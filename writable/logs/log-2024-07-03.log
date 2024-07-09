@@ -1,0 +1,762 @@
+INFO - 2024-07-03 03:54:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 03:55:42 --> ErrorException: Undefined array key "whs_code"
+[Method: GET, Route: warehouse/add]
+in APPPATH\Views\warehouse\add.php on line 36.
+ 1 APPPATH\Views\warehouse\add.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "whs_code"', 'D:\\Project-project\\CI\\erp-01\\app\\Views\\warehouse\\add.php', 36)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\erp-01\\app\\Views\\warehouse\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('warehouse/add', [], true)
+ 5 APPPATH\Controllers\Warehouse.php(81): view('warehouse/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 03:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 03:56:48 --> ErrorException: Undefined variable $departments
+[Method: GET, Route: warehouse/add]
+in APPPATH\Views\warehouse\add.php on line 50.
+ 1 APPPATH\Views\warehouse\add.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $departments', 'D:\\Project-project\\CI\\erp-01\\app\\Views\\warehouse\\add.php', 50)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\erp-01\\app\\Views\\warehouse\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('warehouse/add', [], true)
+ 5 APPPATH\Controllers\Warehouse.php(81): view('warehouse/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 03:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 07:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 07:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:02:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:03:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:09:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:14:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:14:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:18:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:18:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:18:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-03 08:18:29 --> mysqli_sql_exception: Table 'db_erp.dept_master' doesn't exist in D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(310): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('d001', 'dept_code', Array, NULL, 'dept_code')
+#6 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('dept_code', 'dept_code', 'd001', Array, Array, 'dept_code')
+#7 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#8 D:\Project-project\CI\erp-01\app\Controllers\Department.php(90): CodeIgniter\Controller->validate(Array)
+#9 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Department->save()
+#10 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+#11 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\erp-01\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(49): require_once('D:\\Project-proj...')
+#16 {main}
+CRITICAL - 2024-07-03 08:18:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.dept_master' doesn't exist
+[Method: POST, Route: department/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `dept_master`
+WHERE `dept_code` = :dept_code:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('d001', 'dept_code', [...], null, 'dept_code')
+ 4 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('dept_code', 'dept_code', 'd001', [...], [...], 'dept_code')
+ 5 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\Department.php(90): CodeIgniter\Controller->validate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->save()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 08:18:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.dept_master' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `dept_master`
+WHERE `dept_code` = \'d001\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `dept_master`
+WHERE `dept_code` = \'d001\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `dept_master`
+WHERE `dept_code` = :dept_code:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('d001', 'dept_code', [...], null, 'dept_code')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('dept_code', 'dept_code', 'd001', [...], [...], 'dept_code')
+ 7 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\Department.php(90): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->save()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 08:18:29 --> [Caused by] mysqli_sql_exception: Table 'db_erp.dept_master' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('SELECT 1
+FROM `dept_master`
+WHERE `dept_code` = \'d001\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `dept_master`
+WHERE `dept_code` = \'d001\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `dept_master`
+WHERE `dept_code` = \'d001\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `dept_master`
+WHERE `dept_code` = :dept_code:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('d001', 'dept_code', [...], null, 'dept_code')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('dept_code', 'dept_code', 'd001', [...], [...], 'dept_code')
+ 8 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\Department.php(90): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->save()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 08:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:21:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-03 08:21:46 --> mysqli_sql_exception: Unknown column 'dept_taxid' in 'field list' in D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `de...', 0)
+#1 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `de...')
+#2 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `de...')
+#3 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `de...', Array, false)
+#4 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\erp-01\app\Controllers\Department.php(132): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Department->save()
+#10 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+#11 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\erp-01\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(49): require_once('D:\\Project-proj...')
+#16 {main}
+CRITICAL - 2024-07-03 08:21:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dept_taxid' in 'field list'
+[Method: POST, Route: department/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `department_master` (`comp_code`, `site_code`, `dept_code`, `dept_name`, `dept_taxid`, `dept_pic`, `dept_add`, `dept_city`, `dept_prov`, `dept_count`, `dept_post`, `dept_phone1`, `dept_phone2`, `dept_phone3`, `dept_badd`, `dept_bcity`, `dept_bprov`, `dept_bcount`, `dept_bpost`, `dept_bphone1`, `dept_bphone2`, `dept_bphone3`, `dept_madd`, `dept_mcity`, `dept_mprov`, `dept_mcount`, `dept_mpost`, `dept_mphone1`, `dept_mphone2`, `dept_mphone3`, `created_at`, `updated_at`) VALUES (:comp_code:, :site_code:, :dept_code:, :dept_name:, :dept_taxid:, :dept_pic:, :dept_add:, :dept_city:, :dept_prov:, :dept_count:, :dept_post:, :dept_phone1:, :dept_phone2:, :dept_phone3:, :dept_badd:, :dept_bcity:, :dept_bprov:, :dept_bcount:, :dept_bpost:, :dept_bphone1:, :dept_bphone2:, :dept_bphone3:, :dept_madd:, :dept_mcity:, :dept_mprov:, :dept_mcount:, :dept_mpost:, :dept_mphone1:, :dept_mphone2:, :dept_mphone3:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Department.php(132): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->save()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 08:21:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dept_taxid' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `department_master` (`comp_code`, `site_code`, `dept_code`, `dept_name`, `dept_taxid`, `dept_pic`, `dept_add`, `dept_city`, `dept_prov`, `dept_count`, `dept_post`, `dept_phone1`, `dept_phone2`, `dept_phone3`, `dept_badd`, `dept_bcity`, `dept_bprov`, `dept_bcount`, `dept_bpost`, `dept_bphone1`, `dept_bphone2`, `dept_bphone3`, `dept_madd`, `dept_mcity`, `dept_mprov`, `dept_mcount`, `dept_mpost`, `dept_mphone1`, `dept_mphone2`, `dept_mphone3`, `created_at`, `updated_at`) VALUES (\'001\', \'s01\', \'d001\', \'ss\', \'1212\', \'sa\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'3609\', \'17\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 08:21:46\', \'2024-07-03 08:21:46\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `department_master` (`comp_code`, `site_code`, `dept_code`, `dept_name`, `dept_taxid`, `dept_pic`, `dept_add`, `dept_city`, `dept_prov`, `dept_count`, `dept_post`, `dept_phone1`, `dept_phone2`, `dept_phone3`, `dept_badd`, `dept_bcity`, `dept_bprov`, `dept_bcount`, `dept_bpost`, `dept_bphone1`, `dept_bphone2`, `dept_bphone3`, `dept_madd`, `dept_mcity`, `dept_mprov`, `dept_mcount`, `dept_mpost`, `dept_mphone1`, `dept_mphone2`, `dept_mphone3`, `created_at`, `updated_at`) VALUES (\'001\', \'s01\', \'d001\', \'ss\', \'1212\', \'sa\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'3609\', \'17\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 08:21:46\', \'2024-07-03 08:21:46\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `department_master` (`comp_code`, `site_code`, `dept_code`, `dept_name`, `dept_taxid`, `dept_pic`, `dept_add`, `dept_city`, `dept_prov`, `dept_count`, `dept_post`, `dept_phone1`, `dept_phone2`, `dept_phone3`, `dept_badd`, `dept_bcity`, `dept_bprov`, `dept_bcount`, `dept_bpost`, `dept_bphone1`, `dept_bphone2`, `dept_bphone3`, `dept_madd`, `dept_mcity`, `dept_mprov`, `dept_mcount`, `dept_mpost`, `dept_mphone1`, `dept_mphone2`, `dept_mphone3`, `created_at`, `updated_at`) VALUES (:comp_code:, :site_code:, :dept_code:, :dept_name:, :dept_taxid:, :dept_pic:, :dept_add:, :dept_city:, :dept_prov:, :dept_count:, :dept_post:, :dept_phone1:, :dept_phone2:, :dept_phone3:, :dept_badd:, :dept_bcity:, :dept_bprov:, :dept_bcount:, :dept_bpost:, :dept_bphone1:, :dept_bphone2:, :dept_bphone3:, :dept_madd:, :dept_mcity:, :dept_mprov:, :dept_mcount:, :dept_mpost:, :dept_mphone1:, :dept_mphone2:, :dept_mphone3:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Department.php(132): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->save()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 08:21:46 --> [Caused by] mysqli_sql_exception: Unknown column 'dept_taxid' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `department_master` (`comp_code`, `site_code`, `dept_code`, `dept_name`, `dept_taxid`, `dept_pic`, `dept_add`, `dept_city`, `dept_prov`, `dept_count`, `dept_post`, `dept_phone1`, `dept_phone2`, `dept_phone3`, `dept_badd`, `dept_bcity`, `dept_bprov`, `dept_bcount`, `dept_bpost`, `dept_bphone1`, `dept_bphone2`, `dept_bphone3`, `dept_madd`, `dept_mcity`, `dept_mprov`, `dept_mcount`, `dept_mpost`, `dept_mphone1`, `dept_mphone2`, `dept_mphone3`, `created_at`, `updated_at`) VALUES (\'001\', \'s01\', \'d001\', \'ss\', \'1212\', \'sa\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'3609\', \'17\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 08:21:46\', \'2024-07-03 08:21:46\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `department_master` (`comp_code`, `site_code`, `dept_code`, `dept_name`, `dept_taxid`, `dept_pic`, `dept_add`, `dept_city`, `dept_prov`, `dept_count`, `dept_post`, `dept_phone1`, `dept_phone2`, `dept_phone3`, `dept_badd`, `dept_bcity`, `dept_bprov`, `dept_bcount`, `dept_bpost`, `dept_bphone1`, `dept_bphone2`, `dept_bphone3`, `dept_madd`, `dept_mcity`, `dept_mprov`, `dept_mcount`, `dept_mpost`, `dept_mphone1`, `dept_mphone2`, `dept_mphone3`, `created_at`, `updated_at`) VALUES (\'001\', \'s01\', \'d001\', \'ss\', \'1212\', \'sa\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'3609\', \'17\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 08:21:46\', \'2024-07-03 08:21:46\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `department_master` (`comp_code`, `site_code`, `dept_code`, `dept_name`, `dept_taxid`, `dept_pic`, `dept_add`, `dept_city`, `dept_prov`, `dept_count`, `dept_post`, `dept_phone1`, `dept_phone2`, `dept_phone3`, `dept_badd`, `dept_bcity`, `dept_bprov`, `dept_bcount`, `dept_bpost`, `dept_bphone1`, `dept_bphone2`, `dept_bphone3`, `dept_madd`, `dept_mcity`, `dept_mprov`, `dept_mcount`, `dept_mpost`, `dept_mphone1`, `dept_mphone2`, `dept_mphone3`, `created_at`, `updated_at`) VALUES (\'001\', \'s01\', \'d001\', \'ss\', \'1212\', \'sa\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'3609\', \'17\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 08:21:46\', \'2024-07-03 08:21:46\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `department_master` (`comp_code`, `site_code`, `dept_code`, `dept_name`, `dept_taxid`, `dept_pic`, `dept_add`, `dept_city`, `dept_prov`, `dept_count`, `dept_post`, `dept_phone1`, `dept_phone2`, `dept_phone3`, `dept_badd`, `dept_bcity`, `dept_bprov`, `dept_bcount`, `dept_bpost`, `dept_bphone1`, `dept_bphone2`, `dept_bphone3`, `dept_madd`, `dept_mcity`, `dept_mprov`, `dept_mcount`, `dept_mpost`, `dept_mphone1`, `dept_mphone2`, `dept_mphone3`, `created_at`, `updated_at`) VALUES (:comp_code:, :site_code:, :dept_code:, :dept_name:, :dept_taxid:, :dept_pic:, :dept_add:, :dept_city:, :dept_prov:, :dept_count:, :dept_post:, :dept_phone1:, :dept_phone2:, :dept_phone3:, :dept_badd:, :dept_bcity:, :dept_bprov:, :dept_bcount:, :dept_bpost:, :dept_bphone1:, :dept_bphone2:, :dept_bphone3:, :dept_madd:, :dept_mcity:, :dept_mprov:, :dept_mcount:, :dept_mpost:, :dept_mphone1:, :dept_mphone2:, :dept_mphone3:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Department.php(132): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->save()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 08:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:25:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 08:25:51 --> ErrorException: Undefined property: stdClass::$dept_taxid
+[Method: POST, Route: department/getDepartment]
+in APPPATH\Controllers\Department.php on line 45.
+ 1 APPPATH\Controllers\Department.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$dept_taxid', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\Department.php', 45)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->getDepartment()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 08:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 08:25:56 --> ErrorException: Undefined property: stdClass::$dept_taxid
+[Method: POST, Route: department/getDepartment]
+in APPPATH\Controllers\Department.php on line 45.
+ 1 APPPATH\Controllers\Department.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$dept_taxid', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\Department.php', 45)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->getDepartment()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 08:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 08:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 08:26:54 --> ErrorException: Undefined variable $site
+[Method: GET, Route: department/edit/1]
+in APPPATH\Views\department\edit.php on line 11.
+ 1 APPPATH\Views\department\edit.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $site', 'D:\\Project-project\\CI\\erp-01\\app\\Views\\department\\edit.php', 11)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\erp-01\\app\\Views\\department\\edit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('department/edit', [], true)
+ 5 APPPATH\Controllers\Department.php(165): view('department/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 08:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 08:28:25 --> ErrorException: Undefined variable $sites
+[Method: GET, Route: department/edit/1]
+in APPPATH\Views\department\edit.php on line 34.
+ 1 APPPATH\Views\department\edit.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sites', 'D:\\Project-project\\CI\\erp-01\\app\\Views\\department\\edit.php', 34)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\erp-01\\app\\Views\\department\\edit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('department/edit', [], true)
+ 5 APPPATH\Controllers\Department.php(165): view('department/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 08:29:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 08:29:48 --> BadMethodCallException: Call to undefined method App\Models\SiteModel::getDepartment
+[Method: GET, Route: department/edit/1]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Department.php(156): CodeIgniter\Model->__call('getDepartment', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 08:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 08:30:14 --> ErrorException: Undefined property: stdClass::$site_pic
+[Method: GET, Route: department/edit/1]
+in APPPATH\Views\department\edit.php on line 54.
+ 1 APPPATH\Views\department\edit.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$site_pic', 'D:\\Project-project\\CI\\erp-01\\app\\Views\\department\\edit.php', 54)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\erp-01\\app\\Views\\department\\edit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('department/edit', [], true)
+ 5 APPPATH\Controllers\Department.php(167): view('department/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Department->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Department))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 10:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:01:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:01:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:25:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-03 14:28:52 --> mysqli_sql_exception: Table 'db_erp.whs_master' doesn't exist in D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(310): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('w01', 'whs_code', Array, NULL, 'whs_code')
+#6 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('whs_code', 'whs_code', 'w01', Array, Array, 'whs_code')
+#7 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#8 D:\Project-project\CI\erp-01\app\Controllers\Warehouse.php(94): CodeIgniter\Controller->validate(Array)
+#9 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Warehouse->save()
+#10 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+#11 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\erp-01\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(49): require_once('D:\\Project-proj...')
+#16 {main}
+CRITICAL - 2024-07-03 14:28:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.whs_master' doesn't exist
+[Method: POST, Route: warehouse/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = :whs_code:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('w01', 'whs_code', [...], null, 'whs_code')
+ 4 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('whs_code', 'whs_code', 'w01', [...], [...], 'whs_code')
+ 5 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\Warehouse.php(94): CodeIgniter\Controller->validate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->save()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 14:28:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.whs_master' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = :whs_code:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('w01', 'whs_code', [...], null, 'whs_code')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('whs_code', 'whs_code', 'w01', [...], [...], 'whs_code')
+ 7 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\Warehouse.php(94): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->save()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 14:28:53 --> [Caused by] mysqli_sql_exception: Table 'db_erp.whs_master' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = :whs_code:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('w01', 'whs_code', [...], null, 'whs_code')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('whs_code', 'whs_code', 'w01', [...], [...], 'whs_code')
+ 8 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\Warehouse.php(94): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->save()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 14:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-03 14:28:53 --> mysqli_sql_exception: Table 'db_erp.whs_master' doesn't exist in D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(310): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('w01', 'whs_code', Array, NULL, 'whs_code')
+#6 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('whs_code', 'whs_code', 'w01', Array, Array, 'whs_code')
+#7 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#8 D:\Project-project\CI\erp-01\app\Controllers\Warehouse.php(94): CodeIgniter\Controller->validate(Array)
+#9 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Warehouse->save()
+#10 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+#11 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\erp-01\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(49): require_once('D:\\Project-proj...')
+#16 {main}
+CRITICAL - 2024-07-03 14:28:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.whs_master' doesn't exist
+[Method: POST, Route: warehouse/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = :whs_code:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('w01', 'whs_code', [...], null, 'whs_code')
+ 4 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('whs_code', 'whs_code', 'w01', [...], [...], 'whs_code')
+ 5 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\Warehouse.php(94): CodeIgniter\Controller->validate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->save()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 14:28:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.whs_master' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = :whs_code:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('w01', 'whs_code', [...], null, 'whs_code')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('whs_code', 'whs_code', 'w01', [...], [...], 'whs_code')
+ 7 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 8 APPPATH\Controllers\Warehouse.php(94): CodeIgniter\Controller->validate([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->save()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 14:28:53 --> [Caused by] mysqli_sql_exception: Table 'db_erp.whs_master' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = \'w01\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `whs_master`
+WHERE `whs_code` = :whs_code:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(228): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('w01', 'whs_code', [...], null, 'whs_code')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('whs_code', 'whs_code', 'w01', [...], [...], 'whs_code')
+ 8 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\Warehouse.php(94): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->save()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 14:30:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:30:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:31:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:54:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:59:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:59:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:59:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 14:59:55 --> ErrorException: Undefined property: stdClass::$whs_taxid
+[Method: POST, Route: warehouse/getWarehouse]
+in APPPATH\Controllers\Warehouse.php on line 47.
+ 1 APPPATH\Controllers\Warehouse.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$whs_taxid', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\Warehouse.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->getWarehouse()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 15:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 15:00:54 --> ErrorException: Undefined property: stdClass::$whs_taxid
+[Method: POST, Route: warehouse/getWarehouse]
+in APPPATH\Controllers\Warehouse.php on line 47.
+ 1 APPPATH\Controllers\Warehouse.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$whs_taxid', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\Warehouse.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->getWarehouse()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 15:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:02:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:02:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 15:02:04 --> ErrorException: Undefined variable $sites
+[Method: GET, Route: warehouse/edit/1]
+in APPPATH\Views\warehouse\edit.php on line 34.
+ 1 APPPATH\Views\warehouse\edit.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sites', 'D:\\Project-project\\CI\\erp-01\\app\\Views\\warehouse\\edit.php', 34)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\erp-01\\app\\Views\\warehouse\\edit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('warehouse/edit', [], true)
+ 5 APPPATH\Controllers\Warehouse.php(173): view('warehouse/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Warehouse->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Warehouse))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 15:03:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:03:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:13:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:14:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-03 17:14:15 --> mysqli_sql_exception: Unknown column 'loc_badd' in 'field list' in D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `lo...', 0)
+#1 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lo...')
+#2 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lo...')
+#3 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lo...', Array, false)
+#4 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\erp-01\app\Controllers\Location.php(141): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Location->save()
+#10 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Location))
+#11 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\erp-01\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(49): require_once('D:\\Project-proj...')
+#16 {main}
+CRITICAL - 2024-07-03 17:14:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'loc_badd' in 'field list'
+[Method: POST, Route: location/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `location_master` (`site_code`, `comp_code`, `whs_code`, `loc_code`, `loc_name`, `loc_pic`, `loc_add`, `loc_city`, `loc_prov`, `loc_count`, `loc_post`, `loc_phone1`, `loc_phone2`, `loc_phone3`, `loc_badd`, `loc_bcity`, `loc_bprov`, `loc_bcount`, `loc_bpost`, `loc_bphone1`, `loc_bphone2`, `loc_bphone3`, `loc_madd`, `loc_mcity`, `loc_mprov`, `loc_mcount`, `loc_mpost`, `loc_mphone1`, `loc_mphone2`, `loc_mphone3`, `created_at`, `updated_at`) VALUES (:site_code:, :comp_code:, :whs_code:, :loc_code:, :loc_name:, :loc_pic:, :loc_add:, :loc_city:, :loc_prov:, :loc_count:, :loc_post:, :loc_phone1:, :loc_phone2:, :loc_phone3:, :loc_badd:, :loc_bcity:, :loc_bprov:, :loc_bcount:, :loc_bpost:, :loc_bphone1:, :loc_bphone2:, :loc_bphone3:, :loc_madd:, :loc_mcity:, :loc_mprov:, :loc_mcount:, :loc_mpost:, :loc_mphone1:, :loc_mphone2:, :loc_mphone3:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Location.php(141): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Location->save()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Location))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 17:14:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'loc_badd' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `location_master` (`site_code`, `comp_code`, `whs_code`, `loc_code`, `loc_name`, `loc_pic`, `loc_add`, `loc_city`, `loc_prov`, `loc_count`, `loc_post`, `loc_phone1`, `loc_phone2`, `loc_phone3`, `loc_badd`, `loc_bcity`, `loc_bprov`, `loc_bcount`, `loc_bpost`, `loc_bphone1`, `loc_bphone2`, `loc_bphone3`, `loc_madd`, `loc_mcity`, `loc_mprov`, `loc_mcount`, `loc_mpost`, `loc_mphone1`, `loc_mphone2`, `loc_mphone3`, `created_at`, `updated_at`) VALUES (\'s01\', \'001\', \'w01\', \'L01\', \'Loc01\', \'lll\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 17:14:15\', \'2024-07-03 17:14:15\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `location_master` (`site_code`, `comp_code`, `whs_code`, `loc_code`, `loc_name`, `loc_pic`, `loc_add`, `loc_city`, `loc_prov`, `loc_count`, `loc_post`, `loc_phone1`, `loc_phone2`, `loc_phone3`, `loc_badd`, `loc_bcity`, `loc_bprov`, `loc_bcount`, `loc_bpost`, `loc_bphone1`, `loc_bphone2`, `loc_bphone3`, `loc_madd`, `loc_mcity`, `loc_mprov`, `loc_mcount`, `loc_mpost`, `loc_mphone1`, `loc_mphone2`, `loc_mphone3`, `created_at`, `updated_at`) VALUES (\'s01\', \'001\', \'w01\', \'L01\', \'Loc01\', \'lll\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 17:14:15\', \'2024-07-03 17:14:15\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `location_master` (`site_code`, `comp_code`, `whs_code`, `loc_code`, `loc_name`, `loc_pic`, `loc_add`, `loc_city`, `loc_prov`, `loc_count`, `loc_post`, `loc_phone1`, `loc_phone2`, `loc_phone3`, `loc_badd`, `loc_bcity`, `loc_bprov`, `loc_bcount`, `loc_bpost`, `loc_bphone1`, `loc_bphone2`, `loc_bphone3`, `loc_madd`, `loc_mcity`, `loc_mprov`, `loc_mcount`, `loc_mpost`, `loc_mphone1`, `loc_mphone2`, `loc_mphone3`, `created_at`, `updated_at`) VALUES (:site_code:, :comp_code:, :whs_code:, :loc_code:, :loc_name:, :loc_pic:, :loc_add:, :loc_city:, :loc_prov:, :loc_count:, :loc_post:, :loc_phone1:, :loc_phone2:, :loc_phone3:, :loc_badd:, :loc_bcity:, :loc_bprov:, :loc_bcount:, :loc_bpost:, :loc_bphone1:, :loc_bphone2:, :loc_bphone3:, :loc_madd:, :loc_mcity:, :loc_mprov:, :loc_mcount:, :loc_mpost:, :loc_mphone1:, :loc_mphone2:, :loc_mphone3:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Location.php(141): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Location->save()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Location))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+CRITICAL - 2024-07-03 17:14:15 --> [Caused by] mysqli_sql_exception: Unknown column 'loc_badd' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `location_master` (`site_code`, `comp_code`, `whs_code`, `loc_code`, `loc_name`, `loc_pic`, `loc_add`, `loc_city`, `loc_prov`, `loc_count`, `loc_post`, `loc_phone1`, `loc_phone2`, `loc_phone3`, `loc_badd`, `loc_bcity`, `loc_bprov`, `loc_bcount`, `loc_bpost`, `loc_bphone1`, `loc_bphone2`, `loc_bphone3`, `loc_madd`, `loc_mcity`, `loc_mprov`, `loc_mcount`, `loc_mpost`, `loc_mphone1`, `loc_mphone2`, `loc_mphone3`, `created_at`, `updated_at`) VALUES (\'s01\', \'001\', \'w01\', \'L01\', \'Loc01\', \'lll\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 17:14:15\', \'2024-07-03 17:14:15\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `location_master` (`site_code`, `comp_code`, `whs_code`, `loc_code`, `loc_name`, `loc_pic`, `loc_add`, `loc_city`, `loc_prov`, `loc_count`, `loc_post`, `loc_phone1`, `loc_phone2`, `loc_phone3`, `loc_badd`, `loc_bcity`, `loc_bprov`, `loc_bcount`, `loc_bpost`, `loc_bphone1`, `loc_bphone2`, `loc_bphone3`, `loc_madd`, `loc_mcity`, `loc_mprov`, `loc_mcount`, `loc_mpost`, `loc_mphone1`, `loc_mphone2`, `loc_mphone3`, `created_at`, `updated_at`) VALUES (\'s01\', \'001\', \'w01\', \'L01\', \'Loc01\', \'lll\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 17:14:15\', \'2024-07-03 17:14:15\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `location_master` (`site_code`, `comp_code`, `whs_code`, `loc_code`, `loc_name`, `loc_pic`, `loc_add`, `loc_city`, `loc_prov`, `loc_count`, `loc_post`, `loc_phone1`, `loc_phone2`, `loc_phone3`, `loc_badd`, `loc_bcity`, `loc_bprov`, `loc_bcount`, `loc_bpost`, `loc_bphone1`, `loc_bphone2`, `loc_bphone3`, `loc_madd`, `loc_mcity`, `loc_mprov`, `loc_mcount`, `loc_mpost`, `loc_mphone1`, `loc_mphone2`, `loc_mphone3`, `created_at`, `updated_at`) VALUES (\'s01\', \'001\', \'w01\', \'L01\', \'Loc01\', \'lll\', \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', \'\', \'1805\', \'102\', \'11630\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'2024-07-03 17:14:15\', \'2024-07-03 17:14:15\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `location_master` (`site_code`, `comp_code`, `whs_code`, `loc_code`, `loc_name`, `loc_pic`, `loc_add`, `loc_city`, `loc_prov`, `loc_count`, `loc_post`, `loc_phone1`, `loc_phone2`, `loc_phone3`, `loc_badd`, `loc_bcity`, `loc_bprov`, `loc_bcount`, `loc_bpost`, `loc_bphone1`, `loc_bphone2`, `loc_bphone3`, `loc_madd`, `loc_mcity`, `loc_mprov`, `loc_mcount`, `loc_mpost`, `loc_mphone1`, `loc_mphone2`, `loc_mphone3`, `created_at`, `updated_at`) VALUES (:site_code:, :comp_code:, :whs_code:, :loc_code:, :loc_name:, :loc_pic:, :loc_add:, :loc_city:, :loc_prov:, :loc_count:, :loc_post:, :loc_phone1:, :loc_phone2:, :loc_phone3:, :loc_badd:, :loc_bcity:, :loc_bprov:, :loc_bcount:, :loc_bpost:, :loc_bphone1:, :loc_bphone2:, :loc_bphone3:, :loc_madd:, :loc_mcity:, :loc_mprov:, :loc_mcount:, :loc_mpost:, :loc_mphone1:, :loc_mphone2:, :loc_mphone3:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Location.php(141): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Location->save()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Location))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 17:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:26:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:26:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 17:26:49 --> BadMethodCallException: Call to undefined method App\Models\WarehouseModel::getLocation
+[Method: GET, Route: location/edit/1]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Location.php(162): CodeIgniter\Model->__call('getLocation', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Location->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Location))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 17:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 17:27:45 --> ErrorException: Undefined property: stdClass::$loc_bcount
+[Method: GET, Route: location/edit/1]
+in APPPATH\Controllers\Location.php on line 169.
+ 1 APPPATH\Controllers\Location.php(169): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$loc_bcount', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\Location.php', 169)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Location->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Location))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
+INFO - 2024-07-03 17:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:32:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
