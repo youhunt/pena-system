@@ -17,6 +17,8 @@ class Company extends BaseController
         $data['submenu'] = 'company';
 
         $data['title'] = 'Company';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Company']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Company', 'pagetitle' => 'MasterData']);
         return view('company/index', $data);
 	}
 
@@ -65,6 +67,8 @@ class Company extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'company';
         $data['countries'] = $dataCou->findAll();
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Company']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Company', 'pagetitle' => 'MasterData']);
 
         return view('company/add', $data);            
     }
@@ -127,9 +131,11 @@ class Company extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'company';
         $data['company'] = $dataComp->getCompany($id);
-        $data['countries'] = $dataCou->findAll();
-        $data['states'] = $dataSta->getByCountry($data['company'][0]->comp_count);
-        $data['cities'] = $dataCit->getByCountry($data['company'][0]->comp_count);
+        $data['country_name'] = $dataCou->getCountry($data['company'][0]->comp_count)[0]->name;
+        $data['state_name'] = $dataSta->getStates($data['company'][0]->comp_prov)[0]->name;
+        $data['city_name'] = $dataCit->getCity($data['company'][0]->comp_city)[0]->name;
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Company']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Company', 'pagetitle' => 'MasterData']);
 
         return view('company/edit', $data);            
     }

@@ -18,6 +18,8 @@ class Site extends BaseController
         $data['submenu'] = 'site';
 
         $data['title'] = 'Site';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Site']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Site', 'pagetitle' => 'MasterData']);
         return view('site/index', $data);
 	}
 
@@ -69,6 +71,8 @@ class Site extends BaseController
         $data['submenu'] = 'site';
         $data['countries'] = $dataCou->findAll();
         $data['company'] = $dataCom->findAll();
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Site']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Site', 'pagetitle' => 'MasterData']);
 
         return view('site/add', $data);            
     }
@@ -158,6 +162,8 @@ class Site extends BaseController
         $data['cities'] = $dataCit->getByState($data['site'][0]->site_prov);
         $data['bcities'] = $dataCit->getByState($data['site'][0]->site_bprov);
         $data['mcities'] = $dataCit->getByState($data['site'][0]->site_mprov);
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Site']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Site', 'pagetitle' => 'MasterData']);
 
         return view('site/edit', $data);            
     }

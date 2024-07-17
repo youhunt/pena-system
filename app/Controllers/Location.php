@@ -21,6 +21,8 @@ class Location extends BaseController
         $data['submenu'] = 'loc';
 
         $data['title'] = 'Location';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
         return view('location/index', $data);
 	}
 
@@ -80,6 +82,8 @@ class Location extends BaseController
         $data['sites'] = $dataSit->findAll();
         $data['departments'] = $dataDep->findAll();
         $data['warehouses'] = $dataWhs->findAll();
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
 
         return view('location/add', $data);            
     }

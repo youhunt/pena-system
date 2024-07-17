@@ -3,26 +3,22 @@
 <?= $this->section('page-content') ?>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Countries</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"><?= lang('Countries.Countries'); ?></h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Country</th>
-                                            <th>Region</th>
-                                            <th>Subregion</th>
+                                            <th><?= lang('Countries.ID'); ?></th>
+                                            <th><?= lang('Countries.Country'); ?></th>
                                             <th style="width: 90px;"></th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Country</th>
-                                            <th>Region</th>
-                                            <th>Subregion</th>
+                                            <th><?= lang('Countries.ID'); ?></th>
+                                            <th><?= lang('Countries.Country'); ?></th>
                                             <th></th>
                                         </tr>
                                     </tfoot>
@@ -94,14 +90,6 @@
                     "searchable": true
                 },
                 {
-                    "data": "region",
-                    "autoWidth": true,
-                    "searchable": true
-                }, {
-                    "data": "subregion",
-                    "autoWidth": true,
-                    "searchable": true
-                }, {
                     data: "no", render: function (data, type, row) {
                         return '<a href="<?= base_url(); ?>countries/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a><a href="<?= base_url(); ?>states/add/' + row.id + '" class="btn btn-danger btn-circle btn-sm" title="Add States"><i class="fas fa-tasks"></i></a>';
                     }

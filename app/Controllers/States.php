@@ -61,4 +61,23 @@ class States extends BaseController
         $data = $model->getByCountry($id);
         return json_encode($data);
     }
+
+    public function getByCountry()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('states');   
+
+        $query = $builder
+                    ->where('country_id', $this->request->getVar('country_id'))
+                    ->like('name', $this->request->getVar('q'))
+                    ->select('id, name as text')
+                    ->limit(30)->get();
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
 }

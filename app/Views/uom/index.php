@@ -1,45 +1,54 @@
 <?= $this->extend('template/index') ?>            
 
 <?= $this->section('page-content') ?>
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3" style="padding: 0 !important;">
-                            <nav class="navbar navbar-expand navbar-light bg-light">
-                                <a class="navbar-brand m-0 font-weight-bold text-primary" href="#"><?= $title ?></a>
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item dropdown">
-                                        <a class="btn btn-primary" href="<?= base_url(); ?>uom/add" id="navbarDropdown"
-                                            role="button" >
-                                            Add
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>UOM</th>
-                                            <th>Description</th>
-                                            <th style="width: 90px;"></th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>UOM</th>
-                                            <th>Description</th>
-                                            <th></th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                                                            
-                                    </tbody>
-                                </table>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row mb-2">
+                                        <div class="col-sm">
+                                            <h4 class="card-title"><?= $title ?></h4>
+                                        </div>
+                                        <!-- end col -->
+                                        <div class="col-sm-auto">
+                                            <div class="text-sm-end">
+                                                <a href="<?= base_url(); ?>uom/add" class="btn btn-success btn-rounded" id="addProject-btn"><i class="mdi mdi-plus me-1"></i><?= lang('Files.AddNew'); ?></a>
+                                            </div>
+                                        </div>
+                                        <!-- end col -->
+                                    </div>
+                                    <!-- end row -->
+                                    <div class="">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><?= lang('UOM.id'); ?></th>
+                                                        <th><?= lang('UOM.uom_code'); ?></th>
+                                                        <th><?= lang('UOM.uom_desc'); ?></th>
+                                                        <th><?= lang('UOM.uomdec'); ?></th>
+                                                        <th style="width: 90px;"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th><?= lang('UOM.id'); ?></th>
+                                                        <th><?= lang('UOM.uom_code'); ?></th>
+                                                        <th><?= lang('UOM.uom_desc'); ?></th>
+                                                        <th><?= lang('UOM.uomdec'); ?></th>
+                                                        <th></th>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                                                        
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
 <?= $this->endSection() ?>  
@@ -102,6 +111,11 @@
                 },
                 {
                     "data": "uom_desc",
+                    "autoWidth": true,
+                    "searchable": true
+                },
+                {
+                    "data": "uomdec",
                     "autoWidth": true,
                     "searchable": true
                 }, {

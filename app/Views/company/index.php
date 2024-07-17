@@ -1,49 +1,56 @@
 <?= $this->extend('template/index') ?>            
 
 <?= $this->section('page-content') ?>
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3" style="padding: 0 !important;">
-                            <nav class="navbar navbar-expand navbar-light bg-light">
-                                <a class="navbar-brand m-0 font-weight-bold text-primary" href="#"><?= $title ?></a>
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item dropdown">
-                                        <a class="btn btn-primary" href="<?= base_url(); ?>company/add" id="navbarDropdown"
-                                            role="button" >
-                                            Add
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Code</th>
-                                            <th>Name</th>
-                                            <th>Company PIC</th>
-                                            <th>Company Tax ID</th>
-                                            <th style="width: 45px;"></th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Code</th>
-                                            <th>Name</th>
-                                            <th>Company PIC</th>
-                                            <th>Company Tax ID</th>
-                                            <th></th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                                                            
-                                    </tbody>
-                                </table>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row mb-2">
+                                        <div class="col-sm">
+                                            <h4 class="card-title"><?= $title ?></h4>
+                                        </div>
+                                        <!-- end col -->
+                                        <div class="col-sm-auto">
+                                            <div class="text-sm-end">
+                                                <a href="<?= base_url(); ?>company/add" class="btn btn-success btn-rounded" id="addProject-btn"><i class="mdi mdi-plus me-1"></i><?= lang('Files.AddNew'); ?></a>
+                                            </div>
+                                        </div>
+                                        <!-- end col -->
+                                    </div>
+                                    <!-- end row -->
+                                    <div class="">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><?= lang('Company.id'); ?></th>
+                                                        <th><?= lang('Company.comp_code'); ?></th>
+                                                        <th><?= lang('Company.comp_name'); ?></th>
+                                                        <th><?= lang('Company.comp_pic'); ?></th>
+                                                        <th><?= lang('Company.comp_taxid'); ?></th>
+                                                        <th style="width: 45px;"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th><?= lang('Company.id'); ?></th>
+                                                        <th><?= lang('Company.comp_code'); ?></th>
+                                                        <th><?= lang('Company.comp_name'); ?></th>
+                                                        <th><?= lang('Company.comp_pic'); ?></th>
+                                                        <th><?= lang('Company.comp_taxid'); ?></th>
+                                                        <th></th>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                                                        
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
 <?= $this->endSection() ?>  

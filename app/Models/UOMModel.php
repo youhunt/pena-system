@@ -12,16 +12,17 @@ class UOMModel extends Model
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
-        'id', 'uom_code', 'uom_desc', 
+        'id', 'uom_code', 'uom_desc', 'uomdec', 
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
         'uom_code'      => 'required|is_unique[uom.uom_code]|min_length[1]|max_length[4]',
         'uom_desc'      => 'required',
+        'uomdec'      => 'required',       
     ];
 
-    protected $column_order = ['id', 'uom_code', 'uom_desc'];
-    protected $column_search = ['uom_code', 'uom_desc',];
+    protected $column_order = ['id', 'uom_code', 'uom_desc', 'uomdec'];
+    protected $column_search = ['uom_code', 'uom_desc', 'uomdec'];
     protected $order = ['id' => 'ASC'];
     protected $request;
     protected $db;

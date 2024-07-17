@@ -19,6 +19,8 @@ class Department extends BaseController
         $data['submenu'] = 'dept';
 
         $data['title'] = 'Department';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
         return view('department/index', $data);
 	}
 
@@ -72,6 +74,8 @@ class Department extends BaseController
         $data['countries'] = $dataCou->findAll();
         $data['company'] = $dataCom->findAll();
         $data['sites'] = $dataSit->findAll();
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
 
         return view('department/add', $data);            
     }
@@ -163,6 +167,8 @@ class Department extends BaseController
         $data['cities'] = $dataCit->getByState($data['dept'][0]->dept_prov);
         $data['bcities'] = $dataCit->getByState($data['dept'][0]->dept_bprov);
         $data['mcities'] = $dataCit->getByState($data['dept'][0]->dept_mprov);
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
 
         return view('department/edit', $data);            
     }

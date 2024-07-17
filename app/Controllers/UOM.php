@@ -14,6 +14,8 @@ class UOM extends BaseController
         $data['submenu'] = 'uom';
 
         $data['title'] = 'UOM';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'UOM']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'UOM', 'pagetitle' => 'MasterData']);
         return view('uom/index', $data);
 	}
 
@@ -34,6 +36,7 @@ class UOM extends BaseController
                 $row['id'] = $list->id;
                 $row['uom_code'] = $list->uom_code;
                 $row['uom_desc'] = $list->uom_desc;
+                $row['uomdec'] = $list->uomdec;
                 $row['no'] = '';
                 $data[] = $row;
             }
@@ -57,6 +60,8 @@ class UOM extends BaseController
         ];
         $data['menu'] = 'item';
         $data['submenu'] = 'uom';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'UOM']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'UOM', 'pagetitle' => 'MasterData']);
 
         return view('uom/add', $data);            
     }
@@ -66,6 +71,7 @@ class UOM extends BaseController
         $rules = [
             'uom_code' => 'required|min_length[1]|max_length[4]|is_unique[uom.uom_code]',
             'uom_desc' => 'required',
+            'uomdec' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -78,7 +84,8 @@ class UOM extends BaseController
             $model = new UOMModel($request);
             $data = [
                 'uom_code' => $this->request->getVar('uom_code'),
-                'uom_desc' => $this->request->getVar('uom_desc')
+                'uom_desc' => $this->request->getVar('uom_desc'),
+                'uomdec' => $this->request->getVar('uomdec'),
                 // 'create_date'=>  date("Y-m-d H:i:s"),
                 // 'create_by' =>  user()->username,
                 // 'active' => 1
@@ -107,6 +114,8 @@ class UOM extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'uom';
         $data['uom'] = $dataUOM->getUOM($id);
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'UOM']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'UOM', 'pagetitle' => 'MasterData']);
 
         return view('uom/edit', $data);            
     }
@@ -117,6 +126,7 @@ class UOM extends BaseController
         $rules = [
             'uom_code'      => 'required|min_length[1]|max_length[4]|is_unique[uom.uom_code,id,'.$id.']',
             'uom_desc'      => 'required',
+            'uomdec' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -130,6 +140,7 @@ class UOM extends BaseController
             $data = [
                 'uom_code' => $this->request->getVar('uom_code'),
                 'uom_desc' => $this->request->getVar('uom_desc'),
+                'uomdec' => $this->request->getVar('uomdec'),
             ];
             
             $model->updateData($id, $data);
@@ -153,5 +164,22 @@ class UOM extends BaseController
         $model->deleteData($id);
         
         return redirect()->to(base_url('/uom/index'));
+    }
+
+    public function getAll()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('uom');   
+
+        $query = $builder->like('uom_desc', $this->request->getVar('q'))
+                    ->select('uom_code as id, uom_desc as text')
+                    ->limit(30)->get();
+        $data = $query->getResult();
+        
+		echo json_encode($data);
     }
 }

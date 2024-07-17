@@ -20,6 +20,8 @@ class Warehouse extends BaseController
         $data['submenu'] = 'whs';
 
         $data['title'] = 'Warehouse';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Warehouse']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Warehouse', 'pagetitle' => 'MasterData']);
         return view('warehouse/index', $data);
 	}
 
@@ -76,7 +78,9 @@ class Warehouse extends BaseController
         $data['company'] = $dataCom->findAll();
         $data['sites'] = $dataSit->findAll();
         $data['departments'] = $dataDep->findAll();
-
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Warehouse']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Warehouse', 'pagetitle' => 'MasterData']);
+        
         return view('warehouse/add', $data);            
     }
 
@@ -171,7 +175,9 @@ class Warehouse extends BaseController
         $data['cities'] = $dataCit->getByState($data['whs'][0]->whs_prov);
         $data['bcities'] = $dataCit->getByState($data['whs'][0]->whs_bprov);
         $data['mcities'] = $dataCit->getByState($data['whs'][0]->whs_mprov);
-
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Warehouse']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Warehouse', 'pagetitle' => 'MasterData']);
+        
         return view('warehouse/edit', $data);            
     }
 
@@ -249,5 +255,22 @@ class Warehouse extends BaseController
         $model->deleteData($id);
         
         return redirect()->to(base_url('/warehouse/index'));
+    }
+
+    public function getAll()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('warehouse_master');   
+
+        $query = $builder->like('whs_name', $this->request->getVar('q'))
+                    ->select('whs_code as id, whs_name as text')
+                    ->limit(30)->get();
+        $data = $query->getResult();
+        
+		echo json_encode($data);
     }
 }

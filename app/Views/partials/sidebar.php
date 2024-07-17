@@ -10,26 +10,107 @@
                 <li class="menu-title" key="t-menu"><?= lang('Files.Menu') ?></li>
 
                 <li>
-                <a href="/" class="has-arrow waves-effect">
+                <a href="/" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
                         <span key="t-dashboards"><?= lang('Files.Dashboards') ?></span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" class="waves-effect">
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <!-- <span class="badge rounded-pill bg-danger float-end" key="t-setup"><?= lang('Setup') ?></span> -->
                         <i class="bx bx-cog"></i>
                         <span key="t-setup"><?= lang('Files.Setup') ?></span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="countries" key="t-countries"><?= lang('Files.Countries') ?></a></li>
-                        <li><a href="states" key="t-states"><?= lang('Files.States') ?></a></li>
-                        <li><a href="cities" key="t-cities"><?= lang('Files.Cities') ?></a></li>
+                        <li><a href="/prefix" key="t-prefnum"><?= lang('Files.PrefNum') ?></a></li>
+                        <li><a href="/countries" key="t-countries"><?= lang('Files.Countries') ?></a></li>
+                        <li><a href="/states" key="t-states"><?= lang('Files.States') ?></a></li>
+                        <li><a href="/cities" key="t-cities"><?= lang('Files.Cities') ?></a></li>
+                        <li><a href="/company" key="t-company"><?= lang('Files.Company') ?></a></li>
+                        <li><a href="/site" key="t-site"><?= lang('Files.Site') ?></a></li>
+                        <li><a href="/department" key="t-department"><?= lang('Files.Department') ?></a></li>
+                        <li><a href="/warehouse" key="t-warehouse"><?= lang('Files.Warehouse') ?></a></li>
+                        <li><a href="/location" key="t-location"><?= lang('Files.Location') ?></a></li>
+                        <li><a href="/uom" key="t-uom"><?= lang('Files.UOM') ?></a></li>
+                        <li><a href="/uomconv" key="t-uomconv"><?= lang('Files.UOMConv') ?></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span key="t-inventory"><?= lang('Files.Inventory') ?></span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-master"><?= lang('Files.Master') ?></a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="/item" key="t-item"><?= lang('Files.Item') ?></a></li>
+                                <li><a href="/itemuom" key="t-itemuom"><?= lang('Files.ItemUoM') ?></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-transactions"><?= lang('Files.Transactions') ?></a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="/invinout" key="t-invinout"><?= lang('Files.InvInOut') ?></a></li>
+                                <li><a href="/invtransfer" key="t-invtransfer"><?= lang('Files.InvTransfer') ?></a></li>
+                                <li><a href="/invstockopname" key="t-invstockopname"><?= lang('Files.InvStockOpname') ?></a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
 
-                <li class="menu-title" key="t-apps"><?= lang('Files.Apps') ?></li>
+                <!-- <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span key="t-inventory"><?= lang('Files.Inventory') ?></span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-master><?= lang('Files.Master') ?></a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="/item" key="t-item"><?= lang('Files.Item') ?></a></li>
+                                <li><a href="javascript: void(0);" key="t-level-2-2"><?= lang('Files.Level') ?> 2.2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span key="t-inventory"><?= lang('Files.Inventory') ?></span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li class="menu-title" key="t-master"><a href="javascript: void(0);"><?= lang('Files.Master') ?></li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2"><?= lang('Files.Level') ?> 1.2</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="javascript: void(0);" key="t-level-2-1"><?= lang('Files.Level') ?> 2.1</a></li>
+                                <li><a href="javascript: void(0);" key="t-level-2-2"><?= lang('Files.Level') ?> 2.2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span key="t-multi-level"><?= lang('Files.Multi Level') ?></span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="javascript: void(0);" key="t-level-1-1"><?= lang('Files.Level') ?> 1.1</a></li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2"><?= lang('Files.Level') ?> 1.2</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="javascript: void(0);" key="t-level-2-1"><?= lang('Files.Level') ?> 2.1</a></li>
+                                <li><a href="javascript: void(0);" key="t-level-2-2"><?= lang('Files.Level') ?> 2.2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li> -->
+
+                <!-- <li class="menu-title" key="t-apps"><?= lang('Files.Apps') ?></li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -360,7 +441,7 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
             </ul>
         </div>

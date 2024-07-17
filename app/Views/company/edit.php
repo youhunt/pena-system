@@ -1,225 +1,235 @@
 <?= $this->extend('template/index') ?>            
  
 <?= $this->section('page-content') ?>
-                    <div class="text-center">
-                        <h1 class="h4 text-gray-900 mb-4"><?= $title ?></h1>
-                    </div>
-
-                    <?= view('\Myth\Auth\Views\_message_block') ?>
- 
                     <form action="<?= base_url(); ?>company/update" class="user" method="post">
                         <input type="hidden" name="id" value="<?= $company[0]->id; ?>" ?>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="comp_code">Code</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" class="form-control form-control-user <?php if(session('errors.comp_code')) : ?>is-invalid<?php endif ?>"
-                                name="comp_code" value="<?= $company[0]->comp_code ? $company[0]->comp_code : old('comp_code'); ?>" style="padding: .1rem .5rem .1rem .5rem;">
-                            </div>
-                            <div class="col-2">
-                                <label for="comp_name">PIC</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.comp_pic')) : ?>is-invalid<?php endif ?>" name="comp_pic" value="<?= $company[0]->comp_pic ? $company[0]->comp_pic :  old('comp_pic'); ?>">
-                            </div>                                                    
-                        </div>
 
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="comp_name">Name</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.comp_name')) : ?>is-invalid<?php endif ?>" name="comp_name" value="<?=  $company[0]->comp_name ? $company[0]->comp_name :  old('comp_name'); ?>">
-                            </div>
-                            <div class="col-2">
-                                <label for="comp_taxid">Company Tax ID</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.comp_taxid')) : ?>is-invalid<?php endif ?>" name="comp_taxid" value="<?=  $company[0]->comp_pic ? $company[0]->comp_pic :  old('comp_pic'); ?>">
-                            </div>                            
-                        </div>
- 
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="comp_add">Address</label>
-                            </div>
-                            <div class="col-10">
-                                <textarea class="form-control <?php if(session('errors.comp_add')) : ?>is-invalid<?php endif ?>" id="comp_add" name="comp_add" rows="2"><?= $company[0]->comp_add ? $company[0]->comp_add :  old('comp_add'); ?></textarea>
-                            </div>
-                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4"><?= $title ?></h4>
+                                        <div class="row mb-4">
+                                            <div class="col-sm-12">
+                                                <?= view('\Myth\Auth\Views\_message_block') ?>
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">    
-                            <div class="col-2">
-                                <label for="country">Country</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="comp_count" id="country" class="form-control input-lg">
-                                    <option value="">Choose Country</option>
-                                    <?php
-                                    foreach($countries as $row)
-                                    {
-                                        echo '<option '.($row["id"]===$company[0]->comp_count ? "selected" :  "").' value="'.$row["id"].'">'.$row["name"].'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-2">
-                                <label for="state">State</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="comp_prov" id="state" class="form-control input-lg">
-                                    <option value="">Choose State</option>
-                                    <?php
-                                    foreach($states as $row)
-                                    {
-                                        echo '<option '.($row->id===$company[0]->comp_prov ? "selected" :  "").' value="'.$row->id.'">'.$row->name.'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Company.comp_code'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.comp_code')) : ?>is-invalid<?php endif ?>" id="comp_code" placeholder="<?= lang('Company.comp_code'); ?>" name="comp_code" value="<?= $company[0]->comp_code ? $company[0]->comp_code :  old('comp_code'); ?>"">
+                                            </div>
+                                            <label for="comp_pic" class="col-sm-2 col-form-label"><?= lang('Company.comp_pic'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.comp_pic')) : ?>is-invalid<?php endif ?>" id="comp_pic" placeholder="<?= lang('Company.comp_pic'); ?>" name="comp_pic" value="<?= $company[0]->comp_pic ? $company[0]->comp_pic :  old('comp_pic'); ?>">
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">
-                            
-                            <div class="col-2">
-                                <label for="city">City</label>
+                                        <div class="row mb-4">
+                                            <label for="comp_name" class="col-sm-2 col-form-label"><?= lang('Company.comp_name'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.comp_name')) : ?>is-invalid<?php endif ?>" id="comp_name" placeholder="<?= lang('Company.comp_name'); ?>" name="comp_name" value="<?= $company[0]->comp_name ? $company[0]->comp_name :  old('comp_name'); ?>">
+                                            </div>
+                                            <label for="comp_taxid" class="col-sm-2 col-form-label"><?= lang('Company.comp_taxid'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.comp_taxid')) : ?>is-invalid<?php endif ?>" id="comp_taxid" placeholder="<?= lang('Company.comp_taxid'); ?>" name="comp_taxid" value="<?= $company[0]->comp_taxid ? $company[0]->comp_taxid :  old('comp_taxid'); ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="comp_add" class="col-sm-2 col-form-label"><?= lang('Company.comp_add'); ?></label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control <?php if(session('errors.comp_add')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Company.comp_add'); ?>" name="comp_add"><?= $company[0]->comp_add ? $company[0]->comp_add :  old('comp_add'); ?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="comp_count" class="col-sm-2 col-form-label"><?= lang('Company.comp_count'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="comp_count" name="comp_count" value="<?= $company[0]->comp_count ? $company[0]->comp_count :  old('comp_count'); ?>" />
+                                                <select class="form-control <?php if(session('errors.comp_count')) : ?>is-invalid<?php endif ?>" name="country" id="country" >
+                                                    <option selected="selected"><?= $country_name ?></option>
+                                                </select>
+                                            </div>
+                                            <label for="comp_prov" class="col-sm-2 col-form-label"><?= lang('Company.comp_prov'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="comp_prov" name="comp_prov" value="<?= $company[0]->comp_prov ? $company[0]->comp_prov :  old('comp_prov'); ?>" />
+                                                <select class="form-control <?php if(session('errors.comp_prov')) : ?>is-invalid<?php endif ?>" name="prov" id="prov" >
+                                                    <option selected="selected"><?= $state_name ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="comp_city" class="col-sm-2 col-form-label"><?= lang('Company.comp_city'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="comp_city" name="comp_city" value="<?= $company[0]->comp_city ? $company[0]->comp_city :  old('comp_city'); ?>" />
+                                                <select class="form-control <?php if(session('errors.comp_city')) : ?>is-invalid<?php endif ?>" name="city" id="city" >
+                                                    <option selected="selected"><?= $city_name ?></option>
+                                                </select>
+                                            </div>
+                                            <label for="comp_post" class="col-sm-2 col-form-label">&nbsp;</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.comp_post')) : ?>is-invalid<?php endif ?>" id="comp_post" placeholder="<?= lang('Company.comp_post'); ?>" name="comp_post" value="<?= $company[0]->comp_post ? $company[0]->comp_post :  old('comp_post'); ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="comp_phone1" class="col-sm-2 col-form-label"><?= lang('Company.comp_phone1'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.comp_phone1')) : ?>is-invalid<?php endif ?>" id="comp_phone1" placeholder="<?= lang('Company.comp_phone1'); ?>" name="comp_phone1" value="<?= $company[0]->comp_phone1 ? $company[0]->comp_phone1 :  old('comp_phone1'); ?>">
+                                            </div>
+                                            <label for="comp_phone2" class="col-sm-2 col-form-label"><?= lang('Company.comp_phone2'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.comp_phone2')) : ?>is-invalid<?php endif ?>" id="comp_phone2" placeholder="<?= lang('Company.comp_phone2'); ?>" name="comp_phone2" value="<?= $company[0]->comp_phone2 ? $company[0]->comp_phone2 :  old('comp_phone2'); ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="comp_phone3" class="col-sm-2 col-form-label"><?= lang('Company.comp_phone3'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.comp_phone3')) : ?>is-invalid<?php endif ?>" id="comp_phone3" placeholder="<?= lang('Company.comp_phone3'); ?>" name="comp_name" value="<?= $company[0]->comp_phone3 ? $company[0]->comp_phone3 :  old('comp_phone3'); ?>">
+                                            </div>
+                                            <label for="comp_taxid" class="col-sm-2 col-form-label">&nbsp;</label>
+                                            <div class="col-sm-4">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-end">
+                                            <div class="col-sm-12">
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary w-md"><?= lang('Files.Update'); ?></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end card body -->
+                                </div>
+                                <!-- end card -->
                             </div>
-                            <div class="col-4">
-                                <select name="comp_city" id="city" class="form-control input-lg">
-                                    <option value="">Choose City</option>
-                                    <?php
-                                    foreach($cities as $row)
-                                    {
-                                        echo '<option '.($row->id===$company[0]->comp_city ? "selected" :  "").' value="'.$row->id.'">'.$row->name.'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                        
-                            <div class="col-2">
-                                <label for="city">Postal Code</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.comp_post')) : ?>is-invalid<?php endif ?>" name="comp_post" value="<?=  $company[0]->comp_post ? $company[0]->comp_post :  old('comp_post'); ?>">
-                            </div>
+                            <!-- end col -->
                         </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="city">Phone 1</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.comp_phone1')) : ?>is-invalid<?php endif ?>" name="comp_phone1" value="<?=  $company[0]->comp_phone1 ? $company[0]->comp_pic :  old('comp_phone1'); ?>">
-                            </div>
-                       
-                            <div class="col-2">
-                                <label for="city">Phone 2</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.comp_phone2')) : ?>is-invalid<?php endif ?>" name="comp_phone2" value="<?=  $company[0]->comp_phone2 ? $company[0]->comp_phone2 :  old('comp_phone2'); ?>">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            
-                            <div class="col-2">
-                                <label for="city">Phone 3</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.comp_phone3')) : ?>is-invalid<?php endif ?>" name="comp_phone3" value="<?=  $company[0]->comp_phone3 ? $company[0]->comp_phone3 :  old('comp_phone3'); ?>">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-user btn-block">Save</button>
-                            </div>
-                        </div>
-                         
                     </form>
-<!-- comp_post
-comp_phone1comp_post
-comp_phone2
-comp_phone3 -->
+
 <?= $this->endSection() ?>
 
 <?= $this->section('script-js') ?>    
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#country').change(function(){
-
-            var country_id = $('#country').val();
-            if(country_id != '')
-            {
-                $.ajax({
-                    url:"<?php echo base_url('/states/ByCountry/'); ?>"+country_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose State</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#state').html(html);
-                    }
-                });
-                $.ajax({
-                    url:"<?php echo base_url('/cities/ByCountry/'); ?>"+country_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose City</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#city').html(html);
-                    }
-                });
+        $('#country').select2({
+            placeholder: '',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/countries/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
-            else
-            {
-                $('#state').val('');
-                $('#city').val('');
-            }
+        }).on('select2:select', function (evt) {
+            var data = $("#country option:selected").val();
+            $("#comp_count").val(data);
         });
 
-        $('#state').change(function(){
+        // var countrySelect = $('#country');
+        // $.ajax({
+        //     type: 'GET',
+        //     url: '<?= base_url('/countries/getCountry/'.$company[0]->comp_count); ?>'
+        // }).then(function (data) {
+        //     // create the option and append to Select2
 
-            var state_id = $('#state').val();
-            if(state_id != '')
-            {
-                $.ajax({
-                    url:"<?php echo base_url('/cities/ByState/'); ?>"+state_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose City</option>';
+        //     var option = new Option(data.name, data.id, true, true);
+        //     countrySelect.append(option).trigger('change');
 
-                        for(var count = 0; count < data.length; count++)
-                        {
+        //     // manually trigger the `select2:select` event
+        //     countrySelect.trigger({
+        //         type: 'select2:select',
+        //         params: {
+        //             data: data
+        //         }
+        //     });
+        // });
 
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
+        $('#prov').select2({
+            placeholder: '',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/states/getByCountry'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    var query = {
+                        q: params.term,
+                        country_id: $("#comp_count").val()                     
+                    };
 
-                        }
-                        $('#city').html(html);
-                    }
-                });
+                    // Query parameters will be ?search=[term]&type=public
+                    return query;
+                    // return {
+                    //     q: params.term, // search term
+                    //     country_id: $('comp_count').val(),
+                    // };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
-            else
-            {
-                $('#city').val('');
-            }
+        }).on('select2:select', function (evt) {
+            var data = $("#prov option:selected").val();
+            $("#comp_prov").val(data);
+            //alert("Data yang dipilih adalah "+data);
         });
+        
+        $('#city').select2({
+            placeholder: '',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/cities/getByCountryAndState'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    var query = {
+                        q: params.term,
+                        country_id: $("#comp_count").val(),                     
+                        state_id: $("#comp_prov").val()                     
+                    };
+
+                    // Query parameters will be ?search=[term]&type=public
+                    return query;
+                    // return {
+                    //     q: params.term, // search term
+                    //     country_id: $('comp_count').val(),
+                    // };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            }
+        }).on('select2:select', function (evt) {
+            var data = $("#city option:selected").val();
+            $("#comp_city").val(data);
+            //alert("Data yang dipilih adalah "+data);
+        });
+        
 
     });
 </script>

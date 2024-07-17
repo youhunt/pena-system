@@ -72,4 +72,24 @@ class Cities extends BaseController
         $data = $model->getByState($id);
         return json_encode($data);
     }
+
+    public function getByCountryAndState()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('cities');   
+
+        $query = $builder
+                    ->where('state_id', $this->request->getVar('state_id'))
+                    ->where('country_id', $this->request->getVar('country_id'))
+                    ->like('name', $this->request->getVar('q'))
+                    ->select('id, name as text')
+                    ->limit(30)->get();
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
 }

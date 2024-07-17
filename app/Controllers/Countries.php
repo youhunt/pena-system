@@ -53,8 +53,26 @@ class Countries extends BaseController
 
     public function getAll()
     {
-        $model = new StatesModel();
-        $data = $model->select(['id','name'])->getResult();
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('countries');   
+
+        $query = $builder->like('name', $this->request->getVar('q'))
+                    ->select('id, name as text')
+                    ->limit(30)->get();
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
+
+    public function getCountry($id = null)
+    {
+        $request = Services::request();
+        $model = new CountriesModel($request);
+        $data = $model->getCountry($id);
         return json_encode($data);
     }
 }

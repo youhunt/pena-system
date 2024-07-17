@@ -3,26 +3,26 @@
 <?= $this->section('page-content') ?>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Cities</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"><?= lang('Cities.Cities'); ?></h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>City</th>
-                                            <th>State</th>
-                                            <th>Country</th>
+                                            <th><?= lang('Cities.ID'); ?></th>
+                                            <th><?= lang('Cities.City'); ?></th>
+                                            <th><?= lang('Cities.State'); ?></th>
+                                            <th><?= lang('Cities.Country'); ?></th>
                                             <th style="width: 90px;"></th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>City</th>
-                                            <th>State</th>
-                                            <th>Country</th>
+                                            <th><?= lang('Cities.ID'); ?></th>
+                                            <th><?= lang('Cities.City'); ?></th>
+                                            <th><?= lang('Cities.State'); ?></th>
+                                            <th><?= lang('Cities.Country'); ?></th>
                                             <th></th>
                                         </tr>
                                     </tfoot>
@@ -94,15 +94,15 @@
                     "searchable": true
                 },
                 {
-                    "data": "country",
-                    "autoWidth": true,
-                    "searchable": true
-                }, 
-                {
                     "data": "states",
                     "autoWidth": true,
                     "searchable": true
                 },
+                {
+                    "data": "country",
+                    "autoWidth": true,
+                    "searchable": true
+                }, 
                 {
                     data: "no", render: function (data, type, row) {
                         return '<a href="<?= base_url(); ?>cities/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a>';

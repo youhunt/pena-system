@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="col-5 align-self-end">
-                                    <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/profile-img.png" alt="" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                                 <a href="/">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="assets/images/logo.svg" alt="" class="rounded-circle" height="34">
+                                            <img src="/assets/images/logo.svg" alt="" class="rounded-circle" height="34">
                                         </span>
                                     </div>
                                 </a>
@@ -135,10 +135,10 @@
     <?= $this->include('partials/vendor-scripts') ?>
 
     <!-- validation init -->
-    <script src="assets/js/pages/validation.init.js"></script>
+    <script src="/assets/js/pages/validation.init.js"></script>
 
     <!-- App js -->
-    <script src="assets/js/app.js"></script>
+    <script src="/assets/js/app.js"></script>
 
 </body>
 
