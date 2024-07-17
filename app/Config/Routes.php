@@ -49,15 +49,15 @@ $routes->post('uom/update', 'UOM::update', ['filter' => 'role:administrator']);
 $routes->post('uom/delete', 'UOM::delete', ['filter' => 'role:administrator']);
 $routes->get('uom/getAll?(:any)', 'UOM::getAll', ['filter' => 'role:administrator']);
 
-$routes->get('uomconv', 'UOMConv::index', ['filter' => 'role:administrator']);
-$routes->get('uomconv/index', 'UOMConv::index', ['filter' => 'role:administrator']);
-$routes->post('uomconv/getUOMConv', 'UOMConv::getUOMConv', ['filter' => 'role:administrator']);
-$routes->get('uomconv/add', 'UOMConv::add', ['filter' => 'role:administrator']);
-$routes->get('uomconv/edit/(:segment)', 'UOMConv::edit/$1', ['filter' => 'role:administrator']);
-$routes->post('uomconv/save', 'UOMConv::save', ['filter' => 'role:administrator']);
-$routes->post('uomconv/update', 'UOMConv::update', ['filter' => 'role:administrator']);
-$routes->post('uomconv/delete', 'UOMConv::delete', ['filter' => 'role:administrator']);
-$routes->get('uomconv/getAll?(:any)', 'UOMConv::getAll', ['filter' => 'role:administrator']);
+$routes->get('convuom', 'ConvUOM::index', ['filter' => 'role:administrator']);
+$routes->get('convuom/index', 'ConvUOM::index', ['filter' => 'role:administrator']);
+$routes->post('convuom/getConvUOM', 'ConvUOM::getConvUOM', ['filter' => 'role:administrator']);
+$routes->get('convuom/add', 'ConvUOM::add', ['filter' => 'role:administrator']);
+$routes->get('convuom/edit/(:segment)', 'ConvUOM::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('convuom/save', 'ConvUOM::save', ['filter' => 'role:administrator']);
+$routes->post('convuom/update', 'ConvUOM::update', ['filter' => 'role:administrator']);
+$routes->post('convuom/delete', 'ConvUOM::delete', ['filter' => 'role:administrator']);
+$routes->get('convuom/getAll?(:any)', 'ConvUOM::getAll', ['filter' => 'role:administrator']);
 
 $routes->get('company', 'Company::index', ['filter' => 'role:administrator']);
 $routes->get('company/index', 'Company::index', ['filter' => 'role:administrator']);

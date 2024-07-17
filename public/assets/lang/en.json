@@ -212,6 +212,7 @@
   "t-invinout": "Inventory In Out",
   "t-invtransfer": "Inventory Transfer",
   "t-invstockopname": "Inventory Stock Opname",
+  "t-planning": "Planning",
   "t-forecast": "Forecast",
   "t-planrel": "Planned Released",
   "t-production": "Production",

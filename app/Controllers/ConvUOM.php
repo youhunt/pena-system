@@ -2,28 +2,28 @@
 
 namespace App\Controllers;
 
-use App\Models\UOMConvModel;
+use App\Models\ConvUOMModel;
 use Config\Services;
 
-class UOMConv extends BaseController
+class ConvUOM extends BaseController
 {
 
     public function index()
 	{
         $data['menu'] = 'item';
-        $data['submenu'] = 'uomconv';
+        $data['submenu'] = 'convuom';
 
-        $data['title'] = 'UOMConv';
-        $data['title_meta'] = view('partials/title-meta', ['title' => 'UOMConv']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'UOMConv', 'pagetitle' => 'MasterData']);
-        return view('uomconv/index', $data);
+        $data['title'] = 'ConvUOM';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'ConvUOM']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'ConvUOM', 'pagetitle' => 'MasterData']);
+        return view('convuom/index', $data);
 	}
 
-    public function getUOMConv()  
+    public function getConvUOM()  
     {
 
         $request = Services::request();
-        $datatable = new UOMConvModel($request);
+        $datatable = new ConvUOMModel($request);
         
         if ($request->getMethod(true) === 'POST') {
             $lists = $datatable->getDatatables();
@@ -56,14 +56,14 @@ class UOMConv extends BaseController
     {        
     
         $data = [            
-            'title' => 'Add UOMConv',
+            'title' => 'Add ConvUOM',
         ];
         $data['menu'] = 'item';
-        $data['submenu'] = 'uomconv';
-        $data['title_meta'] = view('partials/title-meta', ['title' => 'UOMConv']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'UOMConv', 'pagetitle' => 'MasterData']);
+        $data['submenu'] = 'convuom';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'ConvUOM']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'ConvUOM', 'pagetitle' => 'MasterData']);
 
-        return view('uomconv/add', $data);            
+        return view('convuom/add', $data);            
     }
 
     public function save()
@@ -81,7 +81,7 @@ class UOMConv extends BaseController
 
         if($this->validate($rules)){
             $request = Services::request();
-            $model = new UOMConvModel($request);
+            $model = new ConvUOMModel($request);
             $data = [
                 'fr_uom' => $this->request->getVar('fr_uom'),
                 'to_uom' => $this->request->getVar('to_uom'),
@@ -90,7 +90,7 @@ class UOMConv extends BaseController
             
             $model->save($data);
 
-            return redirect()->to(base_url('/uomconv/index'));
+            return redirect()->to(base_url('/convuom/index'));
 
         } else {
             
@@ -103,18 +103,18 @@ class UOMConv extends BaseController
     public function edit($id)
     {        
         $request = Services::request();
-        $dataUOMConv = new UOMConvModel($request);
+        $dataConvUOM = new ConvUOMModel($request);
     
         $data = [            
-            'title' => 'Update UOMConv',
+            'title' => 'Update ConvUOM',
         ];
         $data['menu'] = 'setup';
-        $data['submenu'] = 'uomconv';
-        $data['uomconv'] = $dataUOMConv->getUOMConv($id);
-        $data['title_meta'] = view('partials/title-meta', ['title' => 'UOMConv']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'UOMConv', 'pagetitle' => 'MasterData']);
+        $data['submenu'] = 'convuom';
+        $data['convuom'] = $dataConvUOM->getConvUOM($id);
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'ConvUOM']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'ConvUOM', 'pagetitle' => 'MasterData']);
 
-        return view('uomconv/edit', $data);            
+        return view('convuom/edit', $data);            
     }
 
     public function update()
@@ -133,7 +133,7 @@ class UOMConv extends BaseController
 
         if($this->validate($rules)){
             $request = Services::request();
-            $model = new UOMConvModel($request);
+            $model = new ConvUOMModel($request);
             $data = [
                 'fr_uom' => $this->request->getVar('fr_uom'),
                 'to_uom' => $this->request->getVar('to_uom'),
@@ -143,7 +143,7 @@ class UOMConv extends BaseController
             $model->updateData($id, $data);
             // $model->where('id', $id)->update($data);
 
-            return redirect()->to(base_url('/uomconv/index'));
+            return redirect()->to(base_url('/convuom/index'));
 
         } else {
             
@@ -157,10 +157,10 @@ class UOMConv extends BaseController
     {
         $id =  $this->request->getVar('id');
         $request = Services::request();
-        $model = new UOMConvModel($request);
+        $model = new ConvUOMModel($request);
         $model->deleteData($id);
         
-        return redirect()->to(base_url('/uomconv/index'));
+        return redirect()->to(base_url('/convuom/index'));
     }
 
     public function getAll()

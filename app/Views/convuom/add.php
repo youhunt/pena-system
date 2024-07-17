@@ -1,7 +1,7 @@
 <?= $this->extend('template/index') ?>            
  
 <?= $this->section('page-content') ?>
-                    <form action="<?= base_url(); ?>uomconv/save" class="user" method="post">
+                    <form action="<?= base_url(); ?>convuom/save" class="user" method="post">
 
                         <div class="row">
                             <div class="col-xl-12">
@@ -15,12 +15,12 @@
                                         </div>
 
                                         <div class="row mb-4">
-                                            <label for="fr_uom" class="col-sm-2 col-form-label"><?= lang('UOMConv.fr_uom'); ?></label>
+                                            <label for="fr_uom" class="col-sm-2 col-form-label"><?= lang('ConvUOM.fr_uom'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="fr_uom" name="fr_uom" value="" />
                                                 <select class="form-control <?php if(session('errors.fr_uom')) : ?>is-invalid<?php endif ?>" name="fruom" id="fruom" ></select>
                                             </div>
-                                            <label for="to_uom" class="col-sm-2 col-form-label"><?= lang('UOMConv.to_uom'); ?></label>
+                                            <label for="to_uom" class="col-sm-2 col-form-label"><?= lang('ConvUOM.to_uom'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="to_uom" name="to_uom" value="" />
                                                 <select class="form-control <?php if(session('errors.to_uom')) : ?>is-invalid<?php endif ?>" name="touom" id="touom" ></select>
@@ -28,9 +28,9 @@
                                         </div>
 
                                         <div class="row mb-4">
-                                            <label for="value" class="col-sm-2 col-form-label"><?= lang('UOMConv.value'); ?></label>
+                                            <label for="value" class="col-sm-2 col-form-label"><?= lang('ConvUOM.value'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('UOMConv.value'); ?>" name="value" value="<?=  old('value'); ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('ConvUOM.value'); ?>" name="value" value="<?=  old('value'); ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">
@@ -61,7 +61,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#fruom').select2({
-            placeholder: '<?= lang('UOMConv.fr_uom'); ?>',
+            placeholder: '<?= lang('ConvUOM.fr_uom'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/uom/getAll'); ?>',
@@ -86,7 +86,7 @@
         });
 
         $('#touom').select2({
-            placeholder: '<?= lang('UOMConv.to_uom'); ?>',
+            placeholder: '<?= lang('ConvUOM.to_uom'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/uom/getAll'); ?>',

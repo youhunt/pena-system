@@ -5,7 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use CodeIgniter\HTTP\RequestInterface;
 
-class UOMConvModel extends Model
+class ConvUOMModel extends Model
 {
 
     protected $table          = 'uomconv';
