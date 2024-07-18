@@ -143,7 +143,7 @@ class Item extends BaseController
     {
         $id =  $this->request->getVar('id');
         $rules = [
-            'item_code'      => 'required|is_unique[item_master.item_code]|min_length[3]|max_length[50]',
+            'item_code'      => 'required',
             'item_name_1'      => 'required',
             'shelf_life'      => 'required',
             'stockuom'      => 'required',

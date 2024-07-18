@@ -83,7 +83,7 @@ class ConvUOMModel extends Model
         return $tbl_storage->countAllResults();
     }
 
-    public function getUOM($id = '')
+    public function getConvUOM($id = '')
     {
         $this->dt->where('id', $id);
         $query = $this->dt->get();

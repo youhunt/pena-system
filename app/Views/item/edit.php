@@ -55,16 +55,20 @@
                                             </div>
                                             <label for="stockuom" class="col-sm-2 col-form-label"><?= lang('Item.stockuom'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="stockuom" name="stockuom" value="" />
-                                                <select class="form-control <?php if(session('errors.stockuom')) : ?>is-invalid<?php endif ?>" name="uom" id="uom" ></select>
+                                                <input type="hidden" id="stockuom" name="stockuom" value="<?= old('stockuom') ? old('stockuom') : $item[0]->stockuom  ; ?>" />
+                                                <select class="form-control <?php if(session('errors.stockuom')) : ?>is-invalid<?php endif ?>" name="uom" id="uom" >
+                                                    <option selected="selected"><?= old('stockuom') ? old('stockuom') : $item[0]->stockuom  ; ?></option>
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class="row mb-4">
                                             <label for="stockwhs" class="col-sm-2 col-form-label"><?= lang('Item.stockwhs'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="stockwhs" name="stockwhs" value="" />
-                                                <select class="form-control <?php if(session('errors.item_city')) : ?>is-invalid<?php endif ?>" name="whs" id="whs" ></select>
+                                                <input type="hidden" id="stockwhs" name="stockwhs" value="<?= old('stockwhs') ? old('stockwhs') : $item[0]->stockwhs  ; ?>" />
+                                                <select class="form-control <?php if(session('errors.stockwhs')) : ?>is-invalid<?php endif ?>" name="whs" id="whs" >
+                                                    <option selected="selected"><?= old('stockwhs') ? old('stockwhs') : $item[0]->stockwhs  ; ?></option>
+                                                </select>
                                             </div>
                                             <label for="item_price" class="col-sm-2 col-form-label"><?= lang('Item.item_price'); ?></label>
                                             <div class="col-sm-4">
@@ -163,7 +167,6 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $(document).ready(function(){
         $('#uom').select2({
             placeholder: '<?= lang('Item.stockuom'); ?>',
             minimumInputLength: 1,
