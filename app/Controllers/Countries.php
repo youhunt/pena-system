@@ -34,9 +34,8 @@ class Countries extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['name'] = $list->name;
-                $row['region'] = $list->region;
-                $row['subregion'] = $list->subregion;
+                $row['country_code'] = $list->country_code;
+                $row['country_name'] = $list->country_name;
                 $data[] = $row;
             }
 
@@ -74,5 +73,114 @@ class Countries extends BaseController
         $model = new CountriesModel($request);
         $data = $model->getCountry($id);
         return json_encode($data);
+    }
+
+    public function add()
+    {        
+        $request = Services::request();
+        $dataCou = new CountriesModel($request);
+    
+        $data = [            
+            'title' => 'Add Countries',
+        ];
+        $data['menu'] = 'setup';
+        $data['submenu'] = 'countries';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Countries']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Countries', 'pagetitle' => 'MasterData']);
+
+        return view('countries/add', $data);            
+    }
+
+    public function save()
+    {
+        $rules = [
+            'country_code'      => 'required|is_unique[countries.country_code]|min_length[3]|max_length[12]',
+            'country_name'      => 'required',
+        ];
+    
+        if (! $this->validate($rules))
+        {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        if($this->validate($rules)){
+            $request = Services::request();
+            $model = new CountriesModel($request);
+            $data = [
+                'country_code' => $this->request->getVar('country_code'),
+                'country_name' => $this->request->getVar('country_name'),
+            ];
+            
+            $model->save($data);
+
+            return redirect()->to(base_url('/countries/index'));
+
+        } else {
+            
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+
+        }
+    
+    }
+
+    public function edit($id)
+    {        
+        $request = Services::request();
+        $dataCountry = new CountriesModel($request);
+    
+        $data = [            
+            'title' => 'Update Countries',
+        ];
+        $data['menu'] = 'setup';
+        $data['submenu'] = 'countries';
+        $data['countries'] = $dataCountry->getCountries($id);
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Countries']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Countries', 'pagetitle' => 'MasterData']);
+
+        return view('countries/edit', $data);            
+    }
+
+    public function update()
+    {
+        $id =  $this->request->getVar('country_code');
+        $rules = [
+            'country_code'      => 'required', //|is_unique[countries.country_code,'.$id.']|min_length[3]|max_length[12]
+            'country_name'      => 'required',
+        ];
+    
+        if (! $this->validate($rules))
+        {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        if($this->validate($rules)){
+            $request = Services::request();
+            $model = new CountriesModel($request);
+            $data = [
+                'country_code' => $this->request->getVar('country_code'),
+                'country_name' => $this->request->getVar('country_name'),
+            ];
+            
+            $model->updateData($id, $data);
+            // $model->where('id', $id)->update($data);
+
+            return redirect()->to(base_url('/countries/index'));
+
+        } else {
+            
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+
+        }
+    
+    }
+
+    public function delete()
+    {
+        $id =  $this->request->getVar('id');
+        $request = Services::request();
+        $model = new CountriesModel($request);
+        $model->deleteData($id);
+        
+        return redirect()->to(base_url('/countries/index'));
     }
 }

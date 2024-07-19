@@ -23,8 +23,12 @@ $routes->get('countries', 'Countries::index', ['filter' => 'role:administrator']
 $routes->get('countries/index', 'Countries::index', ['filter' => 'role:administrator']);
 $routes->post('countries/getCountries', 'Countries::getCountries', ['filter' => 'role:administrator']);
 $routes->get('countries/getCountry/(:segment)', 'Countries::getCountry/$1', ['filter' => 'role:administrator']);
-// $routes->match(['get', 'post'], 'countries/getAll', 'Countries::getAll', ['filter' => 'role:administrator']);
 $routes->get('countries/getAll?(:any)', 'Countries::getAll', ['filter' => 'role:administrator']);
+$routes->get('countries/add', 'Countries::add', ['filter' => 'role:administrator']);
+$routes->get('countries/edit/(:segment)', 'Countries::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('countries/save', 'Countries::save', ['filter' => 'role:administrator']);
+$routes->post('countries/update', 'Countries::update', ['filter' => 'role:administrator']);
+$routes->post('countries/delete', 'Countries::delete', ['filter' => 'role:administrator']);
 
 $routes->get('states', 'States::index', ['filter' => 'role:administrator']);
 $routes->get('states/index', 'States::index', ['filter' => 'role:administrator']);

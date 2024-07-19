@@ -299,10 +299,20 @@ return [
     'AccNo' => 'Account No.',
     'COA' => 'Chart of Account',
 
-
+    'Yes' => 'Ya',
+    'No' => 'Tidak',
     'Save' => 'Simpan',
     'Update' => 'Update',
     'Edit' => 'Ubah',
     'Delete' => 'Hapus',
     'AddNew' => 'Tambah Baru',
+    'confirmDelete' => 'Pilih "Ya" untuk menghapus',
+    
+    'created_at' => 'Dibuat',	
+    'updated_at' => 'Diubah',	
+    'deleted_at' => 'Dihapus',	
+    'created_by' => 'Dibuat oleh',	
+    'deleted_by' => 'Dihapus oleh',	
+    'updated_by' => 'Diubah oleh',	
+    'active' => 'Aktif',
  ];

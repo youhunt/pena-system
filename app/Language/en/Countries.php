@@ -5,4 +5,6 @@ return [
     'Countries' => 'Countries',
     'ID' => 'ID',
     'Country' => 'Country',
+    'country_name' => 'Country Name', 
+    'country_code' => 'Country Code',	
 ];

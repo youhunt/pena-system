@@ -12,15 +12,16 @@ class CountriesModel extends Model
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
-        'id', 'name', 'region', 'region_id', 'subregion', 'subregion_id',
+        'id', 'country_name', 'country_code',
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
-        'name'      => 'required|alpha_numeric_punct|min_length[3]|max_length[100]',
+        'country_name'      => 'required|alpha_numeric_punct|min_length[3]|max_length[100]',
+        'country_code'      => 'required'
     ];
 
-    protected $column_order = ['id', 'name', 'region', 'subregion'];
-    protected $column_search = ['name', 'region', 'subregion',];
+    protected $column_order = ['id', 'country_name', 'country_code'];
+    protected $column_search = ['country_name', 'country_code',];
     protected $order = ['id' => 'ASC'];
     protected $request;
     protected $db;
@@ -81,11 +82,22 @@ class CountriesModel extends Model
         return $tbl_storage->countAllResults();
     }
 
-    public function getCountry($id = '')
+    public function getCountries($id = '')
     {
         $this->dt->where('id', $id);
         $query = $this->dt->get();
         return $query->getResult();        
     }
 
+    function updateData($id, $data) 
+    {
+        $this->dt->where('id', $id);
+        return $this->dt->update($data);
+    }
+
+    function deleteData($id) 
+    {
+        $this->dt->where('id', $id);
+        return $this->dt->update($data);
+    }
 }

@@ -298,9 +298,20 @@ return [
     'AccNo' => 'Account No.',
     'COA' => 'Chart of Account',
 
+    'Yes' => 'Yes',
+    'No' => 'No',
     'Save' => 'Save',
     'Update' => 'Update',
     'Edit' => 'Edit',
     'Delete' => 'Delete',
     'AddNew' => 'Add New',
+    'confirmDelete' => 'Choose "Yes" to delete',
+
+    'created_at' => 'Created at',	
+    'updated_at' => 'Updated at',	
+    'deleted_at' => 'Deleted at',	
+    'created_by' => 'Created by',	
+    'deleted_by' => 'Deleted by',	
+    'updated_by' => 'Updated by',	
+    'active' => 'Active',
  ];
