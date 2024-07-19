@@ -131,7 +131,7 @@
                                 <select name="loc_prov" id="loc_prov" class="form-control input-lg">
                                     <option value="">Choose State</option>
                                     <?php
-                                    foreach($states as $row)
+                                    foreach($provinces as $row)
                                     {
                                         echo '<option '.($row->id===$loc[0]->loc_prov ? "selected" :  "").' value="'.$row->id.'">'.$row->name.'</option>';
                                     }
@@ -220,7 +220,7 @@
                                 <select name="whs_dprov" id="whs_dprov" class="form-control input-lg">
                                     <option value="">Choose State</option>
                                     <?php
-                                    foreach($bstates as $row)
+                                    foreach($bprovinces as $row)
                                     {
                                         echo '<option '.($row->id===$loc[0]->whs_dprov ? "selected" :  "").' value="'.$row->id.'">'.$row->name.'</option>';
                                     }
@@ -297,7 +297,7 @@
             if(country_id != '')
             {
                 $.ajax({
-                    url:"<?php echo base_url('/states/ByCountry/'); ?>"+country_id,
+                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
                     method:"get",
                     dataType:"JSON",
                     success:function(data)
@@ -373,7 +373,7 @@
             if(country_id != '')
             {
                 $.ajax({
-                    url:"<?php echo base_url('/states/ByCountry/'); ?>"+country_id,
+                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
                     method:"get",
                     dataType:"JSON",
                     success:function(data)

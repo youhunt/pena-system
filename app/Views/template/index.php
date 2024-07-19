@@ -50,6 +50,8 @@
                 <?= $this->include('partials/footer') ?>
             </div>
             <!-- end main content-->
+            
+            <?= $this->renderSection('div-modal'); ?>
 
         </div>
         <!-- END layout-wrapper -->

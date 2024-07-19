@@ -257,7 +257,7 @@ return [
     'View All' => 'View All',
 
     'Countries' => 'Countries',
-    'States' => 'States',
+    'Provinces' => 'Provinces',
     'Cities' => 'Cities',
     'MasterData' => 'Master Data',
     'Company' => 'Company',

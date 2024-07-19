@@ -12,7 +12,7 @@ class CountriesModel extends Model
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
-        'id', 'country_name', 'country_code',
+        'id', 'country_name', 'country_code', 'created_at', 'created_by', 'deleted_at', 'deleted_by', 'updated_by' ,'updated_at' ,'active'
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
@@ -95,7 +95,7 @@ class CountriesModel extends Model
         return $this->dt->update($data);
     }
 
-    function deleteData($id) 
+    function deleteData($id, $data) 
     {
         $this->dt->where('id', $id);
         return $this->dt->update($data);

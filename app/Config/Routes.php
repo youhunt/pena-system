@@ -30,11 +30,17 @@ $routes->post('countries/save', 'Countries::save', ['filter' => 'role:administra
 $routes->post('countries/update', 'Countries::update', ['filter' => 'role:administrator']);
 $routes->post('countries/delete', 'Countries::delete', ['filter' => 'role:administrator']);
 
-$routes->get('states', 'States::index', ['filter' => 'role:administrator']);
-$routes->get('states/index', 'States::index', ['filter' => 'role:administrator']);
-$routes->get('states/ByCountry/(:segment)', 'States::ByCountry/$1', ['filter' => 'role:administrator']);
-$routes->post('states/getStates', 'States::getStates', ['filter' => 'role:administrator']);
-$routes->get('states/getByCountry?(:any)', 'States::getByCountry', ['filter' => 'role:administrator']);
+$routes->get('provinces', 'Provinces::index', ['filter' => 'role:administrator']);
+$routes->get('provinces/index', 'Provinces::index', ['filter' => 'role:administrator']);
+$routes->get('provinces/ByCountry/(:segment)', 'Provinces::ByCountry/$1', ['filter' => 'role:administrator']);
+$routes->post('provinces/getProvinces', 'Provinces::getProvinces', ['filter' => 'role:administrator']);
+$routes->get('provinces/getByCountry?(:any)', 'Provinces::getByCountry', ['filter' => 'role:administrator']);
+$routes->get('provinces/getAll?(:any)', 'Provinces::getAll', ['filter' => 'role:administrator']);
+$routes->get('provinces/add', 'Provinces::add', ['filter' => 'role:administrator']);
+$routes->get('provinces/edit/(:segment)', 'Provinces::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('provinces/save', 'Provinces::save', ['filter' => 'role:administrator']);
+$routes->post('provinces/update', 'Provinces::update', ['filter' => 'role:administrator']);
+$routes->post('provinces/delete', 'Provinces::delete', ['filter' => 'role:administrator']);
 
 $routes->get('cities', 'Cities::index', ['filter' => 'role:administrator']);
 $routes->get('cities/index', 'Cities::index', ['filter' => 'role:administrator']);
@@ -42,6 +48,12 @@ $routes->get('cities/ByCountry/(:segment)', 'Cities::ByCountry/$1', ['filter' =>
 $routes->get('cities/ByState/(:segment)', 'Cities::ByState/$1', ['filter' => 'role:administrator']);
 $routes->post('cities/getCities', 'Cities::getCities', ['filter' => 'role:administrator']);
 $routes->get('cities/getByCountryAndState?(:any)', 'Cities::getByCountryAndState', ['filter' => 'role:administrator']);
+$routes->get('countries/getAll?(:any)', 'Countries::getAll', ['filter' => 'role:administrator']);
+$routes->get('countries/add', 'Countries::add', ['filter' => 'role:administrator']);
+$routes->get('countries/edit/(:segment)', 'Countries::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('countries/save', 'Countries::save', ['filter' => 'role:administrator']);
+$routes->post('countries/update', 'Countries::update', ['filter' => 'role:administrator']);
+$routes->post('countries/delete', 'Countries::delete', ['filter' => 'role:administrator']);
 
 $routes->get('uom', 'UOM::index', ['filter' => 'role:administrator']);
 $routes->get('uom/index', 'UOM::index', ['filter' => 'role:administrator']);

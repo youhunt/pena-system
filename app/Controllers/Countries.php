@@ -36,6 +36,7 @@ class Countries extends BaseController
                 $row['id'] = $list->id;
                 $row['country_code'] = $list->country_code;
                 $row['country_name'] = $list->country_name;
+                $row['active'] = $list->active;
                 $data[] = $row;
             }
 
@@ -59,8 +60,8 @@ class Countries extends BaseController
         $db      = \Config\Database::connect();
         $builder = $db->table('countries');   
 
-        $query = $builder->like('name', $this->request->getVar('q'))
-                    ->select('id, name as text')
+        $query = $builder->like('country_name', $this->request->getVar('q'))
+                    ->select('id, country_name as text')
                     ->limit(30)->get();
         $data = $query->getResult();
         
@@ -142,7 +143,7 @@ class Countries extends BaseController
 
     public function update()
     {
-        $id =  $this->request->getVar('country_code');
+        $id =  $this->request->getVar('id');
         $rules = [
             'country_code'      => 'required', //|is_unique[countries.country_code,'.$id.']|min_length[3]|max_length[12]
             'country_name'      => 'required',
@@ -177,9 +178,24 @@ class Countries extends BaseController
     public function delete()
     {
         $id =  $this->request->getVar('id');
+        $active =  $this->request->getVar('active');
         $request = Services::request();
         $model = new CountriesModel($request);
-        $model->deleteData($id);
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+            'deleted_at' => null,
+            'deleted_by' =>  null,
+            'updated_by' =>  user()->username,
+            'updated_at' =>  date("Y-m-d H:i:s"),
+            'active' => 1,
+        ];
+        }
+        $model->deleteData($id, $data);
         
         return redirect()->to(base_url('/countries/index'));
     }

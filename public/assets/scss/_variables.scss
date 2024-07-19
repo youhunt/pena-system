@@ -1192,8 +1192,8 @@ $form-invalid-color: $form-feedback-invalid-color;
 $form-invalid-border-color: $form-feedback-invalid-color;
 // scss-docs-end form-validation-colors
 
-// scss-docs-start form-validation-states
-$form-validation-states: (
+// scss-docs-start form-validation-provinces
+$form-validation-provinces: (
   "valid": (
     "color": var(--#{$prefix}form-valid-color),
     "icon": $form-feedback-icon-valid,
@@ -1213,7 +1213,7 @@ $form-validation-states: (
     "border-color": var(--#{$prefix}form-invalid-border-color),
   ),
 );
-// scss-docs-end form-validation-states
+// scss-docs-end form-validation-provinces
 
 // Z-index master list
 //

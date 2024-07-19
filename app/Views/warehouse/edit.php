@@ -123,7 +123,7 @@
                                 <select name="whs_prov" id="whs_prov" class="form-control input-lg">
                                     <option value="">Choose State</option>
                                     <?php
-                                    foreach($states as $row)
+                                    foreach($provinces as $row)
                                     {
                                         echo '<option '.($row->id===$whs[0]->whs_prov ? "selected" :  "").' value="'.$row->id.'">'.$row->name.'</option>';
                                     }
@@ -212,7 +212,7 @@
                                 <select name="whs_bprov" id="whs_bprov" class="form-control input-lg">
                                     <option value="">Choose State</option>
                                     <?php
-                                    foreach($bstates as $row)
+                                    foreach($bprovinces as $row)
                                     {
                                         echo '<option '.($row->id===$whs[0]->whs_bprov ? "selected" :  "").' value="'.$row->id.'">'.$row->name.'</option>';
                                     }
@@ -301,7 +301,7 @@
                                 <select name="whs_mprov" id="whs_mprov" class="form-control input-lg">
                                     <option value="">Choose State</option>
                                     <?php
-                                    foreach($mstates as $row)
+                                    foreach($mprovinces as $row)
                                     {
                                         echo '<option '.($row->id===$whs[0]->whs_mprov ? "selected" :  "").' value="'.$row->id.'">'.$row->name.'</option>';
                                     }
@@ -382,7 +382,7 @@ whs_phone3 -->
             if(country_id != '')
             {
                 $.ajax({
-                    url:"<?php echo base_url('/states/ByCountry/'); ?>"+country_id,
+                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
                     method:"get",
                     dataType:"JSON",
                     success:function(data)
@@ -458,7 +458,7 @@ whs_phone3 -->
             if(country_id != '')
             {
                 $.ajax({
-                    url:"<?php echo base_url('/states/ByCountry/'); ?>"+country_id,
+                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
                     method:"get",
                     dataType:"JSON",
                     success:function(data)
@@ -534,7 +534,7 @@ whs_phone3 -->
             if(country_id != '')
             {
                 $.ajax({
-                    url:"<?php echo base_url('/states/ByCountry/'); ?>"+country_id,
+                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
                     method:"get",
                     dataType:"JSON",
                     success:function(data)

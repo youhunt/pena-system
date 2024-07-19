@@ -399,7 +399,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @see https://en.wikipedia.org/wiki/States_and_federal_territories_of_Malaysia
      */
-    protected static $states = [
+    protected static $provinces = [
         'johor' => [
             'Johor Darul Ta\'zim',
             'Johor',
@@ -672,10 +672,10 @@ class Address extends \Faker\Provider\Address
      */
     public function townState()
     {
-        $state = static::randomElement(array_keys(static::$states));
+        $state = static::randomElement(array_keys(static::$provinces));
         $postcode = static::postcode($state);
         $town = static::randomElement(static::$towns[$state]);
-        $state = static::randomElement(static::$states[$state]);
+        $state = static::randomElement(static::$provinces[$state]);
 
         return $postcode . ' ' . $town . ', ' . $state;
     }
@@ -703,8 +703,8 @@ class Address extends \Faker\Provider\Address
      */
     public function state()
     {
-        $state = static::randomElement(array_keys(static::$states));
+        $state = static::randomElement(array_keys(static::$provinces));
 
-        return static::randomElement(static::$states[$state]);
+        return static::randomElement(static::$provinces[$state]);
     }
 }

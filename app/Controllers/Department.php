@@ -6,7 +6,7 @@ use App\Models\DepartmentModel;
 use App\Models\CompanyModel;
 use App\Models\SiteModel;
 use App\Models\CountriesModel;
-use App\Models\StatesModel;
+use App\Models\ProvincesModel;
 use App\Models\CitiesModel;
 use Config\Services;
 
@@ -149,7 +149,7 @@ class Department extends BaseController
         $dataDep = new DepartmentModel($request);
         $dataSit = new SiteModel($request);
         $dataCou = new CountriesModel($request);
-        $dataSta = new StatesModel($request);
+        $dataSta = new ProvincesModel($request);
         $dataCit = new CitiesModel($request);
     
         $data = [            
@@ -161,9 +161,9 @@ class Department extends BaseController
         $data['company'] = $dataCom->findAll();
         $data['countries'] = $dataCou->findAll();
         $data['sites'] = $dataSit->findAll();
-        $data['states'] = $dataSta->getByCountry($data['dept'][0]->dept_count);
-        $data['bstates'] = $dataSta->getByCountry($data['dept'][0]->dept_bcount);
-        $data['mstates'] = $dataSta->getByCountry($data['dept'][0]->dept_mcount);
+        $data['provinces'] = $dataSta->getByCountry($data['dept'][0]->dept_count);
+        $data['bprovinces'] = $dataSta->getByCountry($data['dept'][0]->dept_bcount);
+        $data['mprovinces'] = $dataSta->getByCountry($data['dept'][0]->dept_mcount);
         $data['cities'] = $dataCit->getByState($data['dept'][0]->dept_prov);
         $data['bcities'] = $dataCit->getByState($data['dept'][0]->dept_bprov);
         $data['mcities'] = $dataCit->getByState($data['dept'][0]->dept_mprov);

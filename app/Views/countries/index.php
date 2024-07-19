@@ -26,7 +26,8 @@
                                                         <th><?= lang('Countries.ID'); ?></th>
                                                         <th><?= lang('Countries.country_code'); ?></th>
                                                         <th><?= lang('Countries.country_name'); ?></th>
-                                                        <th style="width: 90px;"></th>
+                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
+                                                        <th style="width: 40px;"></th>
                                                     </tr>
                                                 </thead>
                                                 <tfoot>
@@ -34,6 +35,7 @@
                                                         <th><?= lang('Countries.ID'); ?></th>
                                                         <th><?= lang('Countries.country_code'); ?></th>
                                                         <th><?= lang('Countries.country_name'); ?></th>
+                                                        <th><?= lang('Files.active'); ?></th>
                                                         <th></th>
                                                     </tr>
                                                 </tfoot>
@@ -58,14 +60,15 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="countriesLabel">Delete</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body"><?= lang('Files.confirmDelete'); ?></div>
+                <div class="modal-body">Choose "Yes" to <span id="msgActive"></span>.</div>
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+                    <input type="hidden" name="active" class="active">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">No</button>
                     <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
             </div>
@@ -110,18 +113,39 @@
                     "searchable": true
                 },
                 {
+                    "data": "active", 
+                    "render": function (data, type, row) {
+                        var retVal = "";
+                        if (data === null) return "";
+                        if (data === "1") {
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-countries" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                        } else if (data === "0") {
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-countries" title="Click to ACTIVE Item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                        }
+
+                        return retVal;
+                    },
+                },
+                {
                     data: "no", render: function (data, type, row) {
-                        return '<a href="<?= base_url(); ?>countries/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-countries" title="Delete" data-id="' + row.id + '"><i class="fas fa-times"></i></a>';
+                        return '<a href="<?= base_url(); ?>countries/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a>';
                     }
                 },
             ]
         });
         
-        $('#dataTable tbody').on('click', '.btn-delete-countries', function() {
+        $('#dataTable tbody').on('click', '.btn-active-countries', function() {
             const id = $(this).data('id');
+            const active = $(this).data('active');
             
             // Set data to Form Edit
             $('.id').val(id);
+            $('.active').val(active);
+            if (active == "1") {
+                $('#msgActive').text("Inactive");
+            } else if (active == "0") {
+                $('#msgActive').text("Active");
+            }
 
             // Call Modal Edit
             $('#countriesModal').modal('show');

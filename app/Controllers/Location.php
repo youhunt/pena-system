@@ -8,7 +8,7 @@ use App\Models\DepartmentModel;
 use App\Models\CompanyModel;
 use App\Models\SiteModel;
 use App\Models\CountriesModel;
-use App\Models\StatesModel;
+use App\Models\ProvincesModel;
 use App\Models\CitiesModel;
 use Config\Services;
 
@@ -153,7 +153,7 @@ class Location extends BaseController
         $dataLoc = new LocationModel($request);
         $dataSit = new SiteModel($request);
         $dataCou = new CountriesModel($request);
-        $dataSta = new StatesModel($request);
+        $dataSta = new ProvincesModel($request);
         $dataCit = new CitiesModel($request);
         $dataDep = new DepartmentModel($request);
         $dataWhs = new WarehouseModel($request);
@@ -169,8 +169,8 @@ class Location extends BaseController
         $data['countries'] = $dataCou->findAll();
         $data['departments'] = $dataDep->findAll();
         $data['warehouses'] = $dataWhs->findAll();
-        $data['states'] = $dataSta->getByCountry($data['loc'][0]->loc_count);
-        $data['bstates'] = $dataSta->getByCountry($data['loc'][0]->whs_dcount);
+        $data['provinces'] = $dataSta->getByCountry($data['loc'][0]->loc_count);
+        $data['bprovinces'] = $dataSta->getByCountry($data['loc'][0]->whs_dcount);
         $data['cities'] = $dataCit->getByState($data['loc'][0]->loc_prov);
         $data['bcities'] = $dataCit->getByState($data['loc'][0]->whs_dprov);
 

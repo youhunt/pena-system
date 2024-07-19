@@ -94,7 +94,7 @@
                     "searchable": true
                 },
                 {
-                    "data": "states",
+                    "data": "provinces",
                     "autoWidth": true,
                     "searchable": true
                 },

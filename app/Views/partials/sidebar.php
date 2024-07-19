@@ -25,7 +25,7 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="/prefix" key="t-prefnum"><?= lang('Files.PrefNum') ?></a></li>
                         <li><a href="/countries" key="t-countries"><?= lang('Files.Countries') ?></a></li>
-                        <li><a href="/states" key="t-states"><?= lang('Files.States') ?></a></li>
+                        <li><a href="/provinces" key="t-provinces"><?= lang('Files.Provinces') ?></a></li>
                         <li><a href="/cities" key="t-cities"><?= lang('Files.Cities') ?></a></li>
                         <li><a href="/company" key="t-company"><?= lang('Files.Company') ?></a></li>
                         <li><a href="/site" key="t-site"><?= lang('Files.Site') ?></a></li>

@@ -7,7 +7,7 @@ use App\Models\DepartmentModel;
 use App\Models\CompanyModel;
 use App\Models\SiteModel;
 use App\Models\CountriesModel;
-use App\Models\StatesModel;
+use App\Models\ProvincesModel;
 use App\Models\CitiesModel;
 use Config\Services;
 
@@ -155,7 +155,7 @@ class Warehouse extends BaseController
         $dataWhs = new WarehouseModel($request);
         $dataSit = new SiteModel($request);
         $dataCou = new CountriesModel($request);
-        $dataSta = new StatesModel($request);
+        $dataSta = new ProvincesModel($request);
         $dataCit = new CitiesModel($request);
         $dataDep = new DepartmentModel($request);
     
@@ -169,9 +169,9 @@ class Warehouse extends BaseController
         $data['company'] = $dataCom->findAll();
         $data['countries'] = $dataCou->findAll();
         $data['departments'] = $dataDep->findAll();
-        $data['states'] = $dataSta->getByCountry($data['whs'][0]->whs_count);
-        $data['bstates'] = $dataSta->getByCountry($data['whs'][0]->whs_bcount);
-        $data['mstates'] = $dataSta->getByCountry($data['whs'][0]->whs_mcount);
+        $data['provinces'] = $dataSta->getByCountry($data['whs'][0]->whs_count);
+        $data['bprovinces'] = $dataSta->getByCountry($data['whs'][0]->whs_bcount);
+        $data['mprovinces'] = $dataSta->getByCountry($data['whs'][0]->whs_mcount);
         $data['cities'] = $dataCit->getByState($data['whs'][0]->whs_prov);
         $data['bcities'] = $dataCit->getByState($data['whs'][0]->whs_bprov);
         $data['mcities'] = $dataCit->getByState($data['whs'][0]->whs_mprov);

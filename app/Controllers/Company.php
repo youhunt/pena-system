@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CompanyModel;
 use App\Models\CountriesModel;
-use App\Models\StatesModel;
+use App\Models\ProvincesModel;
 use App\Models\CitiesModel;
 use Config\Services;
 
@@ -122,7 +122,7 @@ class Company extends BaseController
         $request = Services::request();
         $dataComp = new CompanyModel($request);
         $dataCou = new CountriesModel($request);
-        $dataSta = new StatesModel($request);
+        $dataSta = new ProvincesModel($request);
         $dataCit = new CitiesModel($request);
     
         $data = [            
@@ -132,7 +132,7 @@ class Company extends BaseController
         $data['submenu'] = 'company';
         $data['company'] = $dataComp->getCompany($id);
         $data['country_name'] = $dataCou->getCountry($data['company'][0]->comp_count)[0]->name;
-        $data['state_name'] = $dataSta->getStates($data['company'][0]->comp_prov)[0]->name;
+        $data['state_name'] = $dataSta->getProvinces($data['company'][0]->comp_prov)[0]->name;
         $data['city_name'] = $dataCit->getCity($data['company'][0]->comp_city)[0]->name;
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Company']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Company', 'pagetitle' => 'MasterData']);

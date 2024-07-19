@@ -16,7 +16,7 @@ class Address extends \Faker\Provider\Address
         '香港', '澳门',
     ];
 
-    protected static $states = [
+    protected static $provinces = [
         '北京市', '天津市', '河北省', '山西省',
         '内蒙古自治区', '辽宁省', '吉林省',
         '黑龙江省', '上海市', '江苏省',
@@ -115,7 +115,7 @@ class Address extends \Faker\Provider\Address
 
     public function state()
     {
-        return static::randomElement(static::$states);
+        return static::randomElement(static::$provinces);
     }
 
     public function stateAbbr()

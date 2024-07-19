@@ -58,12 +58,12 @@ INFO - 2024-06-26 08:00:43 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-06-26 08:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-06-26 08:00:47 --> ArgumentCountError: Too few arguments to function App\Models\CountriesModel::__construct(), 0 passed in D:\Project-project\CI\erp-01\app\Controllers\States.php on line 33 and exactly 1 expected
-[Method: POST, Route: states/getStates]
+CRITICAL - 2024-06-26 08:00:47 --> ArgumentCountError: Too few arguments to function App\Models\CountriesModel::__construct(), 0 passed in D:\Project-project\CI\erp-01\app\Controllers\Provinces.php on line 33 and exactly 1 expected
+[Method: POST, Route: provinces/getStates]
 in APPPATH\Models\CountriesModel.php on line 29.
- 1 APPPATH\Controllers\States.php(33): App\Models\CountriesModel->__construct()
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+ 1 APPPATH\Controllers\Provinces.php(33): App\Models\CountriesModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -71,12 +71,12 @@ in APPPATH\Models\CountriesModel.php on line 29.
  8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
 INFO - 2024-06-26 08:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-06-26 08:01:12 --> ArgumentCountError: Too few arguments to function App\Models\CountriesModel::__construct(), 0 passed in D:\Project-project\CI\erp-01\app\Controllers\States.php on line 33 and exactly 1 expected
-[Method: POST, Route: states/getStates]
+CRITICAL - 2024-06-26 08:01:12 --> ArgumentCountError: Too few arguments to function App\Models\CountriesModel::__construct(), 0 passed in D:\Project-project\CI\erp-01\app\Controllers\Provinces.php on line 33 and exactly 1 expected
+[Method: POST, Route: provinces/getStates]
 in APPPATH\Models\CountriesModel.php on line 29.
- 1 APPPATH\Controllers\States.php(33): App\Models\CountriesModel->__construct()
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+ 1 APPPATH\Controllers\Provinces.php(33): App\Models\CountriesModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -93,9 +93,9 @@ Stack trace:
 #4 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
 #5 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
 #6 D:\Project-project\CI\erp-01\app\Models\CountriesModel.php(88): CodeIgniter\BaseModel->first()
-#7 D:\Project-project\CI\erp-01\app\Controllers\States.php(41): App\Models\CountriesModel->getCountry('70')
-#8 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\States->getStates()
-#9 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+#7 D:\Project-project\CI\erp-01\app\Controllers\Provinces.php(41): App\Models\CountriesModel->getCountry('70')
+#8 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+#9 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
 #10 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #11 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
 #12 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -103,7 +103,7 @@ Stack trace:
 #14 D:\Project-project\CI\erp-01\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(49): require_once('D:\\Project-proj...')
 #15 {main}
 CRITICAL - 2024-06-26 08:03:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'countries.deleted_at' in 'where clause'
-[Method: POST, Route: states/getStates]
+[Method: POST, Route: provinces/getStates]
 in SYSTEMPATH\Database\BaseConnection.php on line 686.
  1 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT *
 FROM `countries`
@@ -113,9 +113,9 @@ AND `countries`.`deleted_at` IS NULL
  2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
  3 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
  4 APPPATH\Models\CountriesModel.php(88): CodeIgniter\BaseModel->first()
- 5 APPPATH\Controllers\States.php(41): App\Models\CountriesModel->getCountry('70')
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+ 5 APPPATH\Controllers\Provinces.php(41): App\Models\CountriesModel->getCountry('70')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -141,9 +141,9 @@ AND `countries`.`deleted_at` IS NULL
  4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
  5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
  6 APPPATH\Models\CountriesModel.php(88): CodeIgniter\BaseModel->first()
- 7 APPPATH\Controllers\States.php(41): App\Models\CountriesModel->getCountry('70')
- 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+ 7 APPPATH\Controllers\Provinces.php(41): App\Models\CountriesModel->getCountry('70')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
 10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
 12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -174,9 +174,9 @@ AND `countries`.`deleted_at` IS NULL
  5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
  6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
  7 APPPATH\Models\CountriesModel.php(88): CodeIgniter\BaseModel->first()
- 8 APPPATH\Controllers\States.php(41): App\Models\CountriesModel->getCountry('70')
- 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
-10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+ 8 APPPATH\Controllers\Provinces.php(41): App\Models\CountriesModel->getCountry('70')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
 11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
 13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -185,11 +185,11 @@ AND `countries`.`deleted_at` IS NULL
 INFO - 2024-06-26 08:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2024-06-26 08:11:36 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::eq()
-[Method: POST, Route: states/getStates]
+[Method: POST, Route: provinces/getStates]
 in APPPATH\Models\CountriesModel.php on line 86.
- 1 APPPATH\Controllers\States.php(41): App\Models\CountriesModel->getCountry('70')
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+ 1 APPPATH\Controllers\Provinces.php(41): App\Models\CountriesModel->getCountry('70')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -200,10 +200,10 @@ INFO - 2024-06-26 08:13:46 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-06-26 08:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:14:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2024-06-26 08:14:40 --> Error: Cannot use object of type stdClass as array
-[Method: POST, Route: states/getStates]
-in APPPATH\Controllers\States.php on line 41.
- 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+[Method: POST, Route: provinces/getStates]
+in APPPATH\Controllers\Provinces.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -212,11 +212,11 @@ in APPPATH\Controllers\States.php on line 41.
 INFO - 2024-06-26 08:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2024-06-26 08:15:16 --> ErrorException: Attempt to read property "name" on array
-[Method: POST, Route: states/getStates]
-in APPPATH\Controllers\States.php on line 41.
- 1 APPPATH\Controllers\States.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on array', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\States.php', 41)
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+[Method: POST, Route: provinces/getStates]
+in APPPATH\Controllers\Provinces.php on line 41.
+ 1 APPPATH\Controllers\Provinces.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on array', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\Provinces.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -225,11 +225,11 @@ in APPPATH\Controllers\States.php on line 41.
 INFO - 2024-06-26 08:16:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:16:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2024-06-26 08:16:59 --> ErrorException: Undefined array key "name"
-[Method: POST, Route: states/getStates]
-in APPPATH\Controllers\States.php on line 41.
- 1 APPPATH\Controllers\States.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\States.php', 41)
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+[Method: POST, Route: provinces/getStates]
+in APPPATH\Controllers\Provinces.php on line 41.
+ 1 APPPATH\Controllers\Provinces.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\Provinces.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -238,10 +238,10 @@ in APPPATH\Controllers\States.php on line 41.
 INFO - 2024-06-26 08:55:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:55:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2024-06-26 08:55:54 --> Error: Cannot use object of type stdClass as array
-[Method: POST, Route: states/getStates]
-in APPPATH\Controllers\States.php on line 41.
- 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+[Method: POST, Route: provinces/getStates]
+in APPPATH\Controllers\Provinces.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -250,10 +250,10 @@ in APPPATH\Controllers\States.php on line 41.
 INFO - 2024-06-26 08:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2024-06-26 08:56:07 --> Error: Cannot use object of type stdClass as array
-[Method: POST, Route: states/getStates]
-in APPPATH\Controllers\States.php on line 41.
- 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+[Method: POST, Route: provinces/getStates]
+in APPPATH\Controllers\Provinces.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -262,11 +262,11 @@ in APPPATH\Controllers\States.php on line 41.
 INFO - 2024-06-26 08:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-26 08:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2024-06-26 08:57:24 --> ErrorException: Attempt to read property "name" on array
-[Method: POST, Route: states/getStates]
-in APPPATH\Controllers\States.php on line 41.
- 1 APPPATH\Controllers\States.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on array', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\States.php', 41)
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->getStates()
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+[Method: POST, Route: provinces/getStates]
+in APPPATH\Controllers\Provinces.php on line 41.
+ 1 APPPATH\Controllers\Provinces.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on array', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\Provinces.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getStates()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))

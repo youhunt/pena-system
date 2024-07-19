@@ -277,7 +277,7 @@ loc_phone3 -->
             if(country_id != '')
             {
                 $.ajax({
-                    url:"<?php echo base_url('/states/ByCountry/'); ?>"+country_id,
+                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
                     method:"get",
                     dataType:"JSON",
                     success:function(data)
@@ -353,7 +353,7 @@ loc_phone3 -->
             if(country_id != '')
             {
                 $.ajax({
-                    url:"<?php echo base_url('/states/ByCountry/'); ?>"+country_id,
+                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
                     method:"get",
                     dataType:"JSON",
                     success:function(data)
@@ -429,7 +429,7 @@ loc_phone3 -->
             if(country_id != '')
             {
                 $.ajax({
-                    url:"<?php echo base_url('/states/ByCountry/'); ?>"+country_id,
+                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
                     method:"get",
                     dataType:"JSON",
                     success:function(data)

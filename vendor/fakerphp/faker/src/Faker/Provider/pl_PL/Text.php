@@ -2645,23 +2645,23 @@ EOT;
     Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West
     Virginia, Wisconsin, and Wyoming.
 
-    We have filed in all 50 states now, but these are the only ones
+    We have filed in all 50 provinces now, but these are the only ones
     that have responded.
 
-    As the requirements for other states are met, additions to this list
-    will be made and fund raising will begin in the additional states.
+    As the requirements for other provinces are met, additions to this list
+    will be made and fund raising will begin in the additional provinces.
     Please feel free to ask to check the status of your state.
 
     In answer to various questions we have received on this:
 
     We are constantly working on finishing the paperwork to legally
-    request donations in all 50 states.  If your state is not listed and
+    request donations in all 50 provinces.  If your state is not listed and
     you would like to know if we have added it since the list you have,
     just ask.
 
-    While we cannot solicit donations from people in states where we are
+    While we cannot solicit donations from people in provinces where we are
     not yet registered, we know of no prohibition against accepting
-    donations from donors in these states who approach us with an offer to
+    donations from donors in these provinces who approach us with an offer to
     donate.
 
     International donations are accepted, but we don't know ANYTHING about
@@ -2683,8 +2683,8 @@ EOT;
     the US Internal Revenue Service as a 501(c)(3) organization with EIN
     [Employee Identification Number] 64-622154.  Donations are
     tax-deductible to the maximum extent permitted by law.  As fund-raising
-    requirements for other states are met, additions to this list will be
-    made and fund-raising will begin in the additional states.
+    requirements for other provinces are met, additions to this list will be
+    made and fund-raising will begin in the additional provinces.
 
     We need your donations more than ever!
 
@@ -2778,7 +2778,7 @@ EOT;
     LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
     PARTICULAR PURPOSE.
 
-    Some states do not allow disclaimers of implied warranties or
+    Some provinces do not allow disclaimers of implied warranties or
     the exclusion or limitation of consequential damages, so the
     above disclaimers and exclusions may not apply to you, and you
     may have other legal rights.

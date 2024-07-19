@@ -21,8 +21,8 @@ class CitiesModel extends Model
         'state_id'      => 'required',
     ];
 
-    protected $column_order = ['id', 'name', 'country', 'states'];
-    protected $column_search = ['name', 'country', 'states'];
+    protected $column_order = ['id', 'name', 'country', 'provinces'];
+    protected $column_search = ['name', 'country', 'provinces'];
     protected $order = ['id' => 'ASC'];
     protected $request;
     protected $db;

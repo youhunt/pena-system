@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CitiesModel;
 use App\Models\CountriesModel;
-use App\Models\StatesModel;
+use App\Models\ProvincesModel;
 
 use Config\Services;
 
@@ -34,7 +34,7 @@ class Cities extends BaseController
             $no = $request->getPost('start');
 
             $countriesModel = new CountriesModel($request);
-            $statesModel = new StatesModel($request);
+            $provincesModel = new ProvincesModel($request);
 
             foreach ($lists as $list) {
                 $no++;
@@ -42,7 +42,7 @@ class Cities extends BaseController
                 $row['id'] = $list->id;
                 $row['name'] = $list->name;
                 $row['country'] = $countriesModel->getCountry($list->country_id)[0]->name;
-                $row['states'] = $statesModel->getStates($list->state_id)[0]->name;
+                $row['provinces'] = $provincesModel->getProvinces($list->state_id)[0]->name;
                 $data[] = $row;
             }
 

@@ -2320,7 +2320,7 @@ EOT;
     WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
     WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
 
-    1.F.5.  Some states do not allow disclaimers of certain implied
+    1.F.5.  Some provinces do not allow disclaimers of certain implied
     warranties or the exclusion or limitation of certain types of damages.
     If any disclaimer or limitation set forth in this agreement violates the
     law of the state applicable to this agreement, the agreement shall be
@@ -2396,7 +2396,7 @@ EOT;
     status with the IRS.
 
     The Foundation is committed to complying with the laws regulating
-    charities and charitable donations in all 50 states of the United
+    charities and charitable donations in all 50 provinces of the United
     States.  Compliance requirements are not uniform and it takes a
     considerable effort, much paperwork and many fees to meet and keep up
     with these requirements.  We do not solicit donations in locations
@@ -2404,9 +2404,9 @@ EOT;
     SEND DONATIONS or determine the status of compliance for any
     particular state visit http://pglaf.org
 
-    While we cannot and do not solicit contributions from states where we
+    While we cannot and do not solicit contributions from provinces where we
     have not met the solicitation requirements, we know of no prohibition
-    against accepting unsolicited donations from donors in such states who
+    against accepting unsolicited donations from donors in such provinces who
     approach us with offers to donate.
 
     International donations are gratefully accepted, but we cannot make

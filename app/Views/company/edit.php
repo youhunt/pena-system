@@ -167,7 +167,7 @@
             placeholder: '',
             minimumInputLength: 1,
             ajax: {
-                url: '<?= base_url('/states/getByCountry'); ?>',
+                url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {

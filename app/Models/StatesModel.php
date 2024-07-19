@@ -5,14 +5,14 @@ namespace App\Models;
 use CodeIgniter\Model;
 use CodeIgniter\HTTP\RequestInterface;
 
-class StatesModel extends Model
+class ProvincesModel extends Model
 {
 
-    protected $table          = 'states';
+    protected $table          = 'provinces';
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
-        'id', 'name', 'country_id', 
+        'id', 'name', 'country_id', 'created_at', 'created_by', 'deleted_at', 'deleted_by', 'updated_by' ,'updated_at' ,'active', 
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
@@ -82,7 +82,7 @@ class StatesModel extends Model
         return $tbl_storage->countAllResults();
     }
 
-    public function getStates($id = '')
+    public function getProvinces($id = '')
     {
         $this->dt->where('id', $id);
         $query = $this->dt->get();

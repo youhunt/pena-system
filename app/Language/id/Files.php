@@ -258,7 +258,7 @@ return [
 
     'Setup' => 'Pengaturan',
     'Countries' => 'Negara',
-    'States' => 'Propinsi',
+    'Provinces' => 'Propinsi',
     'Cities' => 'Kota',
     'MasterData' => 'Master Data',
     'Company' => 'Perusahaan',

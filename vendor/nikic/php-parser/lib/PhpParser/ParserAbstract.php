@@ -61,7 +61,7 @@ abstract class ParserAbstract implements Parser {
     protected int $unexpectedTokenRule;
 
     protected int $YY2TBLSTATE;
-    /** @var int Number of non-leaf states */
+    /** @var int Number of non-leaf provinces */
     protected int $numNonLeafStates;
 
     /** @var int[] Map of PHP token IDs to internal symbols */
@@ -75,7 +75,7 @@ abstract class ParserAbstract implements Parser {
     /** @var array<int, string> Names of the production rules (only necessary for debugging) */
     protected array $productions;
 
-    /** @var int[] Map of states to a displacement into the $action table. The corresponding action for this
+    /** @var int[] Map of provinces to a displacement into the $action table. The corresponding action for this
      *             state/symbol pair is $action[$actionBase[$state] + $symbol]. If $actionBase[$state] is 0, the
      *             action is defaulted, i.e. $actionDefault[$state] should be used instead. */
     protected array $actionBase;
@@ -84,7 +84,7 @@ abstract class ParserAbstract implements Parser {
     /** @var int[] Table indexed analogously to $action. If $actionCheck[$actionBase[$state] + $symbol] != $symbol
      *             then the action is defaulted, i.e. $actionDefault[$state] should be used instead. */
     protected array $actionCheck;
-    /** @var int[] Map of states to their default action */
+    /** @var int[] Map of provinces to their default action */
     protected array $actionDefault;
     /** @var callable[] Semantic action callbacks */
     protected array $reduceCallbacks;
@@ -92,7 +92,7 @@ abstract class ParserAbstract implements Parser {
     /** @var int[] Map of non-terminals to a displacement into the $goto table. The corresponding goto state for this
      *             non-terminal/state pair is $goto[$gotoBase[$nonTerminal] + $state] (unless defaulted) */
     protected array $gotoBase;
-    /** @var int[] Table of states to goto after reduction. Indexed according to $gotoBase comment. */
+    /** @var int[] Table of provinces to goto after reduction. Indexed according to $gotoBase comment. */
     protected array $goto;
     /** @var int[] Table indexed analogously to $goto. If $gotoCheck[$gotoBase[$nonTerminal] + $state] != $nonTerminal
      *             then the goto state is defaulted, i.e. $gotoDefault[$nonTerminal] should be used. */
@@ -225,7 +225,7 @@ abstract class ParserAbstract implements Parser {
         $this->tokenStartStack = [];
         $this->tokenEndStack = [0];
 
-        // Start off in the initial state and keep a stack of previous states
+        // Start off in the initial state and keep a stack of previous provinces
         $state = 0;
         $stateStack = [$state];
 

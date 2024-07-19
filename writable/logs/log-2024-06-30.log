@@ -316,12 +316,12 @@ INFO - 2024-06-30 09:47:19 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-06-30 09:55:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-30 09:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-30 10:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-06-30 10:00:54 --> ArgumentCountError: Too few arguments to function App\Models\StatesModel::__construct(), 0 passed in D:\Project-project\CI\erp-01\app\Controllers\States.php on line 57 and exactly 1 expected
-[Method: GET, Route: states/ByCountry/61]
+CRITICAL - 2024-06-30 10:00:54 --> ArgumentCountError: Too few arguments to function App\Models\StatesModel::__construct(), 0 passed in D:\Project-project\CI\erp-01\app\Controllers\Provinces.php on line 57 and exactly 1 expected
+[Method: GET, Route: provinces/ByCountry/61]
 in APPPATH\Models\StatesModel.php on line 30.
- 1 APPPATH\Controllers\States.php(57): App\Models\StatesModel->__construct()
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->ByCountry('61')
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+ 1 APPPATH\Controllers\Provinces.php(57): App\Models\StatesModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->ByCountry('61')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -329,12 +329,12 @@ in APPPATH\Models\StatesModel.php on line 30.
  8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('D:\\Project-project\\CI\\erp-01\\public\\index.php')
 INFO - 2024-06-30 10:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-30 10:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-06-30 10:01:16 --> ArgumentCountError: Too few arguments to function App\Models\StatesModel::__construct(), 0 passed in D:\Project-project\CI\erp-01\app\Controllers\States.php on line 57 and exactly 1 expected
-[Method: GET, Route: states/ByCountry/5]
+CRITICAL - 2024-06-30 10:01:16 --> ArgumentCountError: Too few arguments to function App\Models\StatesModel::__construct(), 0 passed in D:\Project-project\CI\erp-01\app\Controllers\Provinces.php on line 57 and exactly 1 expected
+[Method: GET, Route: provinces/ByCountry/5]
 in APPPATH\Models\StatesModel.php on line 30.
- 1 APPPATH\Controllers\States.php(57): App\Models\StatesModel->__construct()
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->ByCountry('5')
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+ 1 APPPATH\Controllers\Provinces.php(57): App\Models\StatesModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->ByCountry('5')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
@@ -361,11 +361,11 @@ INFO - 2024-06-30 14:52:46 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-06-30 14:58:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-30 14:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2024-06-30 14:58:16 --> ErrorException: Undefined variable $datatable
-[Method: GET, Route: states/ByCountry/9]
-in APPPATH\Controllers\States.php on line 59.
- 1 APPPATH\Controllers\States.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datatable', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\States.php', 59)
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\States->ByCountry('9')
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\States))
+[Method: GET, Route: provinces/ByCountry/9]
+in APPPATH\Controllers\Provinces.php on line 59.
+ 1 APPPATH\Controllers\Provinces.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datatable', 'D:\\Project-project\\CI\\erp-01\\app\\Controllers\\Provinces.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->ByCountry('9')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
  4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
