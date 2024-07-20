@@ -5,6 +5,8 @@ return [
     'Cities' => 'Cities',
     'ID' => 'ID',
     'City' => 'City',
-    'State' => 'State',
+    'Province' => 'Province',
     'Country' => 'Country',
+    'city_code' => 'City Code',
+    'city_name' => 'City Name',
 ];

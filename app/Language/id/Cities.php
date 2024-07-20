@@ -5,6 +5,8 @@ return [
     'Cities' => 'Kota',
     'ID' => 'Kode',
     'City' => 'Kota',
-    'State' => 'Propinsi',
+    'Province' => 'Propinsi',
     'Country' => 'Negara',
+    'city_code' => 'Kode Kota',
+    'city_name' => 'Kota',
 ];

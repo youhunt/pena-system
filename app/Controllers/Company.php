@@ -131,9 +131,9 @@ class Company extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'company';
         $data['company'] = $dataComp->getCompany($id);
-        $data['country_name'] = $dataCou->getCountry($data['company'][0]->comp_count)[0]->name;
-        $data['state_name'] = $dataSta->getProvinces($data['company'][0]->comp_prov)[0]->name;
-        $data['city_name'] = $dataCit->getCity($data['company'][0]->comp_city)[0]->name;
+        $data['country_name'] = $dataCou->getCountries($data['company'][0]->comp_count)[0]->country_name;
+        $data['state_name'] = $dataSta->getProvinces($data['company'][0]->comp_prov)[0]->province_name;
+        $data['city_name'] = $dataCit->getCities($data['company'][0]->comp_city)[0]->city_name;
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Company']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Company', 'pagetitle' => 'MasterData']);
 
@@ -191,8 +191,23 @@ class Company extends BaseController
         $id =  $this->request->getVar('id');
         $request = Services::request();
         $model = new CompanyModel($request);
-        $model->deleteData($id);
-        
+        $active =  $this->request->getVar('active');
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+                'deleted_at' => null,
+                'deleted_by' =>  null,
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
+                'active' => 1,
+            ];
+        }
+        $model->deleteData($id, $data);
+
         return redirect()->to(base_url('/company/index'));
     }
 }

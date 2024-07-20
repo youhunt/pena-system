@@ -12,17 +12,18 @@ class CitiesModel extends Model
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
-        'id', 'name', 'country_id',  'state_id', 
+        'id', 'city_code', 'city_name', 'country_id',  'province_id', 
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
-        'name'      => 'required|alpha_numeric_punct|min_length[3]|max_length[100]',
+        'city_name'      => 'required|alpha_numeric_punct|min_length[3]|max_length[100]',
+        'city_code'      => 'required',
         'country_id'      => 'required',
-        'state_id'      => 'required',
+        'province_id'      => 'required',
     ];
 
-    protected $column_order = ['id', 'name', 'country', 'provinces'];
-    protected $column_search = ['name', 'country', 'provinces'];
+    protected $column_order = ['id', 'city_code', 'city_name', 'country', 'province'];
+    protected $column_search = ['city_code', 'city_name', 'country', 'province'];
     protected $order = ['id' => 'ASC'];
     protected $request;
     protected $db;
@@ -90,17 +91,32 @@ class CitiesModel extends Model
         return $query->getResult();        
     }
 
-    public function getByState($id = '')
+    public function getByProvince($id = '')
     {
-        $this->dt->where('state_id', $id);
+        $this->dt->where('province_id', $id);
         $query = $this->dt->get();
         return $query->getResult();        
     }
 
-    public function getCity($id = '')
+    public function getCities($id = '')
     {
-        $this->dt->where('id', $id);
+        $this->dt->select('cities.id, city_code, city_name, cities.country_id, cities.province_id, cities.active, countries.country_name as country, provinces.province_name as province');
+        $this->dt->join('countries', 'countries.id = cities.country_id');
+        $this->dt->join('provinces', 'provinces.id = cities.province_id');
+        $this->dt->where('cities.id', $id);
         $query = $this->dt->get();
         return $query->getResult();        
+    }
+
+    function updateData($id, $data) 
+    {
+        $this->dt->where('id', $id);
+        return $this->dt->update($data);
+    }
+
+    function deleteData($id, $data) 
+    {
+        $this->dt->where('id', $id);
+        return $this->dt->update($data);
     }
 }

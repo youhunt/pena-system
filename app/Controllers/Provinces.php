@@ -74,9 +74,9 @@ class Provinces extends BaseController
         $builder = $db->table('provinces');   
 
         $query = $builder
-                    ->where('province_id', $this->request->getVar('province_id'))
-                    ->like('name', $this->request->getVar('q'))
-                    ->select('id, name as text')
+                    ->where('country_id', $this->request->getVar('country_id'))
+                    ->like('province_name', $this->request->getVar('q'))
+                    ->select('id, province_name as text')
                     ->limit(30)->get();
         $data = $query->getResult();
         

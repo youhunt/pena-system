@@ -1,0 +1,257 @@
+INFO - 2024-07-20 03:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-20 03:27:29 --> BadMethodCallException: Call to undefined method App\Models\CountriesModel::getCountry
+[Method: POST, Route: cities/getCities]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Cities.php(46): CodeIgniter\Model->__call('getCountry', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getCities()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-20 03:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-20 03:27:46 --> BadMethodCallException: Call to undefined method App\Models\CountriesModel::getCountry
+[Method: POST, Route: cities/getCities]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Cities.php(46): CodeIgniter\Model->__call('getCountry', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getCities()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-20 03:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:28:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-20 03:28:58 --> ErrorException: Undefined property: stdClass::$name
+[Method: POST, Route: cities/getCities]
+in APPPATH\Controllers\Cities.php on line 46.
+ 1 APPPATH\Controllers\Cities.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$name', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\Cities.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getCities()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-20 03:29:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:29:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:30:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:30:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:32:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:32:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:32:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:32:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 03:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:09:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-20 04:11:51 --> mysqli_sql_exception: Column 'country_id' in field list is ambiguous in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `cities`...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cities`...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cities`...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `cities`...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Models\CitiesModel.php(107): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(157): App\Models\CitiesModel->getCities('153726')
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->edit('153726')
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#13 {main}
+CRITICAL - 2024-07-20 04:11:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'country_id' in field list is ambiguous
+[Method: GET, Route: cities/edit/153726]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `cities`.`id`, `city_code`, `city_name`, `country_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = :cities.id:', [...], false)
+ 2 APPPATH\Models\CitiesModel.php(107): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Cities.php(157): App\Models\CitiesModel->getCities('153726')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->edit('153726')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-20 04:11:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'country_id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cities`.`id`, `city_code`, `city_name`, `country_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'153726\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cities`.`id`, `city_code`, `city_name`, `country_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'153726\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `cities`.`id`, `city_code`, `city_name`, `country_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = :cities.id:', [...], false)
+ 4 APPPATH\Models\CitiesModel.php(107): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Cities.php(157): App\Models\CitiesModel->getCities('153726')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->edit('153726')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-20 04:11:51 --> [Caused by] mysqli_sql_exception: Column 'country_id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `cities`.`id`, `city_code`, `city_name`, `country_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'153726\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cities`.`id`, `city_code`, `city_name`, `country_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'153726\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cities`.`id`, `city_code`, `city_name`, `country_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'153726\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `cities`.`id`, `city_code`, `city_name`, `country_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = :cities.id:', [...], false)
+ 5 APPPATH\Models\CitiesModel.php(107): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Cities.php(157): App\Models\CitiesModel->getCities('153726')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->edit('153726')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-20 04:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-20 04:14:20 --> ErrorException: Undefined variable $provinces
+[Method: GET, Route: cities/edit/153726]
+in APPPATH\Views\cities\edit.php on line 5.
+ 1 APPPATH\Views\cities\edit.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $provinces', 'D:\\Project-project\\CI\\pena-system\\app\\Views\\cities\\edit.php', 5)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\pena-system\\app\\Views\\cities\\edit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('cities/edit', [], true)
+ 5 APPPATH\Controllers\Cities.php(161): view('cities/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->edit('153726')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-20 04:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:19:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-20 04:19:44 --> CodeIgniter\Validation\Exceptions\ValidationException: "province_id" is not a valid rule.
+[Method: POST, Route: cities/update]
+in SYSTEMPATH\Validation\Validation.php on line 345.
+ 1 SYSTEMPATH\Validation\Validation.php(345): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('province_id')
+ 2 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('province_id', 'province_id', '1825', [...], [...], 'province_id')
+ 3 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Cities.php(174): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->update()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-20 04:20:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:20:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:20:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-20 04:21:32 --> BadMethodCallException: Call to undefined method App\Models\CountriesModel::getCountry
+[Method: GET, Route: company/edit/3]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Company.php(134): CodeIgniter\Model->__call('getCountry', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Company->edit('3')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-20 04:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-20 04:24:50 --> BadMethodCallException: Call to undefined method App\Models\CitiesModel::getCity
+[Method: GET, Route: company/edit/3]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Company.php(136): CodeIgniter\Model->__call('getCity', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Company->edit('3')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-20 04:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:26:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:26:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-20 04:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
