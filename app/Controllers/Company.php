@@ -41,6 +41,7 @@ class Company extends BaseController
                 $row['comp_name'] = $list->comp_name;
                 $row['comp_pic'] = $list->comp_pic;
                 $row['comp_taxid'] = $list->comp_taxid;
+                $row['active'] = $list->active;
                 $row['no'] = "";
                 $data[] = $row;
             }
