@@ -87,7 +87,7 @@ class Cities extends BaseController
         $query = $builder
                     ->where('province_id', $this->request->getVar('province_id'))
                     ->where('country_id', $this->request->getVar('country_id'))
-                    ->like('name', $this->request->getVar('q'))
+                    ->like('city_name', $this->request->getVar('q'))
                     ->select('id, city_name as text')
                     ->limit(30)->get();
         $data = $query->getResult();

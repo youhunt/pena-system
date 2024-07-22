@@ -57,6 +57,23 @@ class Company extends BaseController
         }
     }
 
+    public function getAll()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('company_master');   
+
+        $query = $builder->like('comp_name', $this->request->getVar('q'))
+                    ->select('id, comp_name as text')
+                    ->limit(30)->get();
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
+
     public function add()
     {        
         $request = Services::request();
@@ -104,6 +121,8 @@ class Company extends BaseController
                 'comp_phone1' => $this->request->getVar('comp_phone1'),
                 'comp_phone2' => $this->request->getVar('comp_phone2'),
                 'comp_phone3' => $this->request->getVar('comp_phone3'),
+                'created_by' =>  user()->username,
+                'created_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->save($data);
@@ -122,9 +141,6 @@ class Company extends BaseController
     {        
         $request = Services::request();
         $dataComp = new CompanyModel($request);
-        $dataCou = new CountriesModel($request);
-        $dataSta = new ProvincesModel($request);
-        $dataCit = new CitiesModel($request);
     
         $data = [            
             'title' => 'Update Company',
@@ -132,9 +148,6 @@ class Company extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'company';
         $data['company'] = $dataComp->getCompany($id);
-        $data['country_name'] = $dataCou->getCountries($data['company'][0]->comp_count)[0]->country_name;
-        $data['state_name'] = $dataSta->getProvinces($data['company'][0]->comp_prov)[0]->province_name;
-        $data['city_name'] = $dataCit->getCities($data['company'][0]->comp_city)[0]->city_name;
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Company']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Company', 'pagetitle' => 'MasterData']);
 
@@ -172,6 +185,8 @@ class Company extends BaseController
                 'comp_phone1' => $this->request->getVar('comp_phone1'),
                 'comp_phone2' => $this->request->getVar('comp_phone2'),
                 'comp_phone3' => $this->request->getVar('comp_phone3'),
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->updateData($id, $data);

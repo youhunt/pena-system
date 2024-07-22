@@ -174,7 +174,7 @@
             placeholder: '<?= lang('Company.comp_city'); ?>',
             minimumInputLength: 1,
             ajax: {
-                url: '<?= base_url('/cities/getByCountryAndState'); ?>',
+                url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {

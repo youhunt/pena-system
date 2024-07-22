@@ -28,6 +28,7 @@ class Site extends BaseController
 
         $request = Services::request();
         $datatable = new SiteModel($request);
+        $dataComp = new CompanyModel($request);
         
         if ($request->getMethod(true) === 'POST') {
             $lists = $datatable->getDatatables();
@@ -38,11 +39,12 @@ class Site extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['comp_code'] = $list->comp_code;
+                $row['comp_code'] = $dataComp->getCompany($list->comp_code)[0]->comp_name;
                 $row['site_code'] = $list->site_code;
                 $row['site_name'] = $list->site_name;
                 $row['site_pic'] = $list->site_pic;
                 $row['site_taxid'] = $list->site_taxid;
+                $row['active'] = $list->active;
                 $row['no'] = "";
                 $data[] = $row;
             }
@@ -61,16 +63,12 @@ class Site extends BaseController
     public function add()
     {        
         $request = Services::request();
-        $dataCou = new CountriesModel($request);
-        $dataCom = new CompanyModel($request);
     
         $data = [            
             'title' => 'Add Site',
         ];
         $data['menu'] = 'setup';
         $data['submenu'] = 'site';
-        $data['countries'] = $dataCou->findAll();
-        $data['company'] = $dataCom->findAll();
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Site']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Site', 'pagetitle' => 'MasterData']);
 
@@ -125,6 +123,8 @@ class Site extends BaseController
                 'site_mphone1' => $this->request->getVar('site_mphone1'),
                 'site_mphone2' => $this->request->getVar('site_mphone2'),
                 'site_mphone3' => $this->request->getVar('site_mphone3'),
+                'created_by' =>  user()->username,
+                'created_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->save($data);
@@ -142,11 +142,11 @@ class Site extends BaseController
     public function edit($id)
     {        
         $request = Services::request();
-        $dataCom = new CompanyModel($request);
+        //$dataCom = new CompanyModel($request);
         $dataSit = new SiteModel($request);
-        $dataCou = new CountriesModel($request);
-        $dataSta = new ProvincesModel($request);
-        $dataCit = new CitiesModel($request);
+        // $dataCou = new CountriesModel($request);
+        // $dataSta = new ProvincesModel($request);
+        // $dataCit = new CitiesModel($request);
     
         $data = [            
             'title' => 'Update Site',
@@ -154,14 +154,14 @@ class Site extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'site';
         $data['site'] = $dataSit->getSite($id);
-        $data['company'] = $dataCom->findAll();
-        $data['countries'] = $dataCou->findAll();
-        $data['provinces'] = $dataSta->getByCountry($data['site'][0]->site_count);
-        $data['bprovinces'] = $dataSta->getByCountry($data['site'][0]->site_bcount);
-        $data['mprovinces'] = $dataSta->getByCountry($data['site'][0]->site_mcount);
-        $data['cities'] = $dataCit->getByState($data['site'][0]->site_prov);
-        $data['bcities'] = $dataCit->getByState($data['site'][0]->site_bprov);
-        $data['mcities'] = $dataCit->getByState($data['site'][0]->site_mprov);
+        // $data['company'] = $dataCom->findAll();
+        // $data['countries'] = $dataCou->findAll();
+        // $data['provinces'] = $dataSta->getByCountry($data['site'][0]->site_count);
+        // $data['bprovinces'] = $dataSta->getByCountry($data['site'][0]->site_bcount);
+        // $data['mprovinces'] = $dataSta->getByCountry($data['site'][0]->site_mcount);
+        // $data['cities'] = $dataCit->getByProvince($data['site'][0]->site_prov);
+        // $data['bcities'] = $dataCit->getByProvince($data['site'][0]->site_bprov);
+        // $data['mcities'] = $dataCit->getByProvince($data['site'][0]->site_mprov);
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Site']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Site', 'pagetitle' => 'MasterData']);
 
@@ -217,6 +217,8 @@ class Site extends BaseController
                 'site_mphone1' => $this->request->getVar('site_mphone1'),
                 'site_mphone2' => $this->request->getVar('site_mphone2'),
                 'site_mphone3' => $this->request->getVar('site_mphone3'),
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->updateData($id, $data);
@@ -237,7 +239,22 @@ class Site extends BaseController
         $id =  $this->request->getVar('id');
         $request = Services::request();
         $model = new SiteModel($request);
-        $model->deleteData($id);
+        $active =  $this->request->getVar('active');
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+                'deleted_at' => null,
+                'deleted_by' =>  null,
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
+                'active' => 1,
+            ];
+        }
+        $model->deleteData($id, $data);
         
         return redirect()->to(base_url('/site/index'));
     }

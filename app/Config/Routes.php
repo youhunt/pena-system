@@ -83,6 +83,7 @@ $routes->get('company/edit/(:segment)', 'Company::edit/$1', ['filter' => 'role:a
 $routes->post('company/save', 'Company::save', ['filter' => 'role:administrator']);
 $routes->post('company/update', 'Company::update', ['filter' => 'role:administrator']);
 $routes->post('company/delete', 'Company::delete', ['filter' => 'role:administrator']);
+$routes->get('company/getAll?(:any)', 'Company::getAll', ['filter' => 'role:administrator']);
 
 $routes->get('site', 'Site::index', ['filter' => 'role:administrator']);
 $routes->get('site/index', 'Site::index', ['filter' => 'role:administrator']);

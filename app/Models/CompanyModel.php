@@ -87,8 +87,12 @@ class CompanyModel extends Model
 
     public function getCompany($id = '')
     {
-        $this->dt->where('id', $id);
-        $query = $this->dt->get();
+        $this->dt->select('company_master.*, countries.country_name as country, provinces.province_name as province, cities.city_name as city');
+        $this->dt->join('countries', 'countries.id = company_master.comp_count');
+        $this->dt->join('provinces', 'provinces.id = company_master.comp_prov');
+        $this->dt->join('cities', 'cities.id = company_master.comp_city');
+        $this->dt->where('company_master.id', $id);
+       $query = $this->dt->get();
         return $query->getResult();        
     }
 

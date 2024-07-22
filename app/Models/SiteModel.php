@@ -91,7 +91,17 @@ class SiteModel extends Model
 
     public function getSite($id = '')
     {
-        $this->dt->where('id', $id);
+        // $this->dt->select('site_master.*, countries.country_name as country, provinces.province_name as province, cities.city_name as city, bcount.country_name as bcountry, bprov.province_name as bprovince, bcity.city_name as bcity, mcount.country_name as mcountry, mprov.province_name as mprovince, mcity.city_name as mcity');
+        // $this->dt->join('countries', 'countries.id = site_master.site_count');
+        // $this->dt->join('provinces', 'provinces.id = site_master.site_prov');
+        // $this->dt->join('cities', 'cities.id = site_master.site_city');
+        // $this->dt->join('countries bcount', 'bcount.id = site_master.site_bcount');
+        // $this->dt->join('provinces bprov', 'bprov.id = site_master.site_bprov');
+        // $this->dt->join('cities bcity', 'bcity.id = site_master.site_bcity');
+        // $this->dt->join('countries mcount', 'mcount.id = site_master.site_mcount');
+        // $this->dt->join('provinces mprov', 'mprov.id = site_master.site_mprov');
+        // $this->dt->join('cities mcity', 'mcity.id = site_master.site_mcity');
+        $this->dt->where('site_master.id', $id);
         $query = $this->dt->get();
         return $query->getResult();        
     }
