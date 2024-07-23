@@ -1,550 +1,570 @@
 <?= $this->extend('template/index') ?>            
  
 <?= $this->section('page-content') ?>
-                    <div class="text-center">
-                        <h1 class="h4 text-gray-900 mb-4"><?= $title ?></h1>
-                    </div>
-
-                    <?= view('\Myth\Auth\Views\_message_block') ?>
- 
                     <form action="<?= base_url(); ?>department/save" class="user" method="post">
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4"><?= $title ?></h4>
+                                        <div class="row mb-4">
+                                            <div class="col-sm-12">
+                                                <?= view('\Myth\Auth\Views\_message_block') ?>
+                                            </div>
+                                        </div>
+
  
-                        <div class="form-group row">    
-                            <div class="col-2">
-                                <label for="comp_code">Company</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="comp_code" id="comp_code" class="form-control input-lg">
-                                    <option value="">Choose Company</option>
-                                    <?php
-                                    foreach($company as $row)
-                                    {
-                                        echo '<option value="'.$row["comp_code"].'">'.$row["comp_name"].'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-2">
-                                <label for="site_code">Site</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="site_code" id="site_code" class="form-control input-lg">
-                                    <option value="">Choose Site</option>
-                                    <?php
-                                    foreach($sites as $row)
-                                    {
-                                        echo '<option value="'.$row["site_code"].'">'.$row["site_name"].'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="dept_code">Code</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" class="form-control form-control-user <?php if(session('errors.dept_code')) : ?>is-invalid<?php endif ?>"
-                                name="dept_code" value="<?= old('dept_code') ?>" style="padding: .1rem .5rem .1rem .5rem;">
-                            </div>
-                            <div class="col-2">
-                                <label for="dept_pic">PIC</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_pic')) : ?>is-invalid<?php endif ?>" name="dept_pic" value="<?= old('dept_pic') ?>">
-                            </div>                                                    
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Department.comp_code'); ?></label>
+                                            <div class="col-sm-6">
+                                                <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code'); ?>" />
+                                                <select class="form-control <?php if(session('errors.comp_code')) : ?>is-invalid<?php endif ?>" name="company" id="company" >
+                                                    <option selected="selected"><?= old('company'); ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="dept_name">Name</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_name')) : ?>is-invalid<?php endif ?>" name="dept_name" value="<?= old('dept_name') ?>">
-                            </div>
-                            <div class="col-2">
-                                <label for="dept_taxid">Department Tax ID</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_taxid')) : ?>is-invalid<?php endif ?>" name="dept_taxid" value="<?= old('dept_taxid') ?>">
-                            </div>                            
-                        </div>
- 
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="dept_add">Address</label>
-                            </div>
-                            <div class="col-10">
-                                <textarea class="form-control <?php if(session('errors.dept_add')) : ?>is-invalid<?php endif ?>" id="dept_add" rows="2" name="dept_add"><?= old('dept_add') ?></textarea>
-                            </div>
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="site_code" class="col-sm-2 col-form-label"><?= lang('Department.site_code'); ?></label>
+                                            <div class="col-sm-6">
+                                                <input type="hidden" id="site_code" name="site_code" value="<?= old('site_code'); ?>" />
+                                                <select class="form-control <?php if(session('errors.site_code')) : ?>is-invalid<?php endif ?>" name="site" id="site" >
+                                                    <option selected="selected"><?= old('site'); ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">    
-                            <div class="col-2">
-                                <label for="dept_count">Country</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="dept_count" id="dept_count" class="form-control input-lg">
-                                    <option value="">Choose Country</option>
-                                    <?php
-                                    foreach($countries as $row)
-                                    {
-                                        echo '<option value="'.$row["id"].'">'.$row["name"].'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-2">
-                                <label for="dept_prov">State</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="dept_prov" id="dept_prov" class="form-control input-lg">
-                                    <option value="">Choose State</option>
-                                </select>
-                            </div>
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_code" class="col-sm-2 col-form-label"><?= lang('Department.dept_code'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_code')) : ?>is-invalid<?php endif ?>" id="dept_code" placeholder="<?= lang('Department.dept_code'); ?>" name="dept_code" value="<?= old('dept_code') ?>">
+                                            </div>
+                                            <label for="dept_pic" class="col-sm-2 col-form-label"><?= lang('Department.dept_pic'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_pic')) : ?>is-invalid<?php endif ?>" id="dept_pic" placeholder="<?= lang('Department.dept_pic'); ?>" name="dept_pic" value="<?= old('dept_pic') ?>">
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">
-                            
-                            <div class="col-2">
-                                <label for="dept_city">City</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="dept_city" id="dept_city" class="form-control input-lg">
-                                    <option value="">Choose City</option>
-                                </select>
-                            </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_name" class="col-sm-2 col-form-label"><?= lang('Department.dept_name'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_name')) : ?>is-invalid<?php endif ?>" id="dept_name" placeholder="<?= lang('Department.dept_name'); ?>" name="dept_name" value="<?= old('dept_name') ?>">
+                                            </div>
+                                            <label for="dept_taxid" class="col-sm-2 col-form-label">&nbsp;</label>
+                                            <div class="col-sm-4">&nbsp;</div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="dept_add" class="col-sm-2 col-form-label"><?= lang('Department.dept_add'); ?></label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control <?php if(session('errors.dept_add')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Department.dept_add'); ?>" name="dept_add"><?= old('dept_add') ?></textarea>
+                                            </div>
+                                        </div>
                         
-                            <div class="col-2">
-                                <label for="dept_post">Postal Code</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_post')) : ?>is-invalid<?php endif ?>" name="dept_post" value="<?= old('dept_post') ?>">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="dept_phone1">Phone 1</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_phone1')) : ?>is-invalid<?php endif ?>" name="dept_phone1" value="<?= old('dept_phone1') ?>">
-                            </div>
-                       
-                            <div class="col-2">
-                                <label for="dept_phone2">Phone 2</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_phone2')) : ?>is-invalid<?php endif ?>" name="dept_phone1" value="<?= old('dept_phone1') ?>">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            
-                            <div class="col-2">
-                                <label for="dept_phone3">Phone 3</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_phone3')) : ?>is-invalid<?php endif ?>" name="dept_phone3" value="<?= old('dept_phone3') ?>">
-                            </div>
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_count" class="col-sm-2 col-form-label"><?= lang('Department.dept_count'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="dept_count" name="dept_count" value="" />
+                                                <select class="form-control <?php if(session('errors.dept_count')) : ?>is-invalid<?php endif ?>" name="country" id="country" ></select>
+                                            </div>
+                                            <label for="dept_prov" class="col-sm-2 col-form-label"><?= lang('Department.dept_prov'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="dept_prov" name="dept_prov" value="" />
+                                                <select class="form-control <?php if(session('errors.dept_prov')) : ?>is-invalid<?php endif ?>" name="prov" id="prov" ></select>
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="dept_badd">Billing Address</label>
-                            </div>
-                            <div class="col-10">
-                                <textarea class="form-control <?php if(session('errors.dept_badd')) : ?>is-invalid<?php endif ?>" id="dept_badd" rows="2" name="dept_badd"><?= old('dept_badd') ?></textarea>
-                            </div>
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_city" class="col-sm-2 col-form-label"><?= lang('Department.dept_city'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="dept_city" name="dept_city" value="" />
+                                                <select class="form-control <?php if(session('errors.dept_city')) : ?>is-invalid<?php endif ?>" name="city" id="city" ></select>
+                                            </div>
+                                            <label for="dept_post" class="col-sm-2 col-form-label"><?= lang('Department.dept_post'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_post')) : ?>is-invalid<?php endif ?>" id="dept_post" placeholder="<?= lang('Department.dept_post'); ?>" name="dept_post" value="<?= old('dept_post') ?>">
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">    
-                            <div class="col-2">
-                                <label for="bcountry">Country</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="dept_bcount" id="dept_bcount" class="form-control input-lg">
-                                    <option value="">Choose Country</option>
-                                    <?php
-                                    foreach($countries as $row)
-                                    {
-                                        echo '<option value="'.$row["id"].'">'.$row["name"].'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-2">
-                                <label for="dept_bprov">State</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="dept_bprov" id="dept_bprov" class="form-control input-lg">
-                                    <option value="">Choose State</option>
-                                </select>
-                            </div>
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_phone1" class="col-sm-2 col-form-label"><?= lang('Department.dept_phone1'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_phone1')) : ?>is-invalid<?php endif ?>" id="dept_phone1" placeholder="<?= lang('Department.dept_phone1'); ?>" name="dept_phone1" value="<?= old('dept_phone1') ?>">
+                                            </div>
+                                            <label for="dept_phone2" class="col-sm-2 col-form-label"><?= lang('Department.dept_phone2'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_phone2')) : ?>is-invalid<?php endif ?>" id="dept_phone2" placeholder="<?= lang('Department.dept_phone2'); ?>" name="dept_phone2" value="<?= old('dept_phone2') ?>">
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">
-                            
-                            <div class="col-2">
-                                <label for="bcity">City</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="dept_bcity" id="dept_bcity" class="form-control input-lg">
-                                    <option value="">Choose City</option>
-                                </select>
-                            </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_phone3" class="col-sm-2 col-form-label"><?= lang('Department.dept_phone3'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_phone3')) : ?>is-invalid<?php endif ?>" id="dept_phone3" placeholder="<?= lang('Department.dept_phone3'); ?>" name="dept_phone3" value="<?= old('dept_phone3') ?>">
+                                            </div>
+                                            <label for="dept_phone2" class="col-sm-2 col-form-label">&nbsp;</label>
+                                            <div class="col-sm-4">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="dept_badd" class="col-sm-2 col-form-label"><?= lang('Department.dept_badd'); ?></label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control <?php if(session('errors.dept_badd')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Department.dept_badd'); ?>" name="dept_badd"><?= old('dept_badd') ?></textarea>
+                                            </div>
+                                        </div>
                         
-                            <div class="col-2">
-                                <label for="dept_bpost">Postal Code</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_bpost')) : ?>is-invalid<?php endif ?>" name="dept_bpost" value="<?= old('dept_bpost') ?>">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="dept_bphone2">Phone 1</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_bphone1')) : ?>is-invalid<?php endif ?>" name="dept_bphone1" value="<?= old('dept_bphone1') ?>">
-                            </div>
-                       
-                            <div class="col-2">
-                                <label for="dept_bphone2">Phone 2</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_bphone2')) : ?>is-invalid<?php endif ?>" name="dept_bphone2" value="<?= old('dept_bphone2') ?>">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            
-                            <div class="col-2">
-                                <label for="dept_bphone3">Phone 3</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_bphone3')) : ?>is-invalid<?php endif ?>" name="dept_bphone3" value="<?= old('dept_bphone3') ?>">
-                            </div>
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_bcount" class="col-sm-2 col-form-label"><?= lang('Department.dept_bcount'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="dept_bcount" name="dept_bcount" value="" />
+                                                <select class="form-control <?php if(session('errors.dept_bcount')) : ?>is-invalid<?php endif ?>" name="bcountry" id="bcountry" ></select>
+                                            </div>
+                                            <label for="dept_bprov" class="col-sm-2 col-form-label"><?= lang('Department.dept_bprov'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="dept_bprov" name="dept_bprov" value="" />
+                                                <select class="form-control <?php if(session('errors.dept_bprov')) : ?>is-invalid<?php endif ?>" name="bprov" id="bprov" ></select>
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="dept_madd">Mailing Address</label>
-                            </div>
-                            <div class="col-10">
-                                <textarea class="form-control <?php if(session('errors.dept_madd')) : ?>is-invalid<?php endif ?>" id="dept_madd" rows="2" name="dept_madd"><?= old('dept_madd') ?></textarea>
-                            </div>
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_bcity" class="col-sm-2 col-form-label"><?= lang('Department.dept_bcity'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="dept_bcity" name="dept_bcity" value="" />
+                                                <select class="form-control <?php if(session('errors.dept_bcity')) : ?>is-invalid<?php endif ?>" name="bcity" id="bcity" ></select>
+                                            </div>
+                                            <label for="dept_bpost" class="col-sm-2 col-form-label"><?= lang('Department.dept_bpost'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_bpost')) : ?>is-invalid<?php endif ?>" id="dept_bpost" placeholder="<?= lang('Department.dept_bpost'); ?>" name="dept_bpost" value="<?= old('dept_bpost') ?>">
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">    
-                            <div class="col-2">
-                                <label for="dept_mcount">Country</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="dept_mcount" id="dept_mcount" class="form-control input-lg">
-                                    <option value="">Choose Country</option>
-                                    <?php
-                                    foreach($countries as $row)
-                                    {
-                                        echo '<option value="'.$row["id"].'">'.$row["name"].'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-2">
-                                <label for="dept_mprov">State</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="dept_mprov" id="dept_mprov" class="form-control input-lg">
-                                    <option value="">Choose State</option>
-                                </select>
-                            </div>
-                        </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_bphone1" class="col-sm-2 col-form-label"><?= lang('Department.dept_bphone1'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_bphone1')) : ?>is-invalid<?php endif ?>" id="dept_bphone1" placeholder="<?= lang('Department.dept_bphone1'); ?>" name="dept_bphone1" value="<?= old('dept_bphone1') ?>">
+                                            </div>
+                                            <label for="dept_bphone2" class="col-sm-2 col-form-label"><?= lang('Department.dept_bphone2'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_bphone2')) : ?>is-invalid<?php endif ?>" id="dept_bphone2" placeholder="<?= lang('Department.dept_bphone2'); ?>" name="dept_bphone2" value="<?= old('dept_bphone2') ?>">
+                                            </div>
+                                        </div>
 
-                        <div class="form-group row">
-                            
-                            <div class="col-2">
-                                <label for="dept_mcity">City</label>
-                            </div>
-                            <div class="col-4">
-                                <select name="dept_mcity" id="dept_mcity" class="form-control input-lg">
-                                    <option value="">Choose City</option>
-                                </select>
-                            </div>
+                                        <div class="row mb-4">
+                                            <label for="dept_bphone3" class="col-sm-2 col-form-label"><?= lang('Department.dept_bphone3'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_bphone3')) : ?>is-invalid<?php endif ?>" id="dept_bphone3" placeholder="<?= lang('Department.dept_bphone3'); ?>" name="dept_bphone3" value="<?= old('dept_bphone3') ?>">
+                                            </div>
+                                            <label for="dept_bphone2" class="col-sm-2 col-form-label">&nbsp;</label>
+                                            <div class="col-sm-4">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="dept_madd" class="col-sm-2 col-form-label"><?= lang('Department.dept_madd'); ?></label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control <?php if(session('errors.dept_madd')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Department.dept_madd'); ?>" name="dept_madd"><?= old('dept_madd') ?></textarea>
+                                            </div>
+                                        </div>
                         
-                            <div class="col-2">
-                                <label for="dept_mpost">Postal Code</label>
+                                        <div class="row mb-4">
+                                            <label for="dept_mcount" class="col-sm-2 col-form-label"><?= lang('Department.dept_mcount'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="dept_mcount" name="dept_mcount" value="" />
+                                                <select class="form-control <?php if(session('errors.dept_mcount')) : ?>is-invalid<?php endif ?>" name="mcountry" id="mcountry" ></select>
+                                            </div>
+                                            <label for="dept_mprov" class="col-sm-2 col-form-label"><?= lang('Department.dept_mprov'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="dept_mprov" name="dept_mprov" value="" />
+                                                <select class="form-control <?php if(session('errors.dept_mprov')) : ?>is-invalid<?php endif ?>" name="mprov" id="mprov" ></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="dept_mcity" class="col-sm-2 col-form-label"><?= lang('Department.dept_mcity'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="dept_mcity" name="dept_mcity" value="" />
+                                                <select class="form-control <?php if(session('errors.dept_mcity')) : ?>is-invalid<?php endif ?>" name="mcity" id="mcity" ></select>
+                                            </div>
+                                            <label for="dept_mpost" class="col-sm-2 col-form-label"><?= lang('Department.dept_mpost'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_mpost')) : ?>is-invalid<?php endif ?>" id="dept_mpost" placeholder="<?= lang('Department.dept_mpost'); ?>" name="dept_mpost" value="<?= old('dept_mpost') ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="dept_mphone1" class="col-sm-2 col-form-label"><?= lang('Department.dept_mphone1'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_mphone1')) : ?>is-invalid<?php endif ?>" id="dept_mphone1" placeholder="<?= lang('Department.dept_mphone1'); ?>" name="dept_mphone1" value="<?= old('dept_mphone1') ?>">
+                                            </div>
+                                            <label for="dept_mphone2" class="col-sm-2 col-form-label"><?= lang('Department.dept_mphone2'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_mphone2')) : ?>is-invalid<?php endif ?>" id="dept_mphone2" placeholder="<?= lang('Department.dept_mphone2'); ?>" name="dept_mphone2" value="<?= old('dept_mphone2') ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="dept_mphone3" class="col-sm-2 col-form-label"><?= lang('Department.dept_mphone3'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control <?php if(session('errors.dept_mphone3')) : ?>is-invalid<?php endif ?>" id="dept_mphone3" placeholder="<?= lang('Department.dept_mphone3'); ?>" name="dept_mphone3" value="<?= old('dept_mphone3') ?>">
+                                            </div>
+                                            <label for="dept_mphone2" class="col-sm-2 col-form-label">&nbsp;</label>
+                                            <div class="col-sm-4">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row justify-content-end">
+                                            <div class="col-sm-12">
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary w-md"><?= lang('Files.Save'); ?></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end card body -->
+                                </div>
+                                <!-- end card -->
                             </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_mpost')) : ?>is-invalid<?php endif ?>" name="dept_mpost" value="<?= old('dept_mpost') ?>">
-                            </div>
+                            <!-- end col -->
                         </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="dept_mphone1">Phone 1</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_mphone1')) : ?>is-invalid<?php endif ?>" name="dept_mphone1" value="<?= old('dept_mphone1') ?>">
-                            </div>
-                       
-                            <div class="col-2">
-                                <label for="dept_mphone2">Phone 2</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_mphone2')) : ?>is-invalid<?php endif ?>" name="dept_mphone2" value="<?= old('dept_mphone2') ?>">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            
-                            <div class="col-2">
-                                <label for="dept_mphone3">Phone 3</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="text" style="padding: .1rem .5rem .1rem .5rem;" class="form-control form-control-user <?php if(session('errors.dept_mphone3')) : ?>is-invalid<?php endif ?>" name="dept_mphone3" value="<?= old('dept_mphone3') ?>">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-user btn-block">Save</button>
-                            </div>
-                        </div>
-                         
                     </form>
-<!-- dept_post
-dept_phone1dept_post
-dept_phone2
-dept_phone3 -->
 <?= $this->endSection() ?>
 
 <?= $this->section('script-js') ?>    
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#dept_count').change(function(){
 
-            var country_id = $('#dept_count').val();
-            if(country_id != '')
-            {
-                $.ajax({
-                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose State</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#dept_prov').html(html);
-                    }
-                });
-                $.ajax({
-                    url:"<?php echo base_url('/cities/ByCountry/'); ?>"+country_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose City</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#dept_city').html(html);
-                    }
-                });
+        $('#company').select2({
+            placeholder: '',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/company/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
-            else
-            {
-                $('#dept_prov').val('');
-                $('#dept_city').val('');
-            }
+        }).on('select2:select', function (evt) {
+            var data = $("#company option:selected").val();
+            $("#comp_code").val(data);
         });
 
-        $('#dept_prov').change(function(){
-
-            var state_id = $('#dept_prov').val();
-            if(state_id != '')
-            {
-                $.ajax({
-                    url:"<?php echo base_url('/cities/ByState/'); ?>"+state_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose City</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#dept_city').html(html);
-                    }
-                });
+        $('#site').select2({
+            placeholder: '',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/site/getByCompany'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        company_id: $("#comp_code").val(),                     
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
-            else
-            {
-                $('#dept_city').val('');
-            }
+        }).on('select2:select', function (evt) {
+            var data = $("#site option:selected").val();
+            $("#site_code").val(data);
         });
 
-        $('#dept_bcount').change(function(){
-
-            var country_id = $('#dept_bcount').val();
-            if(country_id != '')
-            {
-                $.ajax({
-                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose State</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#dept_bprov').html(html);
-                    }
-                });
-                $.ajax({
-                    url:"<?php echo base_url('/cities/ByCountry/'); ?>"+country_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose City</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#dept_bcity').html(html);
-                    }
-                });
+        $('#country').select2({
+            placeholder: '<?= lang('Department.dept_count'); ?>',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/countries/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
-            else
-            {
-                $('#dept_bprov').val('');
-                $('#dept_bcity').val('');
-            }
+        }).on('select2:select', function (evt) {
+            var data = $("#country option:selected").val();
+            $("#dept_count").val(data);
         });
 
-        $('#dept_bprov').change(function(){
+        $('#prov').select2({
+            placeholder: '<?= lang('Department.dept_prov'); ?>',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/provinces/getByCountry'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    var query = {
+                        q: params.term,
+                        country_id: $("#dept_count").val()                     
+                    };
 
-            var state_id = $('#dept_bprov').val();
-            if(state_id != '')
-            {
-                $.ajax({
-                    url:"<?php echo base_url('/cities/ByState/'); ?>"+state_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose City</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#dept_bcity').html(html);
-                    }
-                });
+                    // Query parameters will be ?search=[term]&type=public
+                    return query;
+                    // return {
+                    //     q: params.term, // search term
+                    //     country_id: $('dept_count').val(),
+                    // };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
-            else
-            {
-                $('#dept_bcity').val('');
+        }).on('select2:select', function (evt) {
+            var data = $("#prov option:selected").val();
+            $("#dept_prov").val(data);
+            //alert("Data yang dipilih adalah "+data);
+        });
+        
+        $('#city').select2({
+            placeholder: '<?= lang('Department.dept_city'); ?>',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    var query = {
+                        q: params.term,
+                        country_id: $("#dept_count").val(),                     
+                        province_id: $("#dept_prov").val()                     
+                    };
+
+                    // Query parameters will be ?search=[term]&type=public
+                    return query;
+                    // return {
+                    //     q: params.term, // search term
+                    //     country_id: $('dept_count').val(),
+                    // };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
+        }).on('select2:select', function (evt) {
+            var data = $("#city option:selected").val();
+            $("#dept_city").val(data);
+            //alert("Data yang dipilih adalah "+data);
         });
 
-        $('#dept_mcount').change(function(){
-
-            var country_id = $('#dept_mcount').val();
-            if(country_id != '')
-            {
-                $.ajax({
-                    url:"<?php echo base_url('/provinces/ByCountry/'); ?>"+country_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose State</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#dept_mprov').html(html);
-                    }
-                });
-                $.ajax({
-                    url:"<?php echo base_url('/cities/ByCountry/'); ?>"+country_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose City</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#dept_mcity').html(html);
-                    }
-                });
+        $('#bcountry').select2({
+            placeholder: '<?= lang('Department.dept_bcount'); ?>',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/countries/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
-            else
-            {
-                $('#dept_mprov').val('');
-                $('#dept_mcity').val('');
-            }
+        }).on('select2:select', function (evt) {
+            var data = $("#bcountry option:selected").val();
+            $("#dept_bcount").val(data);
         });
 
-        $('#dept_mprov').change(function(){
+        $('#bprov').select2({
+            placeholder: '<?= lang('Department.dept_bprov'); ?>',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/provinces/getByCountry'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    var query = {
+                        q: params.term,
+                        country_id: $("#dept_bcount").val()                     
+                    };
 
-            var state_id = $('#dept_mprov').val();
-            if(state_id != '')
-            {
-                $.ajax({
-                    url:"<?php echo base_url('/cities/ByState/'); ?>"+state_id,
-                    method:"get",
-                    dataType:"JSON",
-                    success:function(data)
-                    {
-                        var html = '<option value="">Choose City</option>';
-
-                        for(var count = 0; count < data.length; count++)
-                        {
-
-                            html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-
-                        }
-                        $('#dept_mcity').html(html);
-                    }
-                });
+                    // Query parameters will be ?search=[term]&type=public
+                    return query;
+                    // return {
+                    //     q: params.term, // search term
+                    //     country_id: $('dept_count').val(),
+                    // };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
-            else
-            {
-                $('#dept_mcity').val('');
+        }).on('select2:select', function (evt) {
+            var data = $("#bprov option:selected").val();
+            $("#dept_bprov").val(data);
+            //alert("Data yang dipilih adalah "+data);
+        });
+        
+        $('#bcity').select2({
+            placeholder: '<?= lang('Department.dept_bcity'); ?>',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    var query = {
+                        q: params.term,
+                        country_id: $("#dept_bcount").val(),                     
+                        province_id: $("#dept_bprov").val()                     
+                    };
+
+                    // Query parameters will be ?search=[term]&type=public
+                    return query;
+                    // return {
+                    //     q: params.term, // search term
+                    //     country_id: $('dept_count').val(),
+                    // };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
             }
+        }).on('select2:select', function (evt) {
+            var data = $("#bcity option:selected").val();
+            $("#dept_bcity").val(data);
+            //alert("Data yang dipilih adalah "+data);
         });
 
+        $('#mcountry').select2({
+            placeholder: '<?= lang('Department.dept_mcount'); ?>',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/countries/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            }
+        }).on('select2:select', function (evt) {
+            var data = $("#mcountry option:selected").val();
+            $("#dept_mcount").val(data);
+        });
+
+        $('#mprov').select2({
+            placeholder: '<?= lang('Department.dept_mprov'); ?>',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/provinces/getByCountry'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    var query = {
+                        q: params.term,
+                        country_id: $("#dept_mcount").val()                     
+                    };
+
+                    // Query parameters will be ?search=[term]&type=public
+                    return query;
+                    // return {
+                    //     q: params.term, // search term
+                    //     country_id: $('dept_count').val(),
+                    // };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            }
+        }).on('select2:select', function (evt) {
+            var data = $("#mprov option:selected").val();
+            $("#dept_mprov").val(data);
+            //alert("Data yang dipilih adalah "+data);
+        });
+        
+        $('#mcity').select2({
+            placeholder: '<?= lang('Department.dept_mcity'); ?>',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    var query = {
+                        q: params.term,
+                        country_id: $("#dept_mcount").val(),                     
+                        province_id: $("#dept_mprov").val()                     
+                    };
+
+                    // Query parameters will be ?search=[term]&type=public
+                    return query;
+                    // return {
+                    //     q: params.term, // search term
+                    //     country_id: $('dept_count').val(),
+                    // };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            }
+        }).on('select2:select', function (evt) {
+            var data = $("#mcity option:selected").val();
+            $("#dept_mcity").val(data);
+            //alert("Data yang dipilih adalah "+data);
+        });
     });
 </script>
 

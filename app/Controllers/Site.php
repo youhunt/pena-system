@@ -60,6 +60,25 @@ class Site extends BaseController
         }
     }
 
+    public function getByCompany()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('site_master');   
+
+        $query = $builder
+                    ->where('comp_code', $this->request->getVar('company_id'))
+                    ->like('site_name', $this->request->getVar('q'))
+                    ->select('id, site_name as text')
+                    ->limit(30)->get();
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
+
     public function add()
     {        
         $request = Services::request();

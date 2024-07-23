@@ -19,7 +19,9 @@
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Site.comp_code'); ?></label>
                                             <div class="col-sm-6">
                                                 <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code'); ?>" />
-                                                <select class="form-control <?php if(session('errors.comp_code')) : ?>is-invalid<?php endif ?>" name="company" id="company" ></select>
+                                                <select class="form-control <?php if(session('errors.comp_code')) : ?>is-invalid<?php endif ?>" name="company" id="company" >
+                                                    <option selected="selected"><?= old('company'); ?></option>
+                                                </select>
                                             </div>
                                         </div>
 

@@ -29,7 +29,9 @@ class Department extends BaseController
 
         $request = Services::request();
         $datatable = new DepartmentModel($request);
-        
+        $dataCom = new CompanyModel($request);
+        $dataSit = new SiteModel($request);
+
         if ($request->getMethod(true) === 'POST') {
             $lists = $datatable->getDatatables();
             $data = [];
@@ -39,11 +41,12 @@ class Department extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['comp_code'] = $list->comp_code;
-                $row['site_code'] = $list->site_code;
+                $row['comp_code'] = $dataCom->getCompany($list->comp_code)[0]->comp_name ;
+                $row['site_code'] = $dataSit->getSite($list->site_code)[0]->site_name;
                 $row['dept_code'] = $list->dept_code;
                 $row['dept_name'] = $list->dept_name;
                 $row['dept_pic'] = $list->dept_pic;
+                $row['active'] = $list->active;
                 $row['no'] = "";
                 $data[] = $row;
             }
@@ -59,21 +62,34 @@ class Department extends BaseController
         }
     }
 
+    public function getByCompany()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('department_master');   
+
+        $query = $builder
+                    ->where('comp_code', $this->request->getVar('company_id'))
+                    ->like('dept_name', $this->request->getVar('q'))
+                    ->select('id, dept_name as text')
+                    ->limit(30)->get();
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
+
     public function add()
     {        
         $request = Services::request();
-        $dataCou = new CountriesModel($request);
-        $dataCom = new CompanyModel($request);
-        $dataSit = new SiteModel($request);
     
         $data = [            
             'title' => 'Add Department',
         ];
         $data['menu'] = 'setup';
         $data['submenu'] = 'dept';
-        $data['countries'] = $dataCou->findAll();
-        $data['company'] = $dataCom->findAll();
-        $data['sites'] = $dataSit->findAll();
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
 
@@ -128,6 +144,8 @@ class Department extends BaseController
                 'dept_mphone1' => $this->request->getVar('dept_mphone1'),
                 'dept_mphone2' => $this->request->getVar('dept_mphone2'),
                 'dept_mphone3' => $this->request->getVar('dept_mphone3'),
+                'created_by' =>  user()->username,
+                'created_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->save($data);
@@ -149,7 +167,7 @@ class Department extends BaseController
         $dataDep = new DepartmentModel($request);
         $dataSit = new SiteModel($request);
         $dataCou = new CountriesModel($request);
-        $dataSta = new ProvincesModel($request);
+        $dataPro = new ProvincesModel($request);
         $dataCit = new CitiesModel($request);
     
         $data = [            
@@ -158,15 +176,17 @@ class Department extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'dept';
         $data['dept'] = $dataDep->getDepartment($id);
-        $data['company'] = $dataCom->findAll();
-        $data['countries'] = $dataCou->findAll();
-        $data['sites'] = $dataSit->findAll();
-        $data['provinces'] = $dataSta->getByCountry($data['dept'][0]->dept_count);
-        $data['bprovinces'] = $dataSta->getByCountry($data['dept'][0]->dept_bcount);
-        $data['mprovinces'] = $dataSta->getByCountry($data['dept'][0]->dept_mcount);
-        $data['cities'] = $dataCit->getByState($data['dept'][0]->dept_prov);
-        $data['bcities'] = $dataCit->getByState($data['dept'][0]->dept_bprov);
-        $data['mcities'] = $dataCit->getByState($data['dept'][0]->dept_mprov);
+        $data['comp_name'] = $data['dept'][0]->comp_code ? $dataCom->getCompany($data['dept'][0]->comp_code)[0]->comp_name : "";
+        $data['site_name'] = $data['dept'][0]->site_code ? $dataSit->getSite($data['dept'][0]->site_code)[0]->site_name : "";
+        $data['count_name'] = $data['dept'][0]->dept_count ? $dataCou->getCountries($data['dept'][0]->dept_count)[0]->country_name : "";
+        $data['bcount_name'] = $data['dept'][0]->dept_bcount ? $dataCou->getCountries($data['dept'][0]->dept_bcount)[0]->country_name : "";
+        $data['mcount_name'] = $data['dept'][0]->dept_mcount ? $dataCou->getCountries($data['dept'][0]->dept_mcount)[0]->country_name : "";
+        $data['prov_name'] = $data['dept'][0]->dept_prov ? $dataPro->getProvinces($data['dept'][0]->dept_prov)[0]->province_name : "";
+        $data['bprov_name'] = $data['dept'][0]->dept_bprov ? $dataPro->getProvinces($data['dept'][0]->dept_bprov)[0]->province_name : "";
+        $data['mprov_name'] = $data['dept'][0]->dept_mprov ? $dataPro->getProvinces($data['dept'][0]->dept_mprov)[0]->province_name : "";
+        $data['city_name'] = $data['dept'][0]->dept_city ? $dataCit->getCities($data['dept'][0]->dept_city)[0]->city_name : "";
+        $data['bcity_name'] = $data['dept'][0]->dept_bcity ? $dataCit->getCities($data['dept'][0]->dept_bcity)[0]->city_name : "";
+        $data['mcity_name'] = $data['dept'][0]->dept_mcity ? $dataCit->getCities($data['dept'][0]->dept_mcity)[0]->city_name : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
 
@@ -222,6 +242,8 @@ class Department extends BaseController
                 'dept_mphone1' => $this->request->getVar('dept_mphone1'),
                 'dept_mphone2' => $this->request->getVar('dept_mphone2'),
                 'dept_mphone3' => $this->request->getVar('dept_mphone3'),
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->updateData($id, $data);
@@ -242,7 +264,22 @@ class Department extends BaseController
         $id =  $this->request->getVar('id');
         $request = Services::request();
         $model = new DepartmentModel($request);
-        $model->deleteData($id);
+        $active =  $this->request->getVar('active');
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+                'deleted_at' => null,
+                'deleted_by' =>  null,
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
+                'active' => 1,
+            ];
+        }
+        $model->deleteData($id, $data);
         
         return redirect()->to(base_url('/department/index'));
     }
