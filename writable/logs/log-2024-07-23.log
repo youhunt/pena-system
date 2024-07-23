@@ -1,0 +1,2246 @@
+INFO - 2024-07-23 04:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:35:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:35:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:35:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:39:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:53:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 04:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:23:34 --> mysqli_sql_exception: Unknown column 'countries.deleted_at' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Project-project\CI\pena-system\app\Controllers\Company.php(87): CodeIgniter\BaseModel->findAll()
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Company->add()
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company))
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#14 {main}
+CRITICAL - 2024-07-23 06:23:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'countries.deleted_at' in 'where clause'
+[Method: GET, Route: company/add]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `countries`
+WHERE `countries`.`deleted_at` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Company.php(87): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Company->add()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:23:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'countries.deleted_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `countries`
+WHERE `countries`.`deleted_at` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `countries`
+WHERE `countries`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `countries`
+WHERE `countries`.`deleted_at` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Company.php(87): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Company->add()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:23:34 --> [Caused by] mysqli_sql_exception: Unknown column 'countries.deleted_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `countries`
+WHERE `countries`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `countries`
+WHERE `countries`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `countries`
+WHERE `countries`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `countries`
+WHERE `countries`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Company.php(87): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Company->add()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:27:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:27:34 --> mysqli_sql_exception: Unknown column 'country_name' in 'field list' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:27:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'country_name' in 'field list'
+[Method: GET, Route: countries/getAll]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:27:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'country_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%i%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%i%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:27:34 --> [Caused by] mysqli_sql_exception: Unknown column 'country_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%i%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%i%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%i%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:27:34 --> mysqli_sql_exception: Unknown column 'country_name' in 'field list' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:27:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'country_name' in 'field list'
+[Method: GET, Route: countries/getAll]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:27:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'country_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%in%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%in%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:27:34 --> [Caused by] mysqli_sql_exception: Unknown column 'country_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%in%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%in%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%in%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:27:35 --> mysqli_sql_exception: Unknown column 'country_name' in 'field list' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:27:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'country_name' in 'field list'
+[Method: GET, Route: countries/getAll]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:27:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'country_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%ind%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%ind%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:27:35 --> [Caused by] mysqli_sql_exception: Unknown column 'country_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%ind%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%ind%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%ind%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:27:37 --> mysqli_sql_exception: Unknown column 'country_name' in 'field list' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:27:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'country_name' in 'field list'
+[Method: GET, Route: countries/getAll]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:27:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'country_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%indo%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%indo%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:27:37 --> [Caused by] mysqli_sql_exception: Unknown column 'country_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%indo%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%indo%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE \'%indo%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `country_name` as `text`
+FROM `countries`
+WHERE `country_name` LIKE :country_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Countries.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Countries->getAll()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Countries))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:29:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:29:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:29:36 --> mysqli_sql_exception: Table 'db_erp.provinces' doesn't exist in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `p...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `p...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `p...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `p...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Provinces.php(80): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Provinces->getByCountry()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:29:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.provinces' doesn't exist
+[Method: GET, Route: provinces/getByCountry]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = :country_id:
+AND  `province_name` LIKE :province_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Provinces.php(80): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getByCountry()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:29:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.provinces' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%ja%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%ja%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = :country_id:
+AND  `province_name` LIKE :province_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Provinces.php(80): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getByCountry()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:29:36 --> [Caused by] mysqli_sql_exception: Table 'db_erp.provinces' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%ja%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%ja%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%ja%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = :country_id:
+AND  `province_name` LIKE :province_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Provinces.php(80): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getByCountry()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:29:37 --> mysqli_sql_exception: Table 'db_erp.provinces' doesn't exist in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `p...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `p...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `p...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `p...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Provinces.php(80): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Provinces->getByCountry()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:29:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.provinces' doesn't exist
+[Method: GET, Route: provinces/getByCountry]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = :country_id:
+AND  `province_name` LIKE :province_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Provinces.php(80): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getByCountry()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:29:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_erp.provinces' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%j%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%j%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = :country_id:
+AND  `province_name` LIKE :province_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Provinces.php(80): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getByCountry()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:29:37 --> [Caused by] mysqli_sql_exception: Table 'db_erp.provinces' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%j%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%j%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = \'102\'
+AND  `province_name` LIKE \'%j%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `province_name` as `text`
+FROM `provinces`
+WHERE `country_id` = :country_id:
+AND  `province_name` LIKE :province_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Provinces.php(80): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Provinces->getByCountry()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provinces))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:32:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:32:42 --> mysqli_sql_exception: Unknown column 'city_name' in 'field list' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:32:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'city_name' in 'field list'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:32:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'city_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:32:42 --> [Caused by] mysqli_sql_exception: Unknown column 'city_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:32:43 --> mysqli_sql_exception: Unknown column 'city_name' in 'field list' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:32:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'city_name' in 'field list'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:32:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'city_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:32:43 --> [Caused by] mysqli_sql_exception: Unknown column 'city_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:47 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:47 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:47 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:47 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:49 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:49 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:51 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:51 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:53 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:53 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:54 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:54 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:56 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:56 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:56 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:56 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%mag%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:57 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:57 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%ma%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 06:34:58 --> mysqli_sql_exception: Unknown column 'province_id' in 'where clause' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `c...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `c...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `c...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `c...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#12 {main}
+CRITICAL - 2024-07-23 06:34:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+[Method: GET, Route: cities/getByCountryAndProvince]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 2 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 4 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 06:34:58 --> [Caused by] mysqli_sql_exception: Unknown column 'province_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = \'102\'
+AND  `city_name` LIKE \'%m%\' ESCAPE \'!\'
+ LIMIT 30')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `city_name` as `text`
+FROM `cities`
+WHERE `province_id` IS NULL
+AND `country_id` = :country_id:
+AND  `city_name` LIKE :city_name: ESCAPE \'!\'
+ LIMIT 30', [...], false)
+ 5 APPPATH\Controllers\Cities.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cities->getByCountryAndProvince()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cities))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:35:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:35:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:36:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 06:39:46 --> ErrorException: Undefined property: stdClass::$active
+[Method: POST, Route: company/getCompany]
+in APPPATH\Controllers\Company.php on line 44.
+ 1 APPPATH\Controllers\Company.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$active', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\Company.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Company->getCompany()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 06:40:50 --> ErrorException: Undefined property: stdClass::$active
+[Method: POST, Route: company/getCompany]
+in APPPATH\Controllers\Company.php on line 44.
+ 1 APPPATH\Controllers\Company.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$active', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\Company.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Company->getCompany()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:44:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:44:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:44:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:44:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:45:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:45:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:45:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 06:45:27 --> ErrorException: Undefined property: stdClass::$active
+[Method: POST, Route: site/getSite]
+in APPPATH\Controllers\Site.php on line 47.
+ 1 APPPATH\Controllers\Site.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$active', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\Site.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->getSite()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 06:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 06:47:03 --> ErrorException: Undefined array key 0
+[Method: GET, Route: site/edit/1]
+in APPPATH\Views\site\edit.php on line 5.
+ 1 APPPATH\Views\site\edit.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'D:\\Project-project\\CI\\pena-system\\app\\Views\\site\\edit.php', 5)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\pena-system\\app\\Views\\site\\edit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('site/edit', [], true)
+ 5 APPPATH\Controllers\Site.php(168): view('site/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 06:58:32 --> ErrorException: Undefined property: stdClass::$site_comp
+[Method: GET, Route: site/edit/1]
+in APPPATH\Controllers\Site.php on line 157.
+ 1 APPPATH\Controllers\Site.php(157): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$site_comp', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\Site.php', 157)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 06:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 06:58:50 --> BadMethodCallException: Call to undefined method App\Models\CompanyModel::getByCompany
+[Method: GET, Route: site/edit/1]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Site.php(157): CodeIgniter\Model->__call('getByCompany', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:00:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 07:00:04 --> BadMethodCallException: Call to undefined method App\Models\CountriesModel::getCountry
+[Method: GET, Route: site/edit/1]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Site.php(158): CodeIgniter\Model->__call('getCountry', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 07:00:06 --> BadMethodCallException: Call to undefined method App\Models\CountriesModel::getCountry
+[Method: GET, Route: site/edit/1]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Site.php(158): CodeIgniter\Model->__call('getCountry', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 07:00:08 --> BadMethodCallException: Call to undefined method App\Models\CountriesModel::getCountry
+[Method: GET, Route: site/edit/1]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Site.php(158): CodeIgniter\Model->__call('getCountry', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 07:01:19 --> mysqli_sql_exception: Unknown column 'provinces.active' in 'field list' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `provinc...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `provinc...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `provinc...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `provinc...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Models\ProvincesModel.php(91): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\app\Controllers\Site.php(161): App\Models\ProvincesModel->getProvinces('1825')
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#13 {main}
+CRITICAL - 2024-07-23 07:01:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'provinces.active' in 'field list'
+[Method: GET, Route: site/edit/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `provinces`.`id`, `province_code`, `province_name`, `country_id`, `provinces`.`active`, `countries`.`country_name` as `country`
+FROM `provinces`
+JOIN `countries` ON `countries`.`id` = `provinces`.`country_id`
+WHERE `provinces`.`id` = :provinces.id:', [...], false)
+ 2 APPPATH\Models\ProvincesModel.php(91): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Site.php(161): App\Models\ProvincesModel->getProvinces('1825')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 07:01:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'provinces.active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `provinces`.`id`, `province_code`, `province_name`, `country_id`, `provinces`.`active`, `countries`.`country_name` as `country`
+FROM `provinces`
+JOIN `countries` ON `countries`.`id` = `provinces`.`country_id`
+WHERE `provinces`.`id` = \'1825\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `provinces`.`id`, `province_code`, `province_name`, `country_id`, `provinces`.`active`, `countries`.`country_name` as `country`
+FROM `provinces`
+JOIN `countries` ON `countries`.`id` = `provinces`.`country_id`
+WHERE `provinces`.`id` = \'1825\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `provinces`.`id`, `province_code`, `province_name`, `country_id`, `provinces`.`active`, `countries`.`country_name` as `country`
+FROM `provinces`
+JOIN `countries` ON `countries`.`id` = `provinces`.`country_id`
+WHERE `provinces`.`id` = :provinces.id:', [...], false)
+ 4 APPPATH\Models\ProvincesModel.php(91): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Site.php(161): App\Models\ProvincesModel->getProvinces('1825')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 07:01:19 --> [Caused by] mysqli_sql_exception: Unknown column 'provinces.active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `provinces`.`id`, `province_code`, `province_name`, `country_id`, `provinces`.`active`, `countries`.`country_name` as `country`
+FROM `provinces`
+JOIN `countries` ON `countries`.`id` = `provinces`.`country_id`
+WHERE `provinces`.`id` = \'1825\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `provinces`.`id`, `province_code`, `province_name`, `country_id`, `provinces`.`active`, `countries`.`country_name` as `country`
+FROM `provinces`
+JOIN `countries` ON `countries`.`id` = `provinces`.`country_id`
+WHERE `provinces`.`id` = \'1825\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `provinces`.`id`, `province_code`, `province_name`, `country_id`, `provinces`.`active`, `countries`.`country_name` as `country`
+FROM `provinces`
+JOIN `countries` ON `countries`.`id` = `provinces`.`country_id`
+WHERE `provinces`.`id` = \'1825\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `provinces`.`id`, `province_code`, `province_name`, `country_id`, `provinces`.`active`, `countries`.`country_name` as `country`
+FROM `provinces`
+JOIN `countries` ON `countries`.`id` = `provinces`.`country_id`
+WHERE `provinces`.`id` = :provinces.id:', [...], false)
+ 5 APPPATH\Models\ProvincesModel.php(91): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Site.php(161): App\Models\ProvincesModel->getProvinces('1825')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 07:02:50 --> mysqli_sql_exception: Unknown column 'cities.active' in 'field list' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `cities`...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cities`...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cities`...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `cities`...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Models\CitiesModel.php(107): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Project-project\CI\pena-system\app\Controllers\Site.php(164): App\Models\CitiesModel->getCities('56861')
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#13 {main}
+CRITICAL - 2024-07-23 07:02:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cities.active' in 'field list'
+[Method: GET, Route: site/edit/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `cities`.`id`, `city_code`, `city_name`, `cities`.`country_id`, `cities`.`province_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = :cities.id:', [...], false)
+ 2 APPPATH\Models\CitiesModel.php(107): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Site.php(164): App\Models\CitiesModel->getCities('56861')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 07:02:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cities.active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cities`.`id`, `city_code`, `city_name`, `cities`.`country_id`, `cities`.`province_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'56861\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cities`.`id`, `city_code`, `city_name`, `cities`.`country_id`, `cities`.`province_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'56861\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `cities`.`id`, `city_code`, `city_name`, `cities`.`country_id`, `cities`.`province_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = :cities.id:', [...], false)
+ 4 APPPATH\Models\CitiesModel.php(107): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Site.php(164): App\Models\CitiesModel->getCities('56861')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 07:02:50 --> [Caused by] mysqli_sql_exception: Unknown column 'cities.active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `cities`.`id`, `city_code`, `city_name`, `cities`.`country_id`, `cities`.`province_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'56861\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cities`.`id`, `city_code`, `city_name`, `cities`.`country_id`, `cities`.`province_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'56861\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cities`.`id`, `city_code`, `city_name`, `cities`.`country_id`, `cities`.`province_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = \'56861\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `cities`.`id`, `city_code`, `city_name`, `cities`.`country_id`, `cities`.`province_id`, `cities`.`active`, `countries`.`country_name` as `country`, `provinces`.`province_name` as `province`
+FROM `cities`
+JOIN `countries` ON `countries`.`id` = `cities`.`country_id`
+JOIN `provinces` ON `provinces`.`id` = `cities`.`province_id`
+WHERE `cities`.`id` = :cities.id:', [...], false)
+ 5 APPPATH\Models\CitiesModel.php(107): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Site.php(164): App\Models\CitiesModel->getCities('56861')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 07:03:13 --> ErrorException: Array to string conversion
+[Method: GET, Route: site/edit/1]
+in APPPATH\Views\site\edit.php on line 24.
+ 1 APPPATH\Views\site\edit.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\Project-project\\CI\\pena-system\\app\\Views\\site\\edit.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\pena-system\\app\\Views\\site\\edit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('site/edit', [], true)
+ 5 APPPATH\Controllers\Site.php(170): view('site/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:04:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 07:04:53 --> ErrorException: Undefined array key 0
+[Method: GET, Route: site/edit/1]
+in APPPATH\Controllers\Site.php on line 159.
+ 1 APPPATH\Controllers\Site.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\Site.php', 159)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 07:05:55 --> ParseError: syntax error, unexpected token ";"
+[Method: GET, Route: site/edit/1]
+in APPPATH\Controllers\Site.php on line 157.
+ 1 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('D:\\Project-project\\CI\\pena-system\\vendor\\composer/../../app/Controllers/Site.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Site')
+ 3 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\Site', true)
+ 4 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 07:06:18 --> ParseError: syntax error, unexpected token ";"
+[Method: GET, Route: site/edit/1]
+in APPPATH\Controllers\Site.php on line 158.
+ 1 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('D:\\Project-project\\CI\\pena-system\\vendor\\composer/../../app/Controllers/Site.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Site')
+ 3 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\Site', true)
+ 4 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-23 07:06:41 --> ErrorException: Attempt to read property "country_name" on array
+[Method: GET, Route: site/edit/1]
+in APPPATH\Controllers\Site.php on line 159.
+ 1 APPPATH\Controllers\Site.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "country_name" on array', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\Site.php', 159)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:10:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-23 07:10:58 --> mysqli_sql_exception: Unknown column 'updated_by' in 'field list' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `site_ma...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `site_ma...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `site_ma...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `site_ma...', Array, false)
+#4 D:\Project-project\CI\pena-system\app\Models\SiteModel.php(112): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 D:\Project-project\CI\pena-system\app\Controllers\Site.php(226): App\Models\SiteModel->updateData('1', Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Site->update()
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+#8 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#13 {main}
+CRITICAL - 2024-07-23 07:10:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_by' in 'field list'
+[Method: POST, Route: site/update]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `site_master` SET `comp_code` = :comp_code:, `site_code` = :site_code:, `site_name` = :site_name:, `site_taxid` = :site_taxid:, `site_pic` = :site_pic:, `site_add` = :site_add:, `site_city` = :site_city:, `site_prov` = :site_prov:, `site_count` = :site_count:, `site_post` = :site_post:, `site_phone1` = :site_phone1:, `site_phone2` = :site_phone2:, `site_phone3` = :site_phone3:, `site_badd` = :site_badd:, `site_bcity` = :site_bcity:, `site_bprov` = :site_bprov:, `site_bcount` = :site_bcount:, `site_bpost` = :site_bpost:, `site_bphone1` = :site_bphone1:, `site_bphone2` = :site_bphone2:, `site_bphone3` = :site_bphone3:, `site_madd` = :site_madd:, `site_mcity` = :site_mcity:, `site_mprov` = :site_mprov:, `site_mcount` = :site_mcount:, `site_mpost` = :site_mpost:, `site_mphone1` = :site_mphone1:, `site_mphone2` = :site_mphone2:, `site_mphone3` = :site_mphone3:, `updated_by` = :updated_by:, `updated_at` = :updated_at:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Models\SiteModel.php(112): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Site.php(226): App\Models\SiteModel->updateData('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->update()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 07:10:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_by' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `site_master` SET `comp_code` = \'1\', `site_code` = \'s01\', `site_name` = \'SIte 01\', `site_taxid` = \'123\', `site_pic` = \'aku\', `site_add` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_city` = \'\', `site_prov` = \'\', `site_count` = \'\', `site_post` = \'11630\', `site_phone1` = \'085646643769\', `site_phone2` = \'\', `site_phone3` = \'\', `site_badd` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_bcity` = \'56965\', `site_bprov` = \'1802\', `site_bcount` = \'102\', `site_bpost` = \'11630\', `site_bphone1` = \'085646643769\', `site_bphone2` = \'444444\', `site_bphone3` = \'5555\', `site_madd` = \'\', `site_mcity` = \'\', `site_mprov` = \'\', `site_mcount` = \'\', `site_mpost` = \'\', `site_mphone1` = \'\', `site_mphone2` = \'\', `site_mphone3` = \'\', `updated_by` = \'admin\', `updated_at` = \'2024-07-23 07:10:58\'
+WHERE `id` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `site_master` SET `comp_code` = \'1\', `site_code` = \'s01\', `site_name` = \'SIte 01\', `site_taxid` = \'123\', `site_pic` = \'aku\', `site_add` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_city` = \'\', `site_prov` = \'\', `site_count` = \'\', `site_post` = \'11630\', `site_phone1` = \'085646643769\', `site_phone2` = \'\', `site_phone3` = \'\', `site_badd` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_bcity` = \'56965\', `site_bprov` = \'1802\', `site_bcount` = \'102\', `site_bpost` = \'11630\', `site_bphone1` = \'085646643769\', `site_bphone2` = \'444444\', `site_bphone3` = \'5555\', `site_madd` = \'\', `site_mcity` = \'\', `site_mprov` = \'\', `site_mcount` = \'\', `site_mpost` = \'\', `site_mphone1` = \'\', `site_mphone2` = \'\', `site_mphone3` = \'\', `updated_by` = \'admin\', `updated_at` = \'2024-07-23 07:10:58\'
+WHERE `id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `site_master` SET `comp_code` = :comp_code:, `site_code` = :site_code:, `site_name` = :site_name:, `site_taxid` = :site_taxid:, `site_pic` = :site_pic:, `site_add` = :site_add:, `site_city` = :site_city:, `site_prov` = :site_prov:, `site_count` = :site_count:, `site_post` = :site_post:, `site_phone1` = :site_phone1:, `site_phone2` = :site_phone2:, `site_phone3` = :site_phone3:, `site_badd` = :site_badd:, `site_bcity` = :site_bcity:, `site_bprov` = :site_bprov:, `site_bcount` = :site_bcount:, `site_bpost` = :site_bpost:, `site_bphone1` = :site_bphone1:, `site_bphone2` = :site_bphone2:, `site_bphone3` = :site_bphone3:, `site_madd` = :site_madd:, `site_mcity` = :site_mcity:, `site_mprov` = :site_mprov:, `site_mcount` = :site_mcount:, `site_mpost` = :site_mpost:, `site_mphone1` = :site_mphone1:, `site_mphone2` = :site_mphone2:, `site_mphone3` = :site_mphone3:, `updated_by` = :updated_by:, `updated_at` = :updated_at:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Models\SiteModel.php(112): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Site.php(226): App\Models\SiteModel->updateData('1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->update()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-07-23 07:10:58 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_by' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `site_master` SET `comp_code` = \'1\', `site_code` = \'s01\', `site_name` = \'SIte 01\', `site_taxid` = \'123\', `site_pic` = \'aku\', `site_add` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_city` = \'\', `site_prov` = \'\', `site_count` = \'\', `site_post` = \'11630\', `site_phone1` = \'085646643769\', `site_phone2` = \'\', `site_phone3` = \'\', `site_badd` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_bcity` = \'56965\', `site_bprov` = \'1802\', `site_bcount` = \'102\', `site_bpost` = \'11630\', `site_bphone1` = \'085646643769\', `site_bphone2` = \'444444\', `site_bphone3` = \'5555\', `site_madd` = \'\', `site_mcity` = \'\', `site_mprov` = \'\', `site_mcount` = \'\', `site_mpost` = \'\', `site_mphone1` = \'\', `site_mphone2` = \'\', `site_mphone3` = \'\', `updated_by` = \'admin\', `updated_at` = \'2024-07-23 07:10:58\'
+WHERE `id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `site_master` SET `comp_code` = \'1\', `site_code` = \'s01\', `site_name` = \'SIte 01\', `site_taxid` = \'123\', `site_pic` = \'aku\', `site_add` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_city` = \'\', `site_prov` = \'\', `site_count` = \'\', `site_post` = \'11630\', `site_phone1` = \'085646643769\', `site_phone2` = \'\', `site_phone3` = \'\', `site_badd` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_bcity` = \'56965\', `site_bprov` = \'1802\', `site_bcount` = \'102\', `site_bpost` = \'11630\', `site_bphone1` = \'085646643769\', `site_bphone2` = \'444444\', `site_bphone3` = \'5555\', `site_madd` = \'\', `site_mcity` = \'\', `site_mprov` = \'\', `site_mcount` = \'\', `site_mpost` = \'\', `site_mphone1` = \'\', `site_mphone2` = \'\', `site_mphone3` = \'\', `updated_by` = \'admin\', `updated_at` = \'2024-07-23 07:10:58\'
+WHERE `id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `site_master` SET `comp_code` = \'1\', `site_code` = \'s01\', `site_name` = \'SIte 01\', `site_taxid` = \'123\', `site_pic` = \'aku\', `site_add` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_city` = \'\', `site_prov` = \'\', `site_count` = \'\', `site_post` = \'11630\', `site_phone1` = \'085646643769\', `site_phone2` = \'\', `site_phone3` = \'\', `site_badd` = \'Jl. Karya Utama (Belakang Masjid Nurul Iman Srengseng) Kel. Srengseng RT. 10 RW. 3 Kec. Kembangan Jakarta Barat\', `site_bcity` = \'56965\', `site_bprov` = \'1802\', `site_bcount` = \'102\', `site_bpost` = \'11630\', `site_bphone1` = \'085646643769\', `site_bphone2` = \'444444\', `site_bphone3` = \'5555\', `site_madd` = \'\', `site_mcity` = \'\', `site_mprov` = \'\', `site_mcount` = \'\', `site_mpost` = \'\', `site_mphone1` = \'\', `site_mphone2` = \'\', `site_mphone3` = \'\', `updated_by` = \'admin\', `updated_at` = \'2024-07-23 07:10:58\'
+WHERE `id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `site_master` SET `comp_code` = :comp_code:, `site_code` = :site_code:, `site_name` = :site_name:, `site_taxid` = :site_taxid:, `site_pic` = :site_pic:, `site_add` = :site_add:, `site_city` = :site_city:, `site_prov` = :site_prov:, `site_count` = :site_count:, `site_post` = :site_post:, `site_phone1` = :site_phone1:, `site_phone2` = :site_phone2:, `site_phone3` = :site_phone3:, `site_badd` = :site_badd:, `site_bcity` = :site_bcity:, `site_bprov` = :site_bprov:, `site_bcount` = :site_bcount:, `site_bpost` = :site_bpost:, `site_bphone1` = :site_bphone1:, `site_bphone2` = :site_bphone2:, `site_bphone3` = :site_bphone3:, `site_madd` = :site_madd:, `site_mcity` = :site_mcity:, `site_mprov` = :site_mprov:, `site_mcount` = :site_mcount:, `site_mpost` = :site_mpost:, `site_mphone1` = :site_mphone1:, `site_mphone2` = :site_mphone2:, `site_mphone3` = :site_mphone3:, `updated_by` = :updated_by:, `updated_at` = :updated_at:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Models\SiteModel.php(112): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Site.php(226): App\Models\SiteModel->updateData('1', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Site->update()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Site))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-07-23 07:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:13:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:13:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:13:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:26:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:43:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-23 07:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

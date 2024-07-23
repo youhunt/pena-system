@@ -101,7 +101,7 @@ class SiteModel extends Model
         // $this->dt->join('countries mcount', 'mcount.id = site_master.site_mcount');
         // $this->dt->join('provinces mprov', 'mprov.id = site_master.site_mprov');
         // $this->dt->join('cities mcity', 'mcity.id = site_master.site_mcity');
-        $this->dt->where('site_master.id', $id);
+        $this->dt->where('id', $id);
         $query = $this->dt->get();
         return $query->getResult();        
     }

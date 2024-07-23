@@ -4,4 +4,4 @@
 <meta content="Pena ERP System" name="description" />
 <meta content="Pena" name="author" />
 <!-- App favicon -->
-<link rel="shortcut icon" href="/assets/images/favicon.ico">
+<link rel="shortcut icon" href="/assets/images/Logo.png">

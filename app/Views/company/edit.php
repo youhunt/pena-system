@@ -207,7 +207,7 @@
                     var query = {
                         q: params.term,
                         country_id: $("#comp_count").val(),                     
-                        state_id: $("#comp_prov").val()                     
+                        province_id: $("#comp_prov").val()                     
                     };
 
                     // Query parameters will be ?search=[term]&type=public
