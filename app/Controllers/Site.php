@@ -81,8 +81,6 @@ class Site extends BaseController
 
     public function add()
     {        
-        $request = Services::request();
-    
         $data = [            
             'title' => 'Add Site',
         ];

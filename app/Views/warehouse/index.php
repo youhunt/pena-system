@@ -1,7 +1,7 @@
 <?= $this->extend('template/index') ?>            
 
 <?= $this->section('page-content') ?>
-                    <<div class="row">
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
@@ -26,6 +26,7 @@
                                                         <th><?= lang('Warehouse.id'); ?></th>
                                                         <th><?= lang('Warehouse.comp_code'); ?></th>
                                                         <th><?= lang('Warehouse.site_code'); ?></th>
+                                                        <th><?= lang('Warehouse.dept_code'); ?></th>
                                                         <th><?= lang('Warehouse.whs_code'); ?></th>
                                                         <th><?= lang('Warehouse.whs_name'); ?></th>
                                                         <th><?= lang('Warehouse.whs_pic'); ?></th>
@@ -38,6 +39,7 @@
                                                     <th><?= lang('Warehouse.id'); ?></th>
                                                         <th><?= lang('Warehouse.comp_code'); ?></th>
                                                         <th><?= lang('Warehouse.site_code'); ?></th>
+                                                        <th><?= lang('Warehouse.dept_code'); ?></th>
                                                         <th><?= lang('Warehouse.whs_code'); ?></th>
                                                         <th><?= lang('Warehouse.whs_name'); ?></th>
                                                         <th><?= lang('Warehouse.whs_pic'); ?></th>
@@ -140,6 +142,11 @@
                 },
                 {
                     "data": "site_code",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "dept_code",
                     "autoWidth": true,
                     "searchable": true,
                 },

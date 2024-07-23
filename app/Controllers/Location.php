@@ -21,8 +21,8 @@ class Location extends BaseController
         $data['submenu'] = 'loc';
 
         $data['title'] = 'Location';
-        $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Location']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Location', 'pagetitle' => 'MasterData']);
         return view('location/index', $data);
 	}
 
@@ -41,13 +41,14 @@ class Location extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['comp_code'] = $list->comp_code;
-                $row['site_code'] = $list->site_code;
-                $row['dept_code'] = $list->dept_code;
+                $row['comp_code'] = $list->comp_code ? $dataCom->getCompany($list->comp_code)[0]->comp_name : "";
+                $row['site_code'] = $list->site_code ? $dataSit->getSite($list->site_code)[0]->site_name : "";
+                $row['dept_code'] = $list->dept_code ? $dataDep->getDepartment($list->dept_code)[0]->dept_name : "";
                 $row['whs_code'] = $list->whs_code;
                 $row['loc_code'] = $list->loc_code;
                 $row['loc_name'] = $list->loc_name;
                 $row['loc_pic'] = $list->loc_pic;
+                $row['active'] = $list->active;
                 $row['no'] = "";
                 $data[] = $row;
             }
@@ -65,25 +66,13 @@ class Location extends BaseController
 
     public function add()
     {        
-        $request = Services::request();
-        $dataCou = new CountriesModel($request);
-        $dataCom = new CompanyModel($request);
-        $dataSit = new SiteModel($request);
-        $dataDep = new DepartmentModel($request);
-        $dataWhs = new WarehouseModel($request);
-    
         $data = [            
             'title' => 'Add Location',
         ];
         $data['menu'] = 'setup';
         $data['submenu'] = 'loc';
-        $data['countries'] = $dataCou->findAll();
-        $data['company'] = $dataCom->findAll();
-        $data['sites'] = $dataSit->findAll();
-        $data['departments'] = $dataDep->findAll();
-        $data['warehouses'] = $dataWhs->findAll();
-        $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Location']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Location', 'pagetitle' => 'MasterData']);
 
         return view('location/add', $data);            
     }
@@ -132,6 +121,8 @@ class Location extends BaseController
                 'whs_dphone1' => $this->request->getVar('whs_dphone1'),
                 'whs_dphone2' => $this->request->getVar('whs_dphone2'),
                 'whs_dphone3' => $this->request->getVar('whs_dphone3'),
+                'created_by' =>  user()->username,
+                'created_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->save($data);
@@ -222,6 +213,8 @@ class Location extends BaseController
                 'whs_dphone1' => $this->request->getVar('whs_dphone1'),
                 'whs_dphone2' => $this->request->getVar('whs_dphone2'),
                 'whs_dphone3' => $this->request->getVar('whs_dphone3'),
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->updateData($id, $data);
@@ -241,8 +234,22 @@ class Location extends BaseController
     {
         $id =  $this->request->getVar('id');
         $request = Services::request();
-        $model = new LocationModel($request);
-        $model->deleteData($id);
+        $active =  $this->request->getVar('active');
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+                'deleted_at' => null,
+                'deleted_by' =>  null,
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
+                'active' => 1,
+            ];
+        }
+        $model->deleteData($id, $data);
         
         return redirect()->to(base_url('/location/index'));
     }

@@ -76,15 +76,11 @@ class Company extends BaseController
 
     public function add()
     {        
-        $request = Services::request();
-        $dataCou = new CountriesModel($request);
-    
         $data = [            
             'title' => 'Add Company',
         ];
         $data['menu'] = 'setup';
         $data['submenu'] = 'company';
-        $data['countries'] = $dataCou->findAll();
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Company']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Company', 'pagetitle' => 'MasterData']);
 

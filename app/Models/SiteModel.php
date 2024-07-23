@@ -102,9 +102,9 @@ class SiteModel extends Model
         return $this->dt->update($data);
     }
 
-    function deleteData($id) 
+    function deleteData($id, $data) 
     {
         $this->dt->where('id', $id);
-        return $this->dt->delete();
+        return $this->dt->update($data);
     }
 }

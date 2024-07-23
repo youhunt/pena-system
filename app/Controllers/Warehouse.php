@@ -67,8 +67,6 @@ class Warehouse extends BaseController
 
     public function add()
     {        
-        $request = Services::request();
-    
         $data = [            
             'title' => 'Add Warehouse',
         ];
