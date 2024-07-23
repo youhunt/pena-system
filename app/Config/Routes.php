@@ -103,6 +103,7 @@ $routes->get('department/edit/(:segment)', 'Department::edit/$1', ['filter' => '
 $routes->post('department/save', 'Department::save', ['filter' => 'role:administrator']);
 $routes->post('department/update', 'Department::update', ['filter' => 'role:administrator']);
 $routes->post('department/delete', 'Department::delete', ['filter' => 'role:administrator']);
+$routes->get('department/getBySite?(:any)', 'Department::getBySite', ['filter' => 'role:administrator']);
 
 $routes->get('warehouse', 'Warehouse::index', ['filter' => 'role:administrator']);
 $routes->get('warehouse/index', 'Warehouse::index', ['filter' => 'role:administrator']);

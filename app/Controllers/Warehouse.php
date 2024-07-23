@@ -30,6 +30,9 @@ class Warehouse extends BaseController
 
         $request = Services::request();
         $datatable = new WarehouseModel($request);
+        $dataCom = new CompanyModel($request);
+        $dataSit = new SiteModel($request);
+        $dataDep = new DepartmentModel($request);
         
         if ($request->getMethod(true) === 'POST') {
             $lists = $datatable->getDatatables();
@@ -40,12 +43,13 @@ class Warehouse extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['comp_code'] = $list->comp_code;
-                $row['site_code'] = $list->site_code;
-                $row['dept_code'] = $list->dept_code;
+                $row['comp_code'] = $list->comp_code ? $dataCom->getCompany($list->comp_code)[0]->comp_name : "";
+                $row['site_code'] = $list->site_code ? $dataSit->getSite($list->site_code)[0]->site_name : "";
+                $row['dept_code'] = $list->dept_code ? $dataDep->getDepartment($list->dept_code)[0]->dept_name : "";
                 $row['whs_code'] = $list->whs_code;
                 $row['whs_name'] = $list->whs_name;
                 $row['whs_pic'] = $list->whs_pic;
+                $row['active'] = $list->active;
                 $row['no'] = "";
                 $data[] = $row;
             }
@@ -64,20 +68,12 @@ class Warehouse extends BaseController
     public function add()
     {        
         $request = Services::request();
-        $dataCou = new CountriesModel($request);
-        $dataCom = new CompanyModel($request);
-        $dataSit = new SiteModel($request);
-        $dataDep = new DepartmentModel($request);
     
         $data = [            
             'title' => 'Add Warehouse',
         ];
         $data['menu'] = 'setup';
         $data['submenu'] = 'whs';
-        $data['countries'] = $dataCou->findAll();
-        $data['company'] = $dataCom->findAll();
-        $data['sites'] = $dataSit->findAll();
-        $data['departments'] = $dataDep->findAll();
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Warehouse']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Warehouse', 'pagetitle' => 'MasterData']);
         
@@ -134,6 +130,8 @@ class Warehouse extends BaseController
                 'whs_mphone1' => $this->request->getVar('whs_mphone1'),
                 'whs_mphone2' => $this->request->getVar('whs_mphone2'),
                 'whs_mphone3' => $this->request->getVar('whs_mphone3'),
+                'created_by' =>  user()->username,
+                'created_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->save($data);
@@ -155,7 +153,7 @@ class Warehouse extends BaseController
         $dataWhs = new WarehouseModel($request);
         $dataSit = new SiteModel($request);
         $dataCou = new CountriesModel($request);
-        $dataSta = new ProvincesModel($request);
+        $dataPro = new ProvincesModel($request);
         $dataCit = new CitiesModel($request);
         $dataDep = new DepartmentModel($request);
     
@@ -165,17 +163,19 @@ class Warehouse extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'whs';
         $data['whs'] = $dataWhs->getWarehouse($id);
-        $data['sites'] = $dataSit->findAll();
-        $data['company'] = $dataCom->findAll();
-        $data['countries'] = $dataCou->findAll();
-        $data['departments'] = $dataDep->findAll();
-        $data['provinces'] = $dataSta->getByCountry($data['whs'][0]->whs_count);
-        $data['bprovinces'] = $dataSta->getByCountry($data['whs'][0]->whs_bcount);
-        $data['mprovinces'] = $dataSta->getByCountry($data['whs'][0]->whs_mcount);
-        $data['cities'] = $dataCit->getByState($data['whs'][0]->whs_prov);
-        $data['bcities'] = $dataCit->getByState($data['whs'][0]->whs_bprov);
-        $data['mcities'] = $dataCit->getByState($data['whs'][0]->whs_mprov);
-        $data['title_meta'] = view('partials/title-meta', ['title' => 'Warehouse']);
+        $data['dept_name'] = $data['whs'][0]->dept_code ? $dataDep->getDepartment($data['whs'][0]->dept_code)[0]->dept_name : "";
+        $data['site_name'] = $data['whs'][0]->site_code ? $dataSit->getSite($data['whs'][0]->site_code)[0]->site_name : "";
+        $data['comp_name'] = $data['whs'][0]->comp_code ? $dataCom->getCompany($data['whs'][0]->comp_code)[0]->comp_name : "";
+        $data['count_name'] = $data['whs'][0]->whs_count ? $dataCou->getCountries($data['whs'][0]->whs_count)[0]->country_name : "";
+        $data['bcount_name'] = $data['whs'][0]->whs_bcount ? $dataCou->getCountries($data['whs'][0]->whs_bcount)[0]->country_name : "";
+        $data['mcount_name'] = $data['whs'][0]->whs_mcount ? $dataCou->getCountries($data['whs'][0]->whs_mcount)[0]->country_name : "";
+        $data['prov_name'] = $data['whs'][0]->whs_prov ? $dataPro->getProvinces($data['whs'][0]->whs_prov)[0]->province_name : "";
+        $data['bprov_name'] = $data['whs'][0]->whs_bprov ? $dataPro->getProvinces($data['whs'][0]->whs_bprov)[0]->province_name : "";
+        $data['mprov_name'] = $data['whs'][0]->whs_mprov ? $dataPro->getProvinces($data['whs'][0]->whs_mprov)[0]->province_name : "";
+        $data['city_name'] = $data['whs'][0]->whs_city ? $dataCit->getCities($data['whs'][0]->whs_city)[0]->city_name : "";
+        $data['bcity_name'] = $data['whs'][0]->whs_bcity ? $dataCit->getCities($data['whs'][0]->whs_bcity)[0]->city_name : "";
+        $data['mcity_name'] = $data['whs'][0]->whs_mcity ? $dataCit->getCities($data['whs'][0]->whs_mcity)[0]->city_name : "";
+         $data['title_meta'] = view('partials/title-meta', ['title' => 'Warehouse']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Warehouse', 'pagetitle' => 'MasterData']);
         
         return view('warehouse/edit', $data);            
@@ -232,6 +232,8 @@ class Warehouse extends BaseController
                 'whs_mphone1' => $this->request->getVar('whs_mphone1'),
                 'whs_mphone2' => $this->request->getVar('whs_mphone2'),
                 'whs_mphone3' => $this->request->getVar('whs_mphone3'),
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->updateData($id, $data);
@@ -252,7 +254,22 @@ class Warehouse extends BaseController
         $id =  $this->request->getVar('id');
         $request = Services::request();
         $model = new WarehouseModel($request);
-        $model->deleteData($id);
+        $active =  $this->request->getVar('active');
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+                'deleted_at' => null,
+                'deleted_by' =>  null,
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
+                'active' => 1,
+            ];
+        }
+        $model->deleteData($id, $data);
         
         return redirect()->to(base_url('/warehouse/index'));
     }

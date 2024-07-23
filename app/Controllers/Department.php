@@ -41,8 +41,8 @@ class Department extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['comp_code'] = $dataCom->getCompany($list->comp_code)[0]->comp_name ;
-                $row['site_code'] = $dataSit->getSite($list->site_code)[0]->site_name;
+                $row['comp_code'] = $list->comp_code ? $dataCom->getCompany($list->comp_code)[0]->comp_name : "";
+                $row['site_code'] = $list->site_code ? $dataSit->getSite($list->site_code)[0]->site_name : "";
                 $row['dept_code'] = $list->dept_code;
                 $row['dept_name'] = $list->dept_name;
                 $row['dept_pic'] = $list->dept_pic;
@@ -62,7 +62,7 @@ class Department extends BaseController
         }
     }
 
-    public function getByCompany()
+    public function getBySite()
     {
         helper(['form', 'url']);
 
@@ -72,7 +72,7 @@ class Department extends BaseController
         $builder = $db->table('department_master');   
 
         $query = $builder
-                    ->where('comp_code', $this->request->getVar('company_id'))
+                    ->where('site_code', $this->request->getVar('site_id'))
                     ->like('dept_name', $this->request->getVar('q'))
                     ->select('id, dept_name as text')
                     ->limit(30)->get();
