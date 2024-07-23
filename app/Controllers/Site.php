@@ -39,7 +39,7 @@ class Site extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['comp_code'] = $dataComp->getCompany($list->comp_code)[0]->comp_name;
+                $row['comp_code'] = $list->comp_code ? $dataComp->getCompany($list->comp_code)[0]->comp_name : "";
                 $row['site_code'] = $list->site_code;
                 $row['site_name'] = $list->site_name;
                 $row['site_pic'] = $list->site_pic;
