@@ -24,19 +24,29 @@
                                                 <thead>
                                                     <tr>
                                                         <th><?= lang('ConvUOM.id'); ?></th>
+                                                        <th><?= lang('ConvUOM.itemcode'); ?></th>
+                                                        <th><?= lang('ConvUOM.site'); ?></th>
+                                                        <th><?= lang('ConvUOM.dept'); ?></th>
+                                                        <th><?= lang('ConvUOM.whs'); ?></th>
                                                         <th><?= lang('ConvUOM.fr_uom'); ?></th>
                                                         <th><?= lang('ConvUOM.to_uom'); ?></th>
                                                         <th><?= lang('ConvUOM.value'); ?></th>
-                                                        <th style="width: 90px;"></th>
+                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
+                                                        <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
                                                 <tfoot>
                                                     <tr>
                                                         <th><?= lang('ConvUOM.id'); ?></th>
+                                                        <th><?= lang('ConvUOM.itemcode'); ?></th>
+                                                        <th><?= lang('ConvUOM.site'); ?></th>
+                                                        <th><?= lang('ConvUOM.dept'); ?></th>
+                                                        <th><?= lang('ConvUOM.whs'); ?></th>
                                                         <th><?= lang('ConvUOM.fr_uom'); ?></th>
                                                         <th><?= lang('ConvUOM.to_uom'); ?></th>
                                                         <th><?= lang('ConvUOM.value'); ?></th>
-                                                        <th></th>
+                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
+                                                        <th style="width: 45px;"></th>
                                                     </tr>
                                                 </tfoot>
                                                 <tbody>
@@ -56,7 +66,7 @@
 <?= $this->section('div-modal') ?>
     
     <form action="<?= base_url(); ?>convuom/delete" method="post">
-    <div class="modal fade" id="uomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="convUOMModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -70,6 +80,29 @@
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <form action="<?= base_url(); ?>department/delete" method="post">
+    <div class="modal fade" id="convUOMActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="siteLabel">Delete</h5>
+                    <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Choose "Yes" to <span id="msgActive"></span>.</div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" class="id">
+                    <input type="hidden" name="active" class="active">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">No</button>
                     <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
             </div>
@@ -105,6 +138,26 @@
                     "searchable": true
                 },
                 {
+                    "data": "itemcode",
+                    "autoWidth": true,
+                    "searchable": true
+                },
+                {
+                    "data": "site",
+                    "autoWidth": true,
+                    "searchable": true
+                },
+                {
+                    "data": "dept",
+                    "autoWidth": true,
+                    "searchable": true
+                },
+                {
+                    "data": "whs",
+                    "autoWidth": true,
+                    "searchable": true
+                },
+                {
                     "data": "fr_uom",
                     "autoWidth": true,
                     "searchable": true
@@ -118,6 +171,19 @@
                     "data": "value",
                     "autoWidth": true,
                     "searchable": true
+                }, {
+                    "data": "active", 
+                    "render": function (data, type, row) {
+                        var retVal = "";
+                        if (data === null) return "";
+                        if (data === "1") {
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-convuom" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                        } else if (data === "0") {
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-convuom" title="Click to ACTIVE Item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                        }
+
+                        return retVal;
+                    },
                 }, {
                     data: "ID", render: function (data, type, row) {
                         return '<a href="<?= base_url(); ?>convuom/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-convuom" title="Delete" data-id="' + row.id + '"><i class="fas fa-times"></i></a>';
@@ -133,7 +199,24 @@
             $('.id').val(id);
 
             // Call Modal Edit
-            $('#uomModal').modal('show');
+            $('#convUOMModal').modal('show');
+        });
+
+        $('#dataTable tbody').on('click', '.btn-active-convuom', function() {
+            const id = $(this).data('id');
+            const active = $(this).data('active');
+            
+            // Set data to Form Edit
+            $('.id').val(id);
+            $('.active').val(active);
+            if (active == "1") {
+                $('#msgActive').text("Inactive");
+            } else if (active == "0") {
+                $('#msgActive').text("Active");
+            }
+
+            // Call Modal Edit
+            $('#convUOMActiveModal').modal('show');
         });
 
     });

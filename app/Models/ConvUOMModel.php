@@ -8,7 +8,7 @@ use CodeIgniter\HTTP\RequestInterface;
 class ConvUOMModel extends Model
 {
 
-    protected $table          = 'uomconv';
+    protected $table          = 'item_uomconv';
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [

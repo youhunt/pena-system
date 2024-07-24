@@ -45,8 +45,8 @@
                                                         <th><?= lang('Location.loc_code'); ?></th>
                                                         <th><?= lang('Location.loc_name'); ?></th>
                                                         <th><?= lang('Location.loc_pic'); ?></th>
-                                                        <th></th>
-                                                        <th></th>
+                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
+                                                        <th style="width: 45px;"></th>
                                                     </tr>
                                                 </tfoot>
                                                 <tbody>

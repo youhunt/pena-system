@@ -61,12 +61,12 @@
 <?= $this->section('div-modal') ?>
     
     <form action="<?= base_url(); ?>department/delete" method="post">
-    <div class="modal fade" id="siteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="deptModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="siteModal">Delete</h5>
+                    <h5 class="modal-title" id="deptModal">Delete</h5>
                     <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -84,7 +84,7 @@
     </form>
 
     <form action="<?= base_url(); ?>department/delete" method="post">
-    <div class="modal fade" id="siteActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="deptActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -164,9 +164,9 @@
                         var retVal = "";
                         if (data === null) return "";
                         if (data === "1") {
-                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-site" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-dept" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
                         } else if (data === "0") {
-                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-site" title="Click to ACTIVE Item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-dept" title="Click to ACTIVE Item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
                         }
 
                         return retVal;
@@ -174,23 +174,23 @@
                 }, 
                 {
                     data: "no", render: function (data, type, row) {
-                        return '<a href="<?= base_url(); ?>department/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-site" title="Delete" data-id="' + row.id + '"><i class="fas fa-times"></i></a>';
+                        return '<a href="<?= base_url(); ?>department/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-dept" title="Delete" data-id="' + row.id + '"><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
         });
         
-        $('#dataTable tbody').on('click', '.btn-delete-site', function() {
+        $('#dataTable tbody').on('click', '.btn-delete-dept', function() {
             const id = $(this).data('id');
             
             // Set data to Form Edit
             $('.id').val(id);
 
             // Call Modal Edit
-            $('#siteModal').modal('show');
+            $('#deptModal').modal('show');
         });
 
-        $('#dataTable tbody').on('click', '.btn-active-site', function() {
+        $('#dataTable tbody').on('click', '.btn-active-dept', function() {
             const id = $(this).data('id');
             const active = $(this).data('active');
             
@@ -204,7 +204,7 @@
             }
 
             // Call Modal Edit
-            $('#siteActiveModal').modal('show');
+            $('#deptActiveModal').modal('show');
         });
 
     });

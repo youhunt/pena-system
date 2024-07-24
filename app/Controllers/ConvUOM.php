@@ -13,7 +13,7 @@ class ConvUOM extends BaseController
         $data['menu'] = 'item';
         $data['submenu'] = 'convuom';
 
-        $data['title'] = 'ConvUOM';
+        $data['title'] = lang('Files.'.'ConvUOM'.'');
         $data['title_meta'] = view('partials/title-meta', ['title' => 'ConvUOM']);
         $data['page_title'] = view('partials/page-title', ['title' => 'ConvUOM', 'pagetitle' => 'MasterData']);
         return view('convuom/index', $data);
@@ -33,7 +33,10 @@ class ConvUOM extends BaseController
             foreach ($lists as $list) {
                 $no++;
                 $row = [];
-                $row['id'] = $list->id;
+                $row['itemcode'] = $list->itemcode;
+                $row['site'] = $list->site;
+                $row['dept'] = $list->dept;
+                $row['whs'] = $list->whs;
                 $row['fr_uom'] = $list->fr_uom;
                 $row['to_uom'] = $list->to_uom;
                 $row['value'] = $list->value;
@@ -83,9 +86,15 @@ class ConvUOM extends BaseController
             $request = Services::request();
             $model = new ConvUOMModel($request);
             $data = [
+                'itemcode' => $this->request->getVar('itemcode'),
+                'site' => $this->request->getVar('site'),
+                'dept' => $this->request->getVar('dept'),
+                'whs' => $this->request->getVar('whs'),
                 'fr_uom' => $this->request->getVar('fr_uom'),
                 'to_uom' => $this->request->getVar('to_uom'),
                 'value' => $this->request->getVar('value'),
+                'created_by' =>  user()->username,
+                'created_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->save($data);
@@ -135,11 +144,17 @@ class ConvUOM extends BaseController
             $request = Services::request();
             $model = new ConvUOMModel($request);
             $data = [
+                'itemcode' => $this->request->getVar('itemcode'),
+                'site' => $this->request->getVar('site'),
+                'dept' => $this->request->getVar('dept'),
+                'whs' => $this->request->getVar('whs'),
                 'fr_uom' => $this->request->getVar('fr_uom'),
                 'to_uom' => $this->request->getVar('to_uom'),
                 'value' => $this->request->getVar('value'),
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
             ];
-            
+                
             $model->updateData($id, $data);
             // $model->where('id', $id)->update($data);
 
@@ -158,7 +173,22 @@ class ConvUOM extends BaseController
         $id =  $this->request->getVar('id');
         $request = Services::request();
         $model = new ConvUOMModel($request);
-        $model->deleteData($id);
+        $active =  $this->request->getVar('active');
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+            'deleted_at' => null,
+            'deleted_by' =>  null,
+            'updated_by' =>  user()->username,
+            'updated_at' =>  date("Y-m-d H:i:s"),
+            'active' => 1,
+        ];
+        }
+        $model->deleteData($id, $data);
         
         return redirect()->to(base_url('/convuom/index'));
     }

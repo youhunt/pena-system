@@ -178,9 +178,9 @@ class Countries extends BaseController
     public function delete()
     {
         $id =  $this->request->getVar('id');
-        $active =  $this->request->getVar('active');
         $request = Services::request();
         $model = new CountriesModel($request);
+        $active =  $this->request->getVar('active');
         $data = [
             'deleted_at' => date("Y-m-d H:i:s"),
             'deleted_by' =>  user()->username,
