@@ -58,14 +58,14 @@
                                         <div class="row mb-4">
                                             <label for="site_count" class="col-sm-2 col-form-label"><?= lang('Site.site_count'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site_count" name="site_count" value="" />
+                                                <input type="hidden" id="site_count" name="site_count" value="<?= old('site_count') ? old('site_count') : $site[0]->site_count;?>" />
                                                 <select class="form-control <?php if(session('errors.site_count')) : ?>is-invalid<?php endif ?>" name="country" id="country" >
                                                     <option selected="selected"><?= $count_name ?></option>
                                                 </select>
                                             </div>
                                             <label for="site_prov" class="col-sm-2 col-form-label"><?= lang('Site.site_prov'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site_prov" name="site_prov" value="" />
+                                                <input type="hidden" id="site_prov" name="site_prov" value="<?= old('site_city') ? old('site_city') : $site[0]->site_city;?>" />
                                                 <select class="form-control <?php if(session('errors.site_prov')) : ?>is-invalid<?php endif ?>" name="prov" id="prov" >
                                                     <option selected="selected"><?= $prov_name ?></option>
                                                 </select>
@@ -75,7 +75,7 @@
                                         <div class="row mb-4">
                                             <label for="site_city" class="col-sm-2 col-form-label"><?= lang('Site.site_city'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site_city" name="site_city" value="" />
+                                                <input type="hidden" id="site_city" name="site_city" value="<?= old('site_city') ? old('site_city') : $site[0]->site_city;?>" />
                                                 <select class="form-control <?php if(session('errors.site_city')) : ?>is-invalid<?php endif ?>" name="city" id="city" >
                                                     <option selected="selected"><?= $city_name ?></option>
                                                 </select>
@@ -118,14 +118,14 @@
                                         <div class="row mb-4">
                                             <label for="site_bcount" class="col-sm-2 col-form-label"><?= lang('Site.site_bcount'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site_bcount" name="site_bcount" value="" />
+                                                <input type="hidden" id="site_bcount" name="site_bcount" value="<?= old('site_bcount') ? old('site_bcount') : $site[0]->site_bcount ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site_bcount')) : ?>is-invalid<?php endif ?>" name="bcountry" id="bcountry" >
                                                     <option selected="selected"><?= $bcount_name ?></option>
                                                 </select>
                                             </div>
                                             <label for="site_bprov" class="col-sm-2 col-form-label"><?= lang('Site.site_bprov'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site_bprov" name="site_bprov" value="" />
+                                                <input type="hidden" id="site_bprov" name="site_bprov" value="<?= old('site_bprov') ? old('site_bprov') : $site[0]->site_bprov ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site_bprov')) : ?>is-invalid<?php endif ?>" name="bprov" id="bprov" >
                                                     <option selected="selected"><?= $bprov_name ?></option>
                                                 </select>
@@ -135,7 +135,7 @@
                                         <div class="row mb-4">
                                             <label for="site_bcity" class="col-sm-2 col-form-label"><?= lang('Site.site_bcity'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site_bcity" name="site_bcity" value="" />
+                                                <input type="hidden" id="site_bcity" name="site_bcity" value="<?= old('site_bcity') ? old('site_bcity') : $site[0]->site_bcity ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site_bcity')) : ?>is-invalid<?php endif ?>" name="bcity" id="bcity" >
                                                     <option selected="selected"><?= $bcity_name ?></option>
                                                 </select>
@@ -178,14 +178,14 @@
                                         <div class="row mb-4">
                                             <label for="site_mcount" class="col-sm-2 col-form-label"><?= lang('Site.site_mcount'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site_mcount" name="site_mcount" value="" />
+                                                <input type="hidden" id="site_mcount" name="site_mcount" value="<?= old('site_mcount') ? old('site_mcount') : $site[0]->site_mcount ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site_mcount')) : ?>is-invalid<?php endif ?>" name="mcountry" id="mcountry" >
                                                     <option selected="selected"><?= $mcount_name ?></option>
                                                 </select>
                                             </div>
                                             <label for="site_mprov" class="col-sm-2 col-form-label"><?= lang('Site.site_mprov'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site_mprov" name="site_mprov" value="" />
+                                                <input type="hidden" id="site_mprov" name="site_mprov" value="<?= old('site_mprov') ? old('site_mprov') : $site[0]->site_mprov ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site_mprov')) : ?>is-invalid<?php endif ?>" name="mprov" id="mprov" >
                                                     <option selected="selected"><?= $mprov_name ?></option>
                                                 </select>
@@ -195,7 +195,7 @@
                                         <div class="row mb-4">
                                             <label for="site_mcity" class="col-sm-2 col-form-label"><?= lang('Site.site_mcity'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site_mcity" name="site_mcity" value="" />
+                                                <input type="hidden" id="site_mcity" name="site_mcity" value="<?= old('site_mcity') ? old('site_mcity') : $site[0]->site_mcity ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site_mcity')) : ?>is-invalid<?php endif ?>" name="mcity" id="mcity" >
                                                     <option selected="selected"><?= $mcity_name ?></option>
                                                 </select>

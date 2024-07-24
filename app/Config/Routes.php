@@ -114,6 +114,7 @@ $routes->post('warehouse/save', 'Warehouse::save', ['filter' => 'role:administra
 $routes->post('warehouse/update', 'Warehouse::update', ['filter' => 'role:administrator']);
 $routes->post('warehouse/delete', 'Warehouse::delete', ['filter' => 'role:administrator']);
 $routes->get('warehouse/getAll?(:any)', 'Warehouse::getAll', ['filter' => 'role:administrator']);
+$routes->get('warehouse/getByDepartment?(:any)', 'Warehouse::getByDepartment', ['filter' => 'role:administrator']);
 
 $routes->get('location', 'Location::index', ['filter' => 'role:administrator']);
 $routes->get('location/index', 'Location::index', ['filter' => 'role:administrator']);

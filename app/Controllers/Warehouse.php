@@ -173,7 +173,7 @@ class Warehouse extends BaseController
         $data['city_name'] = $data['whs'][0]->whs_city ? $dataCit->getCities($data['whs'][0]->whs_city)[0]->city_name : "";
         $data['bcity_name'] = $data['whs'][0]->whs_bcity ? $dataCit->getCities($data['whs'][0]->whs_bcity)[0]->city_name : "";
         $data['mcity_name'] = $data['whs'][0]->whs_mcity ? $dataCit->getCities($data['whs'][0]->whs_mcity)[0]->city_name : "";
-         $data['title_meta'] = view('partials/title-meta', ['title' => 'Warehouse']);
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Warehouse']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Warehouse', 'pagetitle' => 'MasterData']);
         
         return view('warehouse/edit', $data);            
@@ -283,6 +283,25 @@ class Warehouse extends BaseController
 
         $query = $builder->like('whs_name', $this->request->getVar('q'))
                     ->select('whs_code as id, whs_name as text')
+                    ->limit(30)->get();
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
+
+    public function getByDepartment()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('warehouse_master');   
+
+        $query = $builder
+                    ->where('dept_code', $this->request->getVar('dept_id'))
+                    ->like('whs_name', $this->request->getVar('q'))
+                    ->select('id, whs_name as text')
                     ->limit(30)->get();
         $data = $query->getResult();
         

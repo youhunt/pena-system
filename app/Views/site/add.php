@@ -13,7 +13,6 @@
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
-
  
                                         <div class="row mb-4">
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Site.comp_code'); ?></label>

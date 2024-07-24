@@ -7,7 +7,7 @@ return [
     'site_code' => 'Site Code',
     'dept_code' => 'Dept Code',
     'whs_code' => 'Warehouse Code',
-    'loc_code' => 'Location_Code',
+    'loc_code' => 'Location Code',
     'loc_name' => 'Location Name',
     'loc_pic' => 'PIC',
     'loc_add' => 'Location Address',

@@ -31,6 +31,10 @@ class Location extends BaseController
 
         $request = Services::request();
         $datatable = new LocationModel($request);
+        $dataSit = new SiteModel($request);
+        $dataCom = new CompanyModel($request);
+        $dataDep = new DepartmentModel($request);
+        $dataWhs = new WarehouseModel($request);
         
         if ($request->getMethod(true) === 'POST') {
             $lists = $datatable->getDatatables();
@@ -44,7 +48,7 @@ class Location extends BaseController
                 $row['comp_code'] = $list->comp_code ? $dataCom->getCompany($list->comp_code)[0]->comp_name : "";
                 $row['site_code'] = $list->site_code ? $dataSit->getSite($list->site_code)[0]->site_name : "";
                 $row['dept_code'] = $list->dept_code ? $dataDep->getDepartment($list->dept_code)[0]->dept_name : "";
-                $row['whs_code'] = $list->whs_code;
+                $row['whs_code'] = $list->whs_code ? $dataWhs->getWarehouse($list->whs_code)[0]->whs_name : "";
                 $row['loc_code'] = $list->loc_code;
                 $row['loc_name'] = $list->loc_name;
                 $row['loc_pic'] = $list->loc_pic;
@@ -155,15 +159,18 @@ class Location extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'loc';
         $data['loc'] = $dataLoc->getLocation($id);
-        $data['sites'] = $dataSit->findAll();
-        $data['company'] = $dataCom->findAll();
-        $data['countries'] = $dataCou->findAll();
-        $data['departments'] = $dataDep->findAll();
-        $data['warehouses'] = $dataWhs->findAll();
-        $data['provinces'] = $dataSta->getByCountry($data['loc'][0]->loc_count);
-        $data['bprovinces'] = $dataSta->getByCountry($data['loc'][0]->whs_dcount);
-        $data['cities'] = $dataCit->getByState($data['loc'][0]->loc_prov);
-        $data['bcities'] = $dataCit->getByState($data['loc'][0]->whs_dprov);
+        $data['dept_name'] = $data['loc'][0]->dept_code ? $dataDep->getDepartment($data['loc'][0]->dept_code)[0]->dept_name : "";
+        $data['site_name'] = $data['loc'][0]->site_code ? $dataSit->getSite($data['loc'][0]->site_code)[0]->site_name : "";
+        $data['comp_name'] = $data['loc'][0]->comp_code ? $dataCom->getCompany($data['loc'][0]->comp_code)[0]->comp_name : "";
+        $data['whs_name'] = $data['loc'][0]->whs_code ? $dataWhs->getWarehouse($data['loc'][0]->whs_code)[0]->whs_name : "";
+        $data['count_name'] = $data['loc'][0]->loc_count ? $dataCou->getCountries($data['loc'][0]->loc_count)[0]->country_name : "";
+        $data['dcount_name'] = $data['loc'][0]->whs_dcount ? $dataCou->getCountries($data['loc'][0]->whs_dcount)[0]->country_name : "";
+        $data['prov_name'] = $data['loc'][0]->loc_prov ? $dataPro->getProvinces($data['loc'][0]->loc_prov)[0]->province_name : "";
+        $data['dprov_name'] = $data['loc'][0]->whs_dprov ? $dataPro->getProvinces($data['loc'][0]->whs_dprov)[0]->province_name : "";
+        $data['city_name'] = $data['loc'][0]->loc_city ? $dataCit->getCities($data['loc'][0]->loc_city)[0]->city_name : "";
+        $data['dcity_name'] = $data['loc'][0]->whs_dcity ? $dataCit->getCities($data['loc'][0]->whs_dcity)[0]->city_name : "";
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Location']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Location', 'pagetitle' => 'MasterData']);
 
         return view('location/edit', $data);            
     }

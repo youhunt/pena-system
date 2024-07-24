@@ -152,11 +152,6 @@
                     "searchable": true,
                 },
                 {
-                    "data": "site_code",
-                    "autoWidth": true,
-                    "searchable": true,
-                },
-                {
                     "data": "whs_code",
                     "autoWidth": true,
                     "searchable": true,
