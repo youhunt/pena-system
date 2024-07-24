@@ -87,12 +87,16 @@
                                             <label for="loc_count" class="col-sm-2 col-form-label"><?= lang('Location.loc_count'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="loc_count" name="loc_count" value="<?= old('loc_count') ? old('loc_count') : $loc[0]->loc_count ; ?>" />
-                                                <select class="form-control <?php if(session('errors.loc_count')) : ?>is-invalid<?php endif ?>" name="country" id="country" ></select>
+                                                <select class="form-control <?php if(session('errors.loc_count')) : ?>is-invalid<?php endif ?>" name="country" id="country" >
+                                                    <option selected="selected"><?= $count_name ?></option>
+                                                </select>
                                             </div>
                                             <label for="loc_prov" class="col-sm-2 col-form-label"><?= lang('Location.loc_prov'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="loc_prov" name="loc_prov" value="<?= old('loc_prov') ? old('loc_prov') : $loc[0]->loc_prov ; ?>" />
-                                                <select class="form-control <?php if(session('errors.loc_prov')) : ?>is-invalid<?php endif ?>" name="prov" id="prov" ></select>
+                                                <select class="form-control <?php if(session('errors.loc_prov')) : ?>is-invalid<?php endif ?>" name="prov" id="prov" >
+                                                    <option selected="selected"><?= $prov_name ?></option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -100,7 +104,9 @@
                                             <label for="loc_city" class="col-sm-2 col-form-label"><?= lang('Location.loc_city'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="loc_city" name="loc_city" value="<?= old('loc_city') ? old('loc_city') : $loc[0]->loc_city ; ?>" />
-                                                <select class="form-control <?php if(session('errors.loc_city')) : ?>is-invalid<?php endif ?>" name="city" id="city" ></select>
+                                                <select class="form-control <?php if(session('errors.loc_city')) : ?>is-invalid<?php endif ?>" name="city" id="city" >
+                                                    <option selected="selected"><?= $city_name ?></option>
+                                                </select>
                                             </div>
                                             <label for="loc_post" class="col-sm-2 col-form-label"><?= lang('Location.loc_post'); ?></label>
                                             <div class="col-sm-4">
@@ -141,12 +147,16 @@
                                             <label for="whs_dcount" class="col-sm-2 col-form-label"><?= lang('Location.whs_dcount'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_dcount" name="whs_dcount" value="<?= old('whs_dcount') ? old('whs_dcount') : $loc[0]->whs_dcount ; ?>" />
-                                                <select class="form-control <?php if(session('errors.whs_dcount')) : ?>is-invalid<?php endif ?>" name="dcountry" id="dcountry" ></select>
+                                                <select class="form-control <?php if(session('errors.whs_dcount')) : ?>is-invalid<?php endif ?>" name="dcountry" id="dcountry" >
+                                                    <option selected="selected"><?= $dcount_name ?></option>
+                                                </select>
                                             </div>
                                             <label for="whs_dprov" class="col-sm-2 col-form-label"><?= lang('Location.whs_dprov'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_dprov" name="whs_dprov" value="<?= old('whs_dprov') ? old('whs_dprov') : $loc[0]->whs_dprov ; ?>" />
-                                                <select class="form-control <?php if(session('errors.whs_dprov')) : ?>is-invalid<?php endif ?>" name="dprov" id="dprov" ></select>
+                                                <select class="form-control <?php if(session('errors.whs_dprov')) : ?>is-invalid<?php endif ?>" name="dprov" id="dprov" >
+                                                    <option selected="selected"><?= $dprov_name ?></option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -154,7 +164,9 @@
                                             <label for="whs_dcity" class="col-sm-2 col-form-label"><?= lang('Location.whs_dcity'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_dcity" name="whs_dcity" value="<?= old('whs_dcity') ? old('whs_dcity') : $loc[0]->whs_dcity ; ?>" />
-                                                <select class="form-control <?php if(session('errors.whs_dcity')) : ?>is-invalid<?php endif ?>" name="dcity" id="dcity" ></select>
+                                                <select class="form-control <?php if(session('errors.whs_dcity')) : ?>is-invalid<?php endif ?>" name="dcity" id="dcity" >
+                                                    <option selected="selected"><?= $dcity_name ?></option>
+                                                </select>
                                             </div>
                                             <label for="whs_dpost" class="col-sm-2 col-form-label"><?= lang('Location.whs_dpost'); ?></label>
                                             <div class="col-sm-4">
@@ -176,7 +188,7 @@
                                         <div class="row mb-4">
                                             <label for="whs_dphone3" class="col-sm-2 col-form-label"><?= lang('Location.whs_dphone3'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="text" class="form-control <?php if(session('errors.whs_dphone3')) : ?>is-invalid<?php endif ?>" id="whs_dphone3" placeholder="<?= lang('Location.whs_dphone3'); ?>" name="whs_dphone3" value="<?= old('whs_dphone3') ? old('whs_dphone3') : $loc[0]->whs_dphone3 ; ?>>">
+                                                <input type="text" class="form-control <?php if(session('errors.whs_dphone3')) : ?>is-invalid<?php endif ?>" id="whs_dphone3" placeholder="<?= lang('Location.whs_dphone3'); ?>" name="whs_dphone3" value="<?= old('whs_dphone3') ? old('whs_dphone3') : $loc[0]->whs_dphone3 ; ?>">
                                             </div>
                                             <label for="whs_dphone2" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">

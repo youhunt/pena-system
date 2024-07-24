@@ -37,6 +37,7 @@ class UOM extends BaseController
                 $row['uom_code'] = $list->uom_code;
                 $row['uom_desc'] = $list->uom_desc;
                 $row['uomdec'] = $list->uomdec;
+                $row['active'] = $list->active;
                 $row['no'] = '';
                 $data[] = $row;
             }
@@ -86,9 +87,8 @@ class UOM extends BaseController
                 'uom_code' => $this->request->getVar('uom_code'),
                 'uom_desc' => $this->request->getVar('uom_desc'),
                 'uomdec' => $this->request->getVar('uomdec'),
-                // 'create_date'=>  date("Y-m-d H:i:s"),
-                // 'create_by' =>  user()->username,
-                // 'active' => 1
+                'created_date'=>  date("Y-m-d H:i:s"),
+                'created_by' =>  user()->username,
             ];
             
             $model->save($data);
@@ -141,6 +141,8 @@ class UOM extends BaseController
                 'uom_code' => $this->request->getVar('uom_code'),
                 'uom_desc' => $this->request->getVar('uom_desc'),
                 'uomdec' => $this->request->getVar('uomdec'),
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
             ];
             
             $model->updateData($id, $data);
@@ -161,7 +163,22 @@ class UOM extends BaseController
         $id =  $this->request->getVar('id');
         $request = Services::request();
         $model = new UOMModel($request);
-        $model->deleteData($id);
+        $active =  $this->request->getVar('active');
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+                'deleted_at' => null,
+                'deleted_by' =>  null,
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
+                'active' => 1,
+            ];
+        }
+        $model->deleteData($id, $data);
         
         return redirect()->to(base_url('/uom/index'));
     }

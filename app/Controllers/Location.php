@@ -148,7 +148,7 @@ class Location extends BaseController
         $dataLoc = new LocationModel($request);
         $dataSit = new SiteModel($request);
         $dataCou = new CountriesModel($request);
-        $dataSta = new ProvincesModel($request);
+        $dataPro = new ProvincesModel($request);
         $dataCit = new CitiesModel($request);
         $dataDep = new DepartmentModel($request);
         $dataWhs = new WarehouseModel($request);
