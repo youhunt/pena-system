@@ -193,7 +193,7 @@ class UOM extends BaseController
         $builder = $db->table('uom');   
 
         $query = $builder->like('uom_desc', $this->request->getVar('q'))
-                    ->select('uom_code as id, uom_desc as text')
+                    ->select('id, uom_desc as text')
                     ->limit(30)->get();
         $data = $query->getResult();
         

@@ -267,7 +267,7 @@ return [
     'Location' => 'Location',
     'UOM' => 'Unit of Measure',
     'Item' => 'Item Master',
-    'ConvUOM' => 'Unit of Measure Conversion',
+    'ConvUOM' => 'Item Unit of Measure Conversion Master',
     'Setup' => 'Setup',
     'PrefNum' => 'Prefix & Numbering',
     'Country' => 'Country',

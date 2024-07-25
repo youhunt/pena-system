@@ -16,31 +16,45 @@
                                         </div>
 
                                         <div class="row mb-4">
-                                            <label for="site_code" class="col-sm-2 col-form-label"><?= lang('ConvUOM.site_code'); ?></label>
+                                            <label for="itemcode" class="col-sm-2 col-form-label"><?= lang('ConvUOM.itemcode'); ?></label>
                                             <div class="col-sm-6">
-                                                <input type="hidden" id="site_code" name="site_code" value="<?= old('site_code') ? old('site_code') : $loc[0]->site_code ; ?>" />
-                                                <select class="form-control <?php if(session('errors.site_code')) : ?>is-invalid<?php endif ?>" name="site" id="site" >
-                                                    <option selected="selected"><?= $site_name ?></option>
+                                                <input type="hidden" id="itemcode" name="itemcode" value="<?= old('itemcode') ? old('itemcode') : $loc[0]->itemcode; ?>" />
+                                                <input type="hidden" id="itemname" name="itemname" value="<?= old('itemname') ? old('itemname') : $itemname; ?>" />
+                                                <select class="form-control <?php if(session('errors.itemcode')) : ?>is-invalid<?php endif ?>" name="item" id="item" >
+                                                    <option selected="selected"><?= old('itemname') ? old('itemname') : $itemname; ?></option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="row mb-4">
-                                            <label for="dept_code" class="col-sm-2 col-form-label"><?= lang('ConvUOM.dept_code'); ?></label>
+                                            <label for="site" class="col-sm-2 col-form-label"><?= lang('ConvUOM.site'); ?></label>
                                             <div class="col-sm-6">
-                                                <input type="hidden" id="dept_code" name="dept_code" value="<?= old('dept_code') ? old('dept_code') : $loc[0]->dept_code ; ?>" />
-                                                <select class="form-control <?php if(session('errors.dept_code')) : ?>is-invalid<?php endif ?>" name="dept" id="dept" >
-                                                    <option selected="selected"><?= $dept_name ?></option>
+                                                <input type="hidden" id="site" name="site" value="<?= old('site') ? old('site') : $loc[0]->site; ?>" />
+                                                <input type="hidden" id="site_name" name="site_name" value="<?= old('site_name') ? old('site_name') : $site_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.site')) : ?>is-invalid<?php endif ?>" name="site_code" id="site_code" >
+                                                    <option selected="selected"><?= old('site_name') ? old('site_name') : $site_name; ?></option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="row mb-4">
-                                            <label for="whs_code" class="col-sm-2 col-form-label"><?= lang('ConvUOM.whs_code'); ?></label>
+                                            <label for="dept" class="col-sm-2 col-form-label"><?= lang('ConvUOM.dept'); ?></label>
                                             <div class="col-sm-6">
-                                                <input type="hidden" id="whs_code" name="whs_code" value="<?= old('whs_code') ? old('whs_code') : $loc[0]->whs_code ; ?>" />
-                                                <select class="form-control <?php if(session('errors.whs_code')) : ?>is-invalid<?php endif ?>" name="whs" id="whs" >
-                                                    <option selected="selected"><?= $whs_name ?></option>
+                                                <input type="hidden" id="dept" name="dept" value="<?= old('dept') ? old('dept') : $loc[0]->dept; ?>" />
+                                                <input type="hidden" id="dept_name" name="dept_name" value="<?= old('dept_name') ? old('dept_name') : $dept_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.dept')) : ?>is-invalid<?php endif ?>" name="dept_code" id="dept_code" >
+                                                    <option selected="selected"><?= old('dept_name') ? old('dept_name') : $dept_name; ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="whs" class="col-sm-2 col-form-label"><?= lang('ConvUOM.whs'); ?></label>
+                                            <div class="col-sm-6">
+                                                <input type="hidden" id="whs" name="whs" value="<?= old('whs') ? old('whs') : $loc[0]->whs; ?>" />
+                                                <input type="hidden" id="whs_name" name="whs_name" value="<?= old('whs_name') ? old('whs_name') : $lwhs_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.whs')) : ?>is-invalid<?php endif ?>" name="whs_code" id="whs_code" >
+                                                    <option selected="selected"><?= old('whs_name') ? old('whs_name') : $whs_name; ?></option>
                                                 </select>
                                             </div>
                                         </div>
@@ -48,18 +62,26 @@
                                         <div class="row mb-4">
                                             <label for="fr_uom" class="col-sm-2 col-form-label"><?= lang('ConvUOM.fr_uom'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="text" class="form-control <?php if(session('errors.fr_uom')) : ?>is-invalid<?php endif ?>" id="fr_uom" placeholder="<?= lang('ConvUOM.fr_uom'); ?>" name="fr_uom" value="<?= old('fr_uom') ? old('fr_uom') : $convuom[0]->fr_uom; ?>">
+                                                <input type="hidden" id="fr_uom" name="fr_uom" value="<?= old('fr_uom') ? old('fr_uom') : $loc[0]->fr_uom; ?>" />
+                                                <input type="hidden" id="fr_uom_name" name="fr_uom_name" value="<?= old('fr_uom_name') ? old('fr_uom_name') : $fr_uom_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.fr_uom')) : ?>is-invalid<?php endif ?>" name="fruom" id="fruom" >
+                                                    <option selected="selected"><?= old('fr_uom_name') ? old('fr_uom_name') : $fr_uom_name; ?></option>
+                                                </select>
                                             </div>
                                             <label for="to_uom" class="col-sm-2 col-form-label"><?= lang('ConvUOM.to_uom'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="text" class="form-control <?php if(session('errors.to_uom')) : ?>is-invalid<?php endif ?>" id="comp_code" placeholder="<?= lang('ConvUOM.to_uom'); ?>" name="to_uom" value="<?= old('to_uom') ? old('to_uom') : $convuom[0]->to_uom; ?>">
+                                                <input type="hidden" id="to_uom" name="to_uom" value="<?= old('to_uom') ? old('to_uom') : $loc[0]->to_uom; ?>" />
+                                                <input type="hidden" id="to_uom_name" name="to_uom_name" value="<?= old('to_uom_name') ? old('to_uom_name') : $to_uom_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.to_uom')) : ?>is-invalid<?php endif ?>" name="touom" id="touom" >
+                                                    <option selected="selected"><?= old('to_uom_name') ? old('to_uom_name') : $to_uom_name; ?></option>
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class="row mb-4">
                                             <label for="value" class="col-sm-2 col-form-label"><?= lang('ConvUOM.value'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('ConvUOM.value'); ?>" name="value" value="<?= old('value') ? old('value') : $convuom[0]->value; ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('ConvUOM.value'); ?>" name="value" value="<?=  old('value'); ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">
@@ -90,17 +112,16 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        $('#site').select2({
+        $('#item').select2({
             placeholder: '',
             minimumInputLength: 1,
             ajax: {
-                url: '<?= base_url('/site/getByCompany'); ?>',
+                url: '<?= base_url('/item/getAll'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
                     return {
                         q: params.term, // search term
-                        company_id: $("#comp_code").val(),                     
                         page: params.page
                     };
                 },
@@ -112,21 +133,21 @@
                 cache: true
             }
         }).on('select2:select', function (evt) {
-            var data = $("#site option:selected").val();
-            $("#site_code").val(data);
+            var data = $("#item option:selected").val();
+            $("#itemcode").val(data);
+            $("#itemname").val($("#item option:selected").text());
         });
 
-        $('#dept').select2({
+        $('#site_code').select2({
             placeholder: '',
             minimumInputLength: 1,
             ajax: {
-                url: '<?= base_url('/department/getBySite'); ?>',
+                url: '<?= base_url('/site/getAll'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
                     return {
                         q: params.term, // search term
-                        site_id: $("#site_code").val(),                   
                         page: params.page
                     };
                 },
@@ -138,21 +159,21 @@
                 cache: true
             }
         }).on('select2:select', function (evt) {
-            var data = $("#dept option:selected").val();
-            $("#dept_code").val(data);
+            var data = $("#site_code option:selected").val();
+            $("#site").val(data);
+            $("#site_name").val($("#site_code option:selected").text());
         });
 
-        $('#whs').select2({
+        $('#dept_code').select2({
             placeholder: '',
             minimumInputLength: 1,
             ajax: {
-                url: '<?= base_url('/warehouse/getByDepartment'); ?>',
+                url: '<?= base_url('/department/getAll'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
                     return {
                         q: params.term, // search term
-                        dept_id: $("#dept_code").val(),                   
                         page: params.page
                     };
                 },
@@ -164,8 +185,35 @@
                 cache: true
             }
         }).on('select2:select', function (evt) {
-            var data = $("#whs option:selected").val();
-            $("#whs_code").val(data);
+            var data = $("#dept_code option:selected").val();
+            $("#dept").val(data);
+            $("#dept_name").val($("#dept_code option:selected").text());
+        });
+
+        $('#whs_code').select2({
+            placeholder: '',
+            minimumInputLength: 1,
+            ajax: {
+                url: '<?= base_url('/warehouse/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            }
+        }).on('select2:select', function (evt) {
+            var data = $("#whs_code option:selected").val();
+            $("#whs").val(data);
+            $("#whs_name").val($("#whs_code option:selected").text());
         });
         
         $('#fruom').select2({
@@ -191,6 +239,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#fruom option:selected").val();
             $("#fr_uom").val(data);
+            $("#fr_uom_name").val($("#fruom option:selected").text());
         });
 
         $('#touom').select2({
@@ -216,6 +265,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#touom option:selected").val();
             $("#to_uom").val(data);
+            $("#to_uom_name").val($("#touom option:selected").text());
         });
 
     });

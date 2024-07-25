@@ -68,7 +68,7 @@
                                             </div>
                                             <label for="item_price" class="col-sm-2 col-form-label"><?= lang('Item.item_price'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" value="<?= old('item_price') ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" style="text-align:right;" value="<?= old('item_price') ?>">
                                             </div>
                                         </div>
                                         
@@ -77,18 +77,18 @@
                                         <div class="row mb-4">
                                             <label for="item_length" class="col-sm-2 col-form-label"><?= lang('Item.item_length'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" value="<?= old('item_length') ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" style="text-align:right;" value="<?= old('item_length') ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label"><?= lang('Item.item_width'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" value="<?= old('item_width') ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" style="text-align:right;" value="<?= old('item_width') ?>">
                                             </div>
                                         </div>
 
                                         <div class="row mb-4">
                                             <label for="item_height" class="col-sm-2 col-form-label"><?= lang('Item.item_height'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" value="<?= old('item_height') ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" style="text-align:right;" value="<?= old('item_height') ?>">
                                             </div>
                                             <label for="item_diameter" class="col-sm-2 col-form-label"><?= lang('Item.item_diameter'); ?></label>
                                             <div class="col-sm-4">
@@ -162,6 +162,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        
         $('#uom').select2({
             placeholder: '<?= lang('Item.stockuom'); ?>',
             minimumInputLength: 1,

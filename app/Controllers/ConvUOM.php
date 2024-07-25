@@ -40,6 +40,7 @@ class ConvUOM extends BaseController
                 $row['fr_uom'] = $list->fr_uom;
                 $row['to_uom'] = $list->to_uom;
                 $row['value'] = $list->value;
+                $row['active'] = $list->active;
                 $row['no'] = '';
                 $data[] = $row;
             }
@@ -72,9 +73,13 @@ class ConvUOM extends BaseController
     public function save()
     {
         $rules = [
-            'fr_uom'      => 'required',
-            'to_uom'      => 'required',
-            'value'      => 'required',
+            'itemcode' => 'required',
+            'site' => 'required',
+            'dept' => 'required',
+            'whs' => 'required',
+            'fr_uom' => 'required',
+            'to_uom' => 'required',
+            'value' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -120,6 +125,11 @@ class ConvUOM extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'convuom';
         $data['convuom'] = $dataConvUOM->getConvUOM($id);
+        $data['dept_name'] = $data['convuom'][0]->dept ? $dataDep->getDepartment($data['convuom'][0]->dept)[0]->dept_name : "";
+        $data['site_name'] = $data['convuom'][0]->site ? $dataSit->getSite($data['convuom'][0]->site)[0]->site_name : "";
+        $data['whs_name'] = $data['convuom'][0]->whs ? $dataWhs->getWarehouse($data['convuom'][0]->whs)[0]->whs_name : "";
+        $data['fr_uom_name'] = $data['convuom'][0]->fr_uom ? $dataWhs->getWarehouse($data['convuom'][0]->fr_uom)[0]->uom_desc : "";
+        $data['to_uom_name'] = $data['convuom'][0]->to_uom ? $dataWhs->getWarehouse($data['convuom'][0]->to_uom)[0]->uom_desc : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'ConvUOM']);
         $data['page_title'] = view('partials/page-title', ['title' => 'ConvUOM', 'pagetitle' => 'MasterData']);
 
@@ -130,9 +140,13 @@ class ConvUOM extends BaseController
     {
         $id =  $this->request->getVar('id');
         $rules = [
-            'fr_uom'      => 'required',
-            'to_uom'      => 'required',
-            'value'      => 'required',
+            'itemcode' => 'required',
+            'site' => 'required',
+            'dept' => 'required',
+            'whs' => 'required',
+            'fr_uom' => 'required',
+            'to_uom' => 'required',
+            'value' => 'required',
         ];
     
         if (! $this->validate($rules))

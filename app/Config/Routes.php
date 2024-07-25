@@ -94,6 +94,7 @@ $routes->get('site/edit/(:segment)', 'Site::edit/$1', ['filter' => 'role:adminis
 $routes->post('site/save', 'Site::save', ['filter' => 'role:administrator']);
 $routes->post('site/update', 'Site::update', ['filter' => 'role:administrator']);
 $routes->post('site/delete', 'Site::delete', ['filter' => 'role:administrator']);
+$routes->get('site/getAll?(:any)', 'Site::getAll', ['filter' => 'role:administrator']);
 
 $routes->get('department', 'Department::index', ['filter' => 'role:administrator']);
 $routes->get('department/index', 'Department::index', ['filter' => 'role:administrator']);
@@ -104,6 +105,7 @@ $routes->post('department/save', 'Department::save', ['filter' => 'role:administ
 $routes->post('department/update', 'Department::update', ['filter' => 'role:administrator']);
 $routes->post('department/delete', 'Department::delete', ['filter' => 'role:administrator']);
 $routes->get('department/getBySite?(:any)', 'Department::getBySite', ['filter' => 'role:administrator']);
+$routes->get('department/getAll?(:any)', 'Department::getAll', ['filter' => 'role:administrator']);
 
 $routes->get('warehouse', 'Warehouse::index', ['filter' => 'role:administrator']);
 $routes->get('warehouse/index', 'Warehouse::index', ['filter' => 'role:administrator']);

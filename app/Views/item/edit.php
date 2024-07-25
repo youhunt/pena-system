@@ -57,7 +57,7 @@
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="stockuom" name="stockuom" value="<?= old('stockuom') ? old('stockuom') : $item[0]->stockuom  ; ?>" />
                                                 <select class="form-control <?php if(session('errors.stockuom')) : ?>is-invalid<?php endif ?>" name="uom" id="uom" >
-                                                    <option selected="selected"><?= old('stockuom') ? old('stockuom') : $item[0]->stockuom  ; ?></option>
+                                                    <option selected="selected"><?= old('uom') ? old('uom') : $uom  ; ?></option>
                                                 </select>
                                             </div>
                                         </div>
@@ -67,12 +67,12 @@
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="stockwhs" name="stockwhs" value="<?= old('stockwhs') ? old('stockwhs') : $item[0]->stockwhs  ; ?>" />
                                                 <select class="form-control <?php if(session('errors.stockwhs')) : ?>is-invalid<?php endif ?>" name="whs" id="whs" >
-                                                    <option selected="selected"><?= old('stockwhs') ? old('stockwhs') : $item[0]->stockwhs  ; ?></option>
+                                                    <option selected="selected"><?= old('whs') ? old('whs') : $whs  ; ?></option>
                                                 </select>
                                             </div>
                                             <label for="item_price" class="col-sm-2 col-form-label"><?= lang('Item.item_price'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" value="<?= $item[0]->item_price ? $item[0]->item_price :  old('item_price'); ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" style="text-align:right;" value="<?= $item[0]->item_price ? $item[0]->item_price :  old('item_price'); ?>">
                                             </div>
                                         </div>
                                         
@@ -81,22 +81,22 @@
                                         <div class="row mb-4">
                                             <label for="item_length" class="col-sm-2 col-form-label"><?= lang('Item.item_length'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" value="<?= $item[0]->item_length ? $item[0]->item_length :  old('item_length'); ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" style="text-align:right;" value="<?= $item[0]->item_length ? $item[0]->item_length :  old('item_length'); ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label"><?= lang('Item.item_width'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" value="<?= $item[0]->item_width ? $item[0]->item_width :  old('item_width'); ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" style="text-align:right;" value="<?= $item[0]->item_width ? $item[0]->item_width :  old('item_width'); ?>">
                                             </div>
                                         </div>
 
                                         <div class="row mb-4">
                                             <label for="item_height" class="col-sm-2 col-form-label"><?= lang('Item.item_height'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" value="<?= $item[0]->item_height ? $item[0]->item_height :  old('item_height'); ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" style="text-align:right;" value="<?= $item[0]->item_height ? $item[0]->item_height :  old('item_height'); ?>">
                                             </div>
                                             <label for="item_diameter" class="col-sm-2 col-form-label"><?= lang('Item.item_diameter'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_diameter')) : ?>is-invalid<?php endif ?>" id="item_diameter" placeholder="<?= lang('Item.item_diameter'); ?>" name="item_diameter" value="<?= $item[0]->item_diameter ? $item[0]->item_diameter :  old('item_diameter'); ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.item_diameter')) : ?>is-invalid<?php endif ?>" id="item_diameter" placeholder="<?= lang('Item.item_diameter'); ?>" name="item_diameter" style="text-align:right;" value="<?= $item[0]->item_diameter ? $item[0]->item_diameter :  old('item_diameter'); ?>">
                                             </div>
                                         </div>
                                         <h5 class="card-title mb-4"><?= lang('Item.Grouping'); ?></h5>
@@ -167,6 +167,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        
         $('#uom').select2({
             placeholder: '<?= lang('Item.stockuom'); ?>',
             minimumInputLength: 1,

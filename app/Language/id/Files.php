@@ -268,7 +268,7 @@ return [
     'Location' => 'Lokasi',
     'UOM' => 'Satuan Ukuran',
     'Item' => 'Item',
-    'ConvUOM' => 'Konversi Satuan Ukuran',
+    'ConvUOM' => 'Konversi Satuan Ukuran Item',
     'Item' => 'Item',
     'PrefNum' => 'Prefix & Numbering',
     'Country' => 'Negara',

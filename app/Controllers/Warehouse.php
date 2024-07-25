@@ -282,7 +282,7 @@ class Warehouse extends BaseController
         $builder = $db->table('warehouse_master');   
 
         $query = $builder->like('whs_name', $this->request->getVar('q'))
-                    ->select('whs_code as id, whs_name as text')
+                    ->select('id, whs_name as text')
                     ->limit(30)->get();
         $data = $query->getResult();
         

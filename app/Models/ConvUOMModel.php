@@ -12,13 +12,24 @@ class ConvUOMModel extends Model
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
-        'id', 'fr_uom', 'to_uom', 'value',
+        'id',
+        'itemcode',
+        'site',
+        'dept',
+        'whs',
+        'fr_uom',
+        'to_uom',
+        'value',
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
-        'fr_uom'      => 'required',
-        'to_uom'      => 'required',
-        'value'      => 'required',       
+        'itemcode' => 'required',
+        'site' => 'required',
+        'dept' => 'required',
+        'whs' => 'required',
+        'fr_uom' => 'required',
+        'to_uom' => 'required',
+        'value' => 'required',     
     ];
 
     protected $column_order = ['id', 'fr_uom', 'to_uom', 'value',];
