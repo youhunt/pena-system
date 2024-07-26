@@ -3,7 +3,13 @@
 namespace App\Controllers;
 
 use App\Models\ConvUOMModel;
+use App\Models\UOMModel;
+use App\Models\WarehouseModel;
+use App\Models\DepartmentModel;
+use App\Models\SiteModel;
+use App\Models\ItemModel;
 use Config\Services;
+
 
 class ConvUOM extends BaseController
 {
@@ -24,7 +30,12 @@ class ConvUOM extends BaseController
 
         $request = Services::request();
         $datatable = new ConvUOMModel($request);
-        
+        $dataUOM = new UOMModel($request);
+        $dataSit = new SiteModel($request);
+        $dataDep = new DepartmentModel($request);
+        $dataWhs = new WarehouseModel($request);
+        $dataItem = new ItemModel($request);
+
         if ($request->getMethod(true) === 'POST') {
             $lists = $datatable->getDatatables();
             $data = [];
@@ -33,12 +44,13 @@ class ConvUOM extends BaseController
             foreach ($lists as $list) {
                 $no++;
                 $row = [];
-                $row['itemcode'] = $list->itemcode;
-                $row['site'] = $list->site;
-                $row['dept'] = $list->dept;
-                $row['whs'] = $list->whs;
-                $row['fr_uom'] = $list->fr_uom;
-                $row['to_uom'] = $list->to_uom;
+                $row['id'] = $list->id;
+                $row['itemcode'] = $list->itemcode ? $dataItem->getItem($list->itemcode)[0]->item_name_1 : "";;
+                $row['dept'] = $list->dept ? $dataDep->getDepartment($list->dept)[0]->dept_name : "";
+                $row['site'] = $list->site ? $dataSit->getSite($list->site)[0]->site_name : "";
+                $row['whs'] = $list->whs ? $dataWhs->getWarehouse($list->whs)[0]->whs_name : "";
+                $row['fr_uom'] = $list->fr_uom ? $dataUOM->getUOM($list->fr_uom)[0]->uom_desc : "";
+                $row['to_uom'] = $list->to_uom ? $dataUOM->getUOM($list->to_uom)[0]->uom_desc : "";
                 $row['value'] = $list->value;
                 $row['active'] = $list->active;
                 $row['no'] = '';
@@ -118,7 +130,11 @@ class ConvUOM extends BaseController
     {        
         $request = Services::request();
         $dataConvUOM = new ConvUOMModel($request);
-    
+        $dataUOM = new UOMModel($request);
+        $dataSit = new SiteModel($request);
+        $dataDep = new DepartmentModel($request);
+        $dataWhs = new WarehouseModel($request);
+
         $data = [            
             'title' => 'Update ConvUOM',
         ];
@@ -128,8 +144,8 @@ class ConvUOM extends BaseController
         $data['dept_name'] = $data['convuom'][0]->dept ? $dataDep->getDepartment($data['convuom'][0]->dept)[0]->dept_name : "";
         $data['site_name'] = $data['convuom'][0]->site ? $dataSit->getSite($data['convuom'][0]->site)[0]->site_name : "";
         $data['whs_name'] = $data['convuom'][0]->whs ? $dataWhs->getWarehouse($data['convuom'][0]->whs)[0]->whs_name : "";
-        $data['fr_uom_name'] = $data['convuom'][0]->fr_uom ? $dataWhs->getWarehouse($data['convuom'][0]->fr_uom)[0]->uom_desc : "";
-        $data['to_uom_name'] = $data['convuom'][0]->to_uom ? $dataWhs->getWarehouse($data['convuom'][0]->to_uom)[0]->uom_desc : "";
+        $data['fr_uom_name'] = $data['convuom'][0]->fr_uom ? $dataUom->getUOM($data['convuom'][0]->fr_uom)[0]->uom_desc : "";
+        $data['to_uom_name'] = $data['convuom'][0]->to_uom ? $dataUom->getUOM($data['convuom'][0]->to_uom)[0]->uom_desc : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'ConvUOM']);
         $data['page_title'] = view('partials/page-title', ['title' => 'ConvUOM', 'pagetitle' => 'MasterData']);
 
