@@ -1,7 +1,8 @@
 <?= $this->extend('template/index') ?>            
  
 <?= $this->section('page-content') ?>
-                    <form action="<?= base_url(); ?>convuom/save" class="user" method="post">
+                    <form action="<?= base_url(); ?>itmuomconv/update" class="user" method="post">
+                        <input type="hidden" name="id" value="<?= $itmuomconv[0]->id; ?>" ?>
 
                         <div class="row">
                             <div class="col-xl-12">
@@ -15,28 +16,72 @@
                                         </div>
 
                                         <div class="row mb-4">
-                                            <label for="fr_uom" class="col-sm-2 col-form-label"><?= lang('ConvUOM.fr_uom'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="hidden" id="fr_uom" name="fr_uom" value="<?= old('fr_uom'); ?>" />
-                                                <input type="hidden" id="fr_uom_name" name="fr_uom_name" value="<?= old('fr_uom_name'); ?>" />
-                                                <select class="form-control <?php if(session('errors.fr_uom')) : ?>is-invalid<?php endif ?>" name="fruom" id="fruom" >
-                                                    <option selected="selected"><?= old('fr_uom_name'); ?></option>
-                                                </select>
-                                            </div>
-                                            <label for="to_uom" class="col-sm-2 col-form-label"><?= lang('ConvUOM.to_uom'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="hidden" id="to_uom" name="to_uom" value="<?= old('to_uom'); ?>" />
-                                                <input type="hidden" id="to_uom_name" name="to_uom_name" value="<?= old('to_uom_name'); ?>" />
-                                                <select class="form-control <?php if(session('errors.to_uom')) : ?>is-invalid<?php endif ?>" name="touom" id="touom" >
-                                                    <option selected="selected"><?= old('to_uom_name'); ?></option>
+                                            <label for="itemcode" class="col-sm-2 col-form-label"><?= lang('ItmUOMConv.itemcode'); ?></label>
+                                            <div class="col-sm-6">
+                                                <input type="hidden" id="itemcode" name="itemcode" value="<?= old('itemcode') ? old('itemcode') : $itmuomconv[0]->itemcode; ?>" />
+                                                <input type="hidden" id="itemname" name="itemname" value="<?= old('itemname') ? old('itemname') : $itemname; ?>" />
+                                                <select class="form-control <?php if(session('errors.itemcode')) : ?>is-invalid<?php endif ?>" name="item" id="item" >
+                                                    <option selected="selected"><?= old('itemname') ? old('itemname') : $itemname; ?></option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="row mb-4">
-                                            <label for="value" class="col-sm-2 col-form-label"><?= lang('ConvUOM.value'); ?></label>
+                                            <label for="site" class="col-sm-2 col-form-label"><?= lang('ItmUOMConv.site'); ?></label>
+                                            <div class="col-sm-6">
+                                                <input type="hidden" id="site" name="site" value="<?= old('site') ? old('site') : $itmuomconv[0]->site; ?>" />
+                                                <input type="hidden" id="site_name" name="site_name" value="<?= old('site_name') ? old('site_name') : $site_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.site')) : ?>is-invalid<?php endif ?>" name="site_code" id="site_code" >
+                                                    <option selected="selected"><?= old('site_name') ? old('site_name') : $site_name; ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="dept" class="col-sm-2 col-form-label"><?= lang('ItmUOMConv.dept'); ?></label>
+                                            <div class="col-sm-6">
+                                                <input type="hidden" id="dept" name="dept" value="<?= old('dept') ? old('dept') : $itmuomconv[0]->dept; ?>" />
+                                                <input type="hidden" id="dept_name" name="dept_name" value="<?= old('dept_name') ? old('dept_name') : $dept_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.dept')) : ?>is-invalid<?php endif ?>" name="dept_code" id="dept_code" >
+                                                    <option selected="selected"><?= old('dept_name') ? old('dept_name') : $dept_name; ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="whs" class="col-sm-2 col-form-label"><?= lang('ItmUOMConv.whs'); ?></label>
+                                            <div class="col-sm-6">
+                                                <input type="hidden" id="whs" name="whs" value="<?= old('whs') ? old('whs') : $itmuomconv[0]->whs; ?>" />
+                                                <input type="hidden" id="whs_name" name="whs_name" value="<?= old('whs_name') ? old('whs_name') : $whs_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.whs')) : ?>is-invalid<?php endif ?>" name="whs_code" id="whs_code" >
+                                                    <option selected="selected"><?= old('whs_name') ? old('whs_name') : $whs_name; ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="fr_uom" class="col-sm-2 col-form-label"><?= lang('ItmUOMConv.fr_uom'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('ConvUOM.value'); ?>" name="value" value="<?=  old('value'); ?>">
+                                                <input type="hidden" id="fr_uom" name="fr_uom" value="<?= old('fr_uom') ? old('fr_uom') : $itmuomconv[0]->fr_uom; ?>" />
+                                                <input type="hidden" id="fr_uom_name" name="fr_uom_name" value="<?= old('fr_uom_name') ? old('fr_uom_name') : $fr_uom_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.fr_uom')) : ?>is-invalid<?php endif ?>" name="fruom" id="fruom" >
+                                                    <option selected="selected"><?= old('fr_uom_name') ? old('fr_uom_name') : $fr_uom_name; ?></option>
+                                                </select>
+                                            </div>
+                                            <label for="to_uom" class="col-sm-2 col-form-label"><?= lang('ItmUOMConv.to_uom'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="to_uom" name="to_uom" value="<?= old('to_uom') ? old('to_uom') : $itmuomconv[0]->to_uom; ?>" />
+                                                <input type="hidden" id="to_uom_name" name="to_uom_name" value="<?= old('to_uom_name') ? old('to_uom_name') : $to_uom_name; ?>" />
+                                                <select class="form-control <?php if(session('errors.to_uom')) : ?>is-invalid<?php endif ?>" name="touom" id="touom" >
+                                                    <option selected="selected"><?= old('to_uom_name') ? old('to_uom_name') : $to_uom_name; ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label for="value" class="col-sm-2 col-form-label"><?= lang('ItmUOMConv.value'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="number" class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('ItmUOMConv.value'); ?>" name="value" value="<?=  old('value') ? : $itmuomconv[0]->value; ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">
@@ -59,7 +104,7 @@
                             <!-- end col -->
                         </div>
                     </form>
-                    
+ 
 <?= $this->endSection() ?>   
 
 <?= $this->section('script-js') ?>    
@@ -172,7 +217,7 @@
         });
         
         $('#fruom').select2({
-            placeholder: '<?= lang('ConvUOM.fr_uom'); ?>',
+            placeholder: '<?= lang('ItmUOMConv.fr_uom'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/uom/getAll'); ?>',
@@ -198,7 +243,7 @@
         });
 
         $('#touom').select2({
-            placeholder: '<?= lang('ConvUOM.to_uom'); ?>',
+            placeholder: '<?= lang('ItmUOMConv.to_uom'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/uom/getAll'); ?>',

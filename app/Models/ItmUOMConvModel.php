@@ -5,20 +5,28 @@ namespace App\Models;
 use CodeIgniter\Model;
 use CodeIgniter\HTTP\RequestInterface;
 
-class ConvUOMModel extends Model
+class ItmUOMConvModel extends Model
 {
 
-    protected $table          = 'uomconv';
+    protected $table          = 'item_uomconv';
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
         'id',
+        'itemcode',
+        'site',
+        'dept',
+        'whs',
         'fr_uom',
         'to_uom',
         'value',
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
+        'itemcode' => 'required',
+        'site' => 'required',
+        'dept' => 'required',
+        'whs' => 'required',
         'fr_uom' => 'required',
         'to_uom' => 'required',
         'value' => 'required',     
@@ -86,7 +94,7 @@ class ConvUOMModel extends Model
         return $tbl_storage->countAllResults();
     }
 
-    public function getConvUOM($id = '')
+    public function getItmUOMConv($id = '')
     {
         $this->dt->where('id', $id);
         $query = $this->dt->get();

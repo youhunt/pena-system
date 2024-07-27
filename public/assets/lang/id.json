@@ -192,7 +192,7 @@
   "t-department": "Departemen",
   "t-warehouse": "Gudang",
   "t-location": "Lokasi",
-  "t-prefnum": "Prefix & Numbering",
+  "t-transactioncode": "Transaction Code",
   "t-country": "Negara",
   "t-city": "Kota",
   "t-postal code": "Kode Pos",
@@ -224,7 +224,8 @@
   "t-costing": "Costing",
   "t-itemcost": "Item Cost",
   "t-gl": "GL",
-  "t-column": "Column",
+  "t-column": "Kolom",
   "t-accno": "Account No.",
-  "t-coa": "Chart of Account"
+  "t-coa": "Chart of Account",
+  "t-costtype": "Tipe Biaya"
 }

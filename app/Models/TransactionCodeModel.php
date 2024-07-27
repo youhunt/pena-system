@@ -5,27 +5,49 @@ namespace App\Models;
 use CodeIgniter\Model;
 use CodeIgniter\HTTP\RequestInterface;
 
-class ConvUOMModel extends Model
+class TransactionCodeModel extends Model
 {
 
-    protected $table          = 'uomconv';
+    protected $table          = 'transaction_code';
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
         'id',
-        'fr_uom',
-        'to_uom',
-        'value',
+        'company',
+        'site',
+        'dept',
+        'transcode',
+        'transname',
+        'module',
+        'transtype',
+        'transnumber',
+        'transdescription',
+        'glcode', 
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
-        'fr_uom' => 'required',
-        'to_uom' => 'required',
-        'value' => 'required',     
+        'company' => 'required',
+        'site' => 'required',
+        'dept' => 'required',
+        'transcode' => 'required|is_unique[transaction_code.transcode]',
+        'transname' => 'required',
+        'module' => 'required',
+        'transtype' => 'required',
     ];
 
-    protected $column_order = ['id', 'fr_uom', 'to_uom', 'value',];
-    protected $column_search = ['fr_uom', 'to_uom', 'value',];
+    protected $column_order = [
+        'id',
+        'company',
+        'site',
+        'dept',
+        'transcode',
+    ];
+    protected $column_search = [
+        'company',
+        'site',
+        'dept',
+        'transcode',
+    ];
     protected $order = ['id' => 'ASC'];
     protected $request;
     protected $db;
@@ -86,7 +108,7 @@ class ConvUOMModel extends Model
         return $tbl_storage->countAllResults();
     }
 
-    public function getConvUOM($id = '')
+    public function getTransactionCode($id = '')
     {
         $this->dt->where('id', $id);
         $query = $this->dt->get();

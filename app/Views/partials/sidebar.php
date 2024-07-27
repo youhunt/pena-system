@@ -23,7 +23,7 @@
                         <span key="t-setup"><?= lang('Files.Setup') ?></span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="/prefix" key="t-prefnum"><?= lang('Files.PrefNum') ?></a></li>
+                        <li><a href="/transactioncode" key="t-transactioncode"><?= lang('Files.TransactionCode') ?></a></li>
                         <li><a href="/countries" key="t-countries"><?= lang('Files.Countries') ?></a></li>
                         <li><a href="/provinces" key="t-provinces"><?= lang('Files.Provinces') ?></a></li>
                         <li><a href="/cities" key="t-cities"><?= lang('Files.Cities') ?></a></li>
@@ -33,7 +33,7 @@
                         <li><a href="/warehouse" key="t-warehouse"><?= lang('Files.Warehouse') ?></a></li>
                         <li><a href="/location" key="t-location"><?= lang('Files.Location') ?></a></li>
                         <li><a href="/uom" key="t-uom"><?= lang('Files.UOM') ?></a></li>
-                        <!-- <li><a href="/convuom" key="t-convuom"><?= lang('Files.ConvUOM') ?></a></li> -->
+                        <li><a href="/convuom" key="t-convuom"><?= lang('Files.ConvUOM') ?></a></li>
                     </ul>
                 </li>
                 <li>
@@ -46,8 +46,7 @@
                             <a href="javascript: void(0);" class="has-arrow" key="t-master"><?= lang('Files.Master') ?></a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="/item" key="t-item"><?= lang('Files.Item') ?></a></li>
-                                <li><a href="/convuom" key="t-convuom"><?= lang('Files.ConvUOM') ?></a></li>
-                                <!-- <li><a href="/itemuom" key="t-itemuom"><?= lang('Files.ItemUoM') ?></a></li> -->
+                                <li><a href="/itmuomconv" key="t-itmuomconv"><?= lang('Files.ItmUOMConv') ?></a></li>
                             </ul>
                         </li>
                         <li>
@@ -106,6 +105,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-master"><?= lang('Files.Master') ?></a>
                             <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="/costtype" key="t-costtype"><?= lang('Files.CostType') ?></a></li>
                                 <li><a href="/itemcost" key="t-itemcost"><?= lang('Files.ItemCost') ?></a></li>
                             </ul>
                         </li>

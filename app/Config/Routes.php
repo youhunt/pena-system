@@ -118,6 +118,16 @@ $routes->post('warehouse/delete', 'Warehouse::delete', ['filter' => 'role:admini
 $routes->get('warehouse/getAll?(:any)', 'Warehouse::getAll', ['filter' => 'role:administrator']);
 $routes->get('warehouse/getByDepartment?(:any)', 'Warehouse::getByDepartment', ['filter' => 'role:administrator']);
 
+$routes->get('transactioncode', 'TransactionCode::index', ['filter' => 'role:administrator']);
+$routes->get('transactioncode/index', 'TransactionCode::index', ['filter' => 'role:administrator']);
+$routes->get('transactioncode/add', 'TransactionCode::add', ['filter' => 'role:administrator']);
+$routes->post('transactioncode/getTransactionCode', 'TransactionCode::getTransactionCode', ['filter' => 'role:administrator']);
+$routes->get('transactioncode/edit/(:segment)', 'TransactionCode::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('transactioncode/save', 'TransactionCode::save', ['filter' => 'role:administrator']);
+$routes->post('transactioncode/update', 'TransactionCode::update', ['filter' => 'role:administrator']);
+$routes->post('transactioncode/delete', 'TransactionCode::delete', ['filter' => 'role:administrator']);
+$routes->get('transactioncode/getAll?(:any)', 'TransactionCode::getAll', ['filter' => 'role:administrator']);
+
 $routes->get('location', 'Location::index', ['filter' => 'role:administrator']);
 $routes->get('location/index', 'Location::index', ['filter' => 'role:administrator']);
 $routes->get('location/add', 'Location::add', ['filter' => 'role:administrator']);
@@ -136,3 +146,23 @@ $routes->post('item/save', 'Item::save', ['filter' => 'role:administrator']);
 $routes->post('item/update', 'Item::update', ['filter' => 'role:administrator']);
 $routes->post('item/delete', 'Item::delete', ['filter' => 'role:administrator']);
 $routes->get('item/getAll?(:any)', 'Item::getAll', ['filter' => 'role:administrator']);
+
+$routes->get('itmuomconv', 'ItmUOMConv::index', ['filter' => 'role:administrator']);
+$routes->get('itmuomconv/index', 'ItmUOMConv::index', ['filter' => 'role:administrator']);
+$routes->post('itmuomconv/getItmUOMConv', 'ItmUOMConv::getItmUOMConv', ['filter' => 'role:administrator']);
+$routes->get('itmuomconv/add', 'ItmUOMConv::add', ['filter' => 'role:administrator']);
+$routes->get('itmuomconv/edit/(:segment)', 'ItmUOMConv::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('itmuomconv/save', 'ItmUOMConv::save', ['filter' => 'role:administrator']);
+$routes->post('itmuomconv/update', 'ItmUOMConv::update', ['filter' => 'role:administrator']);
+$routes->post('itmuomconv/delete', 'ItmUOMConv::delete', ['filter' => 'role:administrator']);
+$routes->get('itmuomconv/getAll?(:any)', 'ItmUOMConv::getAll', ['filter' => 'role:administrator']);
+
+$routes->get('costtype', 'CostType::index', ['filter' => 'role:administrator']);
+$routes->get('costtype/index', 'CostType::index', ['filter' => 'role:administrator']);
+$routes->get('costtype/add', 'CostType::add', ['filter' => 'role:administrator']);
+$routes->post('costtype/getCostType', 'CostType::getCostType', ['filter' => 'role:administrator']);
+$routes->get('costtype/edit/(:segment)', 'CostType::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('costtype/save', 'CostType::save', ['filter' => 'role:administrator']);
+$routes->post('costtype/update', 'CostType::update', ['filter' => 'role:administrator']);
+$routes->post('costtype/delete', 'CostType::delete', ['filter' => 'role:administrator']);
+$routes->get('costtype/getAll?(:any)', 'CostType::getAll', ['filter' => 'role:administrator']);

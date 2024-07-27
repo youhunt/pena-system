@@ -17,7 +17,7 @@ class Item extends BaseController
 
         $data['title'] = 'Item';
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Item']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'Item', 'pagetitle' => 'MasterData']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Item', 'pagetitle' => 'ItemMaster']);
         return view('item/index', $data);
 	}
 
@@ -67,7 +67,7 @@ class Item extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'item';
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Item']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'Item', 'pagetitle' => 'MasterData']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Item', 'pagetitle' => 'ItemMaster']);
 
         return view('item/add', $data);            
     }
@@ -143,7 +143,7 @@ class Item extends BaseController
         $data['uom'] = $data['item'][0]->stockuom ? $dataUOM->getUOM($data['item'][0]->stockuom)[0]->uom_desc : "";
         $data['whs'] = $data['item'][0]->stockwhs ? $dataWhs->getWarehouse($data['item'][0]->stockwhs)[0]->whs_name : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Item']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'Item', 'pagetitle' => 'MasterData']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Item', 'pagetitle' => 'ItemMaster']);
 
         return view('item/edit', $data);            
     }

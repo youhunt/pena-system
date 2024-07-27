@@ -12,7 +12,7 @@
                                         <!-- end col -->
                                         <div class="col-sm-auto">
                                             <div class="text-sm-end">
-                                                <a href="<?= base_url(); ?>convuom/add" class="btn btn-success btn-rounded" id="addProject-btn"><i class="mdi mdi-plus me-1"></i><?= lang('Files.AddNew'); ?></a>
+                                                <a href="<?= base_url(); ?>transactioncode/add" class="btn btn-success btn-rounded" id="addProject-btn"><i class="mdi mdi-plus me-1"></i><?= lang('Files.AddNew'); ?></a>
                                             </div>
                                         </div>
                                         <!-- end col -->
@@ -23,20 +23,24 @@
                                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
-                                                        <th><?= lang('ConvUOM.id'); ?></th>
-                                                        <th><?= lang('ConvUOM.fr_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.to_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.value'); ?></th>
+                                                        <th><?= lang('TransactionCode.id'); ?></th>
+                                                        <th><?= lang('TransactionCode.company'); ?></th>
+                                                        <th><?= lang('TransactionCode.site'); ?></th>
+                                                        <th><?= lang('TransactionCode.dept'); ?></th>
+                                                        <th><?= lang('TransactionCode.transcode'); ?></th>
+                                                        <th><?= lang('TransactionCode.transname'); ?></th>
                                                         <th style="width: 40px;"><?= lang('Files.active'); ?></th>
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
                                                 <tfoot>
                                                     <tr>
-                                                        <th><?= lang('ConvUOM.id'); ?></th>
-                                                        <th><?= lang('ConvUOM.fr_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.to_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.value'); ?></th>
+                                                        <th><?= lang('TransactionCode.id'); ?></th>
+                                                        <th><?= lang('TransactionCode.company'); ?></th>
+                                                        <th><?= lang('TransactionCode.site'); ?></th>
+                                                        <th><?= lang('TransactionCode.dept'); ?></th>
+                                                        <th><?= lang('TransactionCode.transcode'); ?></th>
+                                                        <th><?= lang('TransactionCode.transname'); ?></th>
                                                         <th style="width: 40px;"><?= lang('Files.active'); ?></th>
                                                         <th style="width: 45px;"></th>
                                                     </tr>
@@ -50,28 +54,28 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
 <?= $this->endSection() ?>  
 
 <?= $this->section('div-modal') ?>
     
-    <form action="<?= base_url(); ?>convuom/delete" method="post">
-    <div class="modal fade" id="convUOMModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <form action="<?= base_url(); ?>transactioncode/delete" method="post">
+    <div class="modal fade" id="siteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="uomLabel">Delete</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title" id="siteModal">Delete</h5>
+                    <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">Choose "Yes" to delete</div>
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+                    <input type="hidden" name="active" class="active" value="1">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">No</button>
                     <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
             </div>
@@ -79,8 +83,8 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>convuom/delete" method="post">
-    <div class="modal fade" id="convUOMActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <form action="<?= base_url(); ?>transactioncode/delete" method="post">
+    <div class="modal fade" id="siteActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -113,68 +117,80 @@
             "serverSide": true,
             "order": [],
             "ajax": {
-                "url": "<?php echo site_url('convuom/getConvUOM') ?>",
+                "url": "<?php echo site_url('transactioncode/getTransactionCode') ?>",
                 "type": "POST"
             },
             "columnDefs": [
                 {
                     "targets": [0],
                     "visible": false,
-                    "searchable": false
+                    "searchable": false,
                 },
             ],
             "columns": [
                 {
                     "data": "id",
                     "autoWidth": true,
-                    "searchable": true
+                    "searchable": true,
                 },
                 {
-                    "data": "fr_uom",
+                    "data": "company",
                     "autoWidth": true,
-                    "searchable": true
+                    "searchable": true,
                 },
                 {
-                    "data": "to_uom",
+                    "data": "site",
                     "autoWidth": true,
-                    "searchable": true
+                    "searchable": true,
                 },
                 {
-                    "data": "value",
+                    "data": "dept",
                     "autoWidth": true,
-                    "searchable": true
-                }, {
+                    "searchable": true,
+                },
+                {
+                    "data": "transcode",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "transname",
+                    "autoWidth": true,
+                    "searchable": true,
+                }, 
+                {
                     "data": "active", 
                     "render": function (data, type, row) {
                         var retVal = "";
                         if (data === null) return "";
                         if (data === "1") {
-                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-convuom" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-site" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
                         } else if (data === "0") {
-                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-convuom" title="Click to ACTIVE Item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-site" title="Click to ACTIVE Item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
                         }
 
                         return retVal;
                     },
-                }, {
-                    data: "ID", render: function (data, type, row) {
-                        return '<a href="<?= base_url(); ?>convuom/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-convuom" title="Delete" data-id="' + row.id + '"><i class="fas fa-times"></i></a>';
+                }, 
+                {
+                    data: "no", render: function (data, type, row) {
+                        return '<a href="<?= base_url(); ?>transactioncode/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-site" title="Delete" data-id="' + row.id + '"><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
         });
         
-        $('#dataTable tbody').on('click', '.btn-delete-convuom', function() {
+        $('#dataTable tbody').on('click', '.btn-delete-site', function() {
             const id = $(this).data('id');
             
             // Set data to Form Edit
             $('.id').val(id);
 
             // Call Modal Edit
-            $('#convUOMModal').modal('show');
+            $('#siteModal').modal('show');
         });
 
-        $('#dataTable tbody').on('click', '.btn-active-convuom', function() {
+        $('#dataTable tbody').on('click', '.btn-active-site', function() {
             const id = $(this).data('id');
             const active = $(this).data('active');
             
@@ -188,7 +204,7 @@
             }
 
             // Call Modal Edit
-            $('#convUOMActiveModal').modal('show');
+            $('#siteActiveModal').modal('show');
         });
 
     });

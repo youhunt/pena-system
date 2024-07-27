@@ -193,7 +193,7 @@
   "t-location": "Location",
   "t-item": "Item Master",
 
-  "t-prefnum": "Prefix & Numbering",
+  "t-transactioncode": "Transaction Code",
   "t-country": "Country",
   "t-city": "City",
   "t-postal code": "Postal Code",
@@ -227,5 +227,6 @@
   "t-gl": "GL",
   "t-column": "Column",
   "t-accno": "Account No.",
-  "t-coa": "Chart of Account"
+  "t-coa": "Chart of Account",
+  "t-costtype": "Cost Type"
 }

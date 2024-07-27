@@ -12,7 +12,7 @@
                                         <!-- end col -->
                                         <div class="col-sm-auto">
                                             <div class="text-sm-end">
-                                                <a href="<?= base_url(); ?>convuom/add" class="btn btn-success btn-rounded" id="addProject-btn"><i class="mdi mdi-plus me-1"></i><?= lang('Files.AddNew'); ?></a>
+                                                <a href="<?= base_url(); ?>itmuomconv/add" class="btn btn-success btn-rounded" id="addProject-btn"><i class="mdi mdi-plus me-1"></i><?= lang('Files.AddNew'); ?></a>
                                             </div>
                                         </div>
                                         <!-- end col -->
@@ -23,20 +23,28 @@
                                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
-                                                        <th><?= lang('ConvUOM.id'); ?></th>
-                                                        <th><?= lang('ConvUOM.fr_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.to_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.value'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.id'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.itemcode'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.site'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.dept'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.whs'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.fr_uom'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.to_uom'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.value'); ?></th>
                                                         <th style="width: 40px;"><?= lang('Files.active'); ?></th>
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
                                                 <tfoot>
                                                     <tr>
-                                                        <th><?= lang('ConvUOM.id'); ?></th>
-                                                        <th><?= lang('ConvUOM.fr_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.to_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.value'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.id'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.itemcode'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.site'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.dept'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.whs'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.fr_uom'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.to_uom'); ?></th>
+                                                        <th><?= lang('ItmUOMConv.value'); ?></th>
                                                         <th style="width: 40px;"><?= lang('Files.active'); ?></th>
                                                         <th style="width: 45px;"></th>
                                                     </tr>
@@ -57,7 +65,7 @@
 
 <?= $this->section('div-modal') ?>
     
-    <form action="<?= base_url(); ?>convuom/delete" method="post">
+    <form action="<?= base_url(); ?>itmuomconv/delete" method="post">
     <div class="modal fade" id="convUOMModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -79,7 +87,7 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>convuom/delete" method="post">
+    <form action="<?= base_url(); ?>department/delete" method="post">
     <div class="modal fade" id="convUOMActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -113,7 +121,7 @@
             "serverSide": true,
             "order": [],
             "ajax": {
-                "url": "<?php echo site_url('convuom/getConvUOM') ?>",
+                "url": "<?php echo site_url('itmuomconv/getItmUOMConv') ?>",
                 "type": "POST"
             },
             "columnDefs": [
@@ -126,6 +134,26 @@
             "columns": [
                 {
                     "data": "id",
+                    "autoWidth": true,
+                    "searchable": true
+                },
+                {
+                    "data": "itemcode",
+                    "autoWidth": true,
+                    "searchable": true
+                },
+                {
+                    "data": "site",
+                    "autoWidth": true,
+                    "searchable": true
+                },
+                {
+                    "data": "dept",
+                    "autoWidth": true,
+                    "searchable": true
+                },
+                {
+                    "data": "whs",
                     "autoWidth": true,
                     "searchable": true
                 },
@@ -149,22 +177,22 @@
                         var retVal = "";
                         if (data === null) return "";
                         if (data === "1") {
-                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-convuom" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-itmuomconv" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
                         } else if (data === "0") {
-                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-convuom" title="Click to ACTIVE Item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-itmuomconv" title="Click to ACTIVE Item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
                         }
 
                         return retVal;
                     },
                 }, {
                     data: "ID", render: function (data, type, row) {
-                        return '<a href="<?= base_url(); ?>convuom/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-convuom" title="Delete" data-id="' + row.id + '"><i class="fas fa-times"></i></a>';
+                        return '<a href="<?= base_url(); ?>itmuomconv/edit/' + row.id + '" class="btn btn-warning btn-circle btn-sm" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-itmuomconv" title="Delete" data-id="' + row.id + '"><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
         });
         
-        $('#dataTable tbody').on('click', '.btn-delete-convuom', function() {
+        $('#dataTable tbody').on('click', '.btn-delete-itmuomconv', function() {
             const id = $(this).data('id');
             
             // Set data to Form Edit
@@ -174,7 +202,7 @@
             $('#convUOMModal').modal('show');
         });
 
-        $('#dataTable tbody').on('click', '.btn-active-convuom', function() {
+        $('#dataTable tbody').on('click', '.btn-active-itmuomconv', function() {
             const id = $(this).data('id');
             const active = $(this).data('active');
             

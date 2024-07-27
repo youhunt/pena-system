@@ -5,27 +5,31 @@ namespace App\Models;
 use CodeIgniter\Model;
 use CodeIgniter\HTTP\RequestInterface;
 
-class ConvUOMModel extends Model
+class CostTypeModel extends Model
 {
 
-    protected $table          = 'uomconv';
+    protected $table          = 'cost_type';
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
-        'id',
-        'fr_uom',
-        'to_uom',
-        'value',
+        'id', 'type',
+        'description',
+        'group', 
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
-        'fr_uom' => 'required',
-        'to_uom' => 'required',
-        'value' => 'required',     
+        'type'      => 'required|is_unique[cost_type.type]|min_length[1]|max_length[4]',
+        'description'      => 'required',
+        'group'      => 'required',       
     ];
 
-    protected $column_order = ['id', 'fr_uom', 'to_uom', 'value',];
-    protected $column_search = ['fr_uom', 'to_uom', 'value',];
+    protected $column_order = ['id',  'type',
+        'description',
+        'group',];
+    protected $column_search = [ 'type',
+        'description',
+        'group',
+    ];
     protected $order = ['id' => 'ASC'];
     protected $request;
     protected $db;
@@ -86,7 +90,7 @@ class ConvUOMModel extends Model
         return $tbl_storage->countAllResults();
     }
 
-    public function getConvUOM($id = '')
+    public function getCostType($id = '')
     {
         $this->dt->where('id', $id);
         $query = $this->dt->get();
