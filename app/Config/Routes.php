@@ -166,3 +166,17 @@ $routes->post('costtype/save', 'CostType::save', ['filter' => 'role:administrato
 $routes->post('costtype/update', 'CostType::update', ['filter' => 'role:administrator']);
 $routes->post('costtype/delete', 'CostType::delete', ['filter' => 'role:administrator']);
 $routes->get('costtype/getAll?(:any)', 'CostType::getAll', ['filter' => 'role:administrator']);
+
+$routes->get('bom', 'BOM::index', ['filter' => 'role:administrator']);
+$routes->get('bom/index', 'BOM::index', ['filter' => 'role:administrator']);
+$routes->get('bom/add', 'BOM::add', ['filter' => 'role:administrator']);
+$routes->post('bom/getBOM', 'BOM::getBOM', ['filter' => 'role:administrator']);
+$routes->get('bom/edit/(:segment)', 'BOM::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('bom/save', 'BOM::save', ['filter' => 'role:administrator']);
+$routes->post('bom/update', 'BOM::update', ['filter' => 'role:administrator']);
+$routes->post('bom/delete', 'BOM::delete', ['filter' => 'role:administrator']);
+$routes->get('bom/getAll?(:any)', 'BOM::getAll', ['filter' => 'role:administrator']);
+$routes->post('bom/getBOMChild', 'BOM::getBOMChild', ['filter' => 'role:administrator']);
+$routes->post('bom/saveChild', 'BOM::saveChild', ['filter' => 'role:administrator']);
+$routes->post('bom/updateChild', 'BOM::updateChild', ['filter' => 'role:administrator']);
+$routes->post('bom/getBOMChildById', 'BOM::getBOMChildById', ['filter' => 'role:administrator']);

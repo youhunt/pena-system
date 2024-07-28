@@ -51,7 +51,7 @@
                                         <div class="row mb-4">
                                             <label for="shelf_life" class="col-sm-2 col-form-label"><?= lang('Item.shelf_life'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.shelf_life')) : ?>is-invalid<?php endif ?>" id="shelf_life" placeholder="<?= lang('Item.shelf_life'); ?>" name="shelf_life" value="<?= $item[0]->shelf_life ? $item[0]->shelf_life :  old('shelf_life'); ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.shelf_life')) : ?>is-invalid<?php endif ?>" id="shelf_life" placeholder="<?= lang('Item.shelf_life'); ?>" style="text-align:right;" name="shelf_life" value="<?= $item[0]->shelf_life ? $item[0]->shelf_life :  old('shelf_life'); ?>">
                                             </div>
                                             <label for="stockuom" class="col-sm-2 col-form-label"><?= lang('Item.stockuom'); ?></label>
                                             <div class="col-sm-4">

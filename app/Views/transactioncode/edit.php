@@ -120,7 +120,7 @@
             placeholder: '',
             minimumInputLength: 1,
             ajax: {
-                url: '<?= base_url('/comp_name/getAll'); ?>',
+                url: '<?= base_url('/company/getAll'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
@@ -145,7 +145,7 @@
             placeholder: '',
             minimumInputLength: 1,
             ajax: {
-                url: '<?= base_url('/site_name/getByCompany'); ?>',
+                url: '<?= base_url('/site/getByCompany'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
