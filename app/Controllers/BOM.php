@@ -113,8 +113,28 @@ class BOM extends BaseController
     public function getBOMChildById() {
         $request = Services::request();
         $dataBC = new BOMChildModel($request);
+        $dataUOM = new UOMModel($request);
+        $dataItem = new ItemModel($request);
         $id =  $this->request->getVar('id');
-        $data = $dataBC->getBOMChild($id);
+        $lists = $dataBC->getBOMChild($id);
+        $data = [];
+        $no = $request->getPost('start');
+
+        foreach ($lists as $list) {
+            $row = [];
+            $row['id'] = $list->id;
+            $row['childno'] = $list->childno;
+            $row['childcode'] = $list->childcode;
+            $row['itemchildname'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_name_1 : "";
+            $row['childtype'] = lang('BOM.typechild'.$list->childtype);
+            $row['qtyused'] = $list->qtyused;
+            $row['childuom'] = $list->childuom;
+            $row['childuom_desc'] = $list->childuom ? $dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
+            $row['factor'] = $list->factor;
+            $row['childdescription'] = $list->childdescription;
+            $row['active'] = $list->active;
+            $data[] = $row;
+        }
         echo json_encode($data);
     }
 

@@ -175,7 +175,7 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="bomLabel">Add Child</h5>
+                    <h5 class="modal-title" id="bomLabel">BOM Child</h5>
                     <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -239,6 +239,7 @@
                 
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
+                    <input type="hidden" name="status" class="status">
                     <button type="submit" class="btn btn-primary">Save</button>
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
                 </div>
@@ -270,7 +271,7 @@
                             <input type="hidden" class="childcode" name="childcode" value="<?= old('childcode'); ?>" />
                             <input type="hidden" class="itemchildname" name="itemchildname" value="<?= old('itemchildname'); ?>" />
                             <select class="form-control <?php if(session('errors.childcode')) : ?>is-invalid<?php endif ?> itemchild" style="width: 100%;" name="itemchild">
-                                <option selected="selected"><?= old('itemchildname'); ?></option>
+                                <option selected="selected" class="itemchildname"><?= old('itemchildname'); ?></option>
                             </select>
                         </div>
                     </div>
@@ -295,7 +296,7 @@
                         <div class="col-sm-4">
                             <input type="hidden" id="childuom" name="childuom" value="<?= old('childuom'); ?>" />
                             <select class="form-control <?php if(session('errors.childuom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="childuom_desc" id="childuom_desc" >
-                                <option selected="selected"><?= old('childuom_desc'); ?></option>
+                                <option selected="selected" class="childuom_desc" ><?= old('childuom_desc'); ?></option>
                             </select>
                         </div>
                         <label for="factor" class="col-sm-2 col-form-label"><?= lang('BOM.factor'); ?></label>
@@ -336,6 +337,7 @@
             
             // Set data to Form Edit
             $('.id').val(id);
+            $('.status').val('1');
 
             // Call Modal Edit
             $('#bomChildModal').modal('show');
@@ -345,6 +347,7 @@
             const id = $(this).data('id');
             
             // Set data to Form Edit
+            $('.status').val('2');
             $('.id').val(id);
             $.ajax({
                 url: "<?php echo site_url('bom/getBOMChildById') ?>",
@@ -353,17 +356,44 @@
                     id : id
                 } ,
                 success: function (response) {
-                    var jsonStringify = JSON.stringify(response);
-                    var data = JSON.parse(jsonStringify);
-                    console.log(data.childno);
-                    alert(data[0].childno);
-                    $('.childno').val(data[0].childno);
-                    $('.childcode').val(data[0].childcode);
-                    $('.childtype').val(data[0].childtype);
-                    $('.qtyused').val(data[0].qtyused);
-                    $('.childuom').val(data[0].childuom);
-                    $('.factor').val(data[0].factor);
-                    $('.childdescription').val(data[0].childdescription);
+                    var data = $.parseJSON(response); //(jsonStringify);
+                    $('#childno').val(data[0].childno);
+                    $('#childcode').val(data[0].childcode);
+                    $("#itemchildname").val(data[0].itemchildname);
+                    $(".itemchildname").val(data[0].itemchildname);
+                    // $("#itemchild").val(data[0].childcode);
+                    //$("#itemchild").select2('data',{id:data[0].childcode,text:data[0].itemchildname}).trigger('change');
+                    // $('#itemchild').select2().val(data[0].childcode).trigger('change');
+                    // $("#itemchild").val(data[0].childcode);
+                    // $("#itemchild").select2().trigger('change'); 
+                    // $("#itemchild option:selected").val(data[0].childcode);
+                    //$('#itemchild').val([data[0].childcode]).trigger('change');  
+                    //$("#itemchild option:selected").val(data[0].childcode);
+                    var itemSelect = $('#itemchild');
+
+                    var option = new Option(data[0].itemchildname, data[0].childcode, true, true);
+                    itemSelect.append(option).trigger('change');
+
+                    // manually trigger the `select2:select` event
+                    itemSelect.trigger({
+                        type: 'select2:select',
+                        params: {
+                            data: data
+                        }
+                    });
+                    var dataopt = {
+                        id: data[0].childcode,
+                        text: data[0].itemchildname
+                    };
+
+                    var newOption = new Option(dataopt.text, dataopt.id, false, false);
+                    $('#itemchild').append(newOption).trigger('change');
+                    $('#childtype').val(data[0].childtype);
+                    $('#qtyused').val(data[0].qtyused);
+                    $('#childuom').val(data[0].childuom);
+                    $('.childuom_desc').html(data[0].childuom_desc);
+                    $('#factor').val(data[0].factor);
+                    $('#childdescription').val(data[0].childdescription);
                 },
                     error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
@@ -371,7 +401,7 @@
             });
 
             // Call Modal Edit
-            $('#updateBomChildModal').modal('show');
+            $('#bomChildModal').modal('show');
         });
 
         $('#dataTable').DataTable({
@@ -546,7 +576,7 @@
             $("#itemname").val($("#item option:selected").text());
         });
 
-        $('#itemchild','.itemchild' ).select2({
+        $('#itemchild').select2({
             placeholder: '',
             minimumInputLength: 1,
             dropdownParent: $('#bomChildModal'),
@@ -569,11 +599,8 @@
             }
         }).on('select2:select', function (evt) {
             var data = $("#itemchild option:selected").val();
-            var data1 = $(".itemchild option:selected").val();
-            $(".childcode").val(data1);
             $("#childcode").val(data);
             $("#itemchildname").val($("#itemchild option:selected").text());
-            $(".itemchildname").val($(".itemchild option:selected").text());
         });
 
         $('#uom_desc').select2({
