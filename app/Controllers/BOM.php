@@ -114,8 +114,8 @@ class BOM extends BaseController
         $request = Services::request();
         $dataBC = new BOMChildModel($request);
         $id =  $this->request->getVar('id');
-        $data['data'] = $dataBC->getBOMChild($id);
-        return $data;
+        $data = $dataBC->getBOMChild($id);
+        echo json_encode($data);
     }
 
     public function add()

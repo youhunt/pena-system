@@ -263,13 +263,13 @@
                     <div class="row mb-4">
                         <label for="childno" class="col-sm-2 col-form-label"><?= lang('BOM.childno'); ?></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control <?php if(session('errors.childno')) : ?>is-invalid<?php endif ?>" id="childno" placeholder="<?= lang('BOM.childno'); ?>" name="childno" value="<?= old('childno'); ?>">
+                            <input type="text" class="form-control <?php if(session('errors.childno')) : ?>is-invalid<?php endif ?> childno" placeholder="<?= lang('BOM.childno'); ?>" name="childno" value="<?= old('childno'); ?>">
                         </div>
                         <label for="childcode" class="col-sm-2 col-form-label"><?= lang('BOM.childcode'); ?></label>
                         <div class="col-sm-4">
-                            <input type="hidden" id="childcode" name="childcode" value="<?= old('childcode'); ?>" />
-                            <input type="hidden" id="itemchildname" name="itemchildname" value="<?= old('itemchildname'); ?>" />
-                            <select class="form-control <?php if(session('errors.childcode')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemchild" id="itemchild" >
+                            <input type="hidden" class="childcode" name="childcode" value="<?= old('childcode'); ?>" />
+                            <input type="hidden" class="itemchildname" name="itemchildname" value="<?= old('itemchildname'); ?>" />
+                            <select class="form-control <?php if(session('errors.childcode')) : ?>is-invalid<?php endif ?> itemchild" style="width: 100%;" name="itemchild">
                                 <option selected="selected"><?= old('itemchildname'); ?></option>
                             </select>
                         </div>
@@ -278,15 +278,15 @@
                     <div class="row mb-4">
                         <label for="childtype" class="col-sm-2 col-form-label"><?= lang('BOM.childtype'); ?></label>
                         <div class="col-sm-4">
-                            <input type="hidden" id="childtype" name="childtype" value="<?= old('childtype') ; ?>" />
-                            <select class="form-control <?php if(session('errors.childtype')) : ?>is-invalid<?php endif ?>" name="childtype" id="childtype" >
+                            <input type="hidden" class="childtype" name="childtype" value="<?= old('childtype') ; ?>" />
+                            <select class="form-control <?php if(session('errors.childtype')) : ?>is-invalid<?php endif ?> childtype" name="childtype" >
                                 <option value="1" <?= (old('childtype'))=="1" ? "selected" : "" ; ?>><?= lang('BOM.typechild1'); ?></option>
                                 <option value="2" <?= (old('childtype'))=="2" ? "selected" : "" ; ?>><?= lang('BOM.typechild2'); ?></option>
                             </select>
                         </div>
                         <label for="qtyused" class="col-sm-2 col-form-label"><?= lang('BOM.qtyused'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" class="form-control <?php if(session('errors.qtyused')) : ?>is-invalid<?php endif ?>" id="qtyused" placeholder="<?= lang('BOM.qtyused'); ?>" style="text-align:right;" name="qtyused" value="<?= old('qtyused') ; ?>">
+                            <input type="number" class="form-control <?php if(session('errors.qtyused')) : ?>is-invalid<?php endif ?> qtyused" placeholder="<?= lang('BOM.qtyused'); ?>" style="text-align:right;" name="qtyused" value="<?= old('qtyused') ; ?>">
                         </div>
                     </div>
 
@@ -300,14 +300,14 @@
                         </div>
                         <label for="factor" class="col-sm-2 col-form-label"><?= lang('BOM.factor'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" class="form-control <?php if(session('errors.factor')) : ?>is-invalid<?php endif ?>" id="factor" placeholder="<?= lang('BOM.factor'); ?>" style="text-align:right;" name="factor" value="<?= old('factor'); ?>">
+                            <input type="number" class="form-control <?php if(session('errors.factor')) : ?>is-invalid<?php endif ?> factor" placeholder="<?= lang('BOM.factor'); ?>" style="text-align:right;" name="factor" value="<?= old('factor'); ?>">
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <label for="childdescription" class="col-sm-2 col-form-label"><?= lang('BOM.childdescription'); ?></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control <?php if(session('errors.childdescription')) : ?>is-invalid<?php endif ?>" id="childdescription" placeholder="<?= lang('BOM.childdescription'); ?>" name="childdescription" value="<?= old('childdescription'); ?>">
+                            <input type="text" class="form-control <?php if(session('errors.childdescription')) : ?>is-invalid<?php endif ?> childdescription" placeholder="<?= lang('BOM.childdescription'); ?>" name="childdescription" value="<?= old('childdescription'); ?>">
                         </div>
                         <label for="transname" class="col-sm-2 col-form-label">&nbsp;</label>
                         <div class="col-sm-4">&nbsp;</div>
@@ -355,13 +355,15 @@
                 success: function (response) {
                     var jsonStringify = JSON.stringify(response);
                     var data = JSON.parse(jsonStringify);
-                    $('#childno').val(data[0].childno);
-                    $('#childcode').val(data[0].childcode);
-                    $('#childtype').val(data[0].childtype);
-                    $('#qtyused').val(data[0].qtyused);
-                    $('#childuom').val(data[0].childuom);
-                    $('#factor').val(data[0].factor);
-                    $('#childdescription').val(data[0].childdescription);
+                    console.log(data.childno);
+                    alert(data[0].childno);
+                    $('.childno').val(data[0].childno);
+                    $('.childcode').val(data[0].childcode);
+                    $('.childtype').val(data[0].childtype);
+                    $('.qtyused').val(data[0].qtyused);
+                    $('.childuom').val(data[0].childuom);
+                    $('.factor').val(data[0].factor);
+                    $('.childdescription').val(data[0].childdescription);
                 },
                     error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
@@ -544,7 +546,7 @@
             $("#itemname").val($("#item option:selected").text());
         });
 
-        $('#itemchild').select2({
+        $('#itemchild','.itemchild' ).select2({
             placeholder: '',
             minimumInputLength: 1,
             dropdownParent: $('#bomChildModal'),
@@ -567,8 +569,11 @@
             }
         }).on('select2:select', function (evt) {
             var data = $("#itemchild option:selected").val();
+            var data1 = $(".itemchild option:selected").val();
+            $(".childcode").val(data1);
             $("#childcode").val(data);
             $("#itemchildname").val($("#itemchild option:selected").text());
+            $(".itemchildname").val($(".itemchild option:selected").text());
         });
 
         $('#uom_desc').select2({
