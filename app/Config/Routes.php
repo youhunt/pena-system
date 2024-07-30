@@ -179,4 +179,5 @@ $routes->get('bom/getAll?(:any)', 'BOM::getAll', ['filter' => 'role:administrato
 $routes->post('bom/getBOMChild', 'BOM::getBOMChild', ['filter' => 'role:administrator']);
 $routes->post('bom/saveChild', 'BOM::saveChild', ['filter' => 'role:administrator']);
 $routes->post('bom/updateChild', 'BOM::updateChild', ['filter' => 'role:administrator']);
+$routes->post('bom/deleteChild', 'BOM::deleteChild', ['filter' => 'role:administrator']);
 $routes->post('bom/getBOMChildById', 'BOM::getBOMChildById', ['filter' => 'role:administrator']);

@@ -216,7 +216,8 @@
                         <label for="childuom" class="col-sm-2 col-form-label"><?= lang('BOM.childuom'); ?></label>
                         <div class="col-sm-4">
                             <input type="hidden" id="childuom" name="childuom" value="<?= old('childuom'); ?>" />
-                            <select class="form-control <?php if(session('errors.childuom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="childuom_desc" id="childuom_desc" >
+                            <input type="hidden" id="childuom_desc" name="childuom_desc" value="<?= old('childuom_desc'); ?>" />
+                            <select class="form-control <?php if(session('errors.childuom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemchilduom" id="itemchilduom" >
                                 <option selected="selected"><?= old('childuom_desc'); ?></option>
                             </select>
                         </div>
@@ -239,6 +240,8 @@
                 
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
+                    <input type="hidden" name="bom_id" class="bom_id">
+                    
                     <input type="hidden" name="status" class="status">
                     <button type="submit" class="btn btn-primary">Save</button>
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -248,78 +251,47 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>bom/updateChild" method="post">
-    <div class="modal fade" id="updateBomChildModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <form action="<?= base_url(); ?>bom/deleteChild" method="post">
+    <div class="modal fade" id="bomChildDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="bomLabel">Update Child</h5>
+                    <h5 class="modal-title" id="itemLabel">Delete</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Choose "Yes" to delete</div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" class="id">
+                    <input type="hidden" name="bom_id" class="bom_id">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <form action="<?= base_url(); ?>bom/deleteChild" method="post">
+    <div class="modal fade" id="bomChildActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="itemLabel">Delete</h5>
                     <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">
-
-                    <div class="row mb-4">
-                        <label for="childno" class="col-sm-2 col-form-label"><?= lang('BOM.childno'); ?></label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control <?php if(session('errors.childno')) : ?>is-invalid<?php endif ?> childno" placeholder="<?= lang('BOM.childno'); ?>" name="childno" value="<?= old('childno'); ?>">
-                        </div>
-                        <label for="childcode" class="col-sm-2 col-form-label"><?= lang('BOM.childcode'); ?></label>
-                        <div class="col-sm-4">
-                            <input type="hidden" class="childcode" name="childcode" value="<?= old('childcode'); ?>" />
-                            <input type="hidden" class="itemchildname" name="itemchildname" value="<?= old('itemchildname'); ?>" />
-                            <select class="form-control <?php if(session('errors.childcode')) : ?>is-invalid<?php endif ?> itemchild" style="width: 100%;" name="itemchild">
-                                <option selected="selected" class="itemchildname"><?= old('itemchildname'); ?></option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <label for="childtype" class="col-sm-2 col-form-label"><?= lang('BOM.childtype'); ?></label>
-                        <div class="col-sm-4">
-                            <input type="hidden" class="childtype" name="childtype" value="<?= old('childtype') ; ?>" />
-                            <select class="form-control <?php if(session('errors.childtype')) : ?>is-invalid<?php endif ?> childtype" name="childtype" >
-                                <option value="1" <?= (old('childtype'))=="1" ? "selected" : "" ; ?>><?= lang('BOM.typechild1'); ?></option>
-                                <option value="2" <?= (old('childtype'))=="2" ? "selected" : "" ; ?>><?= lang('BOM.typechild2'); ?></option>
-                            </select>
-                        </div>
-                        <label for="qtyused" class="col-sm-2 col-form-label"><?= lang('BOM.qtyused'); ?></label>
-                        <div class="col-sm-4">
-                            <input type="number" class="form-control <?php if(session('errors.qtyused')) : ?>is-invalid<?php endif ?> qtyused" placeholder="<?= lang('BOM.qtyused'); ?>" style="text-align:right;" name="qtyused" value="<?= old('qtyused') ; ?>">
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <label for="childuom" class="col-sm-2 col-form-label"><?= lang('BOM.childuom'); ?></label>
-                        <div class="col-sm-4">
-                            <input type="hidden" id="childuom" name="childuom" value="<?= old('childuom'); ?>" />
-                            <select class="form-control <?php if(session('errors.childuom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="childuom_desc" id="childuom_desc" >
-                                <option selected="selected" class="childuom_desc" ><?= old('childuom_desc'); ?></option>
-                            </select>
-                        </div>
-                        <label for="factor" class="col-sm-2 col-form-label"><?= lang('BOM.factor'); ?></label>
-                        <div class="col-sm-4">
-                            <input type="number" class="form-control <?php if(session('errors.factor')) : ?>is-invalid<?php endif ?> factor" placeholder="<?= lang('BOM.factor'); ?>" style="text-align:right;" name="factor" value="<?= old('factor'); ?>">
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <label for="childdescription" class="col-sm-2 col-form-label"><?= lang('BOM.childdescription'); ?></label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control <?php if(session('errors.childdescription')) : ?>is-invalid<?php endif ?> childdescription" placeholder="<?= lang('BOM.childdescription'); ?>" name="childdescription" value="<?= old('childdescription'); ?>">
-                        </div>
-                        <label for="transname" class="col-sm-2 col-form-label">&nbsp;</label>
-                        <div class="col-sm-4">&nbsp;</div>
-                    </div>
-
-                </div>
-                
+                <div class="modal-body">Choose "Yes" to <span id="msgActive"></span>.</div>
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                    <input type="hidden" name="active" class="active">
+                    <input type="hidden" name="bom_id" class="bom_id">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
             </div>
         </div>
@@ -332,6 +304,37 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        $('#dataTable tbody').on('click', '.btn-delete-bom-child', function() {
+            const id = $(this).data('id');
+            const bom_id = $(this).data('bom_id');
+            
+            // Set data to Form Edit
+            $('.id').val(id);
+            $('.bom_id').val(bom_id);
+
+            // Call Modal Edit
+            $('#bomChildDeleteModal').modal('show');
+        });
+
+        $('#dataTable tbody').on('click', '.btn-active-bom-child', function() {
+            const id = $(this).data('id');
+            const bom_id = $(this).data('bom_id');
+            const active = $(this).data('active');
+            
+            // Set data to Form Edit
+            $('.id').val(id);
+            $('.bom_id').val(bom_id);
+            $('.active').val(active);
+            if (active == "1") {
+                $('#msgActive').text("Inactive");
+            } else if (active == "0") {
+                $('#msgActive').text("Active");
+            }
+
+            // Call Modal Edit
+            $('#bomChildActiveModal').modal('show');
+        });
+
         $('#addChild-btn').on('click', function() {
             const id = $(this).data('id');
             
@@ -361,39 +364,21 @@
                     $('#childcode').val(data[0].childcode);
                     $("#itemchildname").val(data[0].itemchildname);
                     $(".itemchildname").val(data[0].itemchildname);
-                    // $("#itemchild").val(data[0].childcode);
-                    //$("#itemchild").select2('data',{id:data[0].childcode,text:data[0].itemchildname}).trigger('change');
-                    // $('#itemchild').select2().val(data[0].childcode).trigger('change');
-                    // $("#itemchild").val(data[0].childcode);
-                    // $("#itemchild").select2().trigger('change'); 
-                    // $("#itemchild option:selected").val(data[0].childcode);
-                    //$('#itemchild').val([data[0].childcode]).trigger('change');  
-                    //$("#itemchild option:selected").val(data[0].childcode);
                     var itemSelect = $('#itemchild');
-
                     var option = new Option(data[0].itemchildname, data[0].childcode, true, true);
                     itemSelect.append(option).trigger('change');
-
-                    // manually trigger the `select2:select` event
-                    itemSelect.trigger({
-                        type: 'select2:select',
-                        params: {
-                            data: data
-                        }
-                    });
-                    var dataopt = {
-                        id: data[0].childcode,
-                        text: data[0].itemchildname
-                    };
-
-                    var newOption = new Option(dataopt.text, dataopt.id, false, false);
-                    $('#itemchild').append(newOption).trigger('change');
                     $('#childtype').val(data[0].childtype);
                     $('#qtyused').val(data[0].qtyused);
                     $('#childuom').val(data[0].childuom);
-                    $('.childuom_desc').html(data[0].childuom_desc);
+                    var uomSelect = $('#itemchilduom');
+                    option = new Option(data[0].childuom_desc, data[0].childuom, true, true);
+                    uomSelect.append(option).trigger('change');
+                    $('#childuom_desc').html(data[0].childuom_desc);
                     $('#factor').val(data[0].factor);
                     $('#childdescription').val(data[0].childdescription);
+                    $('#childdescription').val(data[0].childdescription);
+                    $('#bom_id').val(data[0].bom_id);
+                    
                 },
                     error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
@@ -454,12 +439,14 @@
                 {
                     "data": "active", 
                     "render": function (data, type, row) {
+                        console.log("data : "+ JSON.stringify(data));
+                        console.log("row : "+ JSON.stringify(row));
                         var retVal = "";
                         if (data === null) return "";
                         if (data === "1") {
-                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-bom-child" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-bom-child" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
                         } else if (data === "0") {
-                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-bom-child" title="Click to ACTIVE Item" data-id="' + row.id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-bom-child" title="Click to ACTIVE Item" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
                         }
 
                         return retVal;
@@ -467,7 +454,7 @@
                 }, 
                 {
                     data: "no", render: function (data, type, row) {
-                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-bom-child" data-id="' + row.id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-bom" title="Delete" data-id="' + row.id + '"><i class="fas fa-times"></i></a>';
+                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-bom-child" data-id="' + row.id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-bom-child" title="Delete" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" ><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
@@ -628,7 +615,7 @@
             $("#uom").val(data);
         });
 
-        $('#childuom_desc').select2({
+        $('#itemchilduom').select2({
             placeholder: '',
             minimumInputLength: 1,
             dropdownParent: $('#bomChildModal'),
@@ -650,8 +637,8 @@
                 cache: true
             }
         }).on('select2:select', function (evt) {
-            var data = $("#childuom_desc option:selected").val();
-            $("#childuom").val(data);
+            $("#childuom_desc").val($("#itemchilduom option:selected").text());
+            $("#childuom").val($("#itemchilduom option:selected").val());
         });
 
     });

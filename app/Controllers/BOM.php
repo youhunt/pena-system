@@ -87,6 +87,7 @@ class BOM extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
+                $row['bom_id'] = $list->bom_id;
                 $row['childno'] = $list->childno;
                 $row['childcode'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_name_1 : "";
                 $row['childtype'] = lang('BOM.typechild'.$list->childtype);
@@ -123,6 +124,7 @@ class BOM extends BaseController
         foreach ($lists as $list) {
             $row = [];
             $row['id'] = $list->id;
+            $row['bom_id'] = $list->bom_id;
             $row['childno'] = $list->childno;
             $row['childcode'] = $list->childcode;
             $row['itemchildname'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_name_1 : "";
@@ -202,6 +204,8 @@ class BOM extends BaseController
     public function saveChild()
     {
         $id =  $this->request->getVar('id');
+        $bom_id =  $this->request->getVar('bom_id');
+        
         $rules = [
             'childno' => 'required',
             'childcode' => 'required',
@@ -219,26 +223,45 @@ class BOM extends BaseController
         if($this->validate($rules)){
             $request = Services::request();
             $model = new BOMChildModel($request);
-            $data = [
-                'bom_id' => $id,
-                'childno' => $this->request->getVar('childno'),
-                'childcode' => $this->request->getVar('childcode'),
-                'childtype' => $this->request->getVar('childtype'),
-                'qtyused' => $this->request->getVar('qtyused'),
-                'childuom' => $this->request->getVar('childuom'),
-                'factor' => $this->request->getVar('factor'),
-                'childdescription' => $this->request->getVar('childdescription'),
-                'created_date'=>  date("Y-m-d H:i:s"),
-                'created_by' =>  user()->username,
-            ];
-
-            try {
+            $status = $this->request->getVar('status');
+            if($status=="1") {
+                $data = [
+                    'bom_id' => $id,
+                    'childno' => $this->request->getVar('childno'),
+                    'childcode' => $this->request->getVar('childcode'),
+                    'childtype' => $this->request->getVar('childtype'),
+                    'qtyused' => $this->request->getVar('qtyused'),
+                    'childuom' => $this->request->getVar('childuom'),
+                    'factor' => $this->request->getVar('factor'),
+                    'childdescription' => $this->request->getVar('childdescription'),
+                    'created_date'=>  date("Y-m-d H:i:s"),
+                    'created_by' =>  user()->username,
+                ];
+                
                 $model->save($data);
-            } catch (\Exception $e) {
-                exit($e->getMessage());
+                
+                return redirect()->to(base_url('/bom/edit/'.$id));
+
+            } else  {
+                $data = [
+                    'bom_id' => $bom_id,
+                    'childno' => $this->request->getVar('childno'),
+                    'childcode' => $this->request->getVar('childcode'),
+                    'childtype' => $this->request->getVar('childtype'),
+                    'qtyused' => $this->request->getVar('qtyused'),
+                    'childuom' => $this->request->getVar('childuom'),
+                    'factor' => $this->request->getVar('factor'),
+                    'childdescription' => $this->request->getVar('childdescription'),
+                    'updated_by' =>  user()->username,
+                    'updated_at' =>  date("Y-m-d H:i:s"),
+                ];
+                
+                $model->updateData($id, $data);
+
+                return redirect()->to(base_url('/bom/edit/'.$bom_id));
+
             }
 
-            return redirect()->to(base_url('/bom/edit/'.$id));
 
         } else {
             
@@ -348,6 +371,33 @@ class BOM extends BaseController
         $model->deleteData($id, $data);
         
         return redirect()->to(base_url('/bom/index'));
+    }
+
+    public function deleteChild()
+    {
+        $id =  $this->request->getVar('id');
+        $bom_id =  $this->request->getVar('bom_id');
+        $request = Services::request();
+        $model = new BOMChildModel($request);
+        $active =  $this->request->getVar('active');
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+                'deleted_at' => null,
+                'deleted_by' =>  null,
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
+                'active' => 1,
+            ];
+        }
+        $model->deleteData($id, $data);
+        
+        return redirect()->to(base_url('/bom/edit/'.$bom_id));
+
     }
 
     public function getAll()

@@ -13,6 +13,7 @@ class BOMChildModel extends Model
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
         'id', 
+        'bom_id',
         'childno',
         'childcode',
         'childtype',
@@ -23,6 +24,7 @@ class BOMChildModel extends Model
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
+        'bom_id' => 'required',
         'childno' => 'required',
         'childcode' => 'required',
         'childtype' => 'required',
@@ -33,6 +35,7 @@ class BOMChildModel extends Model
 
     protected $column_order = [
         'id', 
+        'bom_id',
         'childno',
         'childcode',
         'childtype',
@@ -42,6 +45,7 @@ class BOMChildModel extends Model
         'childdescription',
     ];
     protected $column_search = [
+        'bom_id',
         'childno',
         'childcode',
         'childtype',
