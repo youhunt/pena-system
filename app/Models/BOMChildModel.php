@@ -114,6 +114,27 @@ class BOMChildModel extends Model
         return $tbl_storage->countAllResults();
     }
 
+    public function getDatatablesByBOM($id)
+    {
+        $this->getDatatablesQuery();
+        if ($this->request->getPost('length') != -1)
+            $this->dt->limit($this->request->getPost('length'), $this->request->getPost('start'));
+        $query = $this->dt->where('bom_id', $id)->get();
+        return $query->getResult();
+    }
+
+    public function countFilteredByBOM($id)
+    {
+        $this->getDatatablesQuery();
+        return $this->dt->where('bom_id', $id)->countAllResults();
+    }
+
+    public function countAllByBOM($id)
+    {
+        $tbl_storage = $this->db->table($this->table)->where('bom_id', $id);
+        return $tbl_storage->countAllResults();
+    }
+
     public function getBOMChild($id = '')
     {
         $this->dt->where('id', $id);

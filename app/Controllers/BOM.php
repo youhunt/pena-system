@@ -77,9 +77,10 @@ class BOM extends BaseController
         $datatable = new BOMChildModel($request);
         $dataUOM = new UOMModel($request);
         $dataItem = new ItemModel($request);
+        $bom_id = $request->getPost('bom_id');
 
         if ($request->getMethod(true) === 'POST') {
-            $lists = $datatable->getDatatables();
+            $lists = $datatable->getDatatablesByBOM($bom_id);
             $data = [];
             $no = $request->getPost('start');
 
@@ -102,8 +103,8 @@ class BOM extends BaseController
 
             $output = [
                 'draw' => $request->getPost('draw'),
-                'recordsTotal' => $datatable->countAll(),
-                'recordsFiltered' => $datatable->countFiltered(),
+                'recordsTotal' => $datatable->countAllByBOM($bom_id),
+                'recordsFiltered' => $datatable->countFilteredByBOM($bom_id),
                 'data' => $data
             ];
 
