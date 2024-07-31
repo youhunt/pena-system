@@ -160,7 +160,6 @@ class BOM extends BaseController
         $rules = [
             'site' => 'required',
             'dept' => 'required',
-            'whs' => 'required',
             'parentcode' => 'required',
             'type' => 'required',
             'qty' => 'required',
@@ -308,7 +307,6 @@ class BOM extends BaseController
         $rules = [
             'site' => 'required',
             'dept' => 'required',
-            'whs' => 'required',
             'parentcode' => 'required',
             'type' => 'required',
             'qty' => 'required',

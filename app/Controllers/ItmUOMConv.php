@@ -142,7 +142,7 @@ class ItmUOMConv extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'itmuomconv';
         $data['itmuomconv'] = $dataItmUOMConv->getItmUOMConv($id);
-        $data['itemname'] = $data['itmuomconv'][0]->itemcode ? $dataItem->getItem($data['itmuomconv'][0]->itemcode)[0]->item_name_1 : "";
+        $data['itemname'] = $data['itmuomconv'][0]->itemcode ? $dataItem->getItem($data['itmuomconv'][0]->itemcode)[0]->item_code."|".$dataItem->getItem($data['itmuomconv'][0]->itemcode)[0]->item_name_1 : "";
         $data['dept_name'] = $data['itmuomconv'][0]->dept ? $dataDep->getDepartment($data['itmuomconv'][0]->dept)[0]->dept_name : "";
         $data['site_name'] = $data['itmuomconv'][0]->site ? $dataSit->getSite($data['itmuomconv'][0]->site)[0]->site_name : "";
         $data['whs_name'] = $data['itmuomconv'][0]->whs ? $dataWhs->getWarehouse($data['itmuomconv'][0]->whs)[0]->whs_name : "";
