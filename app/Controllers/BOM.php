@@ -128,7 +128,7 @@ class BOM extends BaseController
             $row['bom_id'] = $list->bom_id;
             $row['childno'] = $list->childno;
             $row['childcode'] = $list->childcode;
-            $row['itemchildname'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_name_1 : "";
+            $row['itemchildname'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_code."|".$dataItem->getItem($list->childcode)[0]->item_name_1 : "";
             $row['childtype'] = lang('BOM.typechild'.$list->childtype);
             $row['qtyused'] = $list->qtyused;
             $row['childuom'] = $list->childuom;
@@ -289,10 +289,12 @@ class BOM extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'bom';
         $data['bom'] = $dataBOM->getBOM($id);
+        $dataIt = $dataItem->getItem($data['bom'][0]->parentcode)[0];
+
         $data['site_name'] = $data['bom'][0]->site ? $dataSit->getSite($data['bom'][0]->site)[0]->site_name : "";
         $data['dept_name'] = $data['bom'][0]->dept ? $dataDep->getDepartment($data['bom'][0]->dept)[0]->dept_name : "";
         $data['whs_name'] = $data['bom'][0]->whs ? $dataWhs->getWarehouse($data['bom'][0]->whs)[0]->whs_name : "";
-        $data['itemname'] = $data['bom'][0]->parentcode ? $dataItem->getItem($data['bom'][0]->parentcode)[0]->item_name_1 : "";
+        $data['itemname'] = $data['bom'][0]->parentcode ? $dataIt->item_code."|".$dataIt->item_name_1 : "";
         $data['uom_desc'] = $data['bom'][0]->uom ? $dataUOM->getUOM($data['bom'][0]->uom)[0]->uom_desc : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'BOM']);
         $data['page_title'] = view('partials/page-title', ['title' => 'BOM', 'pagetitle' => 'MasterData']);

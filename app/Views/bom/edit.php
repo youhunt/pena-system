@@ -2,7 +2,8 @@
  
 <?= $this->section('page-content') ?>
                     <form action="<?= base_url(); ?>bom/update" class="user" method="post">
-                        <input type="hidden" name="id" value="<?= $bom[0]->id; ?>" ?>
+                        <input type="hidden" name="id" class="bom_id" value="<?= $bom[0]->id; ?>" ?>
+                        <input type="hidden" name="bom_id" class="bom_id" value="<?= $bom[0]->id; ?>" ?>
 
                         <div class="row">
                             <div class="col-xl-12">
@@ -240,8 +241,8 @@
                 
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
-                    <input type="hidden" name="bom_id" class="bom_id">
-                    
+                    <input type="hidden" name="bom_id" class="bom_id" value="<?= $bom[0]->id; ?>" ?>
+                
                     <input type="hidden" name="status" class="status">
                     <button type="submit" class="btn btn-primary">Save</button>
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -348,15 +349,16 @@
 
         $('#dataTable tbody').on('click', '.btn-update-bom-child', function() {
             const id = $(this).data('id');
+            const bom_id = $(this).data('bom_id');
             
-            // Set data to Form Edit
-            $('.status').val('2');
             $('.id').val(id);
+            $('.bom_id').val(bom_id);
+            $('.status').val('2');
             $.ajax({
                 url: "<?php echo site_url('bom/getBOMChildById') ?>",
                 type: "post",
                 data: {
-                    id : id
+                    id : id, 
                 } ,
                 success: function (response) {
                     var data = $.parseJSON(response); //(jsonStringify);
@@ -373,7 +375,7 @@
                     var uomSelect = $('#itemchilduom');
                     option = new Option(data[0].childuom_desc, data[0].childuom, true, true);
                     uomSelect.append(option).trigger('change');
-                    $('#childuom_desc').html(data[0].childuom_desc);
+                    //$('#childuom_desc').html(data[0].childuom_desc);
                     $('#factor').val(data[0].factor);
                     $('#childdescription').val(data[0].childdescription);
                     $('#childdescription').val(data[0].childdescription);
@@ -397,7 +399,7 @@
                 "url": "<?php echo site_url('bom/getBOMChild') ?>",
                 "type": "POST",
                 data: {
-                    bom_id: $("#id").val(),
+                    bom_id: $(".bom_id").val(),
                 },
             },
             "columns": [
@@ -454,7 +456,7 @@
                 }, 
                 {
                     data: "no", render: function (data, type, row) {
-                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-bom-child" data-id="' + row.id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-bom-child" title="Delete" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" ><i class="fas fa-times"></i></a>';
+                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-bom-child" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-bom-child" title="Delete" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" ><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
@@ -556,7 +558,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#item option:selected").val();
             $("#parentcode").val(data);
@@ -583,7 +605,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#itemchild option:selected").val();
             $("#childcode").val(data);
