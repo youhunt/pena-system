@@ -301,6 +301,26 @@ class BOM extends BaseController
         return view('bom/edit', $data);            
     }
 
+    function check_code() {
+        $site = $this->input->post('site');
+        $dept = $this->input->post('dept');
+        $whs = $this->input->post('whs');
+        $parentcode  = $this->input->post('parentcode');
+        $this->db->select('id');
+        $this->db->from('bom');
+        $this->db->where('site', $site)
+                ->where('dept', $dept)
+                ->where('whs', $whs)
+                ->where('parentcode', $parentcode);
+        $query = $this->db->get();
+        $num = $query->num_rows();
+        if ($num > 0) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
     public function update()
     {
         $id =  $this->request->getVar('id');
