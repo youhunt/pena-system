@@ -26,4 +26,6 @@ return [
     'typechild1' => 'Main Child',
     'typechild2' => 'Alternatif',
     'typechild3' => 'Alternatif 2',
+    'typechild4' => 'CO Product',
+    'typechild5' => 'By Product',
 ];

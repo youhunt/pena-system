@@ -11,6 +11,7 @@ use App\Models\WarehouseModel;
 use App\Models\ItemModel;
 use Config\Services;
 
+
 class BOM extends BaseController
 {
 
@@ -50,9 +51,9 @@ class BOM extends BaseController
                 $row['whs'] = $list->whs ? $dataWhs->getWarehouse($list->whs)[0]->whs_name : "";
                 $row['parentcode'] = $list->parentcode ? $dataItem->getItem($list->parentcode)[0]->item_name_1 : "";
                 $row['type'] = lang('BOM.type'.$list->type);
-                $row['qty'] = $list->qty;
+                $row['qty'] = number_format((float)$list->qty, 2, '.', '');;
                 $row['uom'] = $list->uom ? $dataUOM->getUOM($list->uom)[0]->uom_desc : "";
-                $row['ratio'] = $list->ratio;
+                $row['ratio'] = number_format((float)$list->ratio, 2, '.', '');
                 $row['description'] = $list->description;
                 $row['active'] = $list->active;
                 $row['no'] = '';
@@ -92,9 +93,9 @@ class BOM extends BaseController
                 $row['childno'] = $list->childno;
                 $row['childcode'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_name_1 : "";
                 $row['childtype'] = lang('BOM.typechild'.$list->childtype);
-                $row['qtyused'] = $list->qtyused;
+                $row['qtyused'] = number_format((float)$list->qtyused, 2, '.', '');
                 $row['childuom'] = $list->childuom ? $dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
-                $row['factor'] = $list->factor;
+                $row['factor'] = number_format((float)$list->factor, 0, '.', '');
                 $row['childdescription'] = $list->childdescription;
                 $row['active'] = $list->active;
                 $row['no'] = '';
@@ -130,7 +131,7 @@ class BOM extends BaseController
             $row['childcode'] = $list->childcode;
             $row['itemchildname'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_code."|".$dataItem->getItem($list->childcode)[0]->item_name_1 : "";
             $row['childtype'] = lang('BOM.typechild'.$list->childtype);
-            $row['qtyused'] = $list->qtyused;
+            $row['qtyused'] = number_format((float)$list->qtyused, 2, '.', '');
             $row['childuom'] = $list->childuom;
             $row['childuom_desc'] = $list->childuom ? $dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
             $row['factor'] = $list->factor;
@@ -188,10 +189,22 @@ class BOM extends BaseController
                 'created_date'=>  date("Y-m-d H:i:s"),
                 'created_by' =>  user()->username,
             ];
-            
-            $model->save($data);
 
-            return redirect()->to(base_url('/bom/index'));
+            try
+            {
+                $model->save($data);
+                $id = $model->getInsertID();
+                return redirect()->to(base_url('/bom/edit/'.$id));
+            }
+            catch (\CodeIgniter\Database\Exceptions\DatabaseException $e)
+            {
+                if ($e->getCode() === 1062)
+                {
+                    $error = ['Data already exists.'];
+                    return redirect()->back()->withInput()->with('errors', $error);
+                }
+
+            } 
 
         } else {
             
@@ -356,10 +369,21 @@ class BOM extends BaseController
                 'updated_at' =>  date("Y-m-d H:i:s"),
             ];
             
-            $model->updateData($id, $data);
-            // $model->where('id', $id)->update($data);
+            try
+            {
+                $model->updateData($id, $data);
+                return redirect()->to(base_url('/bom/index'));
+            }
+            catch (\CodeIgniter\Database\Exceptions\DatabaseException $e)
+            {
+                if ($e->getCode() === 1062)
+                {
+                    $error = ['Data already exists.'];
+                    return redirect()->back()->withInput()->with('errors', $error);
+                }
 
-            return redirect()->to(base_url('/bom/index'));
+            } 
+
 
         } else {
             

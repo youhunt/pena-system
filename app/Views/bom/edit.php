@@ -68,7 +68,7 @@
                                             </div>
                                             <label for="qty" class="col-sm-2 col-form-label"><?= lang('BOM.qty'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.qty')) : ?>is-invalid<?php endif ?>" id="qty" placeholder="<?= lang('BOM.qty'); ?>" style="text-align:right;" name="qty" value="<?= old('qty') ? old('qty') : $bom[0]->qty ; ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.qty')) : ?>is-invalid<?php endif ?>" id="qty" placeholder="<?= lang('BOM.qty'); ?>" style="text-align:right;" name="qty" value="<?= number_format((float)(old('qty') ? old('qty') : $bom[0]->qty), 2, '.', '') ; ?>">
                                             </div>
                                         </div>
 
@@ -82,7 +82,7 @@
                                             </div>
                                             <label for="ratio" class="col-sm-2 col-form-label"><?= lang('BOM.ratio'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.ratio')) : ?>is-invalid<?php endif ?>" id="ratio" placeholder="<?= lang('BOM.ratio'); ?>" style="text-align:right;" name="ratio" value="<?= old('ratio') ? old('ratio') : $bom[0]->ratio ; ?>">
+                                                <input type="number" class="form-control <?php if(session('errors.ratio')) : ?>is-invalid<?php endif ?>" id="ratio" placeholder="<?= lang('BOM.ratio'); ?>" style="text-align:right;" name="ratio" value="<?= number_format((float)(old('ratio') ? old('ratio') : $bom[0]->ratio), 2, '.', ''); ?>">
                                             </div>
                                         </div>
 
@@ -205,11 +205,14 @@
                             <select class="form-control <?php if(session('errors.childtype')) : ?>is-invalid<?php endif ?>" name="childtype" id="childtype" >
                                 <option value="1" <?= (old('childtype'))=="1" ? "selected" : "" ; ?>><?= lang('BOM.typechild1'); ?></option>
                                 <option value="2" <?= (old('childtype'))=="2" ? "selected" : "" ; ?>><?= lang('BOM.typechild2'); ?></option>
+                                <option value="3" <?= (old('childtype'))=="3" ? "selected" : "" ; ?>><?= lang('BOM.typechild3'); ?></option>
+                                <option value="4" <?= (old('childtype'))=="4" ? "selected" : "" ; ?>><?= lang('BOM.typechild4'); ?></option>
+                                <option value="5" <?= (old('childtype'))=="5" ? "selected" : "" ; ?>><?= lang('BOM.typechild5'); ?></option>
                             </select>
                         </div>
                         <label for="qtyused" class="col-sm-2 col-form-label"><?= lang('BOM.qtyused'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" class="form-control <?php if(session('errors.qtyused')) : ?>is-invalid<?php endif ?>" id="qtyused" placeholder="<?= lang('BOM.qtyused'); ?>" style="text-align:right;" name="qtyused" value="<?= old('qtyused') ; ?>">
+                            <input type="number" class="form-control <?php if(session('errors.qtyused')) : ?>is-invalid<?php endif ?>" id="qtyused" placeholder="<?= lang('BOM.qtyused'); ?>" style="text-align:right;" name="qtyused" value="<?= number_format((float)(old('qtyused')), 2, '.', '')  ; ?>">
                         </div>
                     </div>
 
@@ -224,7 +227,7 @@
                         </div>
                         <label for="factor" class="col-sm-2 col-form-label"><?= lang('BOM.factor'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" class="form-control <?php if(session('errors.factor')) : ?>is-invalid<?php endif ?>" id="factor" placeholder="<?= lang('BOM.factor'); ?>" style="text-align:right;" name="factor" value="<?= old('factor'); ?>">
+                            <input type="number" class="form-control <?php if(session('errors.factor')) : ?>is-invalid<?php endif ?>" id="factor" placeholder="<?= lang('BOM.factor'); ?>" style="text-align:right;" name="factor" value="<?= number_format((float)(old('factor')), 2, '.', ''); ?>">
                         </div>
                     </div>
 

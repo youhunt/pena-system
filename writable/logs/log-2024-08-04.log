@@ -1,0 +1,412 @@
+INFO - 2024-08-04 09:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 09:48:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:00:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:00:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:00:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:00:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-04 10:01:24 --> mysqli_sql_exception: Duplicate entry '1-1-1-6' for key 'site' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `bo...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bo...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bo...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bo...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\pena-system\app\Controllers\BOM.php(194): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\BOM->save()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#16 {main}
+CRITICAL - 2024-08-04 10:01:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '1-1-1-6' for key 'site'
+[Method: POST, Route: bom/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (:site:, :dept:, :whs:, :parentcode:, :type:, :qty:, :uom:, :ratio:, :description:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\BOM.php(194): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->save()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-08-04 10:01:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '1-1-1-6' for key 'site'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'1\', \'1\', \'1\', \'\', \'2024-08-04 10:01:24\', \'2024-08-04 10:01:24\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'1\', \'1\', \'1\', \'\', \'2024-08-04 10:01:24\', \'2024-08-04 10:01:24\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (:site:, :dept:, :whs:, :parentcode:, :type:, :qty:, :uom:, :ratio:, :description:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\BOM.php(194): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->save()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-08-04 10:01:24 --> [Caused by] mysqli_sql_exception: Duplicate entry '1-1-1-6' for key 'site'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'1\', \'1\', \'1\', \'\', \'2024-08-04 10:01:24\', \'2024-08-04 10:01:24\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'1\', \'1\', \'1\', \'\', \'2024-08-04 10:01:24\', \'2024-08-04 10:01:24\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'1\', \'1\', \'1\', \'\', \'2024-08-04 10:01:24\', \'2024-08-04 10:01:24\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (:site:, :dept:, :whs:, :parentcode:, :type:, :qty:, :uom:, :ratio:, :description:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\BOM.php(194): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->save()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-04 10:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-04 10:12:08 --> mysqli_sql_exception: Duplicate entry '1-1-1-6' for key 'site' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `bo...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bo...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bo...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bo...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\pena-system\app\Controllers\BOM.php(195): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\BOM->save()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#16 {main}
+CRITICAL - 2024-08-04 10:12:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '1-1-1-6' for key 'site'
+[Method: POST, Route: bom/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (:site:, :dept:, :whs:, :parentcode:, :type:, :qty:, :uom:, :ratio:, :description:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\BOM.php(195): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->save()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-08-04 10:12:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '1-1-1-6' for key 'site'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'10\', \'1\', \'1\', \'BOM item 1\', \'2024-08-04 10:12:08\', \'2024-08-04 10:12:08\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'10\', \'1\', \'1\', \'BOM item 1\', \'2024-08-04 10:12:08\', \'2024-08-04 10:12:08\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (:site:, :dept:, :whs:, :parentcode:, :type:, :qty:, :uom:, :ratio:, :description:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\BOM.php(195): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->save()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-08-04 10:12:08 --> [Caused by] mysqli_sql_exception: Duplicate entry '1-1-1-6' for key 'site'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'10\', \'1\', \'1\', \'BOM item 1\', \'2024-08-04 10:12:08\', \'2024-08-04 10:12:08\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'10\', \'1\', \'1\', \'BOM item 1\', \'2024-08-04 10:12:08\', \'2024-08-04 10:12:08\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1\', \'6\', \'1\', \'10\', \'1\', \'1\', \'BOM item 1\', \'2024-08-04 10:12:08\', \'2024-08-04 10:12:08\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bom` (`site`, `dept`, `whs`, `parentcode`, `type`, `qty`, `uom`, `ratio`, `description`, `created_at`, `updated_at`) VALUES (:site:, :dept:, :whs:, :parentcode:, :type:, :qty:, :uom:, :ratio:, :description:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\BOM.php(195): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->save()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-04 10:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-04 10:17:55 --> mysqli_sql_exception: Duplicate entry '1-1-1-6' for key 'site' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `bo...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bo...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bo...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bo...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\pena-system\app\Controllers\BOM.php(195): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\BOM->save()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#16 {main}
+INFO - 2024-08-04 10:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-04 10:17:55 --> ErrorException: foreach() argument must be of type array|object, string given
+[Method: GET, Route: bom/add]
+in VENDORPATH\myth\auth\src\Views\_message_block.php on line 15.
+ 1 VENDORPATH\myth\auth\src\Views\_message_block.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'D:\\Project-project\\CI\\pena-system\\vendor\\myth\\auth\\src\\Views\\_message_block.php', 15)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\pena-system\\vendor\\myth\\auth\\src\\Views\\_message_block.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('\\Myth\\Auth\\Views\\_message_block', [], true)
+ 5 APPPATH\Views\bom\add.php(13): view('\\Myth\\Auth\\Views\\_message_block')
+ 6 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\pena-system\\app\\Views\\bom\\add.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('bom/add', [], true)
+ 9 APPPATH\Controllers\BOM.php(156): view('bom/add', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->add()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-04 10:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-04 10:20:39 --> mysqli_sql_exception: Duplicate entry '1-1-1-6' for key 'site' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `bo...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bo...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bo...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bo...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\pena-system\app\Controllers\BOM.php(195): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\BOM->save()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#16 {main}
+INFO - 2024-08-04 10:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-04 10:20:39 --> ErrorException: foreach() argument must be of type array|object, string given
+[Method: GET, Route: bom/add]
+in VENDORPATH\myth\auth\src\Views\_message_block.php on line 15.
+ 1 VENDORPATH\myth\auth\src\Views\_message_block.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'D:\\Project-project\\CI\\pena-system\\vendor\\myth\\auth\\src\\Views\\_message_block.php', 15)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\pena-system\\vendor\\myth\\auth\\src\\Views\\_message_block.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('\\Myth\\Auth\\Views\\_message_block', [], true)
+ 5 APPPATH\Views\bom\add.php(13): view('\\Myth\\Auth\\Views\\_message_block')
+ 6 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\pena-system\\app\\Views\\bom\\add.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('bom/add', [], true)
+ 9 APPPATH\Controllers\BOM.php(156): view('bom/add', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->add()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-04 10:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:24:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-04 10:25:15 --> mysqli_sql_exception: Duplicate entry '1-1-1-6' for key 'site' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `bo...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bo...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bo...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bo...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\pena-system\app\Controllers\BOM.php(195): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\BOM->save()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#16 {main}
+INFO - 2024-08-04 10:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-04 10:25:15 --> ErrorException: foreach() argument must be of type array|object, string given
+[Method: GET, Route: bom/add]
+in VENDORPATH\myth\auth\src\Views\_message_block.php on line 15.
+ 1 VENDORPATH\myth\auth\src\Views\_message_block.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'D:\\Project-project\\CI\\pena-system\\vendor\\myth\\auth\\src\\Views\\_message_block.php', 15)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\pena-system\\vendor\\myth\\auth\\src\\Views\\_message_block.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('\\Myth\\Auth\\Views\\_message_block', [], true)
+ 5 APPPATH\Views\bom\add.php(13): view('\\Myth\\Auth\\Views\\_message_block')
+ 6 SYSTEMPATH\View\View.php(234): include('D:\\Project-project\\CI\\pena-system\\app\\Views\\bom\\add.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('bom/add', [], true)
+ 9 APPPATH\Controllers\BOM.php(156): view('bom/add', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->add()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-04 10:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 10:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-04 10:34:52 --> mysqli_sql_exception: Duplicate entry '1-1-1-6' for key 'site' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `bo...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bo...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bo...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bo...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\pena-system\app\Controllers\BOM.php(195): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\BOM->save()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#16 {main}
+INFO - 2024-08-04 10:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:01:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-04 14:02:08 --> ErrorException: Undefined variable $userModel
+[Method: POST, Route: bom/save]
+in APPPATH\Controllers\BOM.php on line 196.
+ 1 APPPATH\Controllers\BOM.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userModel', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\BOM.php', 196)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->save()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-04 14:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:02:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:03:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:03:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:03:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:03:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:27:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:27:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:28:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-04 14:29:29 --> Error: Object of class stdClass could not be converted to string
+[Method: POST, Route: bom/getBOMChild]
+in APPPATH\Controllers\BOM.php on line 98.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BOM->getBOMChild()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BOM))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-04 14:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:30:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:43:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:43:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 14:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
