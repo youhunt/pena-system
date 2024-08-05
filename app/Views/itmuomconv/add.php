@@ -113,7 +113,7 @@
 
         $('#item').select2({
             placeholder: '',
-            minimumInputLength: 1,
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/item/getAll'); ?>',
                 dataType: 'json',

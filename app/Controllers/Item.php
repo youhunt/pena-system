@@ -239,11 +239,18 @@ class Item extends BaseController
         $db      = \Config\Database::connect();
         $builder = $db->table('item_master');   
 
-        $query = $builder->like('item_code', $this->request->getVar('q'))
+        $query = $builder
+                ->select('id, concat(item_code,"|",item_name_1) as text')
+                ->limit(30)->get();
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                    ->like('item_code', $this->request->getVar('q'))
                     ->orLike('item_name_1', $this->request->getVar('q'))
                     ->orLike('item_name_2', $this->request->getVar('q'))
                     ->select('id, concat(item_code,"|",item_name_1) as text')
                     ->limit(30)->get();
+        }
+        
         $data = $query->getResult();
         
 		echo json_encode($data);

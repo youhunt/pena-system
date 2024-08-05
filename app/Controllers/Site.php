@@ -70,10 +70,20 @@ class Site extends BaseController
         $builder = $db->table('site_master');   
 
         $query = $builder
-                    ->where('comp_code', $this->request->getVar('company_id'))
-                    ->like('site_name', $this->request->getVar('q'))
-                    ->select('id, site_name as text')
-                    ->limit(30)->get();
+            ->where('comp_code', $this->request->getVar('company_id'))
+            ->select('id, concat(site_code, "|", site_name) as text')
+            ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->where('comp_code', $this->request->getVar('company_id'))
+                ->like('site_name', $this->request->getVar('q'))
+                ->like('site_code', $this->request->getVar('q'))
+                ->select('id, concat(site_code, "|", site_name) as text')
+                ->limit(30)->get();
+        }
+        
+
         $data = $query->getResult();
         
 		echo json_encode($data);
@@ -89,9 +99,17 @@ class Site extends BaseController
         $builder = $db->table('site_master');   
 
         $query = $builder
-                    ->like('site_name', $this->request->getVar('q'))
-                    ->select('id, site_name as text')
+                ->select('id, concat(site_code,"|", site_name) as text')
+                ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                    ->like('site_code', $this->request->getVar('q'))
+                    ->orLike('site_name', $this->request->getVar('q'))
+                    ->select('id, concat(site_code,"|", site_name) as text')
                     ->limit(30)->get();
+        }
+
         $data = $query->getResult();
         
 		echo json_encode($data);

@@ -60,9 +60,17 @@ class Countries extends BaseController
         $db      = \Config\Database::connect();
         $builder = $db->table('countries');   
 
-        $query = $builder->like('country_name', $this->request->getVar('q'))
-                    ->select('id, country_name as text')
+        $query = $builder
+                    ->select('id, concat(country_code, "|", country_name) as text')
                     ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder->like('country_name', $this->request->getVar('q'))
+                ->orLike('country_code', $this->request->getVar('q'))
+                ->select('id, concat(country_code, "|", country_name) as text')
+                ->limit(30)->get();
+        }
+        
         $data = $query->getResult();
         
 		echo json_encode($data);

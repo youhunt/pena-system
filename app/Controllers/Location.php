@@ -260,4 +260,57 @@ class Location extends BaseController
         
         return redirect()->to(base_url('/location/index'));
     }
+
+    public function getAll()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('location_master');   
+
+        $query = $builder
+                ->select('id, concat(loc_code, "|", loc_name) as text')
+                ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->like('loc_name', $this->request->getVar('q'))
+                ->orLike('loc_code', $this->request->getVar('q'))
+                ->select('id, concat(loc_code, "|", loc_name) as text')
+                ->limit(30)->get();
+        }
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
+
+    public function getByWarehouse()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('location_master');   
+
+        $query = $builder
+                ->where('whs_code', $this->request->getVar('whs_id'))
+                ->select('id, concat(loc_code, "|", loc_name) as text')
+                ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->where('whs_code', $this->request->getVar('whs_id'))
+                ->like('loc_name', $this->request->getVar('q'))
+                ->orLike('loc_code', $this->request->getVar('q'))
+                ->select('id, concat(loc_code, "|", loc_name) as text')
+                ->limit(30)->get();
+        }
+        
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
 }

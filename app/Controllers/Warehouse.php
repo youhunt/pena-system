@@ -281,9 +281,17 @@ class Warehouse extends BaseController
         $db      = \Config\Database::connect();
         $builder = $db->table('warehouse_master');   
 
-        $query = $builder->like('whs_name', $this->request->getVar('q'))
-                    ->select('id, whs_name as text')
-                    ->limit(30)->get();
+        $query = $builder
+                ->select('id, concat(whs_code, "|", whs_name) as text')
+                ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->like('whs_name', $this->request->getVar('q'))
+                ->orLike('whs_code', $this->request->getVar('q'))
+                ->select('id, concat(whs_code, "|", whs_name) as text')
+                ->limit(30)->get();
+        }
         $data = $query->getResult();
         
 		echo json_encode($data);
@@ -299,10 +307,18 @@ class Warehouse extends BaseController
         $builder = $db->table('warehouse_master');   
 
         $query = $builder
-                    ->where('dept_code', $this->request->getVar('dept_id'))
-                    ->like('whs_name', $this->request->getVar('q'))
-                    ->select('id, whs_name as text')
-                    ->limit(30)->get();
+                ->where('dept_code', $this->request->getVar('dept_id'))
+                ->select('id, concat(whs_code, "|", whs_name) as text')
+                ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->where('dept_code', $this->request->getVar('dept_id'))
+                ->like('whs_name', $this->request->getVar('q'))
+                ->orLike('whs_code', $this->request->getVar('q'))
+                ->select('id, concat(whs_code, "|", whs_name) as text')
+                ->limit(30)->get();
+        }
         $data = $query->getResult();
         
 		echo json_encode($data);

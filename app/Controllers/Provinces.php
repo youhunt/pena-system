@@ -74,10 +74,18 @@ class Provinces extends BaseController
         $builder = $db->table('provinces');   
 
         $query = $builder
-                    ->where('country_id', $this->request->getVar('country_id'))
-                    ->like('province_name', $this->request->getVar('q'))
-                    ->select('id, province_name as text')
-                    ->limit(30)->get();
+                ->where('country_id', $this->request->getVar('country_id'))
+                ->select('id, concat(province_code, "|", province_name) as text')
+                ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->where('country_id', $this->request->getVar('country_id'))
+                ->like('province_name', $this->request->getVar('q'))
+                ->orLike('province_code', $this->request->getVar('q'))
+                ->select('id, concat(province_code, "|", province_name) as text')
+                ->limit(30)->get();
+        }
         $data = $query->getResult();
         
 		echo json_encode($data);
@@ -92,9 +100,18 @@ class Provinces extends BaseController
         $db      = \Config\Database::connect();
         $builder = $db->table('provinces');   
 
-        $query = $builder->like('name', $this->request->getVar('q'))
-                    ->select('id, name as text')
-                    ->limit(30)->get();
+        $query = $builder
+            ->select('id, concat(province_code, "|", province_name) as text')
+            ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->like('province_name', $this->request->getVar('q'))
+                ->orLike('province_code', $this->request->getVar('q'))
+                ->select('id, concat(province_code, "|", province_name) as text')
+                ->limit(30)->get();
+        }
+        
         $data = $query->getResult();
         
 		echo json_encode($data);

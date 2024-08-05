@@ -72,10 +72,19 @@ class Department extends BaseController
         $builder = $db->table('department_master');   
 
         $query = $builder
-                    ->where('site_code', $this->request->getVar('site_id'))
-                    ->like('dept_name', $this->request->getVar('q'))
-                    ->select('id, dept_name as text')
-                    ->limit(30)->get();
+            ->where('site_code', $this->request->getVar('site_id'))
+            ->select('id, concat(dept_code, "|", dept_name) as text')
+            ->limit(30)->get();
+            
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->where('site_code', $this->request->getVar('site_id'))
+                ->like('dept_name', $this->request->getVar('q'))
+                ->orLike('dept_code', $this->request->getVar('q'))
+                ->select('id, concat(dept_code, "|", dept_name) as text')
+                ->limit(30)->get();
+        }
+
         $data = $query->getResult();
         
 		echo json_encode($data);
@@ -91,9 +100,17 @@ class Department extends BaseController
         $builder = $db->table('department_master');   
 
         $query = $builder
-                    ->like('dept_name', $this->request->getVar('q'))
-                    ->select('id, dept_name as text')
-                    ->limit(30)->get();
+            ->select('id, concat(dept_code, "|", dept_name) as text')
+            ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->like('dept_name', $this->request->getVar('q'))
+                ->orLike('dept_code', $this->request->getVar('q'))
+                ->select('id, concat(dept_code, "|", dept_name) as text')
+                ->limit(30)->get();
+        }
+
         $data = $query->getResult();
         
 		echo json_encode($data);

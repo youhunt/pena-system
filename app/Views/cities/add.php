@@ -17,15 +17,12 @@
 
                                         <div class="row mb-4">
                                             <label for="Country" class="col-sm-2 col-form-label"><?= lang('Cities.Country'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="country_id" name="country_id" value="" />
                                                 <select class="form-control <?php if(session('errors.country_id')) : ?>is-invalid<?php endif ?>" name="country" id="country" ></select>
                                             </div>
-                                        </div>
-
-                                        <div class="row mb-4">
                                             <label for="Province" class="col-sm-2 col-form-label"><?= lang('Cities.Province'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="province_id" name="province_id" value="" />
                                                 <select class="form-control <?php if(session('errors.province_id')) : ?>is-invalid<?php endif ?>" name="province" id="province" ></select>
                                             </div>
@@ -64,8 +61,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#country').select2({
-            placeholder: '<?= lang('Cities.Country'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Cities.Country'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -82,15 +79,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#country option:selected").val();
             $("#country_id").val(data);
         });
 
         $('#province').select2({
-            placeholder: '<?= lang('Cities.Province'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Cities.Province'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -108,7 +125,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#province option:selected").val();
             $("#province_id").val(data);

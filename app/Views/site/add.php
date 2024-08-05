@@ -231,7 +231,7 @@
     $(document).ready(function(){
 
         $('#company').select2({
-            placeholder: '',
+            placeholder: '|',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/company/getAll'); ?>',
@@ -256,7 +256,7 @@
         });
 
         $('#country').select2({
-            placeholder: '<?= lang('Site.site_count'); ?>',
+            placeholder: '|<?= lang('Site.site_count'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
@@ -281,7 +281,7 @@
         });
 
         $('#prov').select2({
-            placeholder: '<?= lang('Site.site_prov'); ?>',
+            placeholder: '|<?= lang('Site.site_prov'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
@@ -314,7 +314,7 @@
         });
         
         $('#city').select2({
-            placeholder: '<?= lang('Site.site_city'); ?>',
+            placeholder: '|<?= lang('Site.site_city'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
@@ -348,7 +348,7 @@
         });
 
         $('#bcountry').select2({
-            placeholder: '<?= lang('Site.site_bcount'); ?>',
+            placeholder: '|<?= lang('Site.site_bcount'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
@@ -373,7 +373,7 @@
         });
 
         $('#bprov').select2({
-            placeholder: '<?= lang('Site.site_bprov'); ?>',
+            placeholder: '|<?= lang('Site.site_bprov'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
@@ -406,7 +406,7 @@
         });
         
         $('#bcity').select2({
-            placeholder: '<?= lang('Site.site_bcity'); ?>',
+            placeholder: '|<?= lang('Site.site_bcity'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
@@ -440,7 +440,7 @@
         });
 
         $('#mcountry').select2({
-            placeholder: '<?= lang('Site.site_mcount'); ?>',
+            placeholder: '|<?= lang('Site.site_mcount'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
@@ -465,7 +465,7 @@
         });
 
         $('#mprov').select2({
-            placeholder: '<?= lang('Site.site_mprov'); ?>',
+            placeholder: '|<?= lang('Site.site_mprov'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
@@ -498,7 +498,7 @@
         });
         
         $('#mcity').select2({
-            placeholder: '<?= lang('Site.site_mcity'); ?>',
+            placeholder: '|<?= lang('Site.site_mcity'); ?>',
             minimumInputLength: 1,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',

@@ -100,7 +100,7 @@ class CitiesModel extends Model
 
     public function getCities($id = '')
     {
-        $this->dt->select('cities.id, city_code, city_name, cities.country_id, cities.province_id, cities.active, countries.country_name as country, provinces.province_name as province');
+        $this->dt->select('cities.id, city_code, city_name, cities.country_id, cities.province_id, cities.active, concat(countries.country_code,"|",countries.country_name) as country, concat(provinces.province_code,"|",provinces.province_name) as province');
         $this->dt->join('countries', 'countries.id = cities.country_id');
         $this->dt->join('provinces', 'provinces.id = cities.province_id');
         $this->dt->where('cities.id', $id);

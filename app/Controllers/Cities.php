@@ -85,11 +85,47 @@ class Cities extends BaseController
         $builder = $db->table('cities');   
 
         $query = $builder
-                    ->where('province_id', $this->request->getVar('province_id'))
-                    ->where('country_id', $this->request->getVar('country_id'))
-                    ->like('city_name', $this->request->getVar('q'))
-                    ->select('id, city_name as text')
-                    ->limit(30)->get();
+            ->where('province_id', $this->request->getVar('province_id'))
+            ->where('country_id', $this->request->getVar('country_id'))
+            ->select('id, concat(city_code, "|", city_name) as text')
+            ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->where('province_id', $this->request->getVar('province_id'))
+                ->where('country_id', $this->request->getVar('country_id'))
+                ->like('city_name', $this->request->getVar('q'))
+                ->orLike('city_code', $this->request->getVar('q'))
+                ->select('id, concat(city_code, "|", city_name) as text')
+                ->limit(30)->get();
+        }
+        
+        $data = $query->getResult();
+        
+		echo json_encode($data);
+    }
+
+    public function getAll()
+    {
+        helper(['form', 'url']);
+
+        $data = [];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('cities');   
+
+        $query = $builder
+            ->select('id, concat(city_code, "|", city_name) as text')
+            ->limit(30)->get();
+            
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                ->like('city_name', $this->request->getVar('q'))
+                ->orLike('city_code', $this->request->getVar('q'))
+                ->select('id, concat(city_code, "|", city_name) as text')
+                ->limit(30)->get();
+        }
+        
         $data = $query->getResult();
         
 		echo json_encode($data);

@@ -192,9 +192,18 @@ class UOM extends BaseController
         $db      = \Config\Database::connect();
         $builder = $db->table('uom');   
 
-        $query = $builder->like('uom_desc', $this->request->getVar('q'))
-                    ->select('id, uom_desc as text')
+        $query = $builder
+                    ->select('id, concat(uom_code,"|", uom_desc) as text')
                     ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                    ->like('uom_desc', $this->request->getVar('q'))
+                    ->orLike('uom_code', $this->request->getVar('q'))
+                    ->select('id, concat(uom_code,"|", uom_desc) as text')
+                    ->limit(30)->get();
+        }
+        
         $data = $query->getResult();
         
 		echo json_encode($data);

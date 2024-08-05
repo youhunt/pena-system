@@ -133,7 +133,7 @@ class BOM extends BaseController
             $row['childtype'] = lang('BOM.typechild'.$list->childtype);
             $row['qtyused'] = number_format((float)$list->qtyused, 2, '.', '');
             $row['childuom'] = $list->childuom;
-            $row['childuom_desc'] = $list->childuom ? $dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
+            $row['childuom_desc'] = $list->childuom ?  $dataUOM->getUOM($list->childuom)[0]->uom_code."|".$dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
             $row['factor'] = $list->factor;
             $row['childdescription'] = $list->childdescription;
             $row['active'] = $list->active;
@@ -302,12 +302,16 @@ class BOM extends BaseController
         $data['submenu'] = 'bom';
         $data['bom'] = $dataBOM->getBOM($id);
         $dataIt = $dataItem->getItem($data['bom'][0]->parentcode)[0];
+        $dataSi = $dataSit->getSite($data['bom'][0]->site)[0];
+        $dataDe = $dataDep->getDepartment($data['bom'][0]->dept)[0];
+        $dataWh = $dataWhs->getWarehouse($data['bom'][0]->whs)[0];
+        $dataUo = $dataUOM->getUOM($data['bom'][0]->uom)[0];
 
-        $data['site_name'] = $data['bom'][0]->site ? $dataSit->getSite($data['bom'][0]->site)[0]->site_name : "";
-        $data['dept_name'] = $data['bom'][0]->dept ? $dataDep->getDepartment($data['bom'][0]->dept)[0]->dept_name : "";
-        $data['whs_name'] = $data['bom'][0]->whs ? $dataWhs->getWarehouse($data['bom'][0]->whs)[0]->whs_name : "";
-        $data['itemname'] = $data['bom'][0]->parentcode ? $dataIt->item_code."|".$dataIt->item_name_1 : "";
-        $data['uom_desc'] = $data['bom'][0]->uom ? $dataUOM->getUOM($data['bom'][0]->uom)[0]->uom_desc : "";
+        $data['site_name'] = $data['bom'][0]->site ? $dataSi->site_code."|".$dataSi->site_name : "|";
+        $data['dept_name'] = $data['bom'][0]->dept ? $dataDe->dept_code . "|". $dataDe->dept_name : "|";
+        $data['whs_name'] = $data['bom'][0]->whs ? $dataWh->whs_code."|".$dataWh->whs_name : "|";
+        $data['itemname'] = $data['bom'][0]->parentcode ? $dataIt->item_code."|".$dataIt->item_name_1 : "|";
+        $data['uom_desc'] = $data['bom'][0]->uom ? $dataUo->uom_code."|".$dataUo->uom_desc : "|";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'BOM']);
         $data['page_title'] = view('partials/page-title', ['title' => 'BOM', 'pagetitle' => 'MasterData']);
 
