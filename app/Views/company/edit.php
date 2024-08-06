@@ -40,7 +40,7 @@
                                         <div class="row mb-4">
                                             <label for="comp_add" class="col-sm-2 col-form-label"><?= lang('Company.comp_add'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.comp_add')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Company.comp_add'); ?>" name="comp_add"><?= old('comp_add') ? old('comp_add') : $company[0]->comp_add; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.comp_add')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Company.comp_add'); ?>" name="comp_add"><?= old('comp_add') ? old('comp_add') : $company[0]->comp_add; ?></textarea>
                                             </div>
                                         </div>
 
@@ -120,8 +120,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#country').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -138,7 +138,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#country option:selected").val();
             $("#comp_count").val(data);
@@ -164,8 +184,8 @@
         // });
 
         $('#prov').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -189,7 +209,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#prov option:selected").val();
             $("#comp_prov").val(data);
@@ -197,8 +237,8 @@
         });
         
         $('#city').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -223,7 +263,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#city option:selected").val();
             $("#comp_city").val(data);

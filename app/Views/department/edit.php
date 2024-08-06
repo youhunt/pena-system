@@ -18,17 +18,14 @@
  
                                         <div class="row mb-4">
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Department.comp_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code') ? old('comp_code') : $dept[0]->comp_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.comp_code')) : ?>is-invalid<?php endif ?>" name="company" id="company" >
                                                     <option selected="selected"><?= $comp_name ?></option>
                                                 </select>
                                             </div>
-                                        </div>
-
-                                        <div class="row mb-4">
                                             <label for="site_code" class="col-sm-2 col-form-label"><?= lang('Department.site_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="site_code" name="site_code" value="<?= old('site_code') ? old('site_code') : $dept[0]->site_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site_code')) : ?>is-invalid<?php endif ?>" name="site" id="site" >
                                                     <option selected="selected"><?= $site_name ?></option>
@@ -59,7 +56,7 @@
                                         <div class="row mb-4">
                                             <label for="dept_add" class="col-sm-2 col-form-label"><?= lang('Department.dept_add'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.dept_add')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Department.dept_add'); ?>" name="dept_add"><?= old('dept_add') ? old('dept_add') : $dept[0]->dept_add ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.dept_add')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Department.dept_add'); ?>" name="dept_add"><?= old('dept_add') ? old('dept_add') : $dept[0]->dept_add ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -119,7 +116,7 @@
                                         <div class="row mb-4">
                                             <label for="dept_badd" class="col-sm-2 col-form-label"><?= lang('Department.dept_badd'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.dept_badd')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Department.dept_badd'); ?>" name="dept_badd"><?= old('dept_badd') ? old('dept_badd') : $dept[0]->dept_badd ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.dept_badd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Department.dept_badd'); ?>" name="dept_badd"><?= old('dept_badd') ? old('dept_badd') : $dept[0]->dept_badd ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -179,7 +176,7 @@
                                         <div class="row mb-4">
                                             <label for="dept_madd" class="col-sm-2 col-form-label"><?= lang('Department.dept_madd'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.dept_madd')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Department.dept_madd'); ?>" name="dept_madd"><?= old('dept_madd') ? old('dept_madd') : $dept[0]->dept_madd ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.dept_madd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Department.dept_madd'); ?>" name="dept_madd"><?= old('dept_madd') ? old('dept_madd') : $dept[0]->dept_madd ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -258,8 +255,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#company').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/company/getAll'); ?>',
                 dataType: 'json',
@@ -276,15 +273,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#company option:selected").val();
             $("#comp_code").val(data);
         });
 
         $('#site').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/site/getByCompany'); ?>',
                 dataType: 'json',
@@ -302,15 +319,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#site option:selected").val();
             $("#comp_code").val(data);
         });
 
         $('#country').select2({
-            placeholder: '<?= lang('Department.dept_count'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Department.dept_count'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -327,15 +364,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#country option:selected").val();
             $("#dept_count").val(data);
         });
 
         $('#prov').select2({
-            placeholder: '<?= lang('Department.dept_prov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Department.dept_prov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -359,7 +416,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#prov option:selected").val();
             $("#dept_prov").val(data);
@@ -367,8 +444,8 @@
         });
         
         $('#city').select2({
-            placeholder: '<?= lang('Department.dept_city'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Department.dept_city'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -393,7 +470,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#city option:selected").val();
             $("#dept_city").val(data);
@@ -401,8 +498,8 @@
         });
 
         $('#bcountry').select2({
-            placeholder: '<?= lang('Department.dept_bcount'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Department.dept_bcount'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -419,15 +516,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#bcountry option:selected").val();
             $("#dept_bcount").val(data);
         });
 
         $('#bprov').select2({
-            placeholder: '<?= lang('Department.dept_bprov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Department.dept_bprov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -451,7 +568,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#bprov option:selected").val();
             $("#dept_bprov").val(data);
@@ -459,8 +596,8 @@
         });
         
         $('#bcity').select2({
-            placeholder: '<?= lang('Department.dept_bcity'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Department.dept_bcity'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -485,7 +622,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#bcity option:selected").val();
             $("#dept_bcity").val(data);
@@ -493,8 +650,8 @@
         });
 
         $('#mcountry').select2({
-            placeholder: '<?= lang('Department.dept_mcount'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Department.dept_mcount'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -511,15 +668,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#mcountry option:selected").val();
             $("#dept_mcount").val(data);
         });
 
         $('#mprov').select2({
-            placeholder: '<?= lang('Department.dept_mprov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Department.dept_mprov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -543,7 +720,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#mprov option:selected").val();
             $("#dept_mprov").val(data);
@@ -551,8 +748,8 @@
         });
         
         $('#mcity').select2({
-            placeholder: '<?= lang('Department.dept_mcity'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Department.dept_mcity'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -577,7 +774,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#mcity option:selected").val();
             $("#dept_mcity").val(data);

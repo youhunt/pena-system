@@ -18,17 +18,14 @@
  
                                         <div class="row mb-4">
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Warehouse.comp_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code') ? old('comp_code') : $whs[0]->comp_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.comp_code')) : ?>is-invalid<?php endif ?>" name="company" id="company" >
                                                     <option selected="selected"><?= $comp_name ?></option>
                                                 </select>
                                             </div>
-                                        </div>
-
-                                        <div class="row mb-4">
                                             <label for="site_code" class="col-sm-2 col-form-label"><?= lang('Warehouse.site_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="site_code" name="site_code" value="<?= old('site_code') ? old('site_code') : $whs[0]->site_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site_code')) : ?>is-invalid<?php endif ?>" name="site" id="site" >
                                                     <option selected="selected"><?= $site_name ?></option>
@@ -38,38 +35,33 @@
 
                                         <div class="row mb-4">
                                             <label for="dept_code" class="col-sm-2 col-form-label"><?= lang('Warehouse.dept_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="dept_code" name="dept_code" value="<?= old('dept_code') ? old('dept_code') : $whs[0]->dept_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.dept_code')) : ?>is-invalid<?php endif ?>" name="dept" id="dept" >
                                                     <option selected="selected"><?= $dept_name ?></option>
                                                 </select>
                                             </div>
-                                        </div>
-
-                                        <div class="row mb-4">
                                             <label for="whs_code" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_code')) : ?>is-invalid<?php endif ?>" id="whs_code" placeholder="<?= lang('Warehouse.whs_code'); ?>" name="whs_code" value="<?= old('whs_code') ? old('whs_code') : $whs[0]->whs_code ; ?>">
                                             </div>
+                                        </div>
+
+                                        <div class="row mb-4">
                                             <label for="whs_pic" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_pic'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_pic')) : ?>is-invalid<?php endif ?>" id="whs_pic" placeholder="<?= lang('Warehouse.whs_pic'); ?>" name="whs_pic" value="<?= old('whs_pic') ? old('whs_pic') : $whs[0]->whs_pic ; ?>">
                                             </div>
-                                        </div>
-
-                                        <div class="row mb-4">
                                             <label for="whs_name" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_name'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_name')) : ?>is-invalid<?php endif ?>" id="whs_name" placeholder="<?= lang('Warehouse.whs_name'); ?>" name="whs_name" value="<?= old('whs_name') ? old('whs_name') : $whs[0]->whs_name ; ?>">
-                                            </div>
-                                            <label for="whs_taxid" class="col-sm-2 col-form-label">&nbsp;</label>
-                                            <div class="col-sm-4">&nbsp;</div>
+                                            </div>                                            
                                         </div>
 
                                         <div class="row mb-4">
                                             <label for="whs_add" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_add'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.whs_add')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Warehouse.whs_add'); ?>" name="whs_add"><?= old('whs_add') ? old('whs_add') : $whs[0]->whs_add ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.whs_add')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Warehouse.whs_add'); ?>" name="whs_add"><?= old('whs_add') ? old('whs_add') : $whs[0]->whs_add ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -129,7 +121,7 @@
                                         <div class="row mb-4">
                                             <label for="whs_badd" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_badd'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.whs_badd')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Warehouse.whs_badd'); ?>" name="whs_badd"><?= old('whs_badd') ? old('whs_badd') : $whs[0]->whs_badd ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.whs_badd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Warehouse.whs_badd'); ?>" name="whs_badd"><?= old('whs_badd') ? old('whs_badd') : $whs[0]->whs_badd ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -189,7 +181,7 @@
                                         <div class="row mb-4">
                                             <label for="whs_madd" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_madd'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.whs_madd')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Warehouse.whs_madd'); ?>" name="whs_madd"><?= old('whs_madd') ? old('whs_madd') : $whs[0]->whs_madd ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.whs_madd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Warehouse.whs_madd'); ?>" name="whs_madd"><?= old('whs_madd') ? old('whs_madd') : $whs[0]->whs_madd ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -268,8 +260,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#company').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/company/getAll'); ?>',
                 dataType: 'json',
@@ -286,15 +278,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#company option:selected").val();
             $("#comp_code").val(data);
         });
 
         $('#site').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/site/getByCompany'); ?>',
                 dataType: 'json',
@@ -312,15 +324,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#site option:selected").val();
             $("#comp_code").val(data);
         });
 
         $('#dept').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/department/getBySite'); ?>',
                 dataType: 'json',
@@ -338,15 +370,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#dept option:selected").val();
             $("#dept_code").val(data);
         });
 
         $('#country').select2({
-            placeholder: '<?= lang('Warehouse.whs_count'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Warehouse.whs_count'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -363,15 +415,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#country option:selected").val();
             $("#whs_count").val(data);
         });
 
         $('#prov').select2({
-            placeholder: '<?= lang('Warehouse.whs_prov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Warehouse.whs_prov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -395,7 +467,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#prov option:selected").val();
             $("#whs_prov").val(data);
@@ -403,8 +495,8 @@
         });
         
         $('#city').select2({
-            placeholder: '<?= lang('Warehouse.whs_city'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Warehouse.whs_city'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -429,7 +521,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#city option:selected").val();
             $("#whs_city").val(data);
@@ -437,8 +549,8 @@
         });
 
         $('#bcountry').select2({
-            placeholder: '<?= lang('Warehouse.whs_bcount'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Warehouse.whs_bcount'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -455,15 +567,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#bcountry option:selected").val();
             $("#whs_bcount").val(data);
         });
 
         $('#bprov').select2({
-            placeholder: '<?= lang('Warehouse.whs_bprov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Warehouse.whs_bprov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -487,7 +619,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#bprov option:selected").val();
             $("#whs_bprov").val(data);
@@ -495,8 +647,8 @@
         });
         
         $('#bcity').select2({
-            placeholder: '<?= lang('Warehouse.whs_bcity'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Warehouse.whs_bcity'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -521,7 +673,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#bcity option:selected").val();
             $("#whs_bcity").val(data);
@@ -529,8 +701,8 @@
         });
 
         $('#mcountry').select2({
-            placeholder: '<?= lang('Warehouse.whs_mcount'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Warehouse.whs_mcount'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -547,15 +719,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#mcountry option:selected").val();
             $("#whs_mcount").val(data);
         });
 
         $('#mprov').select2({
-            placeholder: '<?= lang('Warehouse.whs_mprov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Warehouse.whs_mprov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -579,7 +771,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#mprov option:selected").val();
             $("#whs_mprov").val(data);
@@ -587,8 +799,8 @@
         });
         
         $('#mcity').select2({
-            placeholder: '<?= lang('Warehouse.whs_mcity'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Warehouse.whs_mcity'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -613,7 +825,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#mcity option:selected").val();
             $("#whs_mcity").val(data);

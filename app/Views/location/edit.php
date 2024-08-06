@@ -18,17 +18,14 @@
  
                                         <div class="row mb-4">
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Location.comp_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code') ? old('comp_code') : $loc[0]->comp_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.comp_code')) : ?>is-invalid<?php endif ?>" name="company" id="company" >
                                                     <option selected="selected"><?= $comp_name ?></option>
                                                 </select>
                                             </div>
-                                        </div>
-
-                                        <div class="row mb-4">
                                             <label for="site_code" class="col-sm-2 col-form-label"><?= lang('Location.site_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="site_code" name="site_code" value="<?= old('site_code') ? old('site_code') : $loc[0]->site_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site_code')) : ?>is-invalid<?php endif ?>" name="site" id="site" >
                                                     <option selected="selected"><?= $site_name ?></option>
@@ -38,17 +35,14 @@
 
                                         <div class="row mb-4">
                                             <label for="dept_code" class="col-sm-2 col-form-label"><?= lang('Location.dept_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="dept_code" name="dept_code" value="<?= old('dept_code') ? old('dept_code') : $loc[0]->dept_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.dept_code')) : ?>is-invalid<?php endif ?>" name="dept" id="dept" >
                                                     <option selected="selected"><?= $dept_name ?></option>
                                                 </select>
                                             </div>
-                                        </div>
-
-                                        <div class="row mb-4">
                                             <label for="whs_code" class="col-sm-2 col-form-label"><?= lang('Location.whs_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="whs_code" name="whs_code" value="<?= old('whs_code') ? old('whs_code') : $loc[0]->whs_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_code')) : ?>is-invalid<?php endif ?>" name="whs" id="whs" >
                                                     <option selected="selected"><?= $whs_name ?></option>
@@ -79,7 +73,7 @@
                                         <div class="row mb-4">
                                             <label for="loc_add" class="col-sm-2 col-form-label"><?= lang('Location.loc_add'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.loc_add')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Location.loc_add'); ?>" name="loc_add"><?= old('loc_add') ? old('loc_add') : $loc[0]->loc_add ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.loc_add')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Location.loc_add'); ?>" name="loc_add"><?= old('loc_add') ? old('loc_add') : $loc[0]->loc_add ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -139,7 +133,7 @@
                                         <div class="row mb-4">
                                             <label for="whs_dadd" class="col-sm-2 col-form-label"><?= lang('Location.whs_dadd'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.whs_dadd')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Location.whs_dadd'); ?>" name="whs_dadd"><?= old('whs_dadd') ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.whs_dadd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Location.whs_dadd'); ?>" name="whs_dadd"><?= old('whs_dadd') ?></textarea>
                                             </div>
                                         </div>
                         
@@ -218,8 +212,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#company').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/company/getAll'); ?>',
                 dataType: 'json',
@@ -236,15 +230,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#company option:selected").val();
             $("#comp_code").val(data);
         });
 
         $('#site').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/site/getByCompany'); ?>',
                 dataType: 'json',
@@ -262,15 +276,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#site option:selected").val();
             $("#site_code").val(data);
         });
 
         $('#dept').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/department/getBySite'); ?>',
                 dataType: 'json',
@@ -288,15 +322,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#dept option:selected").val();
             $("#dept_code").val(data);
         });
 
         $('#whs').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/warehouse/getByDepartment'); ?>',
                 dataType: 'json',
@@ -314,15 +368,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#whs option:selected").val();
             $("#whs_code").val(data);
         });
 
         $('#country').select2({
-            placeholder: '<?= lang('Location.loc_count'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Location.loc_count'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -339,15 +413,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#country option:selected").val();
             $("#loc_count").val(data);
         });
 
         $('#prov').select2({
-            placeholder: '<?= lang('Location.loc_prov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Location.loc_prov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -371,7 +465,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#prov option:selected").val();
             $("#loc_prov").val(data);
@@ -379,8 +493,8 @@
         });
         
         $('#city').select2({
-            placeholder: '<?= lang('Location.loc_city'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Location.loc_city'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -405,7 +519,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#city option:selected").val();
             $("#loc_city").val(data);
@@ -413,8 +547,8 @@
         });
 
         $('#dcountry').select2({
-            placeholder: '<?= lang('Location.whs_dcount'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Location.whs_dcount'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -431,15 +565,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#dcountry option:selected").val();
             $("#whs_dcount").val(data);
         });
 
         $('#dprov').select2({
-            placeholder: '<?= lang('Location.whs_dprov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Location.whs_dprov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -463,7 +617,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#dprov option:selected").val();
             $("#whs_dprov").val(data);
@@ -471,8 +645,8 @@
         });
         
         $('#dcity').select2({
-            placeholder: '<?= lang('Location.whs_dcity'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Location.whs_dcity'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -497,7 +671,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#dcity option:selected").val();
             $("#whs_dcity").val(data);

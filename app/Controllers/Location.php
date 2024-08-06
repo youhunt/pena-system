@@ -159,16 +159,16 @@ class Location extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'loc';
         $data['loc'] = $dataLoc->getLocation($id);
-        $data['dept_name'] = $data['loc'][0]->dept_code ? $dataDep->getDepartment($data['loc'][0]->dept_code)[0]->dept_name : "";
-        $data['site_name'] = $data['loc'][0]->site_code ? $dataSit->getSite($data['loc'][0]->site_code)[0]->site_name : "";
-        $data['comp_name'] = $data['loc'][0]->comp_code ? $dataCom->getCompany($data['loc'][0]->comp_code)[0]->comp_name : "";
-        $data['whs_name'] = $data['loc'][0]->whs_code ? $dataWhs->getWarehouse($data['loc'][0]->whs_code)[0]->whs_name : "";
-        $data['count_name'] = $data['loc'][0]->loc_count ? $dataCou->getCountries($data['loc'][0]->loc_count)[0]->country_name : "";
-        $data['dcount_name'] = $data['loc'][0]->whs_dcount ? $dataCou->getCountries($data['loc'][0]->whs_dcount)[0]->country_name : "";
-        $data['prov_name'] = $data['loc'][0]->loc_prov ? $dataPro->getProvinces($data['loc'][0]->loc_prov)[0]->province_name : "";
-        $data['dprov_name'] = $data['loc'][0]->whs_dprov ? $dataPro->getProvinces($data['loc'][0]->whs_dprov)[0]->province_name : "";
-        $data['city_name'] = $data['loc'][0]->loc_city ? $dataCit->getCities($data['loc'][0]->loc_city)[0]->city_name : "";
-        $data['dcity_name'] = $data['loc'][0]->whs_dcity ? $dataCit->getCities($data['loc'][0]->whs_dcity)[0]->city_name : "";
+        $data['dept_name'] = $data['loc'][0]->dept_code ? $dataDep->getDepartment($data['loc'][0]->dept_code)[0]->dept_code."|".$dataDep->getDepartment($data['loc'][0]->dept_code)[0]->dept_name : "";
+        $data['site_name'] = $data['loc'][0]->site_code ? $dataSit->getSite($data['loc'][0]->site_code)[0]->site_code."|".$dataSit->getSite($data['loc'][0]->site_code)[0]->site_name : "";
+        $data['comp_name'] = $data['loc'][0]->comp_code ? $dataCom->getCompany($data['loc'][0]->comp_code)[0]->comp_code."|".$dataCom->getCompany($data['loc'][0]->comp_code)[0]->comp_name : "";
+        $data['whs_name'] = $data['loc'][0]->whs_code ? $dataWhs->getWarehouse($data['loc'][0]->whs_code)[0]->whs_code."|".$dataWhs->getWarehouse($data['loc'][0]->whs_code)[0]->whs_name : "";
+        $data['count_name'] = $data['loc'][0]->loc_count ? $dataCou->getCountries($data['loc'][0]->loc_count)[0]->country_code."|".$dataCou->getCountries($data['loc'][0]->loc_count)[0]->country_name : "";
+        $data['dcount_name'] = $data['loc'][0]->whs_dcount ? $dataCou->getCountries($data['loc'][0]->whs_dcount)[0]->country_code."|".$dataCou->getCountries($data['loc'][0]->whs_dcount)[0]->country_name : "";
+        $data['prov_name'] = $data['loc'][0]->loc_prov ? $dataPro->getProvinces($data['loc'][0]->loc_prov)[0]->province_code."|".$dataPro->getProvinces($data['loc'][0]->loc_prov)[0]->province_name : "";
+        $data['dprov_name'] = $data['loc'][0]->whs_dprov ? $dataPro->getProvinces($data['loc'][0]->whs_dprov)[0]->province_code."|".$dataPro->getProvinces($data['loc'][0]->whs_dprov)[0]->province_name : "";
+        $data['city_name'] = $data['loc'][0]->loc_city ? $dataCit->getCities($data['loc'][0]->loc_city)[0]->city_code."|".$dataCit->getCities($data['loc'][0]->loc_city)[0]->city_name : "";
+        $data['dcity_name'] = $data['loc'][0]->whs_dcity ? $dataCit->getCities($data['loc'][0]->whs_dcity)[0]->city_code."|".$dataCit->getCities($data['loc'][0]->whs_dcity)[0]->city_name : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Location']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Location', 'pagetitle' => 'MasterData']);
 

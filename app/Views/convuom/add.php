@@ -68,8 +68,8 @@
     $(document).ready(function(){
 
         $('#fruom').select2({
-            placeholder: '<?= lang('ConvUOM.fr_uom'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('ConvUOM.fr_uom'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/uom/getAll'); ?>',
                 dataType: 'json',
@@ -86,7 +86,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#fruom option:selected").val();
             $("#fr_uom").val(data);
@@ -94,8 +114,8 @@
         });
 
         $('#touom').select2({
-            placeholder: '<?= lang('ConvUOM.to_uom'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('ConvUOM.to_uom'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/uom/getAll'); ?>',
                 dataType: 'json',
@@ -112,7 +132,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#touom option:selected").val();
             $("#to_uom").val(data);

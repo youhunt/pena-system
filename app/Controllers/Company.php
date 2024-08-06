@@ -66,13 +66,15 @@ class Company extends BaseController
         $db      = \Config\Database::connect();
         $builder = $db->table('company_master');   
 
-        $query = $builder;
+        $query = $builder->select('id, concat(comp_code, "|", comp_name) as text')
+                    ->limit(30)->get();
         if ($this->request->getVar('q')) {
             $query = $builder->like('comp_code', $this->request->getVar('q'))
-                        ->orLike('comp_name', $this->request->getVar('q'));
+                        ->orLike('comp_name', $this->request->getVar('q'))
+                        ->select('id, concat(comp_code, "|", comp_name) as text')
+                        ->limit(30)->get();
         }
-            $query->select('id, concat(comp_code, "|", comp_name) as text')
-                    ->limit(30)->get();
+        
         $data = $query->getResult();
         
 		echo json_encode($data);

@@ -207,16 +207,16 @@ class Site extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'site';
         $data['site'] = $dataSit->getSite($id);
-        $data['comp_name'] = $data['site'][0]->comp_code ? $dataCom->getCompany($data['site'][0]->comp_code)[0]->comp_name : "";
-        $data['count_name'] = $data['site'][0]->site_count ? $dataCou->getCountries($data['site'][0]->site_count)[0]->country_name : "";
-        $data['bcount_name'] = $data['site'][0]->site_bcount ? $dataCou->getCountries($data['site'][0]->site_bcount)[0]->country_name : "";
-        $data['mcount_name'] = $data['site'][0]->site_mcount ? $dataCou->getCountries($data['site'][0]->site_mcount)[0]->country_name : "";
-        $data['prov_name'] = $data['site'][0]->site_prov ? $dataPro->getProvinces($data['site'][0]->site_prov)[0]->province_name : "";
-        $data['bprov_name'] = $data['site'][0]->site_bprov ? $dataPro->getProvinces($data['site'][0]->site_bprov)[0]->province_name : "";
-        $data['mprov_name'] = $data['site'][0]->site_mprov ? $dataPro->getProvinces($data['site'][0]->site_mprov)[0]->province_name : "";
-        $data['city_name'] = $data['site'][0]->site_city ? $dataCit->getCities($data['site'][0]->site_city)[0]->city_name : "";
-        $data['bcity_name'] = $data['site'][0]->site_bcity ? $dataCit->getCities($data['site'][0]->site_bcity)[0]->city_name : "";
-        $data['mcity_name'] = $data['site'][0]->site_mcity ? $dataCit->getCities($data['site'][0]->site_mcity)[0]->city_name : "";
+        $data['comp_name'] = $data['site'][0]->comp_code ? $dataCom->getCompany($data['site'][0]->comp_code)[0]->comp_code."|".$dataCom->getCompany($data['site'][0]->comp_code)[0]->comp_name : "";
+        $data['count_name'] = $data['site'][0]->site_count ? $dataCou->getCountries($data['site'][0]->site_count)[0]->country_code."|".$dataCou->getCountries($data['site'][0]->site_count)[0]->country_name : "";
+        $data['bcount_name'] = $data['site'][0]->site_bcount ? $dataCou->getCountries($data['site'][0]->site_bcount)[0]->country_code."|".$dataCou->getCountries($data['site'][0]->site_bcount)[0]->country_name : "";
+        $data['mcount_name'] = $data['site'][0]->site_mcount ? $dataCou->getCountries($data['site'][0]->site_mcount)[0]->country_code."|".$dataCou->getCountries($data['site'][0]->site_mcount)[0]->country_name : "";
+        $data['prov_name'] = $data['site'][0]->site_prov ? $dataPro->getProvinces($data['site'][0]->site_prov)[0]->province_code."|".$dataPro->getProvinces($data['site'][0]->site_prov)[0]->province_name : "";
+        $data['bprov_name'] = $data['site'][0]->site_bprov ? $dataPro->getProvinces($data['site'][0]->site_bprov)[0]->province_code."|".$dataPro->getProvinces($data['site'][0]->site_bprov)[0]->province_name : "";
+        $data['mprov_name'] = $data['site'][0]->site_mprov ? $dataPro->getProvinces($data['site'][0]->site_mprov)[0]->province_code."|".$dataPro->getProvinces($data['site'][0]->site_mprov)[0]->province_name : "";
+        $data['city_name'] = $data['site'][0]->site_city ? $dataCit->getCities($data['site'][0]->site_city)[0]->city_code."|".$dataCit->getCities($data['site'][0]->site_city)[0]->city_name : "";
+        $data['bcity_name'] = $data['site'][0]->site_bcity ? $dataCit->getCities($data['site'][0]->site_bcity)[0]->city_code."|".$dataCit->getCities($data['site'][0]->site_bcity)[0]->city_name : "";
+        $data['mcity_name'] = $data['site'][0]->site_mcity ? $dataCit->getCities($data['site'][0]->site_mcity)[0]->city_code."|".$dataCit->getCities($data['site'][0]->site_mcity)[0]->city_name : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Site']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Site', 'pagetitle' => 'MasterData']);
 

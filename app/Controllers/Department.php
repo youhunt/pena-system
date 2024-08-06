@@ -209,17 +209,17 @@ class Department extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'dept';
         $data['dept'] = $dataDep->getDepartment($id);
-        $data['comp_name'] = $data['dept'][0]->comp_code ? $dataCom->getCompany($data['dept'][0]->comp_code)[0]->comp_name : "";
-        $data['site_name'] = $data['dept'][0]->site_code ? $dataSit->getSite($data['dept'][0]->site_code)[0]->site_name : "";
-        $data['count_name'] = $data['dept'][0]->dept_count ? $dataCou->getCountries($data['dept'][0]->dept_count)[0]->country_name : "";
-        $data['bcount_name'] = $data['dept'][0]->dept_bcount ? $dataCou->getCountries($data['dept'][0]->dept_bcount)[0]->country_name : "";
-        $data['mcount_name'] = $data['dept'][0]->dept_mcount ? $dataCou->getCountries($data['dept'][0]->dept_mcount)[0]->country_name : "";
-        $data['prov_name'] = $data['dept'][0]->dept_prov ? $dataPro->getProvinces($data['dept'][0]->dept_prov)[0]->province_name : "";
-        $data['bprov_name'] = $data['dept'][0]->dept_bprov ? $dataPro->getProvinces($data['dept'][0]->dept_bprov)[0]->province_name : "";
-        $data['mprov_name'] = $data['dept'][0]->dept_mprov ? $dataPro->getProvinces($data['dept'][0]->dept_mprov)[0]->province_name : "";
-        $data['city_name'] = $data['dept'][0]->dept_city ? $dataCit->getCities($data['dept'][0]->dept_city)[0]->city_name : "";
-        $data['bcity_name'] = $data['dept'][0]->dept_bcity ? $dataCit->getCities($data['dept'][0]->dept_bcity)[0]->city_name : "";
-        $data['mcity_name'] = $data['dept'][0]->dept_mcity ? $dataCit->getCities($data['dept'][0]->dept_mcity)[0]->city_name : "";
+        $data['site_name'] = $data['dept'][0]->site_code ? $dataSit->getSite($data['dept'][0]->site_code)[0]->site_code."|".$dataSit->getSite($data['dept'][0]->site_code)[0]->site_name : "";
+        $data['comp_name'] = $data['dept'][0]->comp_code ? $dataCom->getCompany($data['dept'][0]->comp_code)[0]->comp_code."|".$dataCom->getCompany($data['dept'][0]->comp_code)[0]->comp_name : "";
+        $data['count_name'] = $data['dept'][0]->dept_count ? $dataCou->getCountries($data['dept'][0]->dept_count)[0]->country_code."|".$dataCou->getCountries($data['dept'][0]->dept_count)[0]->country_name : "";
+        $data['bcount_name'] = $data['dept'][0]->dept_bcount ? $dataCou->getCountries($data['dept'][0]->dept_bcount)[0]->country_code."|".$dataCou->getCountries($data['dept'][0]->dept_bcount)[0]->country_name : "";
+        $data['mcount_name'] = $data['dept'][0]->dept_mcount ? $dataCou->getCountries($data['dept'][0]->dept_mcount)[0]->country_code."|".$dataCou->getCountries($data['dept'][0]->dept_mcount)[0]->country_name : "";
+        $data['prov_name'] = $data['dept'][0]->dept_prov ? $dataPro->getProvinces($data['dept'][0]->dept_prov)[0]->province_code."|".$dataPro->getProvinces($data['dept'][0]->dept_prov)[0]->province_name : "";
+        $data['bprov_name'] = $data['dept'][0]->dept_bprov ? $dataPro->getProvinces($data['dept'][0]->dept_bprov)[0]->province_code."|".$dataPro->getProvinces($data['dept'][0]->dept_bprov)[0]->province_name : "";
+        $data['mprov_name'] = $data['dept'][0]->dept_mprov ? $dataPro->getProvinces($data['dept'][0]->dept_mprov)[0]->province_code."|".$dataPro->getProvinces($data['dept'][0]->dept_mprov)[0]->province_name : "";
+        $data['city_name'] = $data['dept'][0]->dept_city ? $dataCit->getCities($data['dept'][0]->dept_city)[0]->city_code."|".$dataCit->getCities($data['dept'][0]->dept_city)[0]->city_name : "";
+        $data['bcity_name'] = $data['dept'][0]->dept_bcity ? $dataCit->getCities($data['dept'][0]->dept_bcity)[0]->city_code."|".$dataCit->getCities($data['dept'][0]->dept_bcity)[0]->city_name : "";
+        $data['mcity_name'] = $data['dept'][0]->dept_mcity ? $dataCit->getCities($data['dept'][0]->dept_mcity)[0]->city_code."|".$dataCit->getCities($data['dept'][0]->dept_mcity)[0]->city_name : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Department']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Department', 'pagetitle' => 'MasterData']);
 

@@ -39,7 +39,7 @@ class ConvUOM extends BaseController
                 $row['id'] = $list->id;
                 $row['fr_uom'] = $list->fr_uom ? $dataUOM->getUOM($list->fr_uom)[0]->uom_desc : "";
                 $row['to_uom'] = $list->to_uom ? $dataUOM->getUOM($list->to_uom)[0]->uom_desc : "";
-                $row['value'] = $list->value;
+                $row['value'] = number_format((float)$list->value, 2, '.', '');
                 $row['active'] = $list->active;
                 $row['no'] = '';
                 $data[] = $row;
@@ -118,8 +118,8 @@ class ConvUOM extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'convuom';
         $data['convuom'] = $dataConvUOM->getConvUOM($id);
-        $data['fr_uom_name'] = $data['convuom'][0]->fr_uom ? $dataUOM->getUOM($data['convuom'][0]->fr_uom)[0]->uom_desc : "";
-        $data['to_uom_name'] = $data['convuom'][0]->to_uom ? $dataUOM->getUOM($data['convuom'][0]->to_uom)[0]->uom_desc : "";
+        $data['fr_uom_name'] = $data['convuom'][0]->fr_uom ? $dataUOM->getUOM($data['convuom'][0]->fr_uom)[0]->uom_code."|".$dataUOM->getUOM($data['convuom'][0]->fr_uom)[0]->uom_desc : "";
+        $data['to_uom_name'] = $data['convuom'][0]->to_uom ? $dataUOM->getUOM($data['convuom'][0]->to_uom)[0]->uom_code."|".$dataUOM->getUOM($data['convuom'][0]->to_uom)[0]->uom_desc : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'ConvUOM']);
         $data['page_title'] = view('partials/page-title', ['title' => 'ConvUOM', 'pagetitle' => 'ItemMaster']);
 

@@ -18,7 +18,7 @@
  
                                         <div class="row mb-4">
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Site.comp_code'); ?></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
                                                 <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code') ? old('comp_code') : $site[0]->comp_code ; ?>" />
                                                 <select class="form-control <?php if(session('errors.comp_code')) : ?>is-invalid<?php endif ?>" name="company" id="company" >
                                                     <option selected="selected"><?= $comp_name ?></option>
@@ -51,7 +51,7 @@
                                         <div class="row mb-4">
                                             <label for="site_add" class="col-sm-2 col-form-label"><?= lang('Site.site_add'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.site_add')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Site.site_add'); ?>" name="site_add"><?= old('site_add') ? old('site_add') : $site[0]->site_add ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.site_add')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Site.site_add'); ?>" name="site_add"><?= old('site_add') ? old('site_add') : $site[0]->site_add ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -111,7 +111,7 @@
                                         <div class="row mb-4">
                                             <label for="site_badd" class="col-sm-2 col-form-label"><?= lang('Site.site_badd'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.site_badd')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Site.site_badd'); ?>" name="site_badd"><?= old('site_badd') ? old('site_badd') : $site[0]->site_badd ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.site_badd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Site.site_badd'); ?>" name="site_badd"><?= old('site_badd') ? old('site_badd') : $site[0]->site_badd ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -171,7 +171,7 @@
                                         <div class="row mb-4">
                                             <label for="site_madd" class="col-sm-2 col-form-label"><?= lang('Site.site_madd'); ?></label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control <?php if(session('errors.site_madd')) : ?>is-invalid<?php endif ?>" rows="3" placeholder="<?= lang('Site.site_madd'); ?>" name="site_madd"><?= old('site_madd') ? old('site_madd') : $site[0]->site_madd ; ?></textarea>
+                                                <textarea class="form-control <?php if(session('errors.site_madd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Site.site_madd'); ?>" name="site_madd"><?= old('site_madd') ? old('site_madd') : $site[0]->site_madd ; ?></textarea>
                                             </div>
                                         </div>
                         
@@ -250,8 +250,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#company').select2({
-            placeholder: '',
-            minimumInputLength: 1,
+            placeholder: '|',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/company/getAll'); ?>',
                 dataType: 'json',
@@ -268,15 +268,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#company option:selected").val();
             $("#comp_code").val(data);
         });
 
         $('#country').select2({
-            placeholder: '<?= lang('Site.site_count'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Site.site_count'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -293,15 +313,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#country option:selected").val();
             $("#site_count").val(data);
         });
 
         $('#prov').select2({
-            placeholder: '<?= lang('Site.site_prov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Site.site_prov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -325,7 +365,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#prov option:selected").val();
             $("#site_prov").val(data);
@@ -333,8 +393,8 @@
         });
         
         $('#city').select2({
-            placeholder: '<?= lang('Site.site_city'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Site.site_city'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -359,7 +419,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#city option:selected").val();
             $("#site_city").val(data);
@@ -367,8 +447,8 @@
         });
 
         $('#bcountry').select2({
-            placeholder: '<?= lang('Site.site_bcount'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Site.site_bcount'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -385,15 +465,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#bcountry option:selected").val();
             $("#site_bcount").val(data);
         });
 
         $('#bprov').select2({
-            placeholder: '<?= lang('Site.site_bprov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Site.site_bprov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -417,7 +517,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#bprov option:selected").val();
             $("#site_bprov").val(data);
@@ -425,8 +545,8 @@
         });
         
         $('#bcity').select2({
-            placeholder: '<?= lang('Site.site_bcity'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Site.site_bcity'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -451,7 +571,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#bcity option:selected").val();
             $("#site_bcity").val(data);
@@ -459,8 +599,8 @@
         });
 
         $('#mcountry').select2({
-            placeholder: '<?= lang('Site.site_mcount'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Site.site_mcount'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/countries/getAll'); ?>',
                 dataType: 'json',
@@ -477,15 +617,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#mcountry option:selected").val();
             $("#site_mcount").val(data);
         });
 
         $('#mprov').select2({
-            placeholder: '<?= lang('Site.site_mprov'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Site.site_mprov'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/provinces/getByCountry'); ?>',
                 dataType: 'json',
@@ -509,7 +669,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#mprov option:selected").val();
             $("#site_mprov").val(data);
@@ -517,8 +697,8 @@
         });
         
         $('#mcity').select2({
-            placeholder: '<?= lang('Site.site_mcity'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Site.site_mcity'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/cities/getByCountryAndProvince'); ?>',
                 dataType: 'json',
@@ -543,7 +723,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#mcity option:selected").val();
             $("#site_mcity").val(data);
