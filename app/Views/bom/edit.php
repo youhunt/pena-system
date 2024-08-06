@@ -20,7 +20,8 @@
                                             <label for="site" class="col-sm-2 col-form-label"><?= lang('BOM.site'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site" name="site" value="<?= old('site') ? old('site') : $bom[0]->site ; ?>" />
-                                                <select class="form-control <?php if(session('errors.site')) : ?>is-invalid<?php endif ?>" name="site_name" id="site_name" >
+                                                <input type="hidden" id="site_name" name="site_name" value="<?= old('site_name') ? old('site_name') : $site_name ; ?>" />
+                                                <select class="form-control <?php if(session('errors.site')) : ?>is-invalid<?php endif ?>" name="site_code" id="site_code" >
                                                     <option selected="selected"><?= $site_name ?></option>
                                                 </select>
                                             </div>
@@ -28,7 +29,8 @@
                                             <label for="dept" class="col-sm-2 col-form-label"><?= lang('BOM.dept'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept" name="dept" value="<?= old('dept') ? old('dept') : $bom[0]->dept ; ?>" />
-                                                <select class="form-control <?php if(session('errors.dept')) : ?>is-invalid<?php endif ?>" name="dept_name" id="dept_name" >
+                                                <input type="hidden" id="dept_name" name="dept_name" value="<?= old('dept_name') ? old('dept_name') : $dept_name ; ?>" />
+                                                <select class="form-control <?php if(session('errors.dept')) : ?>is-invalid<?php endif ?>" name="dept_code" id="dept_code" >
                                                     <option selected="selected"><?= $dept_name ?></option>
                                                 </select>
                                             </div>
@@ -38,7 +40,8 @@
                                             <label for="whs" class="col-sm-2 col-form-label"><?= lang('BOM.whs'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs" name="whs" value="<?= old('whs') ? old('whs') : $bom[0]->whs ; ?>" />
-                                                <select class="form-control <?php if(session('errors.whs')) : ?>is-invalid<?php endif ?>" name="whs_name" id="whs_name" >
+                                                <input type="hidden" id="whs_name" name="whs_name" value="<?= old('whs_name') ? old('whs_name') : $whs_name ; ?>" />
+                                                <select class="form-control <?php if(session('errors.whs')) : ?>is-invalid<?php endif ?>" name="whs_code" id="whs_code" >
                                                     <option selected="selected"><?= $whs_name ?></option>
                                                 </select>
                                             </div>
@@ -71,7 +74,8 @@
                                             <label for="uom" class="col-sm-2 col-form-label"><?= lang('BOM.uom'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="uom" name="uom" value="<?= old('uom') ? old('uom') : $bom[0]->uom  ; ?>" />
-                                                <select class="form-control <?php if(session('errors.uom')) : ?>is-invalid<?php endif ?>" name="uom_desc" id="uom_desc" >
+                                                <input type="hidden" id="uom_desc" name="uom_desc" value="<?= old('uom_desc') ? old('uom_desc') : $uom_desc ; ?>" />
+                                                <select class="form-control <?php if(session('errors.uom')) : ?>is-invalid<?php endif ?>" name="uom_code" id="uom_code" >
                                                     <option selected="selected"><?= old('uom_desc') ? old('uom_desc') : $uom_desc  ; ?></option>
                                                 </select>
                                             </div>
@@ -461,7 +465,7 @@
             ]
         });
 
-        $('#whs_name').select2({
+        $('#whs_code').select2({
             placeholder: '|',
             minimumInputLength: 0,
             ajax: {
@@ -503,11 +507,12 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            var data = $("#whs_name option:selected").val();
+            var data = $("#whs_code option:selected").val();
             $("#whs").val(data);
+            $("#whs_name").val($("#whs_code option:selected").text());
         });
 
-        $('#site_name').select2({
+        $('#site_code').select2({
             placeholder: '|',
             minimumInputLength: 0,
             ajax: {
@@ -548,11 +553,12 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            var data = $("#site_name option:selected").val();
-            $("#company").val(data);
+            var data = $("#site_code option:selected").val();
+            $("#site").val(data);
+            $("#site_name").val($("#site_code option:selected").text());
         });
 
-        $('#dept_name').select2({
+        $('#dept_code').select2({
             placeholder: '|',
             minimumInputLength: 0,
             ajax: {
@@ -594,8 +600,9 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            var data = $("#dept_name option:selected").val();
+            var data = $("#dept_code option:selected").val();
             $("#dept").val(data);
+            $("#dept_name").val($("#dept_code option:selected").text());
         });
 
         $('#item').select2({
@@ -644,6 +651,52 @@
             $("#itemname").val($("#item option:selected").text());
         });
 
+        $('#uom_code').select2({
+            placeholder: '|',
+            minimumInputLength: 0,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#uom_code option:selected").val();
+            $("#uom").val(data);
+            $("#uom_desc").val($("#uom_code option:selected").text());
+        });
+
         $('#itemchild').select2({
             placeholder: '|',
             minimumInputLength: 0,
@@ -689,51 +742,6 @@
             var data = $("#itemchild option:selected").val();
             $("#childcode").val(data);
             $("#itemchildname").val($("#itemchild option:selected").text());
-        });
-
-        $('#uom_desc').select2({
-            placeholder: '|',
-            minimumInputLength: 0,
-            ajax: {
-                url: '<?= base_url('/uom/getAll'); ?>',
-                dataType: 'json',
-                delay: 250,
-                data: function (params) {
-                    return {
-                        q: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data){
-                return {
-                    results: data
-                };
-                },
-                cache: true
-            },
-            templateResult: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-            templateSelection: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-        }).on('select2:select', function (evt) {
-            var data = $("#uom_desc option:selected").val();
-            $("#uom").val(data);
         });
 
         $('#itemchilduom').select2({

@@ -304,12 +304,11 @@ class BOM extends BaseController
         $dataIt = $dataItem->getItem($data['bom'][0]->parentcode)[0];
         $dataSi = $dataSit->getSite($data['bom'][0]->site)[0];
         $dataDe = $dataDep->getDepartment($data['bom'][0]->dept)[0];
-        $dataWh = $dataWhs->getWarehouse($data['bom'][0]->whs)[0];
         $dataUo = $dataUOM->getUOM($data['bom'][0]->uom)[0];
 
         $data['site_name'] = $data['bom'][0]->site ? $dataSi->site_code."|".$dataSi->site_name : "|";
         $data['dept_name'] = $data['bom'][0]->dept ? $dataDe->dept_code . "|". $dataDe->dept_name : "|";
-        $data['whs_name'] = $data['bom'][0]->whs ? $dataWh->whs_code."|".$dataWh->whs_name : "|";
+        $data['whs_name'] = $data['bom'][0]->whs ? $dataWhs->getWarehouse($data['bom'][0]->whs)[0]->whs_code."|".$dataWhs->getWarehouse($data['bom'][0]->whs)[0]->whs_name : "|";
         $data['itemname'] = $data['bom'][0]->parentcode ? $dataIt->item_code."|".$dataIt->item_name_1 : "|";
         $data['uom_desc'] = $data['bom'][0]->uom ? $dataUo->uom_code."|".$dataUo->uom_desc : "|";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'BOM']);

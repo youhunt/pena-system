@@ -26,7 +26,6 @@ class BOMModel extends Model
     protected $validationRules = [
         'site' => 'required',
         'dept' => 'required',
-        'whs' => 'required',
         'parentcode' => 'required',
         'type' => 'required',
         'qty' => 'required',
