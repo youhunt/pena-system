@@ -20,7 +20,7 @@
                                     <!-- end row -->
                                     <div class="">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <table class="table table-bordered" id="dataTable" class="display nowrap" style="width:100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
                                                         <th><?= lang('ItmUOMConv.id'); ?></th>
@@ -117,6 +117,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#dataTable').DataTable({
+            "scrollX": true,
             "processing": true,
             "serverSide": true,
             "order": [],

@@ -119,6 +119,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#dataTable').DataTable({
+            "scrollX": true,
             "processing": true,
             "serverSide": true,
             "order": [],

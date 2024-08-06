@@ -63,7 +63,7 @@
                                             </div>
                                             <label for="qty" class="col-sm-2 col-form-label"><?= lang('BOM.qty'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.qty')) : ?>is-invalid<?php endif ?>" id="qty" placeholder="<?= lang('BOM.qty'); ?>" style="text-align:right;" name="qty" value="<?= number_format((float)(old('qty') ? old('qty') : $bom[0]->qty), 2, '.', '') ; ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.qty')) : ?>is-invalid<?php endif ?>" id="qty" placeholder="<?= lang('BOM.qty'); ?>" style="text-align:right;" name="qty" value="<?= number_format((float)(old('qty') ? old('qty') : $bom[0]->qty), 2, '.', '') ; ?>">
                                             </div>
                                         </div>
 
@@ -77,7 +77,7 @@
                                             </div>
                                             <label for="ratio" class="col-sm-2 col-form-label"><?= lang('BOM.ratio'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.ratio')) : ?>is-invalid<?php endif ?>" id="ratio" placeholder="<?= lang('BOM.ratio'); ?>" style="text-align:right;" name="ratio" value="<?= number_format((float)(old('ratio') ? old('ratio') : $bom[0]->ratio), 2, '.', ''); ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.ratio')) : ?>is-invalid<?php endif ?>" id="ratio" placeholder="<?= lang('BOM.ratio'); ?>" style="text-align:right;" name="ratio" value="<?= number_format((float)(old('ratio') ? old('ratio') : $bom[0]->ratio), 2, '.', ''); ?>">
                                             </div>
                                         </div>
 
@@ -222,7 +222,7 @@
                         </div>
                         <label for="factor" class="col-sm-2 col-form-label"><?= lang('BOM.factor'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" class="form-control <?php if(session('errors.factor')) : ?>is-invalid<?php endif ?>" id="factor" placeholder="<?= lang('BOM.factor'); ?>" style="text-align:right;" name="factor" value="<?= number_format((float)(old('factor')), 2, '.', ''); ?>">
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.factor')) : ?>is-invalid<?php endif ?>" id="factor" placeholder="<?= lang('BOM.factor'); ?>" style="text-align:right;" name="factor" value="<?= number_format((float)(old('factor')), 2, '.', ''); ?>">
                         </div>
                     </div>
 
