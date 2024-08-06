@@ -138,9 +138,9 @@ class TransactionCode extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'transactioncode';
         $data['transactioncode'] = $dataWhs->getTransactionCode($id);
-        $data['dept_name'] = $data['transactioncode'][0]->dept ? $dataDep->getDepartment($data['transactioncode'][0]->dept)[0]->dept_name : "";
-        $data['site_name'] = $data['transactioncode'][0]->site ? $dataSit->getSite($data['transactioncode'][0]->site)[0]->site_name : "";
-        $data['comp_name'] = $data['transactioncode'][0]->company ? $dataCom->getCompany($data['transactioncode'][0]->company)[0]->comp_name : "";
+        $data['dept_name'] = $data['transactioncode'][0]->dept ? $dataDep->getDepartment($data['transactioncode'][0]->dept)[0]->dept_code."|".$dataDep->getDepartment($data['transactioncode'][0]->dept)[0]->dept_name : "";
+        $data['site_name'] = $data['transactioncode'][0]->site ? $dataSit->getSite($data['transactioncode'][0]->site)[0]->site_code."|".$dataSit->getSite($data['transactioncode'][0]->site)[0]->site_name : "";
+        $data['comp_name'] = $data['transactioncode'][0]->company ? $dataCom->getCompany($data['transactioncode'][0]->company)[0]->comp_code."|".$dataCom->getCompany($data['transactioncode'][0]->company)[0]->comp_name : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'TransactionCode']);
         $data['page_title'] = view('partials/page-title', ['title' => 'TransactionCode', 'pagetitle' => 'MasterData']);
         
