@@ -20,7 +20,7 @@
                             <div class="card-body pt-0">
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <div class="avatar-md profile-user-wid mb-4">
+                                        <div class="avatar-md profile-user-wid mb-2">
                                             <img src="/assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
                                         </div>
                                         <h5 class="font-size-15 text-truncate">Henry Price</h5>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4">Monthly Earning</h4>
+                                <h4 class="card-title mb-2">Monthly Earning</h4>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <p class="text-muted">This month</p>
@@ -133,7 +133,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-sm-flex flex-wrap">
-                                    <h4 class="card-title mb-4">Email Sent</h4>
+                                    <h4 class="card-title mb-2">Email Sent</h4>
                                     <div class="ms-auto">
                                         <ul class="nav nav-pills">
                                             <li class="nav-item">
@@ -160,9 +160,9 @@
                     <div class="col-xl-4">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4">Social Source</h4>
+                                <h4 class="card-title mb-2">Social Source</h4>
                                 <div class="text-center">
-                                    <div class="avatar-sm mx-auto mb-4">
+                                    <div class="avatar-sm mx-auto mb-2">
                                         <span class="avatar-title rounded-circle bg-primary-subtle font-size-24">
                                             <i class="mdi mdi-facebook text-primary"></i>
                                         </span>
@@ -285,10 +285,10 @@
                     <div class="col-xl-4">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4">Top Cities Selling Product</h4>
+                                <h4 class="card-title mb-2">Top Cities Selling Product</h4>
 
                                 <div class="text-center">
-                                    <div class="mb-4">
+                                    <div class="mb-2">
                                         <i class="bx bx-map-pin text-primary display-4"></i>
                                     </div>
                                     <h3>1,456</h3>
@@ -350,7 +350,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4">Latest Transaction</h4>
+                                <h4 class="card-title mb-2">Latest Transaction</h4>
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">
                                         <thead class="table-light">

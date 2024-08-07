@@ -6,7 +6,7 @@ return [
     'site' => 'Site',
     'dept' => 'Department',
     'whs' => 'Warehouse',
-    'parentcode' => 'Item parent Code',
+    'parentcode' => 'Item Parent Code',
     'type' => 'Type',
     'qty' => 'Qty/Batch',
     'uom' => 'UoM',

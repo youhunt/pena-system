@@ -6,7 +6,7 @@ return [
     'site' => 'Lokasi',
     'dept' => 'Departemen',
     'whs' => 'Gudang',
-    'parentcode' => 'Kode induk barang',
+    'parentcode' => 'Kode Induk Barang',
     'type' => 'Jenis',
     'qty' => 'Kuantitas/Batch',
     'uom' => 'UoM',

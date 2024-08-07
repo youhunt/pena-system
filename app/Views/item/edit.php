@@ -8,14 +8,14 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="item_code" class="col-sm-2 col-form-label"><?= lang('Item.item_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.item_code')) : ?>is-invalid<?php endif ?>" id="item_code" placeholder="<?= lang('Item.item_code'); ?>" name="item_code" value="<?= $item[0]->item_code ? $item[0]->item_code :  old('item_code'); ?>">
@@ -26,7 +26,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="item_name_2" class="col-sm-2 col-form-label"><?= lang('Item.item_name_2'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.item_name_2')) : ?>is-invalid<?php endif ?>" id="item_name_2" placeholder="<?= lang('Item.item_name_2'); ?>" name="item_name_2" value="<?= $item[0]->item_name_2 ? $item[0]->item_name_2 :  old('item_name_2'); ?>">
@@ -37,7 +37,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="item_name_additional" class="col-sm-2 col-form-label"><?= lang('Item.item_name_additional'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.item_name_additional')) : ?>is-invalid<?php endif ?>" id="item_name_additional" placeholder="<?= lang('Item.item_name_additional'); ?>" name="item_name_additional" value="<?= $item[0]->item_name_additional ? $item[0]->item_name_additional :  old('item_name_additional'); ?>">
@@ -48,10 +48,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="shelf_life" class="col-sm-2 col-form-label"><?= lang('Item.shelf_life'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.shelf_life')) : ?>is-invalid<?php endif ?>" id="shelf_life" placeholder="<?= lang('Item.shelf_life'); ?>" style="text-align:right;" name="shelf_life" value="<?= $item[0]->shelf_life ? $item[0]->shelf_life :  old('shelf_life'); ?>">
+                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.shelf_life')) : ?>is-invalid<?php endif ?>" id="shelf_life" placeholder="<?= lang('Item.shelf_life'); ?>" style="text-align:right;" name="shelf_life" value="<?= $item[0]->shelf_life ? $item[0]->shelf_life :  old('shelf_life'); ?>">
                                             </div>
                                             <label for="stockuom" class="col-sm-2 col-form-label"><?= lang('Item.stockuom'); ?></label>
                                             <div class="col-sm-4">
@@ -62,7 +62,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="stockwhs" class="col-sm-2 col-form-label"><?= lang('Item.stockwhs'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="stockwhs" name="stockwhs" value="<?= old('stockwhs') ? old('stockwhs') : $item[0]->stockwhs  ; ?>" />
@@ -72,36 +72,36 @@
                                             </div>
                                             <label for="item_price" class="col-sm-2 col-form-label"><?= lang('Item.item_price'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" style="text-align:right;" value="<?= $item[0]->item_price ? $item[0]->item_price :  old('item_price'); ?>">
+                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" style="text-align:right;" value="<?= $item[0]->item_price ? $item[0]->item_price :  old('item_price'); ?>">
                                             </div>
                                         </div>
                                         
-                                        <h5 class="card-title mb-4"><?= lang('Item.Dimension'); ?></h5>
+                                        <h5 class="card-title mb-2"><?= lang('Item.Dimension'); ?></h5>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="item_length" class="col-sm-2 col-form-label"><?= lang('Item.item_length'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" style="text-align:right;" value="<?= $item[0]->item_length ? $item[0]->item_length :  old('item_length'); ?>">
+                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" style="text-align:right;" value="<?= $item[0]->item_length ? $item[0]->item_length :  old('item_length'); ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label"><?= lang('Item.item_width'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" style="text-align:right;" value="<?= $item[0]->item_width ? $item[0]->item_width :  old('item_width'); ?>">
+                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" style="text-align:right;" value="<?= $item[0]->item_width ? $item[0]->item_width :  old('item_width'); ?>">
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="item_height" class="col-sm-2 col-form-label"><?= lang('Item.item_height'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" style="text-align:right;" value="<?= $item[0]->item_height ? $item[0]->item_height :  old('item_height'); ?>">
+                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" style="text-align:right;" value="<?= $item[0]->item_height ? $item[0]->item_height :  old('item_height'); ?>">
                                             </div>
                                             <label for="item_diameter" class="col-sm-2 col-form-label"><?= lang('Item.item_diameter'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.item_diameter')) : ?>is-invalid<?php endif ?>" id="item_diameter" placeholder="<?= lang('Item.item_diameter'); ?>" name="item_diameter" style="text-align:right;" value="<?= $item[0]->item_diameter ? $item[0]->item_diameter :  old('item_diameter'); ?>">
+                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_diameter')) : ?>is-invalid<?php endif ?>" id="item_diameter" placeholder="<?= lang('Item.item_diameter'); ?>" name="item_diameter" style="text-align:right;" value="<?= $item[0]->item_diameter ? $item[0]->item_diameter :  old('item_diameter'); ?>">
                                             </div>
                                         </div>
-                                        <h5 class="card-title mb-4"><?= lang('Item.Grouping'); ?></h5>
+                                        <h5 class="card-title mb-2"><?= lang('Item.Grouping'); ?></h5>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="item_group" class="col-sm-2 col-form-label"><?= lang('Item.item_group'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.item_group')) : ?>is-invalid<?php endif ?>" id="item_group" placeholder="<?= lang('Item.item_group'); ?>" name="item_group" value="<?= $item[0]->item_group ? $item[0]->item_group :  old('item_group'); ?>">
@@ -112,7 +112,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="item_class" class="col-sm-2 col-form-label"><?= lang('Item.item_class'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.item_class')) : ?>is-invalid<?php endif ?>" id="item_class" placeholder="<?= lang('Item.item_class'); ?>" name="item_class" value="<?= $item[0]->item_class ? $item[0]->item_class :  old('item_class'); ?>">
@@ -123,7 +123,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="item_type" class="col-sm-2 col-form-label"><?= lang('Item.item_type'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.item_type')) : ?>is-invalid<?php endif ?>" id="item_type" placeholder="<?= lang('Item.item_type'); ?>" name="item_type" value="<?= $item[0]->item_type ? $item[0]->item_type :  old('item_type'); ?>">
@@ -134,7 +134,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="item_atribute" class="col-sm-2 col-form-label"><?= lang('Item.item_atribute'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.item_atribute')) : ?>is-invalid<?php endif ?>" id="item_atribute" placeholder="<?= lang('Item.item_atribute'); ?>" name="item_atribute" value="<?= $item[0]->item_atribute ? $item[0]->item_atribute :  old('item_atribute'); ?>">
@@ -169,8 +169,8 @@
     $(document).ready(function(){
         
         $('#uom').select2({
-            placeholder: '<?= lang('Item.stockuom'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Item.stockuom'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/uom/getAll'); ?>',
                 dataType: 'json',
@@ -187,15 +187,35 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#uom option:selected").val();
             $("#stockuom").val(data);
         });
 
         $('#whs').select2({
-            placeholder: '<?= lang('Item.stockwhs'); ?>',
-            minimumInputLength: 1,
+            placeholder: '|<?= lang('Item.stockwhs'); ?>',
+            minimumInputLength: 0,
             ajax: {
                 url: '<?= base_url('/warehouse/getAll'); ?>',
                 dataType: 'json',
@@ -212,7 +232,27 @@
                 };
                 },
                 cache: true
-            }
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
         }).on('select2:select', function (evt) {
             var data = $("#whs option:selected").val();
             $("#stockwhs").val(data);

@@ -1,7 +1,7 @@
 <?= $this->extend('template/index') ?>            
 
 <?= $this->section('page-content') ?>
-                    <div class="card shadow mb-4">
+                    <div class="card shadow mb-2">
                         <div class="card-header py-3" style="padding: 0 !important;">
                             <nav class="navbar navbar-expand navbar-light bg-light">
                                 <a class="navbar-brand m-0 font-weight-bold text-primary" href="#">Users</a>

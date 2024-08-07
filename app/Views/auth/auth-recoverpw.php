@@ -31,7 +31,7 @@
                         <div class="card-body pt-0">
                             <div>
                                 <a href="/">
-                                    <div class="avatar-md profile-user-wid mb-4">
+                                    <div class="avatar-md profile-user-wid mb-2">
                                         <span class="avatar-title rounded-circle bg-light">
                                             <img src="/assets/images/logo.svg" alt="" class="rounded-circle" height="34">
                                         </span>
@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="p-2">
-                                <div class="alert alert-success text-center mb-4" role="alert">
+                                <div class="alert alert-success text-center mb-2" role="alert">
                                     <?php 
                                         if(isset($result) && $result == 'success'){ 
                                             echo "Email and instructions has been sent to you. <br/>Please check your Email!";

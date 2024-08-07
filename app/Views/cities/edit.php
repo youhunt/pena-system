@@ -8,14 +8,14 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="Country" class="col-sm-2 col-form-label"><?= lang('Cities.Country'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="country_id" name="country_id" value="<?= old('country_id') ? old('country_id') : $cities[0]->country_id  ; ?>" />
@@ -32,7 +32,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="city_code" class="col-sm-2 col-form-label"><?= lang('Cities.city_code'); ?></label>
                                             <div class="col-sm-2">
                                                 <input type="text" class="form-control <?php if(session('errors.city_code')) : ?>is-invalid<?php endif ?>" id="city_code" placeholder="<?= lang('Cities.city_code'); ?>" name="city_code" value="<?= old('city_code') ? old('city_code') : $cities[0]->city_code; ?>">

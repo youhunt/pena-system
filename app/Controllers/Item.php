@@ -77,7 +77,6 @@ class Item extends BaseController
         $rules = [
             'item_code'      => 'required|is_unique[item_master.item_code]|min_length[3]|max_length[50]',
             'item_name_1'      => 'required',
-            'shelf_life'      => 'required',
             'stockuom'      => 'required',
             'stockwhs'      => 'required',
         ];
@@ -111,6 +110,18 @@ class Item extends BaseController
                 'item_type' => $this->request->getPost('item_type'),
                 'item_subtype' => $this->request->getPost('item_subtype'),
                 'item_atribute' => $this->request->getPost('item_atribute'),
+                'item_lengthuom' => $this->request->getVar('item_lengthuom'),
+                'item_widthuom' => $this->request->getVar('item_widthuom'),
+                'item_heightuom' => $this->request->getVar('item_heightuom'),
+                'item_diameteruom' => $this->request->getVar('item_diameteruom'),
+                'out_length' => $this->request->getVar('out_length'),
+                'out_width' => $this->request->getVar('out_width'),
+                'out_height' => $this->request->getVar('out_height'),
+                'out_diameter' => $this->request->getVar('out_diameter'),
+                'out_lengthuom' => $this->request->getVar('out_lengthuom'),
+                'out_widthuom' => $this->request->getVar('out_widthuom'),
+                'out_heightuom' => $this->request->getVar('out_heightuom'),
+                'out_diameteruom' => $this->request->getVar('out_diameteruom'),
                 'created_date'=>  date("Y-m-d H:i:s"),
                 'created_by' =>  user()->username,
             ];
@@ -154,7 +165,6 @@ class Item extends BaseController
         $rules = [
             'item_code'      => 'required',
             'item_name_1'      => 'required',
-            'shelf_life'      => 'required',
             'stockuom'      => 'required',
             'stockwhs'      => 'required',
         ];
@@ -188,6 +198,17 @@ class Item extends BaseController
                 'item_type' => $this->request->getPost('item_type'),
                 'item_subtype' => $this->request->getPost('item_subtype'),
                 'item_atribute' => $this->request->getPost('item_atribute'),
+                'item_widthuom' => $this->request->getVar('item_widthuom'),
+                'item_heightuom' => $this->request->getVar('item_heightuom'),
+                'item_diameteruom' => $this->request->getVar('item_diameteruom'),
+                'out_length' => $this->request->getVar('out_length'),
+                'out_width' => $this->request->getVar('out_width'),
+                'out_height' => $this->request->getVar('out_height'),
+                'out_diameter' => $this->request->getVar('out_diameter'),
+                'out_lengthuom' => $this->request->getVar('out_lengthuom'),
+                'out_widthuom' => $this->request->getVar('out_widthuom'),
+                'out_heightuom' => $this->request->getVar('out_heightuom'),
+                'out_diameteruom' => $this->request->getVar('out_diameteruom'),
                 'updated_by' =>  user()->username,
                 'updated_at' =>  date("Y-m-d H:i:s"),
             ];

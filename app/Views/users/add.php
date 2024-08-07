@@ -2,7 +2,7 @@
  
 <?= $this->section('page-content') ?>
                     <div class="text-center">
-                        <h1 class="h4 text-gray-900 mb-4"><?= $title ?></h1>
+                        <h1 class="h4 text-gray-900 mb-2"><?= $title ?></h1>
                     </div>
  
                     <?= view('\Myth\Auth\Views\_message_block') ?>

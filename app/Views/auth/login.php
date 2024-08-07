@@ -31,7 +31,7 @@
                         <div class="card-body pt-0">
                             <div class="auth-logo">
                                 <a href="/" class="auth-logo-light">
-                                    <div class="avatar-md profile-user-wid mb-4">
+                                    <div class="avatar-md profile-user-wid mb-2">
                                         <span class="avatar-title rounded-circle bg-light">
                                             <img src="/assets/images/Logo.png" alt="" class="rounded-circle" height="34">
                                         </span>
@@ -39,7 +39,7 @@
                                 </a>
 
                                 <a href="/" class="auth-logo-dark">
-                                    <div class="avatar-md profile-user-wid mb-4">
+                                    <div class="avatar-md profile-user-wid mb-2">
                                         <span class="avatar-title rounded-circle bg-light">
                                             <img src="/assets/images/Logo.png" alt="" class="rounded-circle" height="34">
                                         </span>

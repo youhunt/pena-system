@@ -31,7 +31,7 @@
                         <div class="card-body pt-0">
                             <div>
                                 <a href="/">
-                                    <div class="avatar-md profile-user-wid mb-4">
+                                    <div class="avatar-md profile-user-wid mb-2">
                                         <span class="avatar-title rounded-circle bg-light">
                                             <img src="/assets/images/logo.svg" alt="" class="rounded-circle" height="34">
                                         </span>
@@ -43,11 +43,11 @@
                                 <?php
                                 if (isset($result)) {
                                     if ($result == 'invalid') {
-                                        echo '<div class="alert alert-danger text-center mb-4" role="alert">';
+                                        echo '<div class="alert alert-danger text-center mb-2" role="alert">';
                                         echo "Invalid access to this page!";
                                         echo '</div>';
                                     } else if ($result == 'success') {
-                                        echo '<div class="alert alert-success text-center mb-4" role="alert">';
+                                        echo '<div class="alert alert-success text-center mb-2" role="alert">';
                                         echo "Password updated successfully!";
                                         echo '</div>';
                                     } else {

@@ -8,14 +8,14 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="fr_uom" class="col-sm-2 col-form-label"><?= lang('ConvUOM.fr_uom'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="fr_uom" name="fr_uom" value="<?= old('fr_uom') ? old('fr_uom') : $convuom[0]->fr_uom; ?>" />
@@ -34,10 +34,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="value" class="col-sm-2 col-form-label"><?= lang('ConvUOM.value'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('ConvUOM.value'); ?>" name="value" value="<?=  old('value'); ?>">
+                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('ConvUOM.value'); ?>" name="value" value="<?=  old('value'); ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">

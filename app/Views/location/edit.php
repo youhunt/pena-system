@@ -8,15 +8,15 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
  
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Location.comp_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code') ? old('comp_code') : $loc[0]->comp_code ; ?>" />
@@ -33,7 +33,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_code" class="col-sm-2 col-form-label"><?= lang('Location.dept_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept_code" name="dept_code" value="<?= old('dept_code') ? old('dept_code') : $loc[0]->dept_code ; ?>" />
@@ -50,7 +50,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="loc_code" class="col-sm-2 col-form-label"><?= lang('Location.loc_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.loc_code')) : ?>is-invalid<?php endif ?>" id="loc_code" placeholder="<?= lang('Location.loc_code'); ?>" name="loc_code" value="<?= old('loc_code') ? old('loc_code') : $loc[0]->loc_code ; ?>">
@@ -61,7 +61,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="loc_name" class="col-sm-2 col-form-label"><?= lang('Location.loc_name'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.loc_name')) : ?>is-invalid<?php endif ?>" id="loc_name" placeholder="<?= lang('Location.loc_name'); ?>" name="loc_name" value="<?= old('loc_name') ? old('loc_name') : $loc[0]->loc_name ; ?>">
@@ -70,14 +70,14 @@
                                             <div class="col-sm-4">&nbsp;</div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="loc_add" class="col-sm-2 col-form-label"><?= lang('Location.loc_add'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.loc_add')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Location.loc_add'); ?>" name="loc_add"><?= old('loc_add') ? old('loc_add') : $loc[0]->loc_add ; ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="loc_count" class="col-sm-2 col-form-label"><?= lang('Location.loc_count'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="loc_count" name="loc_count" value="<?= old('loc_count') ? old('loc_count') : $loc[0]->loc_count ; ?>" />
@@ -94,7 +94,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="loc_city" class="col-sm-2 col-form-label"><?= lang('Location.loc_city'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="loc_city" name="loc_city" value="<?= old('loc_city') ? old('loc_city') : $loc[0]->loc_city ; ?>" />
@@ -108,7 +108,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="loc_phone1" class="col-sm-2 col-form-label"><?= lang('Location.loc_phone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.loc_phone1')) : ?>is-invalid<?php endif ?>" id="loc_phone1" placeholder="<?= lang('Location.loc_phone1'); ?>" name="loc_phone1" value="<?= old('loc_phone1') ? old('loc_phone1') : $loc[0]->loc_phone1 ; ?>">
@@ -119,7 +119,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="loc_phone3" class="col-sm-2 col-form-label"><?= lang('Location.loc_phone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.loc_phone3')) : ?>is-invalid<?php endif ?>" id="loc_phone3" placeholder="<?= lang('Location.loc_phone3'); ?>" name="loc_phone3" value="<?= old('loc_phone3') ? old('loc_phone3') : $loc[0]->loc_phone3 ; ?>">
@@ -130,14 +130,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_dadd" class="col-sm-2 col-form-label"><?= lang('Location.whs_dadd'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.whs_dadd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Location.whs_dadd'); ?>" name="whs_dadd"><?= old('whs_dadd') ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_dcount" class="col-sm-2 col-form-label"><?= lang('Location.whs_dcount'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_dcount" name="whs_dcount" value="<?= old('whs_dcount') ? old('whs_dcount') : $loc[0]->whs_dcount ; ?>" />
@@ -154,7 +154,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_dcity" class="col-sm-2 col-form-label"><?= lang('Location.whs_dcity'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_dcity" name="whs_dcity" value="<?= old('whs_dcity') ? old('whs_dcity') : $loc[0]->whs_dcity ; ?>" />
@@ -168,7 +168,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_dphone1" class="col-sm-2 col-form-label"><?= lang('Location.whs_dphone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_dphone1')) : ?>is-invalid<?php endif ?>" id="whs_dphone1" placeholder="<?= lang('Location.whs_dphone1'); ?>" name="whs_dphone1" value="<?= old('whs_dphone1') ? old('whs_dphone1') : $loc[0]->whs_dphone1 ; ?>">
@@ -179,7 +179,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_dphone3" class="col-sm-2 col-form-label"><?= lang('Location.whs_dphone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_dphone3')) : ?>is-invalid<?php endif ?>" id="whs_dphone3" placeholder="<?= lang('Location.whs_dphone3'); ?>" name="whs_dphone3" value="<?= old('whs_dphone3') ? old('whs_dphone3') : $loc[0]->whs_dphone3 ; ?>">

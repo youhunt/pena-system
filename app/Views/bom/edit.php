@@ -9,14 +9,14 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
                                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site" class="col-sm-2 col-form-label"><?= lang('BOM.site'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site" name="site" value="<?= old('site') ? old('site') : $bom[0]->site ; ?>" />
@@ -36,7 +36,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs" class="col-sm-2 col-form-label"><?= lang('BOM.whs'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs" name="whs" value="<?= old('whs') ? old('whs') : $bom[0]->whs ; ?>" />
@@ -55,7 +55,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="type" class="col-sm-2 col-form-label"><?= lang('BOM.type'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="type" name="type" value="<?= old('type') ? old('type') : $bom[0]->type ; ?>" />
@@ -70,7 +70,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="uom" class="col-sm-2 col-form-label"><?= lang('BOM.uom'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="uom" name="uom" value="<?= old('uom') ? old('uom') : $bom[0]->uom  ; ?>" />
@@ -85,7 +85,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="description" class="col-sm-2 col-form-label"><?= lang('BOM.description'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.description')) : ?>is-invalid<?php endif ?>" id="description" placeholder="<?= lang('BOM.description'); ?>" name="description" value="<?= old('description') ? old('description') : $bom[0]->description ; ?>">
@@ -182,7 +182,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <div class="row mb-4">
+                    <div class="row mb-2">
                         <label for="childno" class="col-sm-2 col-form-label"><?= lang('BOM.childno'); ?></label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control <?php if(session('errors.childno')) : ?>is-invalid<?php endif ?>" id="childno" placeholder="<?= lang('BOM.childno'); ?>" name="childno" value="<?= old('childno'); ?>">
@@ -197,7 +197,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-4">
+                    <div class="row mb-2">
                         <label for="childtype" class="col-sm-2 col-form-label"><?= lang('BOM.childtype'); ?></label>
                         <div class="col-sm-4">
                             <input type="hidden" id="childtype" name="childtype" value="<?= old('childtype') ; ?>" />
@@ -211,11 +211,11 @@
                         </div>
                         <label for="qtyused" class="col-sm-2 col-form-label"><?= lang('BOM.qtyused'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" class="form-control <?php if(session('errors.qtyused')) : ?>is-invalid<?php endif ?>" id="qtyused" placeholder="<?= lang('BOM.qtyused'); ?>" style="text-align:right;" name="qtyused" value="<?= number_format((float)(old('qtyused')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.01"class="form-control <?php if(session('errors.qtyused')) : ?>is-invalid<?php endif ?>" id="qtyused" placeholder="<?= lang('BOM.qtyused'); ?>" style="text-align:right;" name="qtyused" value="<?= number_format((float)(old('qtyused')), 2, '.', '')  ; ?>">
                         </div>
                     </div>
 
-                    <div class="row mb-4">
+                    <div class="row mb-2">
                         <label for="childuom" class="col-sm-2 col-form-label"><?= lang('BOM.childuom'); ?></label>
                         <div class="col-sm-4">
                             <input type="hidden" id="childuom" name="childuom" value="<?= old('childuom'); ?>" />
@@ -230,7 +230,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-4">
+                    <div class="row mb-2">
                         <label for="childdescription" class="col-sm-2 col-form-label"><?= lang('BOM.childdescription'); ?></label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control <?php if(session('errors.childdescription')) : ?>is-invalid<?php endif ?>" id="childdescription" placeholder="<?= lang('BOM.childdescription'); ?>" name="childdescription" value="<?= old('childdescription'); ?>">

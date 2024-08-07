@@ -34,7 +34,7 @@
                             <div class="card-body pt-0"> 
                                 <div>
                                     <a href="/">
-                                        <div class="avatar-md profile-user-wid mb-4">
+                                        <div class="avatar-md profile-user-wid mb-2">
                                             <span class="avatar-title rounded-circle bg-light">
                                                 <img src="/assets/images/logo.svg" alt="" class="rounded-circle" height="34">
                                             </span>
@@ -44,7 +44,7 @@
                                 <div class="p-2">
                                     <form class="form-horizontal" action="/">
             
-                                        <div class="user-thumb text-center mb-4">
+                                        <div class="user-thumb text-center mb-2">
                                             <img src="/assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail avatar-md" alt="thumbnail">
                                             <h5 class="font-size-15 mt-3">Maria Laird</h5>
                                         </div>

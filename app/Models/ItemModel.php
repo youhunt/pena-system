@@ -33,6 +33,18 @@ class ItemModel extends Model
         'item_type',
         'item_subtype',
         'item_atribute', 
+        'item_lengthuom',
+        'item_widthuom',
+        'item_heightuom',
+        'item_diameteruom',
+        'out_length',
+        'out_width',
+        'out_height',
+        'out_diameter',
+        'out_lengthuom',
+        'out_widthuom',
+        'out_heightuom',
+        'out_diameteruom',
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [

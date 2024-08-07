@@ -8,14 +8,14 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="uom_code" class="col-sm-2 col-form-label"><?= lang('UOM.uom_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.uom_code')) : ?>is-invalid<?php endif ?>" id="uom_code" placeholder="<?= lang('UOM.uom_code'); ?>" name="uom_code" value="<?= old('uom_code') ? old('uom_code') : $uom[0]->uom_code; ?>">
@@ -26,10 +26,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="uomdec" class="col-sm-2 col-form-label"><?= lang('UOM.uomdec'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" class="form-control <?php if(session('errors.uomdec')) : ?>is-invalid<?php endif ?>" id="uomdec" placeholder="<?= lang('UOM.uomdec'); ?>" name="uomdec" value="<?= old('uomdec') ? old('uomdec') : $uom[0]->uomdec; ?>">
+                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.uomdec')) : ?>is-invalid<?php endif ?>" id="uomdec" placeholder="<?= lang('UOM.uomdec'); ?>" name="uomdec" value="<?= old('uomdec') ? old('uomdec') : $uom[0]->uomdec; ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">

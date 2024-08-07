@@ -7,15 +7,15 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
  
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Warehouse.comp_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code'); ?>" />
@@ -32,7 +32,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_code" class="col-sm-2 col-form-label"><?= lang('Warehouse.dept_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept_code" name="dept_code" value="<?= old('dept_code'); ?>" />
@@ -46,7 +46,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_pic" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_pic'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_pic')) : ?>is-invalid<?php endif ?>" id="whs_pic" placeholder="<?= lang('Warehouse.whs_pic'); ?>" name="whs_pic" value="<?= old('whs_pic') ?>">
@@ -57,14 +57,14 @@
                                             </div>                                            
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_add" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_add'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.whs_add')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Warehouse.whs_add'); ?>" name="whs_add"><?= old('whs_add') ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_count" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_count'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_count" name="whs_count" value="" />
@@ -77,7 +77,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_city" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_city'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_city" name="whs_city" value="" />
@@ -89,7 +89,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_phone1" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_phone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_phone1')) : ?>is-invalid<?php endif ?>" id="whs_phone1" placeholder="<?= lang('Warehouse.whs_phone1'); ?>" name="whs_phone1" value="<?= old('whs_phone1') ?>">
@@ -100,7 +100,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_phone3" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_phone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_phone3')) : ?>is-invalid<?php endif ?>" id="whs_phone3" placeholder="<?= lang('Warehouse.whs_phone3'); ?>" name="whs_phone3" value="<?= old('whs_phone3') ?>">
@@ -111,14 +111,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_badd" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_badd'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.whs_badd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Warehouse.whs_badd'); ?>" name="whs_badd"><?= old('whs_badd') ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_bcount" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_bcount'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_bcount" name="whs_bcount" value="" />
@@ -131,7 +131,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_bcity" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_bcity'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_bcity" name="whs_bcity" value="" />
@@ -143,7 +143,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_bphone1" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_bphone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_bphone1')) : ?>is-invalid<?php endif ?>" id="whs_bphone1" placeholder="<?= lang('Warehouse.whs_bphone1'); ?>" name="whs_bphone1" value="<?= old('whs_bphone1') ?>">
@@ -154,7 +154,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_bphone3" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_bphone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_bphone3')) : ?>is-invalid<?php endif ?>" id="whs_bphone3" placeholder="<?= lang('Warehouse.whs_bphone3'); ?>" name="whs_bphone3" value="<?= old('whs_bphone3') ?>">
@@ -165,14 +165,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_madd" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_madd'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.whs_madd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Warehouse.whs_madd'); ?>" name="whs_madd"><?= old('whs_madd') ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_mcount" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_mcount'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_mcount" name="whs_mcount" value="" />
@@ -185,7 +185,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_mcity" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_mcity'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs_mcity" name="whs_mcity" value="" />
@@ -197,7 +197,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_mphone1" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_mphone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_mphone1')) : ?>is-invalid<?php endif ?>" id="whs_mphone1" placeholder="<?= lang('Warehouse.whs_mphone1'); ?>" name="whs_mphone1" value="<?= old('whs_mphone1') ?>">
@@ -208,7 +208,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs_mphone3" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_mphone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.whs_mphone3')) : ?>is-invalid<?php endif ?>" id="whs_mphone3" placeholder="<?= lang('Warehouse.whs_mphone3'); ?>" name="whs_mphone3" value="<?= old('whs_mphone3') ?>">

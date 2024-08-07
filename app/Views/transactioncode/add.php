@@ -7,14 +7,14 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="company" class="col-sm-2 col-form-label"><?= lang('TransactionCode.company'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="company" name="company" value="<?= old('company'); ?>" />
@@ -31,7 +31,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept" class="col-sm-2 col-form-label"><?= lang('TransactionCode.dept'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept" name="dept" value="<?= old('dept'); ?>" />
@@ -45,7 +45,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="transname" class="col-sm-2 col-form-label"><?= lang('TransactionCode.transname'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.transname')) : ?>is-invalid<?php endif ?>" id="transname" placeholder="<?= lang('TransactionCode.transname'); ?>" name="transname" value="<?= old('transname'); ?>">
@@ -56,7 +56,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="transtype" class="col-sm-2 col-form-label"><?= lang('TransactionCode.transtype'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="transtype" name="transtype" value="<?= old('transtype'); ?>" />
@@ -72,7 +72,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">    
+                                        <div class="row mb-2">    
                                             <label for="transdescription" class="col-sm-2 col-form-label"><?= lang('TransactionCode.transdescription'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.transdescription')) : ?>is-invalid<?php endif ?>" id="transdescription" placeholder="<?= lang('TransactionCode.transdescription'); ?>" name="transdescription" value="<?= old('transdescription'); ?>">

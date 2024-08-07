@@ -7,14 +7,14 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="type" class="col-sm-2 col-form-label"><?= lang('CostType.type'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.type')) : ?>is-invalid<?php endif ?>" id="type" placeholder="<?= lang('CostType.type'); ?>" name="type" value="<?= old('type'); ?>">
@@ -25,7 +25,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="group" class="col-sm-2 col-form-label"><?= lang('CostType.group'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.group')) : ?>is-invalid<?php endif ?>" id="group" placeholder="<?= lang('CostType.group'); ?>" name="group" value="<?=  old('group'); ?>">

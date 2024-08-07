@@ -8,15 +8,15 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
  
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Site.comp_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code') ? old('comp_code') : $site[0]->comp_code ; ?>" />
@@ -26,7 +26,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_code" class="col-sm-2 col-form-label"><?= lang('Site.site_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.site_code')) : ?>is-invalid<?php endif ?>" id="site_code" placeholder="<?= lang('Site.site_code'); ?>" name="site_code" value="<?= old('site_code') ? old('site_code') : $site[0]->site_code ; ?>">
@@ -37,7 +37,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_name" class="col-sm-2 col-form-label"><?= lang('Site.site_name'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.site_name')) : ?>is-invalid<?php endif ?>" id="site_name" placeholder="<?= lang('Site.site_name'); ?>" name="site_name" value="<?= old('site_name') ? old('site_name') : $site[0]->site_name ; ?>">
@@ -48,14 +48,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_add" class="col-sm-2 col-form-label"><?= lang('Site.site_add'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.site_add')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Site.site_add'); ?>" name="site_add"><?= old('site_add') ? old('site_add') : $site[0]->site_add ; ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_count" class="col-sm-2 col-form-label"><?= lang('Site.site_count'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site_count" name="site_count" value="<?= old('site_count') ? old('site_count') : $site[0]->site_count;?>" />
@@ -72,7 +72,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_city" class="col-sm-2 col-form-label"><?= lang('Site.site_city'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site_city" name="site_city" value="<?= old('site_city') ? old('site_city') : $site[0]->site_city;?>" />
@@ -86,7 +86,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_phone1" class="col-sm-2 col-form-label"><?= lang('Site.site_phone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.site_phone1')) : ?>is-invalid<?php endif ?>" id="site_phone1" placeholder="<?= lang('Site.site_phone1'); ?>" name="site_phone1" value="<?= old('site_phone1') ? old('site_phone1') : $site[0]->site_phone1 ; ?>">
@@ -97,7 +97,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_phone3" class="col-sm-2 col-form-label"><?= lang('Site.site_phone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.site_phone3')) : ?>is-invalid<?php endif ?>" id="site_phone3" placeholder="<?= lang('Site.site_phone3'); ?>" name="site_phone3" value="<?= old('site_phone3') ? old('site_phone3') : $site[0]->site_phone3 ; ?>">
@@ -108,14 +108,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_badd" class="col-sm-2 col-form-label"><?= lang('Site.site_badd'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.site_badd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Site.site_badd'); ?>" name="site_badd"><?= old('site_badd') ? old('site_badd') : $site[0]->site_badd ; ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_bcount" class="col-sm-2 col-form-label"><?= lang('Site.site_bcount'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site_bcount" name="site_bcount" value="<?= old('site_bcount') ? old('site_bcount') : $site[0]->site_bcount ; ?>" />
@@ -132,7 +132,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_bcity" class="col-sm-2 col-form-label"><?= lang('Site.site_bcity'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site_bcity" name="site_bcity" value="<?= old('site_bcity') ? old('site_bcity') : $site[0]->site_bcity ; ?>" />
@@ -146,7 +146,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_bphone1" class="col-sm-2 col-form-label"><?= lang('Site.site_bphone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.site_bphone1')) : ?>is-invalid<?php endif ?>" id="site_bphone1" placeholder="<?= lang('Site.site_bphone1'); ?>" name="site_bphone1" value="<?= old('site_bphone1') ? old('site_bphone1') : $site[0]->site_bphone1 ; ?>">
@@ -157,7 +157,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_bphone3" class="col-sm-2 col-form-label"><?= lang('Site.site_bphone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.site_bphone3')) : ?>is-invalid<?php endif ?>" id="site_bphone3" placeholder="<?= lang('Site.site_bphone3'); ?>" name="site_bphone3" value="<?= old('site_bphone3') ? old('site_bphone3') : $site[0]->site_bphone3 ; ?>">
@@ -168,14 +168,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_madd" class="col-sm-2 col-form-label"><?= lang('Site.site_madd'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.site_madd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Site.site_madd'); ?>" name="site_madd"><?= old('site_madd') ? old('site_madd') : $site[0]->site_madd ; ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_mcount" class="col-sm-2 col-form-label"><?= lang('Site.site_mcount'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site_mcount" name="site_mcount" value="<?= old('site_mcount') ? old('site_mcount') : $site[0]->site_mcount ; ?>" />
@@ -192,7 +192,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_mcity" class="col-sm-2 col-form-label"><?= lang('Site.site_mcity'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site_mcity" name="site_mcity" value="<?= old('site_mcity') ? old('site_mcity') : $site[0]->site_mcity ; ?>" />
@@ -206,7 +206,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_mphone1" class="col-sm-2 col-form-label"><?= lang('Site.site_mphone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.site_mphone1')) : ?>is-invalid<?php endif ?>" id="site_mphone1" placeholder="<?= lang('Site.site_mphone1'); ?>" name="site_mphone1" value="<?= old('site_mphone1') ? old('site_mphone1') : $site[0]->site_mphone1 ; ?>">
@@ -217,7 +217,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site_mphone3" class="col-sm-2 col-form-label"><?= lang('Site.site_mphone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.site_mphone3')) : ?>is-invalid<?php endif ?>" id="site_mphone3" placeholder="<?= lang('Site.site_mphone3'); ?>" name="site_mphone3" value="<?= old('site_mphone3') ? old('site_mphone3') : $site[0]->site_mphone3 ; ?>">

@@ -7,14 +7,14 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
                                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="site" class="col-sm-2 col-form-label"><?= lang('BOM.site'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site" name="site" value="<?= old('site'); ?>" />
@@ -33,7 +33,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="whs" class="col-sm-2 col-form-label"><?= lang('BOM.whs'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs" name="whs" value="<?= old('whs'); ?>" />
@@ -52,7 +52,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="type" class="col-sm-2 col-form-label"><?= lang('BOM.type'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="type" name="type" value="<?= old('type'); ?>" />
@@ -67,7 +67,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="uom" class="col-sm-2 col-form-label"><?= lang('BOM.uom'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="uom" name="uom" value="<?= old('uom'); ?>" />
@@ -82,7 +82,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="description" class="col-sm-2 col-form-label"><?= lang('BOM.description'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.description')) : ?>is-invalid<?php endif ?>" id="description" placeholder="<?= lang('BOM.description'); ?>" name="description" value="<?= old('description'); ?>">

@@ -40,11 +40,11 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4"><?=lang('Auth.forgotPassword')?></h1>
+                                        <h1 class="h4 text-gray-900 mb-2"><?=lang('Auth.forgotPassword')?></h1>
                                     </div>
                                     <?= view('Myth\Auth\Views\_message_block') ?>
 
-                                    <p class="mb-4"><?=lang('Auth.enterEmailForInstructions')?></p>
+                                    <p class="mb-2"><?=lang('Auth.enterEmailForInstructions')?></p>
 
                                     <form action="<?= route_to('forgot') ?>" class="user" method="post">
                                         <?= csrf_field() ?>

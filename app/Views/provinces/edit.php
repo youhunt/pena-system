@@ -8,14 +8,14 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="Country" class="col-sm-2 col-form-label"><?= lang('Provinces.Country'); ?></label>
                                             <div class="col-sm-6">
                                                 <input type="hidden" id="country_id" name="country_id" value="<?= old('country_id') ? old('country_id') : $provinces[0]->country_id  ; ?>" />
@@ -25,7 +25,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="province_code" class="col-sm-2 col-form-label"><?= lang('Provinces.province_code'); ?></label>
                                             <div class="col-sm-2">
                                                 <input type="text" class="form-control <?php if(session('errors.province_code')) : ?>is-invalid<?php endif ?>" id="province_code" placeholder="<?= lang('Provinces.province_code'); ?>" name="province_code" value="<?= old('province_code') ? old('province_code') : $provinces[0]->province_code; ?>">

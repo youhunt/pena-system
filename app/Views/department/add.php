@@ -7,15 +7,15 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4"><?= $title ?></h4>
-                                        <div class="row mb-4">
+                                        <h4 class="card-title mb-2"><?= $title ?></h4>
+                                        <div class="row mb-2">
                                             <div class="col-sm-12">
                                                 <?= view('\Myth\Auth\Views\_message_block') ?>
                                             </div>
                                         </div>
 
  
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="comp_code" class="col-sm-2 col-form-label"><?= lang('Department.comp_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="comp_code" name="comp_code" value="<?= old('comp_code'); ?>" />
@@ -32,7 +32,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_code" class="col-sm-2 col-form-label"><?= lang('Department.dept_code'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.dept_code')) : ?>is-invalid<?php endif ?>" id="dept_code" placeholder="<?= lang('Department.dept_code'); ?>" name="dept_code" value="<?= old('dept_code') ?>">
@@ -43,7 +43,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_name" class="col-sm-2 col-form-label"><?= lang('Department.dept_name'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.dept_name')) : ?>is-invalid<?php endif ?>" id="dept_name" placeholder="<?= lang('Department.dept_name'); ?>" name="dept_name" value="<?= old('dept_name') ?>">
@@ -52,14 +52,14 @@
                                             <div class="col-sm-4">&nbsp;</div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_add" class="col-sm-2 col-form-label"><?= lang('Department.dept_add'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.dept_add')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Department.dept_add'); ?>" name="dept_add"><?= old('dept_add') ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_count" class="col-sm-2 col-form-label"><?= lang('Department.dept_count'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept_count" name="dept_count" value="" />
@@ -72,7 +72,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_city" class="col-sm-2 col-form-label"><?= lang('Department.dept_city'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept_city" name="dept_city" value="" />
@@ -84,7 +84,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_phone1" class="col-sm-2 col-form-label"><?= lang('Department.dept_phone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.dept_phone1')) : ?>is-invalid<?php endif ?>" id="dept_phone1" placeholder="<?= lang('Department.dept_phone1'); ?>" name="dept_phone1" value="<?= old('dept_phone1') ?>">
@@ -95,7 +95,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_phone3" class="col-sm-2 col-form-label"><?= lang('Department.dept_phone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.dept_phone3')) : ?>is-invalid<?php endif ?>" id="dept_phone3" placeholder="<?= lang('Department.dept_phone3'); ?>" name="dept_phone3" value="<?= old('dept_phone3') ?>">
@@ -106,14 +106,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_badd" class="col-sm-2 col-form-label"><?= lang('Department.dept_badd'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.dept_badd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Department.dept_badd'); ?>" name="dept_badd"><?= old('dept_badd') ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_bcount" class="col-sm-2 col-form-label"><?= lang('Department.dept_bcount'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept_bcount" name="dept_bcount" value="" />
@@ -126,7 +126,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_bcity" class="col-sm-2 col-form-label"><?= lang('Department.dept_bcity'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept_bcity" name="dept_bcity" value="" />
@@ -138,7 +138,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_bphone1" class="col-sm-2 col-form-label"><?= lang('Department.dept_bphone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.dept_bphone1')) : ?>is-invalid<?php endif ?>" id="dept_bphone1" placeholder="<?= lang('Department.dept_bphone1'); ?>" name="dept_bphone1" value="<?= old('dept_bphone1') ?>">
@@ -149,7 +149,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_bphone3" class="col-sm-2 col-form-label"><?= lang('Department.dept_bphone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.dept_bphone3')) : ?>is-invalid<?php endif ?>" id="dept_bphone3" placeholder="<?= lang('Department.dept_bphone3'); ?>" name="dept_bphone3" value="<?= old('dept_bphone3') ?>">
@@ -160,14 +160,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_madd" class="col-sm-2 col-form-label"><?= lang('Department.dept_madd'); ?></label>
                                             <div class="col-sm-10">
                                                 <textarea class="form-control <?php if(session('errors.dept_madd')) : ?>is-invalid<?php endif ?>" rows="2" placeholder="<?= lang('Department.dept_madd'); ?>" name="dept_madd"><?= old('dept_madd') ?></textarea>
                                             </div>
                                         </div>
                         
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_mcount" class="col-sm-2 col-form-label"><?= lang('Department.dept_mcount'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept_mcount" name="dept_mcount" value="" />
@@ -180,7 +180,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_mcity" class="col-sm-2 col-form-label"><?= lang('Department.dept_mcity'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept_mcity" name="dept_mcity" value="" />
@@ -192,7 +192,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_mphone1" class="col-sm-2 col-form-label"><?= lang('Department.dept_mphone1'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.dept_mphone1')) : ?>is-invalid<?php endif ?>" id="dept_mphone1" placeholder="<?= lang('Department.dept_mphone1'); ?>" name="dept_mphone1" value="<?= old('dept_mphone1') ?>">
@@ -203,7 +203,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-2">
                                             <label for="dept_mphone3" class="col-sm-2 col-form-label"><?= lang('Department.dept_mphone3'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="text" class="form-control <?php if(session('errors.dept_mphone3')) : ?>is-invalid<?php endif ?>" id="dept_mphone3" placeholder="<?= lang('Department.dept_mphone3'); ?>" name="dept_mphone3" value="<?= old('dept_mphone3') ?>">
