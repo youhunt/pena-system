@@ -73,30 +73,35 @@
                                         </div>
                                         
                                         <h5 class="card-title mb-2"><?= lang('Item.Dimension'); ?></h5>
-
                                         <div class="row mb-1">
-                                            <label for="item_length" class="col-sm-1 col-form-label"><?= lang('Item.item_length'); ?></label>
+                                            <label for="item_size" class="col-sm-4 col-form-label"><?= lang('Item.item_size'); ?></label>
+                                            <label for="item_uom" class="col-sm-2 col-form-label"><?= lang('Item.item_uom'); ?></label>
+                                            <label for="process_size" class="col-sm-4 col-form-label"><?= lang('Item.process_size'); ?></label>
+                                            <label for="item_uom" class="col-sm-2 col-form-label"><?= lang('Item.item_uom'); ?></label>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <label for="item_length" class="col-sm-2 col-form-label"><?= lang('Item.item_length'); ?></label>
                                             <div class="col-sm-2">
                                                 <input type="number" step="0.01"class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" style="text-align:right;" value="<?= old('item_length') ?>">
                                             </div>
                                         </div>
 
                                         <div class="row mb-1">
-                                            <label for="item_width" class="col-sm-1 col-form-label"><?= lang('Item.item_width'); ?></label>
+                                            <label for="item_width" class="col-sm-2 col-form-label"><?= lang('Item.item_width'); ?></label>
                                             <div class="col-sm-2">
                                                 <input type="number" step="0.01"class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" style="text-align:right;" value="<?= old('item_width') ?>">
                                             </div>
                                         </div>
 
                                         <div class="row mb-1">
-                                            <label for="item_height" class="col-sm-1 col-form-label"><?= lang('Item.item_height'); ?></label>
+                                            <label for="item_height" class="col-sm-2 col-form-label"><?= lang('Item.item_height'); ?></label>
                                             <div class="col-sm-2">
                                                 <input type="number" step="0.01"class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" style="text-align:right;" value="<?= old('item_height') ?>">
                                             </div>
                                         </div>
 
                                         <div class="row mb-1">
-                                            <label for="item_diameter" class="col-sm-1 col-form-label"><?= lang('Item.item_diameter'); ?></label>
+                                            <label for="item_diameter" class="col-sm-2 col-form-label"><?= lang('Item.item_diameter'); ?></label>
                                             <div class="col-sm-2">
                                                 <input type="number" step="0.01"class="form-control <?php if(session('errors.item_diameter')) : ?>is-invalid<?php endif ?>" id="item_diameter" placeholder="<?= lang('Item.item_diameter'); ?>" name="item_diameter" value="<?= old('item_diameter') ?>">
                                             </div>
