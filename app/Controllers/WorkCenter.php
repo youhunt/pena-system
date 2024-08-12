@@ -48,15 +48,10 @@ class WorkCenter extends BaseController
                 $row['id'] = $list->id;
                 $row['site'] = $list->site ? $dataSit->getSite($list->site)[0]->site_name : "";
                 $row['dept'] = $list->dept ? $dataDep->getDepartment($list->dept)[0]->dept_name : "";
-                $row['whs'] = $list->whs ? $dataWhs->getWarehouse($list->whs)[0]->whs_name : "";
-                $row['parentcode'] = $list->parentcode ? $dataItem->getItem($list->parentcode)[0]->item_name_1 : "";
-                $row['type'] = lang('WorkCenter.type'.$list->type);
-                $row['qty'] = number_format((float)$list->qty, 2, '.', '');;
-                $row['uom'] = $list->uom ? $dataUOM->getUOM($list->uom)[0]->uom_desc : "";
-                $row['ratio'] = number_format((float)$list->ratio, 2, '.', '');
+                $row['warehouse'] = $list->warehouse ? $dataWhs->getWarehouse($list->warehouse)[0]->whs_name : "";
+                $row['workcenter'] = $list->workcenter;
                 $row['description'] = $list->description;
                 $row['active'] = $list->active;
-                $row['no'] = '';
                 $data[] = $row;
             }
 

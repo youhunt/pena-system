@@ -81,7 +81,7 @@
                             <a href="javascript: void(0);" class="has-arrow" key="t-master"><?= lang('Files.Master') ?></a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="/bom" key="t-bom"><?= lang('Files.BOM') ?></a></li>
-                                <li><a href="/workcenter" key="t-workcenter"><?= lang('Files.WorkCenter') ?></a></li>
+                                <li><a href="/work_center" key="t-workcenter"><?= lang('Files.WorkCenter') ?></a></li>
                                 <li><a href="/routing" key="t-routing"><?= lang('Files.Routing') ?></a></li>
                             </ul>
                         </li>

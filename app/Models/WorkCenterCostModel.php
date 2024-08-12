@@ -5,50 +5,44 @@ namespace App\Models;
 use CodeIgniter\Model;
 use CodeIgniter\HTTP\RequestInterface;
 
-class WorkCenterModel extends Model
+class WorkCenterCostModel extends Model
 {
 
-    protected $table          = 'work_center';
+    protected $table          = 'work_center_cost';
     protected $primaryKey     = 'id';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
         'id',
-        'site',
-        'dept',
-        'warehouse',
-        'workcenter',
-        'description',
+        'work_center_id',
+        'costtype',
+        'costamount',
+        'costuom',
+        'notes2',
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
         'site' => 'required',
         'dept' => 'required',
-        'parentcode' => 'required',
-        'type' => 'required',
-        'qty' => 'required',
-        'uom' => 'required',
-        'ratio' => 'required',      
+        'warehouse' => 'required',
+        'workcenter' => 'required',
+        'description' => 'required',
     ];
 
-    protected $column_order = ['id', 'site',
-        'dept',
-        'whs',
-        'parentcode',
-        'type',
-        'qty',
-        'uom',
-        'ratio',
-        'description',
+    protected $column_order = [
+        'id',
+        'work_center_id',
+        'costtype',
+        'costamount',
+        'costuom',
+        'notes2',
     ];
-    protected $column_search = ['site',
-        'dept',
-        'whs',
-        'parentcode',
-        'type',
-        'qty',
-        'uom',
-        'ratio',
-        'description',
+    protected $column_search = [
+        'id',
+        'work_center_id',
+        'costtype',
+        'costamount',
+        'costuom',
+        'notes2',
     ];
     protected $order = ['id' => 'ASC'];
     protected $request;
@@ -110,7 +104,7 @@ class WorkCenterModel extends Model
         return $tbl_storage->countAllResults();
     }
 
-    public function getWorkCenter($id = '')
+    public function getWorkCenterCost($id = '')
     {
         $this->dt->where('id', $id);
         $query = $this->dt->get();
