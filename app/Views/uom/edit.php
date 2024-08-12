@@ -29,7 +29,7 @@
                                         <div class="row mb-2">
                                             <label for="uomdec" class="col-sm-2 col-form-label"><?= lang('UOM.uomdec'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.uomdec')) : ?>is-invalid<?php endif ?>" id="uomdec" placeholder="<?= lang('UOM.uomdec'); ?>" name="uomdec" value="<?= old('uomdec') ? old('uomdec') : $uom[0]->uomdec; ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.uomdec')) : ?>is-invalid<?php endif ?>" id="uomdec" placeholder="<?= lang('UOM.uomdec'); ?>" name="uomdec" value="<?= number_format((float)(old('uomdec') ? old('uomdec') : $uom[0]->uomdec), 2, '.', ''); ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">

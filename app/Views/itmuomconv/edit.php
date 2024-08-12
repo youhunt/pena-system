@@ -75,7 +75,7 @@
                                         <div class="row mb-2">
                                             <label for="value" class="col-sm-2 col-form-label"><?= lang('ItmUOMConv.value'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('ItmUOMConv.value'); ?>" name="value" value="<?=  old('value') ? : $itmuomconv[0]->value; ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.value')) : ?>is-invalid<?php endif ?>" id="value" placeholder="<?= lang('ItmUOMConv.value'); ?>" name="value" value="<?=  number_format((float)(old('value') ? : $itmuomconv[0]->value), 2, '.', ''); ?>">
                                             </div>
                                             <label for="item_width" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">

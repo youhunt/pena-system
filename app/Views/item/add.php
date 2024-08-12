@@ -51,7 +51,7 @@
                                         <div class="row mb-2">
                                             <label for="shelf_life" class="col-sm-2 col-form-label"><?= lang('Item.shelf_life'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.shelf_life')) : ?>is-invalid<?php endif ?>" id="shelf_life" placeholder="<?= lang('Item.shelf_life'); ?>" style="text-align:right;" name="shelf_life" value="<?= old('shelf_life') ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.shelf_life')) : ?>is-invalid<?php endif ?>" id="shelf_life" placeholder="<?= lang('Item.shelf_life'); ?>" style="text-align:right;" name="shelf_life" value="<?= number_format((float)(old('shelf_life')), 2, '.', ''); ?>">
                                             </div>
                                             <label for="stockuom" class="col-sm-2 col-form-label"><?= lang('Item.stockuom'); ?></label>
                                             <div class="col-sm-4">
@@ -68,7 +68,7 @@
                                             </div>
                                             <label for="item_price" class="col-sm-2 col-form-label"><?= lang('Item.item_price'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" style="text-align:right;" value="<?= old('item_price') ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" style="text-align:right;" value="<?= number_format((float)(old('item_price')), 2, '.', ''); ?>">
                                             </div>
                                         </div>
                                         
@@ -82,28 +82,76 @@
                                         <div class="row mb-1">
                                             <label for="item_length" class="col-sm-2 col-form-label"><?= lang('Item.item_length'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" style="text-align:right;" value="<?= old('item_length') ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" style="text-align:right;" value="<?= number_format((float)(old('item_length')), 2, '.', ''); ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="hidden" id="item_lengthuom" name="item_lengthuom" value="" />
+                                                <select class="form-control <?php if(session('errors.item_lengthuom')) : ?>is-invalid<?php endif ?>" name="lengthuom" id="lengthuom" ></select>
+                                            </div>
+                                            <label for="out_length" class="col-sm-2 col-form-label"><?= lang('Item.out_length'); ?></label>
+                                            <div class="col-sm-2">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.out_length')) : ?>is-invalid<?php endif ?>" id="out_length" placeholder="<?= lang('Item.out_length'); ?>" name="out_length" style="text-align:right;" value="<?= number_format((float)(old('out_length')), 2, '.', ''); ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="hidden" id="out_lengthuom" name="out_lengthuom" value="" />
+                                                <select class="form-control <?php if(session('errors.out_lengthuom')) : ?>is-invalid<?php endif ?>" name="olengthuom" id="olengthuom" ></select>
                                             </div>
                                         </div>
 
                                         <div class="row mb-1">
                                             <label for="item_width" class="col-sm-2 col-form-label"><?= lang('Item.item_width'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" style="text-align:right;" value="<?= old('item_width') ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" style="text-align:right;" value="<?= number_format((float)(old('item_width')), 2, '.', ''); ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="hidden" id="item_widthuom" name="item_widthuom" value="" />
+                                                <select class="form-control <?php if(session('errors.item_widthuom')) : ?>is-invalid<?php endif ?>" name="widthuom" id="widthuom" ></select>
+                                            </div>
+                                            <label for="out_width" class="col-sm-2 col-form-label"><?= lang('Item.out_width'); ?></label>
+                                            <div class="col-sm-2">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.out_width')) : ?>is-invalid<?php endif ?>" id="out_width" placeholder="<?= lang('Item.out_width'); ?>" name="out_width" style="text-align:right;" value="<?= number_format((float)(old('out_width')), 2, '.', ''); ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="hidden" id="out_widthuom" name="out_widthuom" value="" />
+                                                <select class="form-control <?php if(session('errors.out_widthuom')) : ?>is-invalid<?php endif ?>" name="owidthuom" id="owidthuom" ></select>
                                             </div>
                                         </div>
 
                                         <div class="row mb-1">
                                             <label for="item_height" class="col-sm-2 col-form-label"><?= lang('Item.item_height'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" style="text-align:right;" value="<?= old('item_height') ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" style="text-align:right;" value="<?= number_format((float)(old('item_height')), 2, '.', ''); ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="hidden" id="item_heightuom" name="item_heightuom" value="" />
+                                                <select class="form-control <?php if(session('errors.item_heightuom')) : ?>is-invalid<?php endif ?>" name="heightuom" id="heightuom" ></select>
+                                            </div>
+                                            <label for="out_height" class="col-sm-2 col-form-label"><?= lang('Item.out_height'); ?></label>
+                                            <div class="col-sm-2">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.out_height')) : ?>is-invalid<?php endif ?>" id="out_height" placeholder="<?= lang('Item.out_height'); ?>" name="out_height" style="text-align:right;" value="<?= number_format((float)(old('out_height')), 2, '.', ''); ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="hidden" id="out_heightuom" name="out_heightuom" value="" />
+                                                <select class="form-control <?php if(session('errors.out_heightuom')) : ?>is-invalid<?php endif ?>" name="oheightuom" id="oheightuom" ></select>
                                             </div>
                                         </div>
 
                                         <div class="row mb-1">
                                             <label for="item_diameter" class="col-sm-2 col-form-label"><?= lang('Item.item_diameter'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01"class="form-control <?php if(session('errors.item_diameter')) : ?>is-invalid<?php endif ?>" id="item_diameter" placeholder="<?= lang('Item.item_diameter'); ?>" name="item_diameter" value="<?= old('item_diameter') ?>">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_diameter')) : ?>is-invalid<?php endif ?>" id="item_diameter" placeholder="<?= lang('Item.item_diameter'); ?>" name="item_diameter" style="text-align:right;" value="<?= number_format((float)(old('item_diameter')), 2, '.', ''); ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="hidden" id="item_diameteruom" name="item_diameteruom" value="" />
+                                                <select class="form-control <?php if(session('errors.item_diameteruom')) : ?>is-invalid<?php endif ?>" name="diameteruom" id="diameteruom" ></select>
+                                            </div>
+                                            <label for="out_diameter" class="col-sm-2 col-form-label"><?= lang('Item.out_diameter'); ?></label>
+                                            <div class="col-sm-2">
+                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.out_diameter')) : ?>is-invalid<?php endif ?>" id="out_diameter" placeholder="<?= lang('Item.out_diameter'); ?>" name="out_diameter" style="text-align:right;" value="<?= number_format((float)(old('out_diameter')), 2, '.', ''); ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input type="hidden" id="out_diameteruom" name="out_diameteruom" value="" />
+                                                <select class="form-control <?php if(session('errors.out_diameteruom')) : ?>is-invalid<?php endif ?>" name="odiameteruom" id="odiameteruom" ></select>
                                             </div>
                                         </div>
                                         <h5 class="card-title mb-2"><?= lang('Item.Grouping'); ?></h5>
@@ -174,6 +222,398 @@
 <script type="text/javascript">
     $(document).ready(function(){
         
+        $('#lengthuom').select2({
+            placeholder: '|<?= lang('Item.item_lengthuom'); ?>',
+            minimumInputLength: 0,
+            allowClear: true,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#lengthuom option:selected").val();
+            $("#item_lengthuom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#item_lengthuom").val(data);
+        });
+
+        $('#widthuom').select2({
+            placeholder: '|<?= lang('Item.item_widthuom'); ?>',
+            minimumInputLength: 0,
+            allowClear: true,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#widthuom option:selected").val();
+            $("#item_widthuom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#item_widthuom").val(data);
+        });
+
+        $('#heightuom').select2({
+            placeholder: '|<?= lang('Item.item_heightuom'); ?>',
+            allowClear: true,
+            minimumInputLength: 0,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#heightuom option:selected").val();
+            $("#item_heightuom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#item_heightuom").val(data);
+        });
+
+        $('#diameteruom').select2({
+            placeholder: '|<?= lang('Item.item_diameteruom'); ?>',
+            minimumInputLength: 0,
+            allowClear: true,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#diameteruom option:selected").val();
+            $("#item_diameteruom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#item_diameteruom").val(data);
+        });
+
+        $('#olengthuom').select2({
+            placeholder: '|<?= lang('Item.out_lengthuom'); ?>',
+            allowClear: true,
+            minimumInputLength: 0,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#olengthuom option:selected").val();
+            $("#out_lengthuom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#out_lengthuom").val(data);
+        });
+
+        $('#owidthuom').select2({
+            placeholder: '|<?= lang('Item.out_widthuom'); ?>',
+            minimumInputLength: 0,
+            allowClear: true,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#owidthuom option:selected").val();
+            $("#out_widthuom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#out_widthuom").val(data);
+        });
+
+        $('#oheightuom').select2({
+            placeholder: '|<?= lang('Item.out_heightuom'); ?>',
+            minimumInputLength: 0,
+            allowClear: true,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#oheightuom option:selected").val();
+            $("#out_heightuom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#out_heightuom").val(data);
+        });
+
+        $('#odiameteruom').select2({
+            placeholder: '|<?= lang('Item.out_diameteruom'); ?>',
+            minimumInputLength: 0,
+            allowClear: true,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#odiameteruom option:selected").val();
+            $("#out_diameteruom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#out_diameteruom").val(data);
+        });
+
         $('#uom').select2({
             placeholder: '|<?= lang('Item.stockuom'); ?>',
             minimumInputLength: 0,

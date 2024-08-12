@@ -79,6 +79,54 @@ class Item extends BaseController
             'item_name_1'      => 'required',
             'stockuom'      => 'required',
             'stockwhs'      => 'required',
+            'item_lengthuom' => [
+                                    'rules'  => 'required_with[item_length]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.item_size').' '.lang('Item.item_lengthuom'),
+                                    ],
+                                ],            
+            'item_widthuom' => [
+                                    'rules'  => 'required_with[item_width]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.item_size').' '.lang('Item.item_widthuom'),
+                                    ],
+                                ],
+            'item_heightuom' => [
+                                    'rules'  => 'required_with[item_height]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.item_size').' '.lang('Item.item_heightuom'),
+                                    ],
+                                ],
+            'item_diameteruom' => [
+                                    'rules'  => 'required_with[item_diameter]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.item_size').' '.lang('Item.item_diameteruom'),
+                                    ],
+                                ],
+            'out_lengthuom' => [
+                                    'rules'  => 'required_with[out_length]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_lengthuom'),
+                                    ],
+                                ],
+            'out_widthuom' => [
+                                    'rules'  => 'required_with[out_width]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_heightuom'),
+                                    ],
+                                ],
+            'out_heightuom' => [
+                                    'rules'  => 'required_with[out_height]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_heightuom'),
+                                    ],
+                                ],
+            'out_diameteruom' => [
+                                    'rules'  => 'required_with[out_diameter]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_diameter'),
+                                    ],
+                                ],
         ];
     
         if (! $this->validate($rules))
@@ -110,18 +158,18 @@ class Item extends BaseController
                 'item_type' => $this->request->getPost('item_type'),
                 'item_subtype' => $this->request->getPost('item_subtype'),
                 'item_atribute' => $this->request->getPost('item_atribute'),
-                'item_lengthuom' => $this->request->getVar('item_lengthuom'),
-                'item_widthuom' => $this->request->getVar('item_widthuom'),
-                'item_heightuom' => $this->request->getVar('item_heightuom'),
-                'item_diameteruom' => $this->request->getVar('item_diameteruom'),
-                'out_length' => $this->request->getVar('out_length'),
-                'out_width' => $this->request->getVar('out_width'),
-                'out_height' => $this->request->getVar('out_height'),
-                'out_diameter' => $this->request->getVar('out_diameter'),
-                'out_lengthuom' => $this->request->getVar('out_lengthuom'),
-                'out_widthuom' => $this->request->getVar('out_widthuom'),
-                'out_heightuom' => $this->request->getVar('out_heightuom'),
-                'out_diameteruom' => $this->request->getVar('out_diameteruom'),
+                'item_lengthuom' => $this->request->getPost('item_lengthuom'),
+                'item_widthuom' => $this->request->getPost('item_widthuom'),
+                'item_heightuom' => $this->request->getPost('item_heightuom'),
+                'item_diameteruom' => $this->request->getPost('item_diameteruom'),
+                'out_length' => $this->request->getPost('out_length'),
+                'out_width' => $this->request->getPost('out_width'),
+                'out_height' => $this->request->getPost('out_height'),
+                'out_diameter' => $this->request->getPost('out_diameter'),
+                'out_lengthuom' => $this->request->getPost('out_lengthuom'),
+                'out_widthuom' => $this->request->getPost('out_widthuom'),
+                'out_heightuom' => $this->request->getPost('out_heightuom'),
+                'out_diameteruom' => $this->request->getPost('out_diameteruom'),
                 'created_date'=>  date("Y-m-d H:i:s"),
                 'created_by' =>  user()->username,
             ];
@@ -151,8 +199,16 @@ class Item extends BaseController
         $data['menu'] = 'setup';
         $data['submenu'] = 'item';
         $data['item'] = $dataItem->getItem($id);
-        $data['uom'] = $data['item'][0]->stockuom ? $dataUOM->getUOM($data['item'][0]->stockuom)[0]->uom_desc : "";
-        $data['whs'] = $data['item'][0]->stockwhs ? $dataWhs->getWarehouse($data['item'][0]->stockwhs)[0]->whs_name : "";
+        $data['uom'] = $data['item'][0]->stockuom ? $dataUOM->getUOM($data['item'][0]->stockuom)[0]->uom_code."|".$dataUOM->getUOM($data['item'][0]->stockuom)[0]->uom_desc : "";
+        $data['lengthuom'] = $data['item'][0]->item_lengthuom ? $dataUOM->getUOM($data['item'][0]->item_lengthuom)[0]->uom_code."|".$dataUOM->getUOM($data['item'][0]->item_lengthuom)[0]->uom_desc : "";
+        $data['widthuom'] = $data['item'][0]->item_widthuom ?       $dataUOM->getUOM($data['item'][0]->item_widthuom)[0]->uom_code."|".$dataUOM->getUOM($data['item'][0]->item_widthuom)[0]->uom_desc      : "";
+        $data['heightuom'] = $data['item'][0]->item_heightuom ?     $dataUOM->getUOM($data['item'][0]->item_heightuom)[0]->uom_code."|".$dataUOM->getUOM($data['item'][0]->item_heightuom)[0]->uom_desc      : "";
+        $data['diameteruom'] = $data['item'][0]->item_diameteruom ? $dataUOM->getUOM($data['item'][0]->item_diameteruom)[0]->uom_code."|".$dataUOM->getUOM($data['item'][0]->item_diameteruom)[0]->uom_desc    : "";
+        $data['olengthuom'] = $data['item'][0]->out_lengthuom ?     $dataUOM->getUOM($data['item'][0]->out_lengthuom)[0]->uom_code."|".$dataUOM->getUOM($data['item'][0]->out_lengthuom)[0]->uom_desc       : "";
+        $data['owidthuom'] = $data['item'][0]->out_widthuom ?       $dataUOM->getUOM($data['item'][0]->out_widthuom)[0]->uom_code."|".$dataUOM->getUOM($data['item'][0]->out_widthuom)[0]->uom_desc       : "";
+        $data['oheightuom'] = $data['item'][0]->out_heightuom ?     $dataUOM->getUOM($data['item'][0]->out_heightuom)[0]->uom_code."|".$dataUOM->getUOM($data['item'][0]->out_heightuom)[0]->uom_desc      : "";
+        $data['odiameteruom'] = $data['item'][0]->out_diameteruom ? $dataUOM->getUOM($data['item'][0]->out_diameteruom)[0]->uom_code."|".$dataUOM->getUOM($data['item'][0]->out_diameteruom)[0]->uom_desc    : "";
+        $data['whs'] = $data['item'][0]->stockwhs ? $dataWhs->getWarehouse($data['item'][0]->stockwhs)[0]->whs_code."|".$dataWhs->getWarehouse($data['item'][0]->stockwhs)[0]->whs_name : "";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Item']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Item', 'pagetitle' => 'ItemMaster']);
 
@@ -167,6 +223,54 @@ class Item extends BaseController
             'item_name_1'      => 'required',
             'stockuom'      => 'required',
             'stockwhs'      => 'required',
+            'item_lengthuom' => [
+                                    'rules'  => 'required_with[item_length]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.item_size').' '.lang('Item.item_lengthuom'),
+                                    ],
+                                ],            
+            'item_widthuom' => [
+                                    'rules'  => 'required_with[item_width]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.item_size').' '.lang('Item.item_widthuom'),
+                                    ],
+                                ],
+            'item_heightuom' => [
+                                    'rules'  => 'required_with[item_height]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.item_size').' '.lang('Item.item_heightuom'),
+                                    ],
+                                ],
+            'item_diameteruom' => [
+                                    'rules'  => 'required_with[item_diameter]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.item_size').' '.lang('Item.item_diameteruom'),
+                                    ],
+                                ],
+            'out_lengthuom' => [
+                                    'rules'  => 'required_with[out_length]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_lengthuom'),
+                                    ],
+                                ],
+            'out_widthuom' => [
+                                    'rules'  => 'required_with[out_width]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_heightuom'),
+                                    ],
+                                ],
+            'out_heightuom' => [
+                                    'rules'  => 'required_with[out_height]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_heightuom'),
+                                    ],
+                                ],
+            'out_diameteruom' => [
+                                    'rules'  => 'required_with[out_diameter]',
+                                    'errors' => [
+                                        'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_diameter'),
+                                    ],
+                                ],
         ];
     
         if (! $this->validate($rules))
@@ -198,17 +302,18 @@ class Item extends BaseController
                 'item_type' => $this->request->getPost('item_type'),
                 'item_subtype' => $this->request->getPost('item_subtype'),
                 'item_atribute' => $this->request->getPost('item_atribute'),
-                'item_widthuom' => $this->request->getVar('item_widthuom'),
-                'item_heightuom' => $this->request->getVar('item_heightuom'),
-                'item_diameteruom' => $this->request->getVar('item_diameteruom'),
-                'out_length' => $this->request->getVar('out_length'),
-                'out_width' => $this->request->getVar('out_width'),
-                'out_height' => $this->request->getVar('out_height'),
-                'out_diameter' => $this->request->getVar('out_diameter'),
-                'out_lengthuom' => $this->request->getVar('out_lengthuom'),
-                'out_widthuom' => $this->request->getVar('out_widthuom'),
-                'out_heightuom' => $this->request->getVar('out_heightuom'),
-                'out_diameteruom' => $this->request->getVar('out_diameteruom'),
+                'item_lengthuom' => $this->request->getPost('item_lengthuom'),
+                'item_widthuom' => $this->request->getPost('item_widthuom'),
+                'item_heightuom' => $this->request->getPost('item_heightuom'),
+                'item_diameteruom' => $this->request->getPost('item_diameteruom'),
+                'out_length' => $this->request->getPost('out_length'),
+                'out_width' => $this->request->getPost('out_width'),
+                'out_height' => $this->request->getPost('out_height'),
+                'out_diameter' => $this->request->getPost('out_diameter'),
+                'out_lengthuom' => $this->request->getPost('out_lengthuom'),
+                'out_widthuom' => $this->request->getPost('out_widthuom'),
+                'out_heightuom' => $this->request->getPost('out_heightuom'),
+                'out_diameteruom' => $this->request->getPost('out_diameteruom'),
                 'updated_by' =>  user()->username,
                 'updated_at' =>  date("Y-m-d H:i:s"),
             ];
@@ -263,11 +368,11 @@ class Item extends BaseController
         $query = $builder
                 ->select('id, concat(item_code,"|",item_name_1) as text')
                 ->limit(30)->get();
-        if ($this->request->getVar('q')) {
+        if ($this->request->getPost('q')) {
             $query = $builder
-                    ->like('item_code', $this->request->getVar('q'))
-                    ->orLike('item_name_1', $this->request->getVar('q'))
-                    ->orLike('item_name_2', $this->request->getVar('q'))
+                    ->like('item_code', $this->request->getPost('q'))
+                    ->orLike('item_name_1', $this->request->getPost('q'))
+                    ->orLike('item_name_2', $this->request->getPost('q'))
                     ->select('id, concat(item_code,"|",item_name_1) as text')
                     ->limit(30)->get();
         }
