@@ -68,14 +68,16 @@
                                         <div class="row mb-2">
                                             <label for="whs_count" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_count'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs_count" name="whs_count" value="" />
+                                                <input type="hidden" id="whs_count" name="whs_count" value="<?= old('whs_count') ? old('whs_count') : $whs[0]->whs_count ; ?>" />
+                                                <input type="hidden" id="count_name" name="count_name" value="<?= old('count_name') ? old('count_name') : $count_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_count')) : ?>is-invalid<?php endif ?>" name="country" id="country" >
                                                     <option selected="selected"><?= $count_name ?></option>
                                                 </select>
                                             </div>
                                             <label for="whs_prov" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_prov'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs_prov" name="whs_prov" value="" />
+                                                <input type="hidden" id="whs_prov" name="whs_prov" value="<?= old('whs_prov') ? old('whs_prov') : $whs[0]->whs_prov ; ?>" />
+                                                <input type="hidden" id="prov_name" name="prov_name" value="<?= old('prov_name') ? old('prov_name') : $prov_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_prov')) : ?>is-invalid<?php endif ?>" name="prov" id="prov" >
                                                     <option selected="selected"><?= $prov_name ?></option>
                                                 </select>
@@ -85,7 +87,8 @@
                                         <div class="row mb-2">
                                             <label for="whs_city" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_city'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs_city" name="whs_city" value="" />
+                                                <input type="hidden" id="whs_city" name="whs_city" value="<?= old('whs_city') ? old('whs_city') : $whs[0]->whs_city ; ?>" />
+                                                <input type="hidden" id="city_name" name="city_name" value="<?= old('city_name') ? old('city_name') : $city_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_city')) : ?>is-invalid<?php endif ?>" name="city" id="city" >
                                                     <option selected="selected"><?= $city_name ?></option>
                                                 </select>
@@ -128,14 +131,16 @@
                                         <div class="row mb-2">
                                             <label for="whs_bcount" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_bcount'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs_bcount" name="whs_bcount" value="" />
+                                                <input type="hidden" id="whs_bcount" name="whs_bcount" value="<?= old('whs_bcount') ? old('whs_bcount') : $whs[0]->whs_bcount ; ?>" />
+                                                <input type="hidden" id="bcount_name" name="bcount_name" value="<?= old('bcount_name') ? old('bcount_name') : $bcount_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_bcount')) : ?>is-invalid<?php endif ?>" name="bcountry" id="bcountry" >
                                                     <option selected="selected"><?= $bcount_name ?></option>
                                                 </select>
                                             </div>
                                             <label for="whs_bprov" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_bprov'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs_bprov" name="whs_bprov" value="" />
+                                                <input type="hidden" id="whs_bprov" name="whs_bprov" value="<?= old('whs_bprov') ? old('whs_bprov') : $whs[0]->whs_bprov ; ?>" />
+                                                <input type="hidden" id="bprov_name" name="bprov_name" value="<?= old('bprov_name') ? old('bprov_name') : $bprov_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_bprov')) : ?>is-invalid<?php endif ?>" name="bprov" id="bprov" >
                                                     <option selected="selected"><?= $bprov_name ?></option>
                                                 </select>
@@ -145,7 +150,8 @@
                                         <div class="row mb-2">
                                             <label for="whs_bcity" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_bcity'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs_bcity" name="whs_bcity" value="" />
+                                                <input type="hidden" id="whs_bcity" name="whs_bcity" value="<?= old('whs_bcity') ? old('whs_bcity') : $whs[0]->whs_bcity ; ?>" />
+                                                <input type="hidden" id="bcity_name" name="bcity_name" value="<?= old('bcity_name') ? old('bcity_name') : $bcity_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_bcity')) : ?>is-invalid<?php endif ?>" name="bcity" id="bcity" >
                                                     <option selected="selected"><?= $bcity_name ?></option>
                                                 </select>
@@ -188,14 +194,16 @@
                                         <div class="row mb-2">
                                             <label for="whs_mcount" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_mcount'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs_mcount" name="whs_mcount" value="" />
+                                                <input type="hidden" id="whs_mcount" name="whs_mcount" value="<?= old('whs_mcount') ? old('whs_mcount') : $whs[0]->whs_mcount ; ?>" />
+                                                <input type="hidden" id="mcount_name" name="mcount_name" value="<?= old('mcount_name') ? old('mcount_name') : $mcount_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_mcount')) : ?>is-invalid<?php endif ?>" name="mcountry" id="mcountry" >
                                                     <option selected="selected"><?= $mcount_name ?></option>
                                                 </select>
                                             </div>
                                             <label for="whs_mprov" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_mprov'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs_mprov" name="whs_mprov" value="" />
+                                                <input type="hidden" id="whs_mprov" name="whs_mprov" value="<?= old('whs_mprov') ? old('whs_mprov') : $whs[0]->whs_mprov ; ?>" />
+                                                <input type="hidden" id="mprov_name" name="mprov_name" value="<?= old('mprov_name') ? old('mprov_name') : $mprov_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_mprov')) : ?>is-invalid<?php endif ?>" name="mprov" id="mprov" >
                                                     <option selected="selected"><?= $mprov_name ?></option>
                                                 </select>
@@ -205,7 +213,8 @@
                                         <div class="row mb-2">
                                             <label for="whs_mcity" class="col-sm-2 col-form-label"><?= lang('Warehouse.whs_mcity'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs_mcity" name="whs_mcity" value="" />
+                                                <input type="hidden" id="whs_mcity" name="whs_mcity" value="<?= old('whs_mcity') ? old('whs_mcity') : $whs[0]->whs_mcity ; ?>" />
+                                                <input type="hidden" id="mcity_name" name="mcity_name" value="<?= old('mcity_name') ? old('mcity_name') : $mcity_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.whs_mcity')) : ?>is-invalid<?php endif ?>" name="mcity" id="mcity" >
                                                     <option selected="selected"><?= $mcity_name ?></option>
                                                 </select>
@@ -259,6 +268,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+
         $('#company').select2({
             placeholder: '|',
             minimumInputLength: 0,
@@ -302,6 +312,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#company option:selected").val();
             $("#comp_code").val(data);
+            $("#comp_name").val($("#company option:selected").text());
         });
 
         $('#site').select2({
@@ -314,7 +325,7 @@
                 data: function (params) {
                     return {
                         q: params.term, // search term
-                        company_id: $("#comp_code").val(),                   
+                        company_id: $("#comp_code").val(),                     
                         page: params.page
                     };
                 },
@@ -347,7 +358,8 @@
             },
         }).on('select2:select', function (evt) {
             var data = $("#site option:selected").val();
-            $("#comp_code").val(data);
+            $("#site_code").val(data);
+            $("#site_name").val($("#site option:selected").text());
         });
 
         $('#dept').select2({
@@ -394,6 +406,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#dept option:selected").val();
             $("#dept_code").val(data);
+            $("#dept_name").val($("#dept option:selected").text());
         });
 
         $('#country').select2({
@@ -439,6 +452,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#country option:selected").val();
             $("#whs_count").val(data);
+            $("#count_name").val($("#country option:selected").text());
         });
 
         $('#prov').select2({
@@ -491,6 +505,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#prov option:selected").val();
             $("#whs_prov").val(data);
+            $("#prov_name").val($("#prov option:selected").text());
             //alert("Data yang dipilih adalah "+data);
         });
         
@@ -545,7 +560,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#city option:selected").val();
             $("#whs_city").val(data);
-            //alert("Data yang dipilih adalah "+data);
+            $("#city_name").val($("#city option:selected").text());
         });
 
         $('#bcountry').select2({
@@ -591,6 +606,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#bcountry option:selected").val();
             $("#whs_bcount").val(data);
+            $("#bcount_name").val($("#bcountry option:selected").text());
         });
 
         $('#bprov').select2({
@@ -643,6 +659,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#bprov option:selected").val();
             $("#whs_bprov").val(data);
+            $("#bprov_name").val($("#bprov option:selected").text());
             //alert("Data yang dipilih adalah "+data);
         });
         
@@ -697,6 +714,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#bcity option:selected").val();
             $("#whs_bcity").val(data);
+            $("#bcity_name").val($("#bcity option:selected").text());
             //alert("Data yang dipilih adalah "+data);
         });
 
@@ -743,6 +761,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#mcountry option:selected").val();
             $("#whs_mcount").val(data);
+            $("#mcount_name").val($("#mcountry option:selected").text());
         });
 
         $('#mprov').select2({
@@ -795,7 +814,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#mprov option:selected").val();
             $("#whs_mprov").val(data);
-            //alert("Data yang dipilih adalah "+data);
+            $("#mprov_name").val($("#mprov option:selected").text());
         });
         
         $('#mcity').select2({
@@ -849,7 +868,7 @@
         }).on('select2:select', function (evt) {
             var data = $("#mcity option:selected").val();
             $("#whs_mcity").val(data);
-            //alert("Data yang dipilih adalah "+data);
+            $("#mcity_name").val($("#mcity option:selected").text());
         });
     });
 </script>

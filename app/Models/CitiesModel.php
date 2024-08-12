@@ -23,7 +23,7 @@ class CitiesModel extends Model
     ];
 
     protected $column_order = ['id', 'city_code', 'city_name', 'country', 'province'];
-    protected $column_search = ['city_code', 'city_name', 'country', 'province'];
+    protected $column_search = ['city_code', 'city_name', 'country_id', 'province_id'];
     protected $order = ['id' => 'ASC'];
     protected $request;
     protected $db;
