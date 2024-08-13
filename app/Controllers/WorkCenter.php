@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\WorkCenterModel;
-use App\Models\WorkCenterChildModel;
+use App\Models\WorkCenterMachineModel;
 use App\Models\UOMModel;
 use App\Models\SiteModel;
 use App\Models\DepartmentModel;
@@ -16,7 +16,7 @@ class WorkCenter extends BaseController
 {
 
     public function index()
-	{
+{
         $data['menu'] = 'item';
         $data['submenu'] = 'work_center';
 
@@ -24,7 +24,7 @@ class WorkCenter extends BaseController
         $data['title_meta'] = view('partials/title-meta', ['title' => 'WorkCenter']);
         $data['page_title'] = view('partials/page-title', ['title' => 'WorkCenter', 'pagetitle' => 'MasterData']);
         return view('work_center/index', $data);
-	}
+}
 
     public function getWorkCenter()  
     {
@@ -66,11 +66,11 @@ class WorkCenter extends BaseController
         }
     }
 
-    public function getWorkCenterChild()  
+    public function getWorkCenterMachine()  
     {
 
         $request = Services::request();
-        $datatable = new WorkCenterChildModel($request);
+        $datatable = new WorkCenterMachineModel($request);
         $dataUOM = new UOMModel($request);
         $dataItem = new ItemModel($request);
         $work_center_id = $request->getPost('work_center_id');
@@ -85,13 +85,58 @@ class WorkCenter extends BaseController
                 $row = [];
                 $row['id'] = $list->id;
                 $row['work_center_id'] = $list->work_center_id;
-                $row['childno'] = $list->childno;
-                $row['childcode'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_name_1 : "";
-                $row['childtype'] = lang('WorkCenter.typechild'.$list->childtype);
-                $row['qtyused'] = number_format((float)$list->qtyused, 2, '.', '');
-                $row['childuom'] = $list->childuom ? $dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
-                $row['factor'] = number_format((float)$list->factor, 0, '.', '');
-                $row['childdescription'] = $list->childdescription;
+                $row['no'] = $list->no;
+                $row['machine'] = $list->machine;
+                $row['notes1'] = $list->notes1;
+                $row['speed'] = $list->speed;
+                $row['capacity'] = $list->capacity;
+                $row['length'] = $list->length;
+                $row['luom'] = $list->luom;
+                $row['width'] = $list->width;
+                $row['wuom'] = $list->wuom;
+                $row['height'] = $list->height;
+                $row['huom'] = $list->huom;
+                $row['volume'] = $list->volume;
+                $row['vuom'] = $list->vuom;
+                $row['qtylabor'] = $list->qtylabor;
+                $row['workhour'] = $list->workhour;
+                $data[] = $row;
+            }
+
+            $output = [
+                'draw' => $request->getPost('draw'),
+                'recordsTotal' => $datatable->countAllByWorkCenter($work_center_id),
+                'recordsFiltered' => $datatable->countFilteredByWorkCenter($work_center_id),
+                'data' => $data
+            ];
+
+            echo json_encode($output);
+        }
+    }
+
+    public function getWorkCenterCost()  
+    {
+
+        $request = Services::request();
+        $datatable = new WorkCenterMachineModel($request);
+        $dataUOM = new UOMModel($request);
+        $dataItem = new ItemModel($request);
+        $work_center_id = $request->getPost('work_center_id');
+
+        if ($request->getMethod(true) === 'POST') {
+            $lists = $datatable->getDatatablesByWorkCenter($work_center_id);
+            $data = [];
+            $no = $request->getPost('start');
+
+            foreach ($lists as $list) {
+                $no++;
+                $row = [];
+                $row['id'] = $list->id;
+                $row['work_center_id'] = $list->work_center_id;
+                $row['costtype'] = $list->costtype;
+                $row['costamount'] = $list->costamount;
+                $row['costuom'] = $list->costuom;
+                $row['notes2'] = $list->notes2;
                 $row['active'] = $list->active;
                 $row['no'] = '';
                 $data[] = $row;
@@ -108,13 +153,13 @@ class WorkCenter extends BaseController
         }
     }
 
-    public function getWorkCenterChildById() {
+    public function getWorkCenterMachineById() {
         $request = Services::request();
-        $dataBC = new WorkCenterChildModel($request);
+        $dataBC = new WorkCenterMachineModel($request);
         $dataUOM = new UOMModel($request);
         $dataItem = new ItemModel($request);
-        $id =  $this->request->getVar('id');
-        $lists = $dataBC->getWorkCenterChild($id);
+        $id =  $this->request->getPost('id');
+        $lists = $dataBC->getWorkCenterMachine($id);
         $data = [];
         $no = $request->getPost('start');
 
@@ -153,14 +198,12 @@ class WorkCenter extends BaseController
 
     public function save()
     {
+
         $rules = [
             'site' => 'required',
             'dept' => 'required',
-            'parentcode' => 'required',
-            'type' => 'required',
-            'qty' => 'required',
-            'uom' => 'required',
-            'ratio' => 'required',
+            'warehouse' => 'required',
+            'workcenter' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -172,15 +215,11 @@ class WorkCenter extends BaseController
             $request = Services::request();
             $model = new WorkCenterModel($request);
             $data = [
-                'site' => $this->request->getVar('site'),
-                'dept' => $this->request->getVar('dept'),
-                'whs' => $this->request->getVar('whs'),
-                'parentcode' => $this->request->getVar('parentcode'),
-                'type' => $this->request->getVar('type'),
-                'qty' => $this->request->getVar('qty'),
-                'uom' => $this->request->getVar('uom'),
-                'ratio' => $this->request->getVar('ratio'),
-                'description' => $this->request->getVar('description'),
+                'site' => $this->request->getPost('site'),
+                'dept' => $this->request->getPost('dept'),
+                'warehouse' => $this->request->getPost('warehouse'),
+                'workcenter' => $this->request->getPost('workcenter'),
+                'description' => $this->request->getPost('description'),
                 'created_date'=>  date("Y-m-d H:i:s"),
                 'created_by' =>  user()->username,
             ];
@@ -209,10 +248,10 @@ class WorkCenter extends BaseController
     
     }
 
-    public function saveChild()
+    public function saveMachine()
     {
-        $id =  $this->request->getVar('id');
-        $work_center_id =  $this->request->getVar('work_center_id');
+        $id =  $this->request->getPost('id');
+        $work_center_id =  $this->request->getPost('work_center_id');
         
         $rules = [
             'childno' => 'required',
@@ -230,18 +269,18 @@ class WorkCenter extends BaseController
 
         if($this->validate($rules)){
             $request = Services::request();
-            $model = new WorkCenterChildModel($request);
-            $status = $this->request->getVar('status');
+            $model = new WorkCenterMachineModel($request);
+            $status = $this->request->getPost('status');
             if($status=="1") {
                 $data = [
                     'work_center_id' => $id,
-                    'childno' => $this->request->getVar('childno'),
-                    'childcode' => $this->request->getVar('childcode'),
-                    'childtype' => $this->request->getVar('childtype'),
-                    'qtyused' => $this->request->getVar('qtyused'),
-                    'childuom' => $this->request->getVar('childuom'),
-                    'factor' => $this->request->getVar('factor'),
-                    'childdescription' => $this->request->getVar('childdescription'),
+                    'childno' => $this->request->getPost('childno'),
+                    'childcode' => $this->request->getPost('childcode'),
+                    'childtype' => $this->request->getPost('childtype'),
+                    'qtyused' => $this->request->getPost('qtyused'),
+                    'childuom' => $this->request->getPost('childuom'),
+                    'factor' => $this->request->getPost('factor'),
+                    'childdescription' => $this->request->getPost('childdescription'),
                     'created_date'=>  date("Y-m-d H:i:s"),
                     'created_by' =>  user()->username,
                 ];
@@ -253,13 +292,13 @@ class WorkCenter extends BaseController
             } else  {
                 $data = [
                     'work_center_id' => $work_center_id,
-                    'childno' => $this->request->getVar('childno'),
-                    'childcode' => $this->request->getVar('childcode'),
-                    'childtype' => $this->request->getVar('childtype'),
-                    'qtyused' => $this->request->getVar('qtyused'),
-                    'childuom' => $this->request->getVar('childuom'),
-                    'factor' => $this->request->getVar('factor'),
-                    'childdescription' => $this->request->getVar('childdescription'),
+                    'childno' => $this->request->getPost('childno'),
+                    'childcode' => $this->request->getPost('childcode'),
+                    'childtype' => $this->request->getPost('childtype'),
+                    'qtyused' => $this->request->getPost('qtyused'),
+                    'childuom' => $this->request->getPost('childuom'),
+                    'factor' => $this->request->getPost('factor'),
+                    'childdescription' => $this->request->getPost('childdescription'),
                     'updated_by' =>  user()->username,
                     'updated_at' =>  date("Y-m-d H:i:s"),
                 ];
@@ -283,66 +322,39 @@ class WorkCenter extends BaseController
     {        
         $request = Services::request();
         $dataWorkCenter = new WorkCenterModel($request);
-        $dataUOM = new UOMModel($request);
         $dataSit = new SiteModel($request);
         $dataDep = new DepartmentModel($request);
         $dataWhs = new WarehouseModel($request);
-        $dataItem = new ItemModel($request);
 
         $data = [            
             'title' => 'Update WorkCenter',
-            'title_child' => 'WorkCenter Child',
+            'title_child' => 'WorkCenter Machine',
+            'title_child2' => 'WorkCenter Cost',
         ];
         $data['menu'] = 'setup';
         $data['submenu'] = 'work_center';
         $data['work_center'] = $dataWorkCenter->getWorkCenter($id);
-        $dataIt = $dataItem->getItem($data['work_center'][0]->parentcode)[0];
+
         $dataSi = $dataSit->getSite($data['work_center'][0]->site)[0];
         $dataDe = $dataDep->getDepartment($data['work_center'][0]->dept)[0];
-        $dataUo = $dataUOM->getUOM($data['work_center'][0]->uom)[0];
 
         $data['site_name'] = $data['work_center'][0]->site ? $dataSi->site_code."|".$dataSi->site_name : "|";
         $data['dept_name'] = $data['work_center'][0]->dept ? $dataDe->dept_code . "|". $dataDe->dept_name : "|";
-        $data['whs_name'] = $data['work_center'][0]->whs ? $dataWhs->getWarehouse($data['work_center'][0]->whs)[0]->whs_code."|".$dataWhs->getWarehouse($data['work_center'][0]->whs)[0]->whs_name : "|";
-        $data['itemname'] = $data['work_center'][0]->parentcode ? $dataIt->item_code."|".$dataIt->item_name_1 : "|";
-        $data['uom_desc'] = $data['work_center'][0]->uom ? $dataUo->uom_code."|".$dataUo->uom_desc : "|";
+        $data['warehouse_name'] = $data['work_center'][0]->warehouse ? $dataWhs->getWarehouse($data['work_center'][0]->warehouse)[0]->whs_code."|".$dataWhs->getWarehouse($data['work_center'][0]->warehouse)[0]->whs_name : "|";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'WorkCenter']);
         $data['page_title'] = view('partials/page-title', ['title' => 'WorkCenter', 'pagetitle' => 'MasterData']);
 
         return view('work_center/edit', $data);            
     }
 
-    function check_code() {
-        $site = $this->input->post('site');
-        $dept = $this->input->post('dept');
-        $whs = $this->input->post('whs');
-        $parentcode  = $this->input->post('parentcode');
-        $this->db->select('id');
-        $this->db->from('work_center');
-        $this->db->where('site', $site)
-                ->where('dept', $dept)
-                ->where('whs', $whs)
-                ->where('parentcode', $parentcode);
-        $query = $this->db->get();
-        $num = $query->num_rows();
-        if ($num > 0) {
-            return FALSE;
-        } else {
-            return TRUE;
-        }
-    }
-
     public function update()
     {
-        $id =  $this->request->getVar('id');
+        $id =  $this->request->getPost('id');
         $rules = [
             'site' => 'required',
             'dept' => 'required',
-            'parentcode' => 'required',
-            'type' => 'required',
-            'qty' => 'required',
-            'uom' => 'required',
-            'ratio' => 'required',
+            'warehouse' => 'required',
+            'workcenter' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -354,15 +366,15 @@ class WorkCenter extends BaseController
             $request = Services::request();
             $model = new WorkCenterModel($request);
             $data = [
-                'site' => $this->request->getVar('site'),
-                'dept' => $this->request->getVar('dept'),
-                'whs' => $this->request->getVar('whs'),
-                'parentcode' => $this->request->getVar('parentcode'),
-                'type' => $this->request->getVar('type'),
-                'qty' => $this->request->getVar('qty'),
-                'uom' => $this->request->getVar('uom'),
-                'ratio' => $this->request->getVar('ratio'),
-                'description' => $this->request->getVar('description'),
+                'site' => $this->request->getPost('site'),
+                'dept' => $this->request->getPost('dept'),
+                'warehouse' => $this->request->getPost('warehouse'),
+                'parentcode' => $this->request->getPost('parentcode'),
+                'type' => $this->request->getPost('type'),
+                'qty' => $this->request->getPost('qty'),
+                'uom' => $this->request->getPost('uom'),
+                'ratio' => $this->request->getPost('ratio'),
+                'description' => $this->request->getPost('description'),
                 'updated_by' =>  user()->username,
                 'updated_at' =>  date("Y-m-d H:i:s"),
             ];
@@ -393,10 +405,10 @@ class WorkCenter extends BaseController
 
     public function delete()
     {
-        $id =  $this->request->getVar('id');
+        $id =  $this->request->getPost('id');
         $request = Services::request();
         $model = new WorkCenterModel($request);
-        $active =  $this->request->getVar('active');
+        $active =  $this->request->getPost('active');
         $data = [
             'deleted_at' => date("Y-m-d H:i:s"),
             'deleted_by' =>  user()->username,
@@ -416,13 +428,13 @@ class WorkCenter extends BaseController
         return redirect()->to(base_url('/work_center/index'));
     }
 
-    public function deleteChild()
+    public function deleteMachine()
     {
-        $id =  $this->request->getVar('id');
-        $work_center_id =  $this->request->getVar('work_center_id');
+        $id =  $this->request->getPost('id');
+        $work_center_id =  $this->request->getPost('work_center_id');
         $request = Services::request();
-        $model = new WorkCenterChildModel($request);
-        $active =  $this->request->getVar('active');
+        $model = new WorkCenterMachineModel($request);
+        $active =  $this->request->getPost('active');
         $data = [
             'deleted_at' => date("Y-m-d H:i:s"),
             'deleted_by' =>  user()->username,
@@ -452,11 +464,11 @@ class WorkCenter extends BaseController
         $db      = \Config\Database::connect();
         $builder = $db->table('work_center');   
 
-        $query = $builder->like('work_center_desc', $this->request->getVar('q'))
+        $query = $builder->like('work_center_desc', $this->request->getPost('q'))
                     ->select('id, work_center_desc as text')
                     ->limit(30)->get();
         $data = $query->getResult();
         
-		echo json_encode($data);
+echo json_encode($data);
     }
 }

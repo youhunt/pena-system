@@ -190,11 +190,19 @@ class CostType extends BaseController
         $data = [];
 
         $db      = \Config\Database::connect();
-        $builder = $db->table('costtype');   
+        $builder = $db->table('cost_type');   
 
-        $query = $builder->like('uom_desc', $this->request->getVar('q'))
-                    ->select('id, uom_desc as text')
+       $query = $builder
+                    ->select('id, concat(type, "|", description) as text')
                     ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder->like('type', $this->request->getVar('q'))
+                ->orLike('description', $this->request->getVar('q'))
+                ->select('id, concat(type, "|", description) as text')
+                ->limit(30)->get();
+        }
+
         $data = $query->getResult();
         
 		echo json_encode($data);

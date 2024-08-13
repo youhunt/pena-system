@@ -1,9 +1,9 @@
 <?= $this->extend('template/index') ?>            
  
 <?= $this->section('page-content') ?>
-                    <form action="<?= base_url(); ?>bom/update" class="user" method="post">
-                        <input type="hidden" name="id" class="bom_id" value="<?= $bom[0]->id; ?>" ?>
-                        <input type="hidden" name="bom_id" class="bom_id" value="<?= $bom[0]->id; ?>" ?>
+                    <form action="<?= base_url(); ?>work_center/update" class="user" method="post">
+                        <input type="hidden" name="id" class="work_center_id" value="<?= $work_center[0]->id; ?>" ?>
+                        <input type="hidden" name="work_center_id" class="work_center_id" value="<?= $work_center[0]->id; ?>" ?>
 
                         <div class="row">
                             <div class="col-xl-12">
@@ -17,18 +17,18 @@
                                         </div>
                                         
                                         <div class="row mb-2">
-                                            <label for="site" class="col-sm-2 col-form-label"><?= lang('BOM.site'); ?></label>
+                                            <label for="site" class="col-sm-2 col-form-label"><?= lang('WorkCenter.site'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="site" name="site" value="<?= old('site') ? old('site') : $bom[0]->site ; ?>" />
+                                                <input type="hidden" id="site" name="site" value="<?= old('site') ? old('site') : $work_center[0]->site ; ?>" />
                                                 <input type="hidden" id="site_name" name="site_name" value="<?= old('site_name') ? old('site_name') : $site_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.site')) : ?>is-invalid<?php endif ?>" name="site_code" id="site_code" >
                                                     <option selected="selected"><?= $site_name ?></option>
                                                 </select>
                                             </div>
                                         
-                                            <label for="dept" class="col-sm-2 col-form-label"><?= lang('BOM.dept'); ?></label>
+                                            <label for="dept" class="col-sm-2 col-form-label"><?= lang('WorkCenter.dept'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="dept" name="dept" value="<?= old('dept') ? old('dept') : $bom[0]->dept ; ?>" />
+                                                <input type="hidden" id="dept" name="dept" value="<?= old('dept') ? old('dept') : $work_center[0]->dept ; ?>" />
                                                 <input type="hidden" id="dept_name" name="dept_name" value="<?= old('dept_name') ? old('dept_name') : $dept_name ; ?>" />
                                                 <select class="form-control <?php if(session('errors.dept')) : ?>is-invalid<?php endif ?>" name="dept_code" id="dept_code" >
                                                     <option selected="selected"><?= $dept_name ?></option>
@@ -37,58 +37,24 @@
                                         </div>
 
                                         <div class="row mb-2">
-                                            <label for="whs" class="col-sm-2 col-form-label"><?= lang('BOM.whs'); ?></label>
+                                            <label for="warehouse" class="col-sm-2 col-form-label"><?= lang('WorkCenter.warehouse'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs" name="whs" value="<?= old('whs') ? old('whs') : $bom[0]->whs ; ?>" />
-                                                <input type="hidden" id="whs_name" name="whs_name" value="<?= old('whs_name') ? old('whs_name') : $whs_name ; ?>" />
-                                                <select class="form-control <?php if(session('errors.whs')) : ?>is-invalid<?php endif ?>" name="whs_code" id="whs_code" >
-                                                    <option selected="selected"><?= $whs_name ?></option>
+                                                <input type="hidden" id="warehouse" name="warehouse" value="<?= old('warehouse') ? old('warehouse') : $work_center[0]->warehouse ; ?>" />
+                                                <input type="hidden" id="warehouse_name" name="warehouse_name" value="<?= old('warehouse_name') ? old('warehouse_name') : $warehouse_name ; ?>" />
+                                                <select class="form-control <?php if(session('errors.warehouse')) : ?>is-invalid<?php endif ?>" name="warehouse_code" id="warehouse_code" >
+                                                    <option selected="selected"><?= $warehouse_name ?></option>
                                                 </select>
                                             </div>
-                                            <label for="parentcode" class="col-sm-2 col-form-label"><?= lang('BOM.parentcode'); ?></label>
+                                            <label for="workcenter" class="col-sm-2 col-form-label"><?= lang('WorkCenter.workcenter'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="parentcode" name="parentcode" value="<?= old('parentcode') ? old('parentcode') : $bom[0]->parentcode ; ?>" />
-                                                <input type="hidden" id="itemname" name="itemname" value="<?= $itemname; ?>" />
-                                                <select class="form-control <?php if(session('errors.parentcode')) : ?>is-invalid<?php endif ?>" name="item" id="item" >
-                                                    <option selected="selected"><?= $itemname; ?></option>
-                                                </select>
+                                                <input type="text" class="form-control <?php if(session('errors.workcenter')) : ?>is-invalid<?php endif ?>" id="workcenter" placeholder="<?= lang('WorkCenter.workcenter'); ?>" name="workcenter" value="<?= old('workcenter') ? old('workcenter') : $work_center[0]->workcenter ; ?>">
                                             </div>
                                         </div>
 
                                         <div class="row mb-2">
-                                            <label for="type" class="col-sm-2 col-form-label"><?= lang('BOM.type'); ?></label>
+                                            <label for="description" class="col-sm-2 col-form-label"><?= lang('WorkCenter.description'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="type" name="type" value="<?= old('type') ? old('type') : $bom[0]->type ; ?>" />
-                                                <select class="form-control <?php if(session('errors.type')) : ?>is-invalid<?php endif ?>" name="type" id="type" >
-                                                    <option value="1" <?= (old('type') ? old('type') : $bom[0]->type)=="1" ? "selected" : "" ; ?>><?= lang('BOM.type1'); ?></option>
-                                                    <option value="2" <?= (old('type') ? old('type') : $bom[0]->type)=="2" ? "selected" : "" ; ?>><?= lang('BOM.type2'); ?></option>
-                                                </select>
-                                            </div>
-                                            <label for="qty" class="col-sm-2 col-form-label"><?= lang('BOM.qty'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.qty')) : ?>is-invalid<?php endif ?>" id="qty" placeholder="<?= lang('BOM.qty'); ?>" style="text-align:right;" name="qty" value="<?= number_format((float)(old('qty') ? old('qty') : $bom[0]->qty), 2, '.', '') ; ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-2">
-                                            <label for="uom" class="col-sm-2 col-form-label"><?= lang('BOM.uom'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="hidden" id="uom" name="uom" value="<?= old('uom') ? old('uom') : $bom[0]->uom  ; ?>" />
-                                                <input type="hidden" id="uom_desc" name="uom_desc" value="<?= old('uom_desc') ? old('uom_desc') : $uom_desc ; ?>" />
-                                                <select class="form-control <?php if(session('errors.uom')) : ?>is-invalid<?php endif ?>" name="uom_code" id="uom_code" >
-                                                    <option selected="selected"><?= old('uom_desc') ? old('uom_desc') : $uom_desc  ; ?></option>
-                                                </select>
-                                            </div>
-                                            <label for="ratio" class="col-sm-2 col-form-label"><?= lang('BOM.ratio'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.ratio')) : ?>is-invalid<?php endif ?>" id="ratio" placeholder="<?= lang('BOM.ratio'); ?>" style="text-align:right;" name="ratio" value="<?= number_format((float)(old('ratio') ? old('ratio') : $bom[0]->ratio), 2, '.', ''); ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-2">
-                                            <label for="description" class="col-sm-2 col-form-label"><?= lang('BOM.description'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control <?php if(session('errors.description')) : ?>is-invalid<?php endif ?>" id="description" placeholder="<?= lang('BOM.description'); ?>" name="description" value="<?= old('description') ? old('description') : $bom[0]->description ; ?>">
+                                                <input type="text" class="form-control <?php if(session('errors.description')) : ?>is-invalid<?php endif ?>" id="description" placeholder="<?= lang('WorkCenter.description'); ?>" name="description" value="<?= old('description') ? old('description') : $work_center[0]->description ; ?>">
                                             </div>
                                             <label for="transname" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">&nbsp;</div>
@@ -120,7 +86,7 @@
                                         <!-- end col -->
                                         <div class="col-sm-auto">
                                             <div class="text-sm-end">
-                                                <a href="#" class="btn btn-success btn-rounded" data-id="<?= $bom[0]->id; ?>" id="addChild-btn"><i class="mdi mdi-plus me-1"></i><?= lang('Files.AddNew'); ?></a>
+                                                <a href="#" class="btn btn-success btn-rounded" data-id="<?= $work_center[0]->id; ?>" id="addMachine-btn"><i class="mdi mdi-plus me-1"></i><?= lang('Files.AddNew'); ?></a>
                                             </div>
                                         </div>
                                         <!-- end col -->
@@ -128,29 +94,95 @@
                                     <!-- end row -->
                                     <div class="">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <table class="table table-bordered" id="dataTableMachine" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
-                                                        <th><?= lang('BOM.childno'); ?></th>
-                                                        <th><?= lang('BOM.childcode'); ?></th>
-                                                        <th><?= lang('BOM.childtype'); ?></th>
-                                                        <th><?= lang('BOM.qtyused'); ?></th>
-                                                        <th><?= lang('BOM.childuom'); ?></th>
-                                                        <th><?= lang('BOM.factor'); ?></th>
-                                                        <th><?= lang('BOM.childdescription'); ?></th>
+                                                        <th><?= lang('WorkCenter.no'); ?></th>
+                                                        <th><?= lang('WorkCenter.machine'); ?></th>
+                                                        <th><?= lang('WorkCenter.notes1'); ?></th>
+                                                        <th><?= lang('WorkCenter.speed'); ?></th>
+                                                        <th><?= lang('WorkCenter.capacity'); ?></th>
+                                                        <th><?= lang('WorkCenter.length'); ?></th>
+                                                        <th><?= lang('WorkCenter.luom'); ?></th>
+                                                        <th><?= lang('WorkCenter.width'); ?></th>
+                                                        <th><?= lang('WorkCenter.wuom'); ?></th>
+                                                        <th><?= lang('WorkCenter.height'); ?></th>
+                                                        <th><?= lang('WorkCenter.huom'); ?></th>
+                                                        <th><?= lang('WorkCenter.volume'); ?></th>
+                                                        <th><?= lang('WorkCenter.vuom'); ?></th>
+                                                        <th><?= lang('WorkCenter.qtylabor'); ?></th>
+                                                        <th><?= lang('WorkCenter.workhour'); ?></th>
                                                         <th style="width: 40px;"><?= lang('Files.active'); ?></th>
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
                                                 <tfoot>
                                                     <tr>
-                                                        <th><?= lang('BOM.childno'); ?></th>
-                                                        <th><?= lang('BOM.childcode'); ?></th>
-                                                        <th><?= lang('BOM.childtype'); ?></th>
-                                                        <th><?= lang('BOM.qtyused'); ?></th>
-                                                        <th><?= lang('BOM.childuom'); ?></th>
-                                                        <th><?= lang('BOM.factor'); ?></th>
-                                                        <th><?= lang('BOM.childdescription'); ?></th>
+                                                        <th><?= lang('WorkCenter.no'); ?></th>
+                                                        <th><?= lang('WorkCenter.machine'); ?></th>
+                                                        <th><?= lang('WorkCenter.notes1'); ?></th>
+                                                        <th><?= lang('WorkCenter.speed'); ?></th>
+                                                        <th><?= lang('WorkCenter.capacity'); ?></th>
+                                                        <th><?= lang('WorkCenter.length'); ?></th>
+                                                        <th><?= lang('WorkCenter.luom'); ?></th>
+                                                        <th><?= lang('WorkCenter.width'); ?></th>
+                                                        <th><?= lang('WorkCenter.wuom'); ?></th>
+                                                        <th><?= lang('WorkCenter.height'); ?></th>
+                                                        <th><?= lang('WorkCenter.huom'); ?></th>
+                                                        <th><?= lang('WorkCenter.volume'); ?></th>
+                                                        <th><?= lang('WorkCenter.vuom'); ?></th>
+                                                        <th><?= lang('WorkCenter.qtylabor'); ?></th>
+                                                        <th><?= lang('WorkCenter.workhour'); ?></th>
+                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
+                                                        <th style="width: 45px;"></th>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                                                        
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row mb-2">
+                                        <div class="col-sm">
+                                            <h4 class="card-title"><?= $title_child2 ?></h4>
+                                        </div>
+                                        <!-- end col -->
+                                        <div class="col-sm-auto">
+                                            <div class="text-sm-end">
+                                                <a href="#" class="btn btn-success btn-rounded" data-id="<?= $work_center[0]->id; ?>" id="addCost-btn"><i class="mdi mdi-plus me-1"></i><?= lang('Files.AddNew'); ?></a>
+                                            </div>
+                                        </div>
+                                        <!-- end col -->
+                                    </div>
+                                    <!-- end row -->
+                                    <div class="">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="dataTableCOst" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><?= lang('WorkCenter.costtype'); ?></th>
+                                                        <th><?= lang('WorkCenter.costamount'); ?></th>
+                                                        <th><?= lang('WorkCenter.costuom'); ?></th>
+                                                        <th><?= lang('WorkCenter.notes2'); ?></th>
+                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
+                                                        <th style="width: 45px;"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th><?= lang('WorkCenter.costtype'); ?></th>
+                                                        <th><?= lang('WorkCenter.costamount'); ?></th>
+                                                        <th><?= lang('WorkCenter.costuom'); ?></th>
+                                                        <th><?= lang('WorkCenter.notes2'); ?></th>
                                                         <th style="width: 40px;"><?= lang('Files.active'); ?></th>
                                                         <th style="width: 45px;"></th>
                                                     </tr>
@@ -169,13 +201,13 @@
 
 <?= $this->section('div-modal') ?>
     
-    <form action="<?= base_url(); ?>bom/saveChild" method="post" id="bomChildForm">
-    <div class="modal fade" id="bomChildModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <form action="<?= base_url(); ?>work_center/saveMachine" method="post" id="work_centerMachineForm">
+    <div class="modal fade" id="work_centerMachineModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="bomLabel">BOM Child</h5>
+                    <h5 class="modal-title" id="work_centerLabel">WorkCenter Machine</h5>
                     <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -183,67 +215,114 @@
                 <div class="modal-body">
 
                     <div class="row mb-2">
-                        <label for="childno" class="col-sm-2 col-form-label"><?= lang('BOM.childno'); ?></label>
+                        <label for="no" class="col-sm-2 col-form-label"><?= lang('WorkCenter.no'); ?></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control <?php if(session('errors.childno')) : ?>is-invalid<?php endif ?>" id="childno" placeholder="<?= lang('BOM.childno'); ?>" name="childno" value="<?= old('childno'); ?>">
+                            <input type="text" class="form-control <?php if(session('errors.no')) : ?>is-invalid<?php endif ?>" id="no" placeholder="<?= lang('WorkCenter.no'); ?>" name="no" value="<?= old('no'); ?>">
                         </div>
-                        <label for="childcode" class="col-sm-2 col-form-label"><?= lang('BOM.childcode'); ?></label>
+                        <label for="machine" class="col-sm-2 col-form-label"><?= lang('WorkCenter.machine'); ?></label>
                         <div class="col-sm-4">
-                            <input type="hidden" id="childcode" name="childcode" value="<?= old('childcode'); ?>" />
-                            <input type="hidden" id="itemchildname" name="itemchildname" value="<?= old('itemchildname'); ?>" />
-                            <select class="form-control <?php if(session('errors.childcode')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemchild" id="itemchild" >
-                                <option selected="selected"><?= old('itemchildname'); ?></option>
+                            <input type="text" class="form-control <?php if(session('errors.machine')) : ?>is-invalid<?php endif ?>" id="machine" placeholder="<?= lang('WorkCenter.machine'); ?>" name="machine" value="<?= old('machine'); ?>">
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label for="notes1" class="col-sm-2 col-form-label"><?= lang('WorkCenter.notes1'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control <?php if(session('errors.notes1')) : ?>is-invalid<?php endif ?>" id="notes1" placeholder="<?= lang('WorkCenter.notes1'); ?>" name="notes1" value="<?= old('notes1'); ?>">
+                        </div>
+                        <label for="speed" class="col-sm-2 col-form-label"><?= lang('WorkCenter.speed'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.speed')) : ?>is-invalid<?php endif ?>" id="speed" placeholder="<?= lang('WorkCenter.speed'); ?>" style="text-align:right;" name="speed" value="<?= number_format((float)(old('speed')), 2, '.', '')  ; ?>">
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label for="capacity" class="col-sm-2 col-form-label"><?= lang('WorkCenter.capacity'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.capacity')) : ?>is-invalid<?php endif ?>" id="capacity" placeholder="<?= lang('WorkCenter.capacity'); ?>" style="text-align:right;" name="capacity" value="<?= number_format((float)(old('capacity')), 2, '.', '')  ; ?>">
+                        </div>
+                        <label for="qtyused" class="col-sm-2 col-form-label">&nbsp;</label>
+                        <div class="col-sm-4">
+                            &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label for="length" class="col-sm-2 col-form-label"><?= lang('WorkCenter.length'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.length')) : ?>is-invalid<?php endif ?>" id="length" placeholder="<?= lang('WorkCenter.length'); ?>" style="text-align:right;" name="length" value="<?= number_format((float)(old('length')), 2, '.', '')  ; ?>">
+                        </div>
+                        <label for="luom" class="col-sm-2 col-form-label"><?= lang('WorkCenter.luom'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="hidden" id="luom" name="luom" value="<?= old('luom'); ?>" />
+                            <input type="hidden" id="luom_desc" name="luom_desc" value="<?= old('luom_desc'); ?>" />
+                            <select class="form-control <?php if(session('errors.luom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemluom" id="itemluom" >
+                                <option selected="selected"><?= old('luom_desc'); ?></option>
                             </select>
                         </div>
                     </div>
 
                     <div class="row mb-2">
-                        <label for="childtype" class="col-sm-2 col-form-label"><?= lang('BOM.childtype'); ?></label>
+                        <label for="width" class="col-sm-2 col-form-label"><?= lang('WorkCenter.width'); ?></label>
                         <div class="col-sm-4">
-                            <input type="hidden" id="childtype" name="childtype" value="<?= old('childtype') ; ?>" />
-                            <select class="form-control <?php if(session('errors.childtype')) : ?>is-invalid<?php endif ?>" name="childtype" id="childtype" >
-                                <option value="1" <?= (old('childtype'))=="1" ? "selected" : "" ; ?>><?= lang('BOM.typechild1'); ?></option>
-                                <option value="2" <?= (old('childtype'))=="2" ? "selected" : "" ; ?>><?= lang('BOM.typechild2'); ?></option>
-                                <option value="3" <?= (old('childtype'))=="3" ? "selected" : "" ; ?>><?= lang('BOM.typechild3'); ?></option>
-                                <option value="4" <?= (old('childtype'))=="4" ? "selected" : "" ; ?>><?= lang('BOM.typechild4'); ?></option>
-                                <option value="5" <?= (old('childtype'))=="5" ? "selected" : "" ; ?>><?= lang('BOM.typechild5'); ?></option>
-                            </select>
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.width')) : ?>is-invalid<?php endif ?>" id="width" placeholder="<?= lang('WorkCenter.width'); ?>" style="text-align:right;" name="width" value="<?= number_format((float)(old('width')), 2, '.', '')  ; ?>">
                         </div>
-                        <label for="qtyused" class="col-sm-2 col-form-label"><?= lang('BOM.qtyused'); ?></label>
+                        <label for="wuom" class="col-sm-2 col-form-label"><?= lang('WorkCenter.wuom'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.qtyused')) : ?>is-invalid<?php endif ?>" id="qtyused" placeholder="<?= lang('BOM.qtyused'); ?>" style="text-align:right;" name="qtyused" value="<?= number_format((float)(old('qtyused')), 2, '.', '')  ; ?>">
+                            <input type="hidden" id="wuom" name="wuom" value="<?= old('wuom'); ?>" />
+                            <input type="hidden" id="wuom_desc" name="wuom_desc" value="<?= old('wuom_desc'); ?>" />
+                            <select class="form-control <?php if(session('errors.wuom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemwuom" id="itemwuom" >
+                                <option selected="selected"><?= old('wuom_desc'); ?></option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="row mb-2">
-                        <label for="childuom" class="col-sm-2 col-form-label"><?= lang('BOM.childuom'); ?></label>
+                        <label for="height" class="col-sm-2 col-form-label"><?= lang('WorkCenter.height'); ?></label>
                         <div class="col-sm-4">
-                            <input type="hidden" id="childuom" name="childuom" value="<?= old('childuom'); ?>" />
-                            <input type="hidden" id="childuom_desc" name="childuom_desc" value="<?= old('childuom_desc'); ?>" />
-                            <select class="form-control <?php if(session('errors.childuom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemchilduom" id="itemchilduom" >
-                                <option selected="selected"><?= old('childuom_desc'); ?></option>
-                            </select>
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.height')) : ?>is-invalid<?php endif ?>" id="height" placeholder="<?= lang('WorkCenter.height'); ?>" style="text-align:right;" name="height" value="<?= number_format((float)(old('height')), 2, '.', '')  ; ?>">
                         </div>
-                        <label for="factor" class="col-sm-2 col-form-label"><?= lang('BOM.factor'); ?></label>
+                        <label for="huom" class="col-sm-2 col-form-label"><?= lang('WorkCenter.huom'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.factor')) : ?>is-invalid<?php endif ?>" id="factor" placeholder="<?= lang('BOM.factor'); ?>" style="text-align:right;" name="factor" value="<?= number_format((float)(old('factor')), 2, '.', ''); ?>">
+                            <input type="hidden" id="huom" name="huom" value="<?= old('huom'); ?>" />
+                            <input type="hidden" id="huom_desc" name="huom_desc" value="<?= old('huom_desc'); ?>" />
+                            <select class="form-control <?php if(session('errors.huom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemhuom" id="itemhuom" >
+                                <option selected="selected"><?= old('huom_desc'); ?></option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="row mb-2">
-                        <label for="childdescription" class="col-sm-2 col-form-label"><?= lang('BOM.childdescription'); ?></label>
+                        <label for="volume" class="col-sm-2 col-form-label"><?= lang('WorkCenter.volume'); ?></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control <?php if(session('errors.childdescription')) : ?>is-invalid<?php endif ?>" id="childdescription" placeholder="<?= lang('BOM.childdescription'); ?>" name="childdescription" value="<?= old('childdescription'); ?>">
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.volume')) : ?>is-invalid<?php endif ?>" id="volume" placeholder="<?= lang('WorkCenter.volume'); ?>" style="text-align:right;" name="volume" value="<?= number_format((float)(old('volume')), 2, '.', '')  ; ?>">
                         </div>
-                        <label for="transname" class="col-sm-2 col-form-label">&nbsp;</label>
-                        <div class="col-sm-4">&nbsp;</div>
+                        <label for="vuom" class="col-sm-2 col-form-label"><?= lang('WorkCenter.vuom'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="hidden" id="vuom" name="vuom" value="<?= old('vuom'); ?>" />
+                            <input type="hidden" id="vuom_desc" name="vuom_desc" value="<?= old('vuom_desc'); ?>" />
+                            <select class="form-control <?php if(session('errors.vuom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemvuom" id="itemvuom" >
+                                <option selected="selected"><?= old('vuom_desc'); ?></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label for="qtylabor" class="col-sm-2 col-form-label"><?= lang('WorkCenter.qtylabor'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.qtylabor')) : ?>is-invalid<?php endif ?>" id="qtylabor" placeholder="<?= lang('WorkCenter.qtylabor'); ?>" style="text-align:right;" name="qtylabor" value="<?= number_format((float)(old('qtylabor')), 2, '.', '')  ; ?>">
+                        </div>
+                        <label for="workhour" class="col-sm-2 col-form-label"><?= lang('WorkCenter.workhour'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.workhour')) : ?>is-invalid<?php endif ?>" id="workhour" placeholder="<?= lang('WorkCenter.workhour'); ?>" style="text-align:right;" name="workhour" value="<?= number_format((float)(old('workhour')), 2, '.', '')  ; ?>">
+                        </div>
                     </div>
 
                 </div>
                 
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
-                    <input type="hidden" name="bom_id" class="bom_id" value="<?= $bom[0]->id; ?>" ?>
+                    <input type="hidden" name="work_center_id" class="work_center_id" value="<?= $work_center[0]->id; ?>" ?>
                 
                     <input type="hidden" name="status" class="status">
                     <button type="submit" class="btn btn-primary">Save</button>
@@ -254,8 +333,66 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>bom/deleteChild" method="post">
-    <div class="modal fade" id="bomChildDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <form action="<?= base_url(); ?>work_center/saveCost" method="post" id="work_centerCostForm">
+    <div class="modal fade" id="work_centerCostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="work_centerLabel">WorkCenter Cost</h5>
+                    <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row mb-2">
+                        <label for="costtype" class="col-sm-2 col-form-label"><?= lang('WorkCenter.costtype'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="hidden" id="costtype" name="costtype" value="<?= old('costtype'); ?>" />
+                            <input type="hidden" id="costtype_desc" name="costtype_desc" value="<?= old('costtype_desc'); ?>" />
+                            <select class="form-control <?php if(session('errors.costtype')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemcosttype" id="itemcosttype" >
+                                <option selected="selected"><?= old('costtype_desc'); ?></option>
+                            </select>
+                        </div>
+                        <label for="costamount" class="col-sm-2 col-form-label"><?= lang('WorkCenter.costamount'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="number" step="0.01" class="form-control <?php if(session('errors.costamount')) : ?>is-invalid<?php endif ?>" id="costamount" placeholder="<?= lang('WorkCenter.costamount'); ?>" style="text-align:right;" name="costamount" value="<?= number_format((float)(old('costamount')), 2, '.', '')  ; ?>">
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label for="costuom" class="col-sm-2 col-form-label"><?= lang('WorkCenter.costuom'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="hidden" id="costuom" name="costuom" value="<?= old('costuom'); ?>" />
+                            <input type="hidden" id="costuom_desc" name="costuom_desc" value="<?= old('costuom_desc'); ?>" />
+                            <select class="form-control <?php if(session('errors.costuom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemcostuom" id="itemcostuom" >
+                                <option selected="selected"><?= old('costuom_desc'); ?></option>
+                            </select>
+                        </div>
+                        <label for="notes2" class="col-sm-2 col-form-label"><?= lang('WorkCenter.notes2'); ?></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control <?php if(session('errors.notes2')) : ?>is-invalid<?php endif ?>" id="notes2" placeholder="<?= lang('WorkCenter.notes2'); ?>" name="notes2" value="<?= old('notes2'); ?>">
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="modal-footer">
+                    <input type="hidden" name="id" class="id">
+                    <input type="hidden" name="work_center_id" class="work_center_id" value="<?= $work_center[0]->id; ?>" ?>
+                
+                    <input type="hidden" name="status" class="status">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <form action="<?= base_url(); ?>work_center/deleteMachine" method="post">
+    <div class="modal fade" id="work_centerMachineDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -268,7 +405,7 @@
                 <div class="modal-body">Choose "Yes" to delete</div>
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
-                    <input type="hidden" name="bom_id" class="bom_id">
+                    <input type="hidden" name="work_center_id" class="work_center_id">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
                     <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
@@ -277,8 +414,8 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>bom/deleteChild" method="post">
-    <div class="modal fade" id="bomChildActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <form action="<?= base_url(); ?>work_center/deleteMachine" method="post">
+    <div class="modal fade" id="work_centerMachineActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -292,7 +429,7 @@
                 <div class="modal-footer">
                     <input type="hidden" name="id" class="id">
                     <input type="hidden" name="active" class="active">
-                    <input type="hidden" name="bom_id" class="bom_id">
+                    <input type="hidden" name="work_center_id" class="work_center_id">
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">No</button>
                     <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
@@ -307,26 +444,26 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#dataTable tbody').on('click', '.btn-delete-bom-child', function() {
+        $('#dataTable tbody').on('click', '.btn-delete-work_center-child', function() {
             const id = $(this).data('id');
-            const bom_id = $(this).data('bom_id');
+            const work_center_id = $(this).data('work_center_id');
             
             // Set data to Form Edit
             $('.id').val(id);
-            $('.bom_id').val(bom_id);
+            $('.work_center_id').val(work_center_id);
 
             // Call Modal Edit
-            $('#bomChildDeleteModal').modal('show');
+            $('#work_centerMachineDeleteModal').modal('show');
         });
 
-        $('#dataTable tbody').on('click', '.btn-active-bom-child', function() {
+        $('#dataTable tbody').on('click', '.btn-active-work_center-child', function() {
             const id = $(this).data('id');
-            const bom_id = $(this).data('bom_id');
+            const work_center_id = $(this).data('work_center_id');
             const active = $(this).data('active');
             
             // Set data to Form Edit
             $('.id').val(id);
-            $('.bom_id').val(bom_id);
+            $('.work_center_id').val(work_center_id);
             $('.active').val(active);
             if (active == "1") {
                 $('#msgActive').text("Inactive");
@@ -335,10 +472,10 @@
             }
 
             // Call Modal Edit
-            $('#bomChildActiveModal').modal('show');
+            $('#work_centerMachineActiveModal').modal('show');
         });
 
-        $('#addChild-btn').on('click', function() {
+        $('#addMachine-btn').on('click', function() {
             const id = $(this).data('id');
             
             // Set data to Form Edit
@@ -346,26 +483,38 @@
             $('.status').val('1');
 
             // Call Modal Edit
-            $('#bomChildForm')[0].reset();
-            $('#bomChildModal').modal('show');
+            $('#work_centerMachineForm')[0].reset();
+            $('#work_centerMachineModal').modal('show');
         });
 
-        $('#dataTable tbody').on('click', '.btn-update-bom-child', function() {
+        $('#addCost-btn').on('click', function() {
             const id = $(this).data('id');
-            const bom_id = $(this).data('bom_id');
+            
+            // Set data to Form Edit
+            $('.id').val(id);
+            $('.status').val('1');
+
+            // Call Modal Edit
+            $('#work_centerCostForm')[0].reset();
+            $('#work_centerCostModal').modal('show');
+        });
+
+        $('#dataTable tbody').on('click', '.btn-update-work_center-child', function() {
+            const id = $(this).data('id');
+            const work_center_id = $(this).data('work_center_id');
             
             $('.id').val(id);
-            $('.bom_id').val(bom_id);
+            $('.work_center_id').val(work_center_id);
             $('.status').val('2');
             $.ajax({
-                url: "<?php echo site_url('bom/getBOMChildById') ?>",
+                url: "<?php echo site_url('work_center/getWorkCenterMachineById') ?>",
                 type: "post",
                 data: {
                     id : id, 
                 } ,
                 success: function (response) {
                     var data = $.parseJSON(response); //(jsonStringify);
-                    $('#childno').val(data[0].childno);
+                    $('#no').val(data[0].no);
                     $('#childcode').val(data[0].childcode);
                     $("#itemchildname").val(data[0].itemchildname);
                     $(".itemchildname").val(data[0].itemchildname);
@@ -374,15 +523,15 @@
                     itemSelect.append(option).trigger('change');
                     $('#childtype').val(data[0].childtype);
                     $('#qtyused').val(data[0].qtyused);
-                    $('#childuom').val(data[0].childuom);
-                    var uomSelect = $('#itemchilduom');
-                    option = new Option(data[0].childuom_desc, data[0].childuom, true, true);
+                    $('#luom').val(data[0].luom);
+                    var uomSelect = $('#itemluom');
+                    option = new Option(data[0].luom_desc, data[0].luom, true, true);
                     uomSelect.append(option).trigger('change');
-                    //$('#childuom_desc').html(data[0].childuom_desc);
+                    //$('#luom_desc').html(data[0].luom_desc);
                     $('#factor').val(data[0].factor);
-                    $('#childdescription').val(data[0].childdescription);
-                    $('#childdescription').val(data[0].childdescription);
-                    $('#bom_id').val(data[0].bom_id);
+                    $('#machine').val(data[0].machine);
+                    $('#machine').val(data[0].machine);
+                    $('#work_center_id').val(data[0].work_center_id);
                     
                 },
                     error: function(jqXHR, textStatus, errorThrown) {
@@ -391,67 +540,105 @@
             });
 
             // Call Modal Edit
-            $('#bomChildModal').modal('show');
+            $('#work_centerMachineModal').modal('show');
         });
 
-        $('#dataTable').DataTable({
+        $('#dataTableMachine').DataTable({
             "processing": true,
             "serverSide": true,
             "order": [],
             "ajax": {
-                "url": "<?php echo site_url('bom/getBOMChild') ?>",
+                "url": "<?php echo site_url('work_center/getWorkCenterMachine') ?>",
                 "type": "POST",
                 data: {
-                    bom_id: $(".bom_id").val(),
+                    work_center_id: $(".work_center_id").val(),
                 },
             },
             "columns": [
                 {
-                    "data": "childno",
+                    "data": "no",
                     "autoWidth": true,
                     "searchable": true,
                 },
                 {
-                    "data": "childcode",
+                    "data": "machine",
+                    "autoWidth": true,
+                    "searchable": true,
+                },                
+                {
+                    "data": "notes1",
                     "autoWidth": true,
                     "searchable": true,
                 },
                 {
-                    "data": "childtype",
+                    "data": "speed",
                     "autoWidth": true,
                     "searchable": true,
                 },
                 {
-                    "data": "qtyused",
+                    "data": "capacity",
                     "autoWidth": true,
                     "searchable": true,
                 },
                 {
-                    "data": "childuom",
+                    "data": "length",
                     "autoWidth": true,
                     "searchable": true,
                 },
                 {
-                    "data": "factor",
+                    "data": "luom",
+                    "autoWidth": true,
+                    "searchable": true,
+                },                
+                {
+                    "data": "width",
                     "autoWidth": true,
                     "searchable": true,
                 },
                 {
-                    "data": "childdescription",
+                    "data": "wuom",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "height",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "huom",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "volume",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "vuom",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "qtylabor",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "workhour",
                     "autoWidth": true,
                     "searchable": true,
                 },
                 {
                     "data": "active", 
                     "render": function (data, type, row) {
-                        console.log("data : "+ JSON.stringify(data));
-                        console.log("row : "+ JSON.stringify(row));
                         var retVal = "";
                         if (data === null) return "";
                         if (data === "1") {
-                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-bom-child" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-work_center-child" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
                         } else if (data === "0") {
-                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-bom-child" title="Click to ACTIVE Item" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-work_center-child" title="Click to ACTIVE Item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
                         }
 
                         return retVal;
@@ -459,13 +646,67 @@
                 }, 
                 {
                     data: "no", render: function (data, type, row) {
-                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-bom-child" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-bom-child" title="Delete" data-id="' + row.id + '" data-bom_id="' + row.bom_id + '" ><i class="fas fa-times"></i></a>';
+                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-work_center-child" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-work_center-child" title="Delete" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" ><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
         });
 
-        $('#whs_code').select2({
+        $('#dataTableCost').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "order": [],
+            "ajax": {
+                "url": "<?php echo site_url('work_center/getWorkCenterCost') ?>",
+                "type": "POST",
+                data: {
+                    work_center_id: $(".work_center_id").val(),
+                },
+            },
+            "columns": [
+                {
+                    "data": "costtype",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "costamount",
+                    "autoWidth": true,
+                    "searchable": true,
+                },                
+                {
+                    "data": "costuom",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "notes2",
+                    "autoWidth": true,
+                    "searchable": true,
+                },
+                {
+                    "data": "active", 
+                    "render": function (data, type, row) {
+                        var retVal = "";
+                        if (data === null) return "";
+                        if (data === "1") {
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-work_center-child" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                        } else if (data === "0") {
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-work_center-child" title="Click to ACTIVE Item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                        }
+
+                        return retVal;
+                    },
+                }, 
+                {
+                    data: "no", render: function (data, type, row) {
+                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-work_center-child" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-work_center-child" title="Delete" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" ><i class="fas fa-times"></i></a>';
+                    }
+                },
+            ]
+        });
+
+        $('#warehouse_code').select2({
             placeholder: '|',
             minimumInputLength: 0,
             ajax: {
@@ -507,9 +748,9 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            var data = $("#whs_code option:selected").val();
-            $("#whs").val(data);
-            $("#whs_name").val($("#whs_code option:selected").text());
+            var data = $("#warehouse_code option:selected").val();
+            $("#warehouse").val(data);
+            $("#warehouse_name").val($("#warehouse_code option:selected").text());
         });
 
         $('#site_code').select2({
@@ -605,52 +846,6 @@
             $("#dept_name").val($("#dept_code option:selected").text());
         });
 
-        $('#item').select2({
-            placeholder: '|',
-            minimumInputLength: 0,
-            ajax: {
-                url: '<?= base_url('/item/getAll'); ?>',
-                dataType: 'json',
-                delay: 250,
-                data: function (params) {
-                    return {
-                        q: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data){
-                return {
-                    results: data
-                };
-                },
-                cache: true
-            },
-            templateResult: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-            templateSelection: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-        }).on('select2:select', function (evt) {
-            var data = $("#item option:selected").val();
-            $("#parentcode").val(data);
-            $("#itemname").val($("#item option:selected").text());
-        });
-
         $('#uom_code').select2({
             placeholder: '|',
             minimumInputLength: 0,
@@ -700,7 +895,7 @@
         $('#itemchild').select2({
             placeholder: '|',
             minimumInputLength: 0,
-            dropdownParent: $('#bomChildModal'),
+            dropdownParent: $('#work_centerMachineModal'),
             ajax: {
                 url: '<?= base_url('/item/getAll'); ?>',
                 dataType: 'json',
@@ -744,10 +939,12 @@
             $("#itemchildname").val($("#itemchild option:selected").text());
         });
 
-        $('#itemchilduom').select2({
+        
+
+        $('#itemcostuom').select2({
             placeholder: '|',
             minimumInputLength: 0,
-            dropdownParent: $('#bomChildModal'),
+            dropdownParent: $('#work_centerCostModal'),
             ajax: {
                 url: '<?= base_url('/uom/getAll'); ?>',
                 dataType: 'json',
@@ -786,8 +983,192 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            $("#childuom_desc").val($("#itemchilduom option:selected").text());
-            $("#childuom").val($("#itemchilduom option:selected").val());
+            $("#costuom_desc").val($("#itemcostuom option:selected").text());
+            $("#costuom").val($("#itemcostuom option:selected").val());
+        });
+
+        $('#itemluom').select2({
+            placeholder: '|',
+            minimumInputLength: 0,
+            dropdownParent: $('#work_centerMachineModal'),
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            $("#luom_desc").val($("#itemluom option:selected").text());
+            $("#luom").val($("#itemluom option:selected").val());
+        });
+
+        $('#itemwuom').select2({
+            placeholder: '|',
+            minimumInputLength: 0,
+            dropdownParent: $('#work_centerMachineModal'),
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            $("#wuom_desc").val($("#itemwuom option:selected").text());
+            $("#wuom").val($("#itemwuom option:selected").val());
+        });
+
+        $('#itemhuom').select2({
+            placeholder: '|',
+            minimumInputLength: 0,
+            dropdownParent: $('#work_centerMachineModal'),
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            $("#huom_desc").val($("#itemhuom option:selected").text());
+            $("#huom").val($("#itemhuom option:selected").val());
+        });
+
+        $('#itemvuom').select2({
+            placeholder: '|',
+            minimumInputLength: 0,
+            dropdownParent: $('#work_centerMachineModal'),
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            $("#vuom_desc").val($("#itemvuom option:selected").text());
+            $("#vuom").val($("#itemvuom option:selected").val());
         });
 
     });

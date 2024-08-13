@@ -1,7 +1,7 @@
 <?= $this->extend('template/index') ?>            
  
 <?= $this->section('page-content') ?>
-                    <form action="<?= base_url(); ?>bom/save" class="user" method="post">
+                    <form action="<?= base_url(); ?>work_center/save" class="user" method="post">
 
                         <div class="row">
                             <div class="col-xl-12">
@@ -15,7 +15,7 @@
                                         </div>
                                         
                                         <div class="row mb-2">
-                                            <label for="site" class="col-sm-2 col-form-label"><?= lang('BOM.site'); ?></label>
+                                            <label for="site" class="col-sm-2 col-form-label"><?= lang('WorkCenter.site'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site" name="site" value="<?= old('site'); ?>" />
                                                 <input type="hidden" id="site_name" name="site_name" value="<?= old('site_name'); ?>" />
@@ -23,7 +23,7 @@
                                                     <option selected="selected"><?= old('site_name') ?></option>
                                                 </select>
                                             </div>
-                                            <label for="dept" class="col-sm-2 col-form-label"><?= lang('BOM.dept'); ?></label>
+                                            <label for="dept" class="col-sm-2 col-form-label"><?= lang('WorkCenter.dept'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept" name="dept" value="<?= old('dept'); ?>" />
                                                 <input type="hidden" id="dept_name" name="dept_name" value="<?= old('dept_name'); ?>" />
@@ -34,58 +34,24 @@
                                         </div>
 
                                         <div class="row mb-2">
-                                            <label for="whs" class="col-sm-2 col-form-label"><?= lang('BOM.whs'); ?></label>
+                                            <label for="warehouse" class="col-sm-2 col-form-label"><?= lang('WorkCenter.warehouse'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="whs" name="whs" value="<?= old('whs'); ?>" />
-                                                <input type="hidden" id="whs_name" name="whs_name" value="<?= old('whs_name'); ?>" />
-                                                <select class="form-control <?php if(session('errors.whs')) : ?>is-invalid<?php endif ?>" name="whs_code" id="whs_code" >
-                                                    <option selected="selected"><?= old('whs_name') ?></option>
+                                                <input type="hidden" id="warehouse" name="warehouse" value="<?= old('warehouse'); ?>" />
+                                                <input type="hidden" id="warehouse_name" name="warehouse_name" value="<?= old('warehouse_name'); ?>" />
+                                                <select class="form-control <?php if(session('errors.warehouse')) : ?>is-invalid<?php endif ?>" name="warehouse_code" id="warehouse_code" >
+                                                    <option selected="selected"><?= old('warehouse_name') ?></option>
                                                 </select>
                                             </div>
-                                            <label for="parentcode" class="col-sm-2 col-form-label"><?= lang('BOM.parentcode'); ?></label>
+                                            <label for="workcenter" class="col-sm-2 col-form-label"><?= lang('WorkCenter.workcenter'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="parentcode" name="parentcode" value="<?= old('parentcode'); ?>" />
-                                                <input type="hidden" id="itemname" name="itemname" value="<?= old('itemname'); ?>" />
-                                                <select class="form-control <?php if(session('errors.parentcode')) : ?>is-invalid<?php endif ?>" name="item" id="item" >
-                                                    <option selected="selected"><?= old('itemname'); ?></option>
-                                                </select>
+                                                <input type="text" class="form-control <?php if(session('errors.workcenter')) : ?>is-invalid<?php endif ?>" id="workcenter" placeholder="<?= lang('WorkCenter.workcenter'); ?>" name="workcenter" value="<?= old('workcenter'); ?>">
                                             </div>
                                         </div>
 
                                         <div class="row mb-2">
-                                            <label for="type" class="col-sm-2 col-form-label"><?= lang('BOM.type'); ?></label>
+                                            <label for="description" class="col-sm-2 col-form-label"><?= lang('WorkCenter.description'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="hidden" id="type" name="type" value="<?= old('type'); ?>" />
-                                                <select class="form-control <?php if(session('errors.type')) : ?>is-invalid<?php endif ?>" name="type" id="type" >
-                                                    <option value="1" <?= (old('type'))=="1" ? "selected" : "" ; ?>><?= lang('BOM.type1'); ?></option>
-                                                    <option value="2" <?= (old('type'))=="2" ? "selected" : "" ; ?>><?= lang('BOM.type2'); ?></option>
-                                                </select>
-                                            </div>
-                                            <label for="qty" class="col-sm-2 col-form-label"><?= lang('BOM.qty'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.qty')) : ?>is-invalid<?php endif ?>" id="qty" placeholder="<?= lang('BOM.qty'); ?>" style="text-align:right;" name="qty" value="<?= number_format((float)(old('qty')), 2, '.', ''); ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-2">
-                                            <label for="uom" class="col-sm-2 col-form-label"><?= lang('BOM.uom'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="hidden" id="uom" name="uom" value="<?= old('uom'); ?>" />
-                                                <input type="hidden" id="uom_desc" name="uom_desc" value="<?= old('uom_desc'); ?>" />
-                                                <select class="form-control <?php if(session('errors.uom')) : ?>is-invalid<?php endif ?>" name="uom_code" id="uom_code" >
-                                                    <option selected="selected"><?= old('uom_desc') ; ?></option>
-                                                </select>
-                                            </div>
-                                            <label for="ratio" class="col-sm-2 col-form-label"><?= lang('BOM.ratio'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.ratio')) : ?>is-invalid<?php endif ?>" id="ratio" placeholder="<?= lang('BOM.ratio'); ?>" style="text-align:right;" name="ratio" value="<?= number_format((float)(old('ratio')), 2, '.', ''); ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-2">
-                                            <label for="description" class="col-sm-2 col-form-label"><?= lang('BOM.description'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control <?php if(session('errors.description')) : ?>is-invalid<?php endif ?>" id="description" placeholder="<?= lang('BOM.description'); ?>" name="description" value="<?= old('description'); ?>">
+                                                <input type="text" class="form-control <?php if(session('errors.description')) : ?>is-invalid<?php endif ?>" id="description" placeholder="<?= lang('WorkCenter.description'); ?>" name="description" value="<?= old('description'); ?>">
                                             </div>
                                             <label for="transname" class="col-sm-2 col-form-label">&nbsp;</label>
                                             <div class="col-sm-4">&nbsp;</div>
@@ -112,7 +78,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#whs_code').select2({
+        $('#warehouse_code').select2({
             placeholder: '|',
             minimumInputLength: 0,
             ajax: {
@@ -154,9 +120,9 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            var data = $("#whs_code option:selected").val();
-            $("#whs").val(data);
-            $("#whs_name").val($("#whs_code option:selected").text());
+            var data = $("#warehouse_code option:selected").val();
+            $("#warehouse").val(data);
+            $("#warehouse_name").val($("#warehouse_code option:selected").text());
         });
 
         $('#site_code').select2({
