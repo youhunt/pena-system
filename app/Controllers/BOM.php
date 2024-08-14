@@ -51,9 +51,9 @@ class BOM extends BaseController
                 $row['whs'] = $list->whs ? $dataWhs->getWarehouse($list->whs)[0]->whs_name : "";
                 $row['parentcode'] = $list->parentcode ? $dataItem->getItem($list->parentcode)[0]->item_name_1 : "";
                 $row['type'] = lang('BOM.type'.$list->type);
-                $row['qty'] = number_format((float)$list->qty, 2, '.', '');;
+                $row['qty'] = number_format((float)$list->qty, 5, '.', '');;
                 $row['uom'] = $list->uom ? $dataUOM->getUOM($list->uom)[0]->uom_desc : "";
-                $row['ratio'] = number_format((float)$list->ratio, 2, '.', '');
+                $row['ratio'] = number_format((float)$list->ratio, 5, '.', '');
                 $row['description'] = $list->description;
                 $row['active'] = $list->active;
                 $row['no'] = '';
@@ -93,7 +93,7 @@ class BOM extends BaseController
                 $row['childno'] = $list->childno;
                 $row['childcode'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_name_1 : "";
                 $row['childtype'] = lang('BOM.typechild'.$list->childtype);
-                $row['qtyused'] = number_format((float)$list->qtyused, 2, '.', '');
+                $row['qtyused'] = number_format((float)$list->qtyused, 5, '.', '');
                 $row['childuom'] = $list->childuom ? $dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
                 $row['factor'] = number_format((float)$list->factor, 0, '.', '');
                 $row['childdescription'] = $list->childdescription;
@@ -131,7 +131,7 @@ class BOM extends BaseController
             $row['childcode'] = $list->childcode;
             $row['itemchildname'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_code."|".$dataItem->getItem($list->childcode)[0]->item_name_1 : "";
             $row['childtype'] = lang('BOM.typechild'.$list->childtype);
-            $row['qtyused'] = number_format((float)$list->qtyused, 2, '.', '');
+            $row['qtyused'] = number_format((float)$list->qtyused, 5, '.', '');
             $row['childuom'] = $list->childuom;
             $row['childuom_desc'] = $list->childuom ?  $dataUOM->getUOM($list->childuom)[0]->uom_code."|".$dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
             $row['factor'] = $list->factor;

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\WorkCenterModel;
 use App\Models\WorkCenterMachineModel;
+use App\Models\WorkCenterCostModel;
 use App\Models\UOMModel;
 use App\Models\SiteModel;
 use App\Models\DepartmentModel;
@@ -31,7 +32,6 @@ class WorkCenter extends BaseController
 
         $request = Services::request();
         $datatable = new WorkCenterModel($request);
-        $dataUOM = new UOMModel($request);
         $dataSit = new SiteModel($request);
         $dataDep = new DepartmentModel($request);
         $dataWhs = new WarehouseModel($request);
@@ -118,7 +118,7 @@ class WorkCenter extends BaseController
     {
 
         $request = Services::request();
-        $datatable = new WorkCenterMachineModel($request);
+        $datatable = new WorkCenterCostModel($request);
         $dataUOM = new UOMModel($request);
         $dataItem = new ItemModel($request);
         $work_center_id = $request->getPost('work_center_id');
@@ -171,7 +171,7 @@ class WorkCenter extends BaseController
             $row['childcode'] = $list->childcode;
             $row['itemchildname'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_code."|".$dataItem->getItem($list->childcode)[0]->item_name_1 : "";
             $row['childtype'] = lang('WorkCenter.typechild'.$list->childtype);
-            $row['qtyused'] = number_format((float)$list->qtyused, 2, '.', '');
+            $row['qtyused'] = number_format((float)$list->qtyused, 5, '.', '');
             $row['childuom'] = $list->childuom;
             $row['childuom_desc'] = $list->childuom ?  $dataUOM->getUOM($list->childuom)[0]->uom_code."|".$dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
             $row['factor'] = $list->factor;
@@ -254,12 +254,21 @@ class WorkCenter extends BaseController
         $work_center_id =  $this->request->getPost('work_center_id');
         
         $rules = [
-            'childno' => 'required',
-            'childcode' => 'required',
-            'childtype' => 'required',
-            'qtyused' => 'required',
-            'childuom' => 'required',
-            'factor' => 'required',
+            'no' => 'required',
+            'machine' => 'required',
+            'notes1' => 'required',
+            'speed' => 'required',
+            'capacity' => 'required',
+            // 'length' => 'required',
+            // 'luom' => 'required',
+            // 'width' => 'required',
+            // 'wuom' => 'required',
+            // 'height' => 'required',
+            // 'huom' => 'required',
+            // 'volume' => 'required',
+            // 'vuom' => 'required',
+            // 'qtylabor' => 'required',
+            // 'workhour' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -274,13 +283,21 @@ class WorkCenter extends BaseController
             if($status=="1") {
                 $data = [
                     'work_center_id' => $id,
-                    'childno' => $this->request->getPost('childno'),
-                    'childcode' => $this->request->getPost('childcode'),
-                    'childtype' => $this->request->getPost('childtype'),
-                    'qtyused' => $this->request->getPost('qtyused'),
-                    'childuom' => $this->request->getPost('childuom'),
-                    'factor' => $this->request->getPost('factor'),
-                    'childdescription' => $this->request->getPost('childdescription'),
+                    'no' => $this->request->getPost('no'),
+                    'machine' => $this->request->getPost('machine'),
+                    'notes1' => $this->request->getPost('notes1'),
+                    'speed' => $this->request->getPost('speed'),
+                    'capacity' => $this->request->getPost('capacity'),
+                    'length' => $this->request->getPost('length'),
+                    'luom' => $this->request->getPost('luom'),
+                    'width' => $this->request->getPost('width'),
+                    'wuom' => $this->request->getPost('wuom'),
+                    'height' => $this->request->getPost('height'),
+                    'huom' => $this->request->getPost('huom'),
+                    'volume' => $this->request->getPost('volume'),
+                    'vuom' => $this->request->getPost('vuom'),
+                    'qtylabor' => $this->request->getPost('qtylabor'),
+                    'workhour' => $this->request->getPost('workhour'),
                     'created_date'=>  date("Y-m-d H:i:s"),
                     'created_by' =>  user()->username,
                 ];
@@ -292,13 +309,21 @@ class WorkCenter extends BaseController
             } else  {
                 $data = [
                     'work_center_id' => $work_center_id,
-                    'childno' => $this->request->getPost('childno'),
-                    'childcode' => $this->request->getPost('childcode'),
-                    'childtype' => $this->request->getPost('childtype'),
-                    'qtyused' => $this->request->getPost('qtyused'),
-                    'childuom' => $this->request->getPost('childuom'),
-                    'factor' => $this->request->getPost('factor'),
-                    'childdescription' => $this->request->getPost('childdescription'),
+                    'no' => $this->request->getPost('no'),
+                    'machine' => $this->request->getPost('machine'),
+                    'notes1' => $this->request->getPost('notes1'),
+                    'speed' => $this->request->getPost('speed'),
+                    'capacity' => $this->request->getPost('capacity'),
+                    'length' => $this->request->getPost('length'),
+                    'luom' => $this->request->getPost('luom'),
+                    'width' => $this->request->getPost('width'),
+                    'wuom' => $this->request->getPost('wuom'),
+                    'height' => $this->request->getPost('height'),
+                    'huom' => $this->request->getPost('huom'),
+                    'volume' => $this->request->getPost('volume'),
+                    'vuom' => $this->request->getPost('vuom'),
+                    'qtylabor' => $this->request->getPost('qtylabor'),
+                    'workhour' => $this->request->getPost('workhour'),
                     'updated_by' =>  user()->username,
                     'updated_at' =>  date("Y-m-d H:i:s"),
                 ];
@@ -369,11 +394,7 @@ class WorkCenter extends BaseController
                 'site' => $this->request->getPost('site'),
                 'dept' => $this->request->getPost('dept'),
                 'warehouse' => $this->request->getPost('warehouse'),
-                'parentcode' => $this->request->getPost('parentcode'),
-                'type' => $this->request->getPost('type'),
-                'qty' => $this->request->getPost('qty'),
-                'uom' => $this->request->getPost('uom'),
-                'ratio' => $this->request->getPost('ratio'),
+                'workcenter' => $this->request->getPost('workcenter'),
                 'description' => $this->request->getPost('description'),
                 'updated_by' =>  user()->username,
                 'updated_at' =>  date("Y-m-d H:i:s"),

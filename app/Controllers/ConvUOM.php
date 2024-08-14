@@ -39,7 +39,7 @@ class ConvUOM extends BaseController
                 $row['id'] = $list->id;
                 $row['fr_uom'] = $list->fr_uom ? $dataUOM->getUOM($list->fr_uom)[0]->uom_desc : "";
                 $row['to_uom'] = $list->to_uom ? $dataUOM->getUOM($list->to_uom)[0]->uom_desc : "";
-                $row['value'] = number_format((float)$list->value, 2, '.', '');
+                $row['value'] = number_format((float)$list->value, 5, '.', '');
                 $row['active'] = $list->active;
                 $row['no'] = '';
                 $data[] = $row;

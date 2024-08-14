@@ -51,7 +51,7 @@
                                         <div class="row mb-2">
                                             <label for="shelf_life" class="col-sm-2 col-form-label"><?= lang('Item.shelf_life'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.shelf_life')) : ?>is-invalid<?php endif ?>" id="shelf_life" placeholder="<?= lang('Item.shelf_life'); ?>" style="text-align:right;" name="shelf_life" value="<?= number_format((float)(old('shelf_life') ? old('shelf_life') : $item[0]->shelf_life), 2, '.', ''); ?>"> 
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.shelf_life')) : ?>is-invalid<?php endif ?>" id="shelf_life" placeholder="<?= lang('Item.shelf_life'); ?>" style="text-align:right;" name="shelf_life" value="<?= number_format((float)(old('shelf_life') ? old('shelf_life') : $item[0]->shelf_life), 5, '.', ''); ?>"> 
                                             </div>
                                             <label for="stockuom" class="col-sm-2 col-form-label"><?= lang('Item.stockuom'); ?></label>
                                             <div class="col-sm-4">
@@ -72,7 +72,7 @@
                                             </div>
                                             <label for="item_price" class="col-sm-2 col-form-label"><?= lang('Item.item_price'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" style="text-align:right;" value="<?= number_format((float)(old('item_price') ? old('item_price') : $item[0]->item_price), 2, '.', ''); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.item_price')) : ?>is-invalid<?php endif ?>" id="item_price" placeholder="<?= lang('Item.item_price'); ?>" name="item_price" style="text-align:right;" value="<?= number_format((float)(old('item_price') ? old('item_price') : $item[0]->item_price), 5, '.', ''); ?>">
                                             </div>
                                         </div>
                                         
@@ -86,7 +86,7 @@
                                         <div class="row mb-1">
                                             <label for="item_length" class="col-sm-2 col-form-label"><?= lang('Item.item_length'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" style="text-align:right;" value="<?= number_format((float)(old('item_length') ? old('item_length') : $item[0]->item_length), 2, '.', ''); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.item_length')) : ?>is-invalid<?php endif ?>" id="item_length" placeholder="<?= lang('Item.item_length'); ?>" name="item_length" style="text-align:right;" value="<?= number_format((float)(old('item_length') ? old('item_length') : $item[0]->item_length), 5, '.', ''); ?>">
                                             </div>
                                             <div class="col-sm-2">
                                                 <input type="hidden" id="item_lengthuom" name="item_lengthuom" value="<?= old('item_lengthuom') ? old('item_lengthuom') : $item[0]->item_lengthuom  ; ?>" />
@@ -96,7 +96,7 @@
                                             </div>
                                             <label for="out_length" class="col-sm-2 col-form-label"><?= lang('Item.out_length'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.out_length')) : ?>is-invalid<?php endif ?>" id="out_length" placeholder="<?= lang('Item.out_length'); ?>" name="out_length" style="text-align:right;" value="<?= number_format((float)(old('out_length') ? old('out_length') : $item[0]->out_length), 2, '.', ''); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.out_length')) : ?>is-invalid<?php endif ?>" id="out_length" placeholder="<?= lang('Item.out_length'); ?>" name="out_length" style="text-align:right;" value="<?= number_format((float)(old('out_length') ? old('out_length') : $item[0]->out_length), 5, '.', ''); ?>">
                                             </div>
                                             <div class="col-sm-2">
                                                 <input type="hidden" id="out_lengthuom" name="out_lengthuom" value="" />
@@ -109,7 +109,7 @@
                                         <div class="row mb-1">
                                             <label for="item_width" class="col-sm-2 col-form-label"><?= lang('Item.item_width'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" style="text-align:right;" value="<?= number_format((float)(old('item_width') ? old('item_width') : $item[0]->item_width), 2, '.', ''); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.item_width')) : ?>is-invalid<?php endif ?>" id="item_width" placeholder="<?= lang('Item.item_width'); ?>" name="item_width" style="text-align:right;" value="<?= number_format((float)(old('item_width') ? old('item_width') : $item[0]->item_width), 5, '.', ''); ?>">
                                             </div>
                                             <div class="col-sm-2">
                                                 <input type="hidden" id="item_widthuom" name="item_widthuom" value="<?= old('item_widthuom') ? old('item_widthuom') : $item[0]->item_widthuom  ; ?>" />
@@ -119,7 +119,7 @@
                                             </div>
                                             <label for="out_width" class="col-sm-2 col-form-label"><?= lang('Item.out_width'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.out_width')) : ?>is-invalid<?php endif ?>" id="out_width" placeholder="<?= lang('Item.out_width'); ?>" name="out_width" style="text-align:right;" value="<?= number_format((float)(old('out_width') ? old('out_width') : $item[0]->out_width), 2, '.', ''); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.out_width')) : ?>is-invalid<?php endif ?>" id="out_width" placeholder="<?= lang('Item.out_width'); ?>" name="out_width" style="text-align:right;" value="<?= number_format((float)(old('out_width') ? old('out_width') : $item[0]->out_width), 5, '.', ''); ?>">
                                             </div>
                                             <div class="col-sm-2">
                                                 <input type="hidden" id="out_widthuom" name="out_widthuom" value="<?= old('out_widthuom') ? old('out_widthuom') : $item[0]->out_widthuom  ; ?>" />
@@ -132,7 +132,7 @@
                                         <div class="row mb-1">
                                             <label for="item_height" class="col-sm-2 col-form-label"><?= lang('Item.item_height'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" style="text-align:right;" value="<?= number_format((float)(old('item_height') ? old('item_height') : $item[0]->item_height), 2, '.', ''); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.item_height')) : ?>is-invalid<?php endif ?>" id="item_height" placeholder="<?= lang('Item.item_height'); ?>" name="item_height" style="text-align:right;" value="<?= number_format((float)(old('item_height') ? old('item_height') : $item[0]->item_height), 5, '.', ''); ?>">
                                             </div>
                                             <div class="col-sm-2">
                                                 <input type="hidden" id="item_heightuom" name="item_heightuom" value="<?= old('item_heightuom') ? old('item_heightuom') : $item[0]->item_heightuom  ; ?>" />
@@ -142,7 +142,7 @@
                                             </div>
                                             <label for="out_height" class="col-sm-2 col-form-label"><?= lang('Item.out_height'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.out_height')) : ?>is-invalid<?php endif ?>" id="out_height" placeholder="<?= lang('Item.out_height'); ?>" name="out_height" style="text-align:right;" value="<?= number_format((float)(old('out_height') ? old('out_height') : $item[0]->out_height), 2, '.', ''); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.out_height')) : ?>is-invalid<?php endif ?>" id="out_height" placeholder="<?= lang('Item.out_height'); ?>" name="out_height" style="text-align:right;" value="<?= number_format((float)(old('out_height') ? old('out_height') : $item[0]->out_height), 5, '.', ''); ?>">
                                             </div>
                                             <div class="col-sm-2">
                                                 <input type="hidden" id="out_heightuom" name="out_heightuom" value="<?= old('out_heightuom') ? old('out_heightuom') : $item[0]->out_heightuom  ; ?>" />
@@ -155,7 +155,7 @@
                                         <div class="row mb-1">
                                             <label for="item_diameter" class="col-sm-2 col-form-label"><?= lang('Item.item_diameter'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.item_diameter')) : ?>is-invalid<?php endif ?>" id="item_diameter" placeholder="<?= lang('Item.item_diameter'); ?>" name="item_diameter"  style="text-align:right;" value="<?= number_format((float)(old('item_diameter') ? old('item_diameter') : $item[0]->item_diameter), 2, '.', ''); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.item_diameter')) : ?>is-invalid<?php endif ?>" id="item_diameter" placeholder="<?= lang('Item.item_diameter'); ?>" name="item_diameter"  style="text-align:right;" value="<?= number_format((float)(old('item_diameter') ? old('item_diameter') : $item[0]->item_diameter), 5, '.', ''); ?>">
                                             </div>
                                             <div class="col-sm-2">
                                                 <input type="hidden" id="item_diameteruom" name="item_diameteruom" value="<?= old('item_diameteruom') ? old('item_diameteruom') : $item[0]->item_diameteruom  ; ?>" />
@@ -165,7 +165,7 @@
                                             </div>
                                             <label for="out_diameter" class="col-sm-2 col-form-label"><?= lang('Item.out_diameter'); ?></label>
                                             <div class="col-sm-2">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.out_diameter')) : ?>is-invalid<?php endif ?>" id="out_diameter" placeholder="<?= lang('Item.out_diameter'); ?>" name="out_diameter"  style="text-align:right;" value="<?= number_format((float)(old('out_diameter') ? old('out_diameter') : $item[0]->out_diameter), 2, '.', ''); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.out_diameter')) : ?>is-invalid<?php endif ?>" id="out_diameter" placeholder="<?= lang('Item.out_diameter'); ?>" name="out_diameter"  style="text-align:right;" value="<?= number_format((float)(old('out_diameter') ? old('out_diameter') : $item[0]->out_diameter), 5, '.', ''); ?>">
                                             </div>
                                             <div class="col-sm-2">
                                                 <input type="hidden" id="out_diameteruom" name="out_diameteruom" value="<?= old('out_diameteruom') ? old('out_diameteruom') : $item[0]->out_diameteruom  ; ?>" />

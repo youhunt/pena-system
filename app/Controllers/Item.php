@@ -127,6 +127,54 @@ class Item extends BaseController
                                         'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_diameter'),
                                     ],
                                 ],
+            'item_length' => [
+                                    'rules'  => 'required_with[item_lengthuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.item_size').' '.lang('Item.item_length'),
+                                    ],
+                                ],            
+            'item_width' => [
+                                    'rules'  => 'required_with[item_widthuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.item_size').' '.lang('Item.item_width'),
+                                    ],
+                                ],
+            'item_height' => [
+                                    'rules'  => 'required_with[item_heightuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.item_size').' '.lang('Item.item_height'),
+                                    ],
+                                ],
+            'item_diameter' => [
+                                    'rules'  => 'required_with[item_diameteruom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.item_size').' '.lang('Item.item_diameter'),
+                                    ],
+                                ],
+            'out_length' => [
+                                    'rules'  => 'required_with[out_lengthuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.process_size').' '.lang('Item.out_length'),
+                                    ],
+                                ],
+            'out_width' => [
+                                    'rules'  => 'required_with[out_widthuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.process_size').' '.lang('Item.out_width'),
+                                    ],
+                                ],
+            'out_height' => [
+                                    'rules'  => 'required_with[out_heightuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.process_size').' '.lang('Item.out_height'),
+                                    ],
+                                ],
+            'out_diameter' => [
+                                    'rules'  => 'required_with[out_diameteruom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.process_size').' '.lang('Item.out_diameter'),
+                                    ],
+                                ],
         ];
     
         if (! $this->validate($rules))
@@ -269,6 +317,54 @@ class Item extends BaseController
                                     'rules'  => 'required_with[out_diameter]',
                                     'errors' => [
                                         'required_with' => 'Please select '.lang('Item.process_size').' '.lang('Item.out_diameter'),
+                                    ],
+                                ],
+            'item_length' => [
+                                    'rules'  => 'required_with[item_lengthuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.item_size').' '.lang('Item.item_length'),
+                                    ],
+                                ],            
+            'item_width' => [
+                                    'rules'  => 'required_with[item_widthuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.item_size').' '.lang('Item.item_width'),
+                                    ],
+                                ],
+            'item_height' => [
+                                    'rules'  => 'required_with[item_heightuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.item_size').' '.lang('Item.item_height'),
+                                    ],
+                                ],
+            'item_diameter' => [
+                                    'rules'  => 'required_with[item_diameteruom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.item_size').' '.lang('Item.item_diameter'),
+                                    ],
+                                ],
+            'out_length' => [
+                                    'rules'  => 'required_with[out_lengthuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.process_size').' '.lang('Item.out_length'),
+                                    ],
+                                ],
+            'out_width' => [
+                                    'rules'  => 'required_with[out_widthuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.process_size').' '.lang('Item.out_width'),
+                                    ],
+                                ],
+            'out_height' => [
+                                    'rules'  => 'required_with[out_heightuom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.process_size').' '.lang('Item.out_height'),
+                                    ],
+                                ],
+            'out_diameter' => [
+                                    'rules'  => 'required_with[out_diameteruom]',
+                                    'errors' => [
+                                        'required_with' => 'Please input '.lang('Item.process_size').' '.lang('Item.out_diameter'),
                                     ],
                                 ],
         ];

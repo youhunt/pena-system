@@ -104,6 +104,35 @@ class WorkCenterCostModel extends Model
         return $tbl_storage->countAllResults();
     }
 
+    public function getDatatablesByWorkCenter($id)
+    {
+        $this->getDatatablesQuery();
+        if ($this->request->getPost('length') != -1)
+            $this->dt->limit($this->request->getPost('length'), $this->request->getPost('start'));
+        $query = $this->dt->where('work_center_id', $id)->get();
+        return $query->getResult();
+    }
+
+
+    public function countFilteredByWorkCenter($id)
+    {
+        $this->getDatatablesQuery();
+        return $this->dt->where('work_center_id', $id)->countAllResults();
+    }
+
+    public function countAllByWorkCenter($id)
+    {
+        $tbl_storage = $this->db->table($this->table)->where('work_center_id', $id);
+        return $tbl_storage->countAllResults();
+    }
+
+    public function getWorkCenterMachine($id = '')
+    {
+        $this->dt->where('id', $id);
+        $query = $this->dt->get();
+        return $query->getResult();        
+    }
+
     public function getWorkCenterCost($id = '')
     {
         $this->dt->where('id', $id);

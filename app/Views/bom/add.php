@@ -63,7 +63,7 @@
                                             </div>
                                             <label for="qty" class="col-sm-2 col-form-label"><?= lang('BOM.qty'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.qty')) : ?>is-invalid<?php endif ?>" id="qty" placeholder="<?= lang('BOM.qty'); ?>" style="text-align:right;" name="qty" value="<?= old('qty') ; ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.qty')) : ?>is-invalid<?php endif ?>" id="qty" placeholder="<?= lang('BOM.qty'); ?>" style="text-align:right;" name="qty" value="<?= old('qty') ; ?>">
                                             </div>
                                         </div>
 
@@ -78,7 +78,7 @@
                                             </div>
                                             <label for="ratio" class="col-sm-2 col-form-label"><?= lang('BOM.ratio'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="number" step="0.01" class="form-control <?php if(session('errors.ratio')) : ?>is-invalid<?php endif ?>" id="ratio" placeholder="<?= lang('BOM.ratio'); ?>" style="text-align:right;" name="ratio" value="<?= old('ratio'); ?>">
+                                                <input type="number" step="0.00001" class="form-control <?php if(session('errors.ratio')) : ?>is-invalid<?php endif ?>" id="ratio" placeholder="<?= lang('BOM.ratio'); ?>" style="text-align:right;" name="ratio" value="<?= old('ratio'); ?>">
                                             </div>
                                         </div>
 

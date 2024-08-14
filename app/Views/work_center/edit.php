@@ -166,7 +166,7 @@
                                     <!-- end row -->
                                     <div class="">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="dataTableCOst" width="100%" cellspacing="0">
+                                            <table class="table table-bordered" id="dataTableCost" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
                                                         <th><?= lang('WorkCenter.costtype'); ?></th>
@@ -232,14 +232,14 @@
                         </div>
                         <label for="speed" class="col-sm-2 col-form-label"><?= lang('WorkCenter.speed'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.speed')) : ?>is-invalid<?php endif ?>" id="speed" placeholder="<?= lang('WorkCenter.speed'); ?>" style="text-align:right;" name="speed" value="<?= number_format((float)(old('speed')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.00001" class="form-control <?php if(session('errors.speed')) : ?>is-invalid<?php endif ?>" id="speed" placeholder="<?= lang('WorkCenter.speed'); ?>" style="text-align:right;" name="speed" value="<?= number_format((float)(old('speed')), 5, '.', '')  ; ?>">
                         </div>
                     </div>
 
                     <div class="row mb-2">
                         <label for="capacity" class="col-sm-2 col-form-label"><?= lang('WorkCenter.capacity'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.capacity')) : ?>is-invalid<?php endif ?>" id="capacity" placeholder="<?= lang('WorkCenter.capacity'); ?>" style="text-align:right;" name="capacity" value="<?= number_format((float)(old('capacity')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.00001" class="form-control <?php if(session('errors.capacity')) : ?>is-invalid<?php endif ?>" id="capacity" placeholder="<?= lang('WorkCenter.capacity'); ?>" style="text-align:right;" name="capacity" value="<?= number_format((float)(old('capacity')), 5, '.', '')  ; ?>">
                         </div>
                         <label for="qtyused" class="col-sm-2 col-form-label">&nbsp;</label>
                         <div class="col-sm-4">
@@ -250,7 +250,7 @@
                     <div class="row mb-2">
                         <label for="length" class="col-sm-2 col-form-label"><?= lang('WorkCenter.length'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.length')) : ?>is-invalid<?php endif ?>" id="length" placeholder="<?= lang('WorkCenter.length'); ?>" style="text-align:right;" name="length" value="<?= number_format((float)(old('length')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.00001" class="form-control <?php if(session('errors.length')) : ?>is-invalid<?php endif ?>" id="length" placeholder="<?= lang('WorkCenter.length'); ?>" style="text-align:right;" name="length" value="<?= number_format((float)(old('length')), 5, '.', '')  ; ?>">
                         </div>
                         <label for="luom" class="col-sm-2 col-form-label"><?= lang('WorkCenter.luom'); ?></label>
                         <div class="col-sm-4">
@@ -265,7 +265,7 @@
                     <div class="row mb-2">
                         <label for="width" class="col-sm-2 col-form-label"><?= lang('WorkCenter.width'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.width')) : ?>is-invalid<?php endif ?>" id="width" placeholder="<?= lang('WorkCenter.width'); ?>" style="text-align:right;" name="width" value="<?= number_format((float)(old('width')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.00001" class="form-control <?php if(session('errors.width')) : ?>is-invalid<?php endif ?>" id="width" placeholder="<?= lang('WorkCenter.width'); ?>" style="text-align:right;" name="width" value="<?= number_format((float)(old('width')), 5, '.', '')  ; ?>">
                         </div>
                         <label for="wuom" class="col-sm-2 col-form-label"><?= lang('WorkCenter.wuom'); ?></label>
                         <div class="col-sm-4">
@@ -280,7 +280,7 @@
                     <div class="row mb-2">
                         <label for="height" class="col-sm-2 col-form-label"><?= lang('WorkCenter.height'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.height')) : ?>is-invalid<?php endif ?>" id="height" placeholder="<?= lang('WorkCenter.height'); ?>" style="text-align:right;" name="height" value="<?= number_format((float)(old('height')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.00001" class="form-control <?php if(session('errors.height')) : ?>is-invalid<?php endif ?>" id="height" placeholder="<?= lang('WorkCenter.height'); ?>" style="text-align:right;" name="height" value="<?= number_format((float)(old('height')), 5, '.', '')  ; ?>">
                         </div>
                         <label for="huom" class="col-sm-2 col-form-label"><?= lang('WorkCenter.huom'); ?></label>
                         <div class="col-sm-4">
@@ -295,7 +295,7 @@
                     <div class="row mb-2">
                         <label for="volume" class="col-sm-2 col-form-label"><?= lang('WorkCenter.volume'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.volume')) : ?>is-invalid<?php endif ?>" id="volume" placeholder="<?= lang('WorkCenter.volume'); ?>" style="text-align:right;" name="volume" value="<?= number_format((float)(old('volume')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.00001" class="form-control <?php if(session('errors.volume')) : ?>is-invalid<?php endif ?>" id="volume" placeholder="<?= lang('WorkCenter.volume'); ?>" style="text-align:right;" name="volume" value="<?= number_format((float)(old('volume')), 5, '.', '')  ; ?>">
                         </div>
                         <label for="vuom" class="col-sm-2 col-form-label"><?= lang('WorkCenter.vuom'); ?></label>
                         <div class="col-sm-4">
@@ -310,11 +310,11 @@
                     <div class="row mb-2">
                         <label for="qtylabor" class="col-sm-2 col-form-label"><?= lang('WorkCenter.qtylabor'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.qtylabor')) : ?>is-invalid<?php endif ?>" id="qtylabor" placeholder="<?= lang('WorkCenter.qtylabor'); ?>" style="text-align:right;" name="qtylabor" value="<?= number_format((float)(old('qtylabor')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.00001" class="form-control <?php if(session('errors.qtylabor')) : ?>is-invalid<?php endif ?>" id="qtylabor" placeholder="<?= lang('WorkCenter.qtylabor'); ?>" style="text-align:right;" name="qtylabor" value="<?= number_format((float)(old('qtylabor')), 5, '.', '')  ; ?>">
                         </div>
                         <label for="workhour" class="col-sm-2 col-form-label"><?= lang('WorkCenter.workhour'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.workhour')) : ?>is-invalid<?php endif ?>" id="workhour" placeholder="<?= lang('WorkCenter.workhour'); ?>" style="text-align:right;" name="workhour" value="<?= number_format((float)(old('workhour')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.00001" class="form-control <?php if(session('errors.workhour')) : ?>is-invalid<?php endif ?>" id="workhour" placeholder="<?= lang('WorkCenter.workhour'); ?>" style="text-align:right;" name="workhour" value="<?= number_format((float)(old('workhour')), 5, '.', '')  ; ?>">
                         </div>
                     </div>
 
@@ -357,7 +357,7 @@
                         </div>
                         <label for="costamount" class="col-sm-2 col-form-label"><?= lang('WorkCenter.costamount'); ?></label>
                         <div class="col-sm-4">
-                            <input type="number" step="0.01" class="form-control <?php if(session('errors.costamount')) : ?>is-invalid<?php endif ?>" id="costamount" placeholder="<?= lang('WorkCenter.costamount'); ?>" style="text-align:right;" name="costamount" value="<?= number_format((float)(old('costamount')), 2, '.', '')  ; ?>">
+                            <input type="number" step="0.00001" class="form-control <?php if(session('errors.costamount')) : ?>is-invalid<?php endif ?>" id="costamount" placeholder="<?= lang('WorkCenter.costamount'); ?>" style="text-align:right;" name="costamount" value="<?= number_format((float)(old('costamount')), 5, '.', '')  ; ?>">
                         </div>
                     </div>
 
