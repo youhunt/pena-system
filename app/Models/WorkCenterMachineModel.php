@@ -33,11 +33,11 @@ class WorkCenterMachineModel extends Model
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
-        'site' => 'required',
-        'dept' => 'required',
-        'warehouse' => 'required',
-        'workcenter' => 'required',
-        'description' => 'required',
+        'no' => 'required',
+        'machine' => 'required',
+        'notes1' => 'required',
+        'speed' => 'required',
+        'capacity' => 'required',
     ];
 
     protected $column_order = [

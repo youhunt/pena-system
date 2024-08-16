@@ -12,6 +12,7 @@ use App\Models\WarehouseModel;
 use App\Models\ItemModel;
 use Config\Services;
 
+use CodeIgniter\Database\Exceptions\DataException;
 
 class WorkCenter extends BaseController
 {
@@ -100,6 +101,7 @@ class WorkCenter extends BaseController
                 $row['vuom'] = $list->vuom;
                 $row['qtylabor'] = $list->qtylabor;
                 $row['workhour'] = $list->workhour;
+                $row['active'] = $list->active;
                 $data[] = $row;
             }
 
@@ -167,15 +169,25 @@ class WorkCenter extends BaseController
             $row = [];
             $row['id'] = $list->id;
             $row['work_center_id'] = $list->work_center_id;
-            $row['childno'] = $list->childno;
-            $row['childcode'] = $list->childcode;
-            $row['itemchildname'] = $list->childcode ? $dataItem->getItem($list->childcode)[0]->item_code."|".$dataItem->getItem($list->childcode)[0]->item_name_1 : "";
-            $row['childtype'] = lang('WorkCenter.typechild'.$list->childtype);
-            $row['qtyused'] = number_format((float)$list->qtyused, 5, '.', '');
-            $row['childuom'] = $list->childuom;
-            $row['childuom_desc'] = $list->childuom ?  $dataUOM->getUOM($list->childuom)[0]->uom_code."|".$dataUOM->getUOM($list->childuom)[0]->uom_desc : "";
-            $row['factor'] = $list->factor;
-            $row['childdescription'] = $list->childdescription;
+            $row['no'] = $list->no;
+            $row['machine'] = $list->machine;
+            $row['notes1'] = $list->notes1;
+            $row['speed'] = $list->speed;
+            $row['capacity'] = $list->capacity;
+            $row['length'] = number_format((float)$list->length, 5, '.', '');
+            $row['luom'] = $list->luom;
+            $row['luom_desc'] = $list->luom ?  $dataUOM->getUOM($list->luom)[0]->uom_code."|".$dataUOM->getUOM($list->luom)[0]->uom_desc : "";
+            $row['width'] = number_format((float)$list->width, 5, '.', '');
+            $row['wuom'] = $list->wuom;
+            $row['wuom_desc'] = $list->wuom ?  $dataUOM->getUOM($list->wuom)[0]->uom_code."|".$dataUOM->getUOM($list->wuom)[0]->uom_desc : "";
+            $row['height'] =  number_format((float)$list->height, 5, '.', '');
+            $row['huom'] = $list->huom;
+            $row['huom_desc'] = $list->huom ?  $dataUOM->getUOM($list->huom)[0]->uom_code."|".$dataUOM->getUOM($list->huom)[0]->uom_desc : "";
+            $row['volume'] = number_format((float)$list->volume, 5, '.', '');
+            $row['vuom'] = $list->vuom;
+            $row['vuom_desc'] = $list->vuom ?  $dataUOM->getUOM($list->vuom)[0]->uom_code."|".$dataUOM->getUOM($list->vuom)[0]->uom_desc : "";
+            $row['qtylabor'] = number_format((float)$list->qtylabor, 5, '.', '');
+            $row['workhour'] = $list->workhour;
             $row['active'] = $list->active;
             $data[] = $row;
         }
@@ -230,7 +242,7 @@ class WorkCenter extends BaseController
                 $id = $model->getInsertID();
                 return redirect()->to(base_url('/work_center/edit/'.$id));
             }
-            catch (\CodeIgniter\Database\Exceptions\DatabaseException $e)
+            catch (DatabaseException $e)
             {
                 if ($e->getCode() === 1062)
                 {
@@ -250,8 +262,8 @@ class WorkCenter extends BaseController
 
     public function saveMachine()
     {
-        $id =  $this->request->getPost('id');
-        $work_center_id =  $this->request->getPost('work_center_id');
+        $id =  $this->request->getVar('id');
+        $work_center_id =  $this->request->getVar('work_center_id');
         
         $rules = [
             'no' => 'required',
@@ -273,71 +285,128 @@ class WorkCenter extends BaseController
     
         if (! $this->validate($rules))
         {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            //return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            $output = [
+                'Success' => false,
+                'Counter' => 9999,
+                'errors' => $this->validator->getErrors(),
+            ];
+
+            return json_encode($output);
         }
 
         if($this->validate($rules)){
             $request = Services::request();
             $model = new WorkCenterMachineModel($request);
-            $status = $this->request->getPost('status');
+            $status = $this->request->getVar('status');
             if($status=="1") {
                 $data = [
                     'work_center_id' => $id,
-                    'no' => $this->request->getPost('no'),
-                    'machine' => $this->request->getPost('machine'),
-                    'notes1' => $this->request->getPost('notes1'),
-                    'speed' => $this->request->getPost('speed'),
-                    'capacity' => $this->request->getPost('capacity'),
-                    'length' => $this->request->getPost('length'),
-                    'luom' => $this->request->getPost('luom'),
-                    'width' => $this->request->getPost('width'),
-                    'wuom' => $this->request->getPost('wuom'),
-                    'height' => $this->request->getPost('height'),
-                    'huom' => $this->request->getPost('huom'),
-                    'volume' => $this->request->getPost('volume'),
-                    'vuom' => $this->request->getPost('vuom'),
-                    'qtylabor' => $this->request->getPost('qtylabor'),
-                    'workhour' => $this->request->getPost('workhour'),
+                    'no' => $this->request->getVar('no'),
+                    'machine' => $this->request->getVar('machine'),
+                    'notes1' => $this->request->getVar('notes1'),
+                    'speed' => $this->request->getVar('speed'),
+                    'capacity' => $this->request->getVar('capacity'),
+                    'length' => $this->request->getVar('length'),
+                    'luom' => $this->request->getVar('luom'),
+                    'width' => $this->request->getVar('width'),
+                    'wuom' => $this->request->getVar('wuom'),
+                    'height' => $this->request->getVar('height'),
+                    'huom' => $this->request->getVar('huom'),
+                    'volume' => $this->request->getVar('volume'),
+                    'vuom' => $this->request->getVar('vuom'),
+                    'qtylabor' => $this->request->getVar('qtylabor'),
+                    'workhour' => $this->request->getVar('workhour'),
                     'created_date'=>  date("Y-m-d H:i:s"),
                     'created_by' =>  user()->username,
                 ];
+
+                try {
+                    $saved = $model->save($data);
+                    if ($saved) {
+                        $output = [
+                            'Success' => true,
+                            'Counter' =>  $model->countAllByWorkCenter($id),
+                            'errors' => [],
+                        ];
+                    } else {
+                        $output = [
+                            'Success' => false,
+                            'Counter' =>  9999,
+                            'errors' => $model->errors(),
+                        ];
+                    }
+                } catch (DataException $e) {
+                    $output = [
+                        'Success' => false,
+                        'Counter' =>  9999,
+                        'errors' => [$e->getMessage()],
+                    ];
+                }
                 
-                $model->save($data);
-                
-                return redirect()->to(base_url('/work_center/edit/'.$id));
+                return json_encode($output);
+                //return redirect()->to(base_url('/work_center/edit/'.$id));
 
             } else  {
                 $data = [
                     'work_center_id' => $work_center_id,
-                    'no' => $this->request->getPost('no'),
-                    'machine' => $this->request->getPost('machine'),
-                    'notes1' => $this->request->getPost('notes1'),
-                    'speed' => $this->request->getPost('speed'),
-                    'capacity' => $this->request->getPost('capacity'),
-                    'length' => $this->request->getPost('length'),
-                    'luom' => $this->request->getPost('luom'),
-                    'width' => $this->request->getPost('width'),
-                    'wuom' => $this->request->getPost('wuom'),
-                    'height' => $this->request->getPost('height'),
-                    'huom' => $this->request->getPost('huom'),
-                    'volume' => $this->request->getPost('volume'),
-                    'vuom' => $this->request->getPost('vuom'),
-                    'qtylabor' => $this->request->getPost('qtylabor'),
-                    'workhour' => $this->request->getPost('workhour'),
+                    'no' => $this->request->getVar('no'),
+                    'machine' => $this->request->getVar('machine'),
+                    'notes1' => $this->request->getVar('notes1'),
+                    'speed' => $this->request->getVar('speed'),
+                    'capacity' => $this->request->getVar('capacity'),
+                    'length' => $this->request->getVar('length'),
+                    'luom' => $this->request->getVar('luom'),
+                    'width' => $this->request->getVar('width'),
+                    'wuom' => $this->request->getVar('wuom'),
+                    'height' => $this->request->getVar('height'),
+                    'huom' => $this->request->getVar('huom'),
+                    'volume' => $this->request->getVar('volume'),
+                    'vuom' => $this->request->getVar('vuom'),
+                    'qtylabor' => $this->request->getVar('qtylabor'),
+                    'workhour' => $this->request->getVar('workhour'),
                     'updated_by' =>  user()->username,
                     'updated_at' =>  date("Y-m-d H:i:s"),
                 ];
                 
-                $model->updateData($id, $data);
+                try {
+                    $updated = $model->updateData($id, $data);
 
-                return redirect()->to(base_url('/work_center/edit/'.$work_center_id));
+                    if ($updated) {
+                        $output = [
+                            'Success' => true,
+                            'Counter' =>  $model->countAllByWorkCenter($work_center_id),
+                            'errors' => [],
+                        ];
+                    } else {
+                        $output = [
+                            'Success' => false,
+                            'Counter' =>  9999,
+                            'errors' => $model->errors(),
+                        ];
+                    }
+                } catch (DataException $e) {
+                    $output = [
+                        'Success' => false,
+                        'Counter' =>  9999,
+                        'errors' => [$e->getMessage()],
+                    ];
+                }
 
+                return json_encode($output);
             }
 
 
         } else {
             
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            //return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            $output = [
+                'Success' => false,
+                'Counter' => 9999,
+                'errors' => $this->validator->getErrors(),
+            ];
+
+            return json_encode($output);
 
         }
     
@@ -490,6 +559,6 @@ class WorkCenter extends BaseController
                     ->limit(30)->get();
         $data = $query->getResult();
         
-echo json_encode($data);
+        echo json_encode($data);
     }
 }

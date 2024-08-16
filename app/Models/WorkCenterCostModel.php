@@ -21,11 +21,9 @@ class WorkCenterCostModel extends Model
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
-        'site' => 'required',
-        'dept' => 'required',
-        'warehouse' => 'required',
-        'workcenter' => 'required',
-        'description' => 'required',
+        'costtype' => 'required',
+        'costuom' => 'required',
+        'costamount' => 'required',
     ];
 
     protected $column_order = [

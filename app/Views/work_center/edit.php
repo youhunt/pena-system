@@ -201,7 +201,7 @@
 
 <?= $this->section('div-modal') ?>
     
-    <form action="<?= base_url(); ?>work_center/saveMachine" method="post" id="work_centerMachineForm">
+    <form method="post" id="work_centerMachineForm">
     <div class="modal fade" id="work_centerMachineModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
@@ -444,7 +444,44 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#dataTable tbody').on('click', '.btn-delete-work_center-child', function() {
+        $("#work_centerMachineForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#work_centerMachineForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>work_center/saveMachine',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        dataTableMachine.ajax.reload();
+                        $('#work_centerMachineModal').modal('hide');
+                        alert("Work Center Machine saved.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        $('#dataTableMachine tbody').on('click', '.btn-delete-work_center_machine', function() {
             const id = $(this).data('id');
             const work_center_id = $(this).data('work_center_id');
             
@@ -456,7 +493,7 @@
             $('#work_centerMachineDeleteModal').modal('show');
         });
 
-        $('#dataTable tbody').on('click', '.btn-active-work_center-child', function() {
+        $('#dataTableMachine tbody').on('click', '.btn-active-work_center_machine', function() {
             const id = $(this).data('id');
             const work_center_id = $(this).data('work_center_id');
             const active = $(this).data('active');
@@ -499,7 +536,7 @@
             $('#work_centerCostModal').modal('show');
         });
 
-        $('#dataTable tbody').on('click', '.btn-update-work_center-child', function() {
+        $('#dataTableMachine tbody').on('click', '.btn-update-work_center_machine', function() {
             const id = $(this).data('id');
             const work_center_id = $(this).data('work_center_id');
             
@@ -514,24 +551,33 @@
                 } ,
                 success: function (response) {
                     var data = $.parseJSON(response); //(jsonStringify);
+                    $('#work_center_id').val(data[0].work_center_id);
                     $('#no').val(data[0].no);
-                    $('#childcode').val(data[0].childcode);
-                    $("#itemchildname").val(data[0].itemchildname);
-                    $(".itemchildname").val(data[0].itemchildname);
-                    var itemSelect = $('#itemchild');
-                    var option = new Option(data[0].itemchildname, data[0].childcode, true, true);
-                    itemSelect.append(option).trigger('change');
-                    $('#childtype').val(data[0].childtype);
-                    $('#qtyused').val(data[0].qtyused);
+                    $('#notes1').val(data[0].notes1);
+                    $('#speed').val(data[0].speed);
+                    $('#capacity').val(data[0].capacity);
+                    $('#length').val(data[0].length);
                     $('#luom').val(data[0].luom);
                     var uomSelect = $('#itemluom');
                     option = new Option(data[0].luom_desc, data[0].luom, true, true);
                     uomSelect.append(option).trigger('change');
-                    //$('#luom_desc').html(data[0].luom_desc);
-                    $('#factor').val(data[0].factor);
-                    $('#machine').val(data[0].machine);
-                    $('#machine').val(data[0].machine);
-                    $('#work_center_id').val(data[0].work_center_id);
+                    $('#width').val(data[0].width);
+                    $('#wuom').val(data[0].wuom);
+                    uomSelect = $('#itemluom');
+                    option = new Option(data[0].luom_desc, data[0].luom, true, true);
+                    uomSelect.append(option).trigger('change');
+                    $('#height').val(data[0].height);
+                    $('#huom').val(data[0].huom);
+                    uomSelect = $('#itemluom');
+                    option = new Option(data[0].luom_desc, data[0].luom, true, true);
+                    uomSelect.append(option).trigger('change');
+                    $('#volume').val(data[0].volume);
+                    $('#vuom').val(data[0].vuom);
+                    uomSelect = $('#itemluom');
+                    option = new Option(data[0].luom_desc, data[0].luom, true, true);
+                    uomSelect.append(option).trigger('change');
+                    $('#qtylabor').val(data[0].qtylabor);
+                    $('#workhour').val(data[0].workhour);
                     
                 },
                     error: function(jqXHR, textStatus, errorThrown) {
@@ -543,7 +589,7 @@
             $('#work_centerMachineModal').modal('show');
         });
 
-        $('#dataTableMachine').DataTable({
+        var dataTableMachine = $('#dataTableMachine').DataTable({
             "processing": true,
             "serverSide": true,
             "order": [],
@@ -636,9 +682,9 @@
                         var retVal = "";
                         if (data === null) return "";
                         if (data === "1") {
-                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-work_center-child" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-work_center_machine" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
                         } else if (data === "0") {
-                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-work_center-child" title="Click to ACTIVE Item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-work_center_machine" title="Click to ACTIVE Item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
                         }
 
                         return retVal;
@@ -646,7 +692,7 @@
                 }, 
                 {
                     data: "no", render: function (data, type, row) {
-                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-work_center-child" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-work_center-child" title="Delete" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" ><i class="fas fa-times"></i></a>';
+                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-work_center_machine" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-work_center-child" title="Delete" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" ><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
@@ -690,9 +736,9 @@
                         var retVal = "";
                         if (data === null) return "";
                         if (data === "1") {
-                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-work_center-child" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
+                            retVal = '<a href="#" class="btn btn-primary btn-circle btn-sm btn-active-work_center_cost" title="Click to delete or INACTIVE item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-check"></i></a>';
                         } else if (data === "0") {
-                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-work_center-child" title="Click to ACTIVE Item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
+                            retVal = '<a href="#" class="btn btn-danger btn-circle btn-sm btn-active-work_center_cost" title="Click to ACTIVE Item" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" data-active="' + row.active + '"><i class="fas fa-times"></i></a>';
                         }
 
                         return retVal;
@@ -700,7 +746,7 @@
                 }, 
                 {
                     data: "no", render: function (data, type, row) {
-                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-work_center-child" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-work_center-child" title="Delete" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" ><i class="fas fa-times"></i></a>';
+                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-work_center_cost" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-work_center-child" title="Delete" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" ><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
