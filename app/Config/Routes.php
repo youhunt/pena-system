@@ -201,3 +201,19 @@ $routes->post('work_center/saveCost', 'WorkCenter::saveCost', ['filter' => 'role
 $routes->post('work_center/updateCost', 'WorkCenter::updateCost', ['filter' => 'role:administrator']);
 $routes->post('work_center/deleteCost', 'WorkCenter::deleteCost', ['filter' => 'role:administrator']);
 $routes->post('work_center/getWorkCenterCostById', 'WorkCenter::getWorkCenterCostById', ['filter' => 'role:administrator']);
+
+$routes->get('routing', 'Routing::index', ['filter' => 'role:administrator']);
+$routes->get('routing/index', 'Routing::index', ['filter' => 'role:administrator']);
+$routes->get('routing/add', 'Routing::add', ['filter' => 'role:administrator']);
+$routes->post('routing/getRouting', 'Routing::getRouting', ['filter' => 'role:administrator']);
+$routes->get('routing/edit/(:segment)', 'Routing::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('routing/save', 'Routing::save', ['filter' => 'role:administrator']);
+$routes->post('routing/update', 'Routing::update', ['filter' => 'role:administrator']);
+$routes->post('routing/delete', 'Routing::delete', ['filter' => 'role:administrator']);
+$routes->get('routing/getAll?(:any)', 'Routing::getAll', ['filter' => 'role:administrator']);
+$routes->post('routing/getRoutingDetail', 'Routing::getRoutingDetail', ['filter' => 'role:administrator']);
+$routes->post('routing/saveDetail', 'Routing::saveDetail', ['filter' => 'role:administrator']);
+$routes->post('routing/updateDetail', 'Routing::updateDetail', ['filter' => 'role:administrator']);
+$routes->post('routing/deleteDetail', 'Routing::deleteDetail', ['filter' => 'role:administrator']);
+$routes->post('routing/getRoutingDetailById', 'Routing::getRoutingDetailById', ['filter' => 'role:administrator']);
+

@@ -2,9 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Models\WorkCenterModel;
-use App\Models\WorkCenterMachineModel;
-use App\Models\WorkCenterCostModel;
+use App\Models\RoutingModel;
+use App\Models\RoutingDetailModel;
 use App\Models\UOMModel;
 use App\Models\SiteModel;
 use App\Models\DepartmentModel;
@@ -15,25 +14,25 @@ use Config\Services;
 use CodeIgniter\Database\Exceptions\DataException;
 use CodeIgniter\Database\Exceptions\DatabaseException;
 
-class WorkCenter extends BaseController
+class Routing extends BaseController
 {
 
     public function index()
 {
         $data['menu'] = 'item';
-        $data['submenu'] = 'work_center';
+        $data['submenu'] = 'routing';
 
-        $data['title'] = 'WorkCenter';
-        $data['title_meta'] = view('partials/title-meta', ['title' => 'WorkCenter']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'WorkCenter', 'pagetitle' => 'MasterData']);
-        return view('work_center/index', $data);
+        $data['title'] = 'Routing';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Routing']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Routing', 'pagetitle' => 'MasterData']);
+        return view('routing/index', $data);
 }
 
-    public function getWorkCenter()  
+    public function getRouting()  
     {
 
         $request = Services::request();
-        $datatable = new WorkCenterModel($request);
+        $datatable = new RoutingModel($request);
         $dataSit = new SiteModel($request);
         $dataDep = new DepartmentModel($request);
         $dataWhs = new WarehouseModel($request);
@@ -51,7 +50,7 @@ class WorkCenter extends BaseController
                 $row['site'] = $list->site ? $dataSit->getSite($list->site)[0]->site_name : "";
                 $row['dept'] = $list->dept ? $dataDep->getDepartment($list->dept)[0]->dept_name : "";
                 $row['warehouse'] = $list->warehouse ? $dataWhs->getWarehouse($list->warehouse)[0]->whs_name : "";
-                $row['workcenter'] = $list->workcenter;
+                $row['itemcode'] = $list->itemcode;
                 $row['description'] = $list->description;
                 $row['active'] = $list->active;
                 $data[] = $row;
@@ -68,16 +67,16 @@ class WorkCenter extends BaseController
         }
     }
 
-    public function getWorkCenterMachine()  
+    public function getRoutingDetail()  
     {
 
         $request = Services::request();
-        $datatable = new WorkCenterMachineModel($request);
+        $datatable = new RoutingDetailModel($request);
         $dataUOM = new UOMModel($request);
-        $work_center_id = $request->getPost('work_center_id');
+        $routing_id = $request->getPost('routing_id');
 
         if ($request->getMethod(true) === 'POST') {
-            $lists = $datatable->getDatatablesByWorkCenter($work_center_id);
+            $lists = $datatable->getDatatablesByRouting($routing_id);
             $data = [];
             $no = $request->getPost('start');
 
@@ -85,7 +84,7 @@ class WorkCenter extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['work_center_id'] = $list->work_center_id;
+                $row['routing_id'] = $list->routing_id;
                 $row['no'] = $list->no;
                 $row['machine'] = $list->machine;
                 $row['notes1'] = $list->notes1;
@@ -107,8 +106,8 @@ class WorkCenter extends BaseController
 
             $output = [
                 'draw' => $request->getPost('draw'),
-                'recordsTotal' => $datatable->countAllByWorkCenter($work_center_id),
-                'recordsFiltered' => $datatable->countFilteredByWorkCenter($work_center_id),
+                'recordsTotal' => $datatable->countAllByRouting($routing_id),
+                'recordsFiltered' => $datatable->countFilteredByRouting($routing_id),
                 'data' => $data
             ];
 
@@ -116,16 +115,16 @@ class WorkCenter extends BaseController
         }
     }
 
-    public function getWorkCenterCost()  
+    public function getRoutingCost()  
     {
 
         $request = Services::request();
-        $datatable = new WorkCenterCostModel($request);
+        $datatable = new RoutingCostModel($request);
         $dataUOM = new UOMModel($request);
-        $work_center_id = $request->getPost('work_center_id');
+        $routing_id = $request->getPost('routing_id');
 
         if ($request->getMethod(true) === 'POST') {
-            $lists = $datatable->getDatatablesByWorkCenter($work_center_id);
+            $lists = $datatable->getDatatablesByRouting($routing_id);
             $data = [];
             $no = $request->getPost('start');
 
@@ -133,7 +132,7 @@ class WorkCenter extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['work_center_id'] = $list->work_center_id;
+                $row['routing_id'] = $list->routing_id;
                 $row['costtype'] = $list->costtype;
                 $row['costamount'] = $list->costamount;
                 $row['costuom'] = $list->costuom ?  ($dataUOM->getUOM($list->costuom) ? $dataUOM->getUOM($list->costuom)[0]->uom_code : "") : "";
@@ -145,8 +144,8 @@ class WorkCenter extends BaseController
 
             $output = [
                 'draw' => $request->getPost('draw'),
-                'recordsTotal' => $datatable->countAllByWorkCenter($work_center_id),
-                'recordsFiltered' => $datatable->countFilteredByWorkCenter($work_center_id),
+                'recordsTotal' => $datatable->countAllByRouting($routing_id),
+                'recordsFiltered' => $datatable->countFilteredByRouting($routing_id),
                 'data' => $data
             ];
 
@@ -154,20 +153,20 @@ class WorkCenter extends BaseController
         }
     }
 
-    public function getWorkCenterMachineById() {
+    public function getRoutingDetailById() {
         $request = Services::request();
-        $dataBC = new WorkCenterMachineModel($request);
+        $dataBC = new RoutingDetailModel($request);
         $dataUOM = new UOMModel($request);
         $dataItem = new ItemModel($request);
         $id =  $this->request->getPost('id');
-        $lists = $dataBC->getWorkCenterMachine($id);
+        $lists = $dataBC->getRoutingDetail($id);
         $data = [];
         $no = $request->getPost('start');
 
         foreach ($lists as $list) {
             $row = [];
             $row['id'] = $list->id;
-            $row['work_center_id'] = $list->work_center_id;
+            $row['routing_id'] = $list->routing_id;
             $row['no'] = $list->no;
             $row['machine'] = $list->machine;
             $row['notes1'] = $list->notes1;
@@ -197,14 +196,14 @@ class WorkCenter extends BaseController
     {        
     
         $data = [            
-            'title' => 'Add WorkCenter',
+            'title' => 'Add Routing',
         ];
         $data['menu'] = 'item';
-        $data['submenu'] = 'work_center';
-        $data['title_meta'] = view('partials/title-meta', ['title' => 'WorkCenter']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'WorkCenter', 'pagetitle' => 'MasterData']);
+        $data['submenu'] = 'routing';
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Routing']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Routing', 'pagetitle' => 'MasterData']);
 
-        return view('work_center/add', $data);            
+        return view('routing/add', $data);            
     }
 
     public function save()
@@ -224,7 +223,7 @@ class WorkCenter extends BaseController
 
         if($this->validate($rules)){
             $request = Services::request();
-            $model = new WorkCenterModel($request);
+            $model = new RoutingModel($request);
             $data = [
                 'site' => $this->request->getPost('site'),
                 'dept' => $this->request->getPost('dept'),
@@ -239,7 +238,7 @@ class WorkCenter extends BaseController
             {
                 $model->save($data);
                 $id = $model->getInsertID();
-                return redirect()->to(base_url('/work_center/edit/'.$id));
+                return redirect()->to(base_url('/routing/edit/'.$id));
             }
             catch (DatabaseException $e)
             {
@@ -259,10 +258,10 @@ class WorkCenter extends BaseController
     
     }
 
-    public function saveMachine()
+    public function saveDetail()
     {
         $id =  $this->request->getVar('id');
-        $work_center_id =  $this->request->getVar('work_center_id');
+        $routing_id =  $this->request->getVar('routing_id');
         
         $rules = [
             'no' => 'required',
@@ -286,11 +285,11 @@ class WorkCenter extends BaseController
 
         if($this->validate($rules)){
             $request = Services::request();
-            $model = new WorkCenterMachineModel($request);
+            $model = new RoutingDetailModel($request);
             $status = $this->request->getVar('status');
             if($status=="1") {
                 $data = [
-                    'work_center_id' => $id,
+                    'routing_id' => $id,
                     'no' => $this->request->getVar('no'),
                     'machine' => $this->request->getVar('machine'),
                     'notes1' => $this->request->getVar('notes1'),
@@ -315,7 +314,7 @@ class WorkCenter extends BaseController
                     if ($saved) {
                         $output = [
                             'Success' => true,
-                            'Counter' =>  $model->countAllByWorkCenter($id),
+                            'Counter' =>  $model->countAllByRouting($id),
                             'errors' => [],
                         ];
                     } else {
@@ -334,11 +333,11 @@ class WorkCenter extends BaseController
                 }
                 
                 return json_encode($output);
-                //return redirect()->to(base_url('/work_center/edit/'.$id));
+                //return redirect()->to(base_url('/routing/edit/'.$id));
 
             } else  {
                 $data = [
-                    'work_center_id' => $work_center_id,
+                    'routing_id' => $routing_id,
                     'no' => $this->request->getVar('no'),
                     'machine' => $this->request->getVar('machine'),
                     'notes1' => $this->request->getVar('notes1'),
@@ -364,7 +363,7 @@ class WorkCenter extends BaseController
                     if ($updated) {
                         $output = [
                             'Success' => true,
-                            'Counter' =>  $model->countAllByWorkCenter($work_center_id),
+                            'Counter' =>  $model->countAllByRouting($routing_id),
                             'errors' => [],
                         ];
                     } else {
@@ -404,7 +403,7 @@ class WorkCenter extends BaseController
     public function saveCost()
     {
         $id =  $this->request->getVar('id');
-        $work_center_id =  $this->request->getVar('work_center_id');
+        $routing_id =  $this->request->getVar('routing_id');
         
         $rules = [
             'costtype' => 'required',
@@ -427,11 +426,11 @@ class WorkCenter extends BaseController
 
         if($this->validate($rules)){
             $request = Services::request();
-            $model = new WorkCenterCostModel($request);
+            $model = new RoutingCostModel($request);
             $status = $this->request->getVar('status');
             if($status=="1") {
                 $data = [
-                    'work_center_id' => $id,
+                    'routing_id' => $id,
                     'costtype' => $this->request->getVar('costtype'),
                     'costamount' => $this->request->getVar('costamount'),
                     'costuom' => $this->request->getVar('costuom'),
@@ -445,7 +444,7 @@ class WorkCenter extends BaseController
                     if ($saved) {
                         $output = [
                             'Success' => true,
-                            'Counter' =>  $model->countAllByWorkCenter($id),
+                            'Counter' =>  $model->countAllByRouting($id),
                             'errors' => [],
                         ];
                     } else {
@@ -464,11 +463,11 @@ class WorkCenter extends BaseController
                 }
                 
                 return json_encode($output);
-                //return redirect()->to(base_url('/work_center/edit/'.$id));
+                //return redirect()->to(base_url('/routing/edit/'.$id));
 
             } else  {
                 $data = [
-                    'work_center_id' => $work_center_id,
+                    'routing_id' => $routing_id,
                     'costtype' => $this->request->getVar('costtype'),
                     'costamount' => $this->request->getVar('costamount'),
                     'costuom' => $this->request->getVar('costuom'),
@@ -483,7 +482,7 @@ class WorkCenter extends BaseController
                     if ($updated) {
                         $output = [
                             'Success' => true,
-                            'Counter' =>  $model->countAllByWorkCenter($work_center_id),
+                            'Counter' =>  $model->countAllByRouting($routing_id),
                             'errors' => [],
                         ];
                     } else {
@@ -523,30 +522,30 @@ class WorkCenter extends BaseController
     public function edit($id)
     {        
         $request = Services::request();
-        $dataWorkCenter = new WorkCenterModel($request);
+        $dataRouting = new RoutingModel($request);
         $dataSit = new SiteModel($request);
         $dataDep = new DepartmentModel($request);
         $dataWhs = new WarehouseModel($request);
 
         $data = [            
-            'title' => 'Update WorkCenter',
-            'title_child' => 'WorkCenter Machine',
-            'title_child2' => 'WorkCenter Cost',
+            'title' => 'Update Routing',
+            'title_child' => 'Routing Detail',
+            'title_child2' => 'Routing Cost',
         ];
         $data['menu'] = 'setup';
-        $data['submenu'] = 'work_center';
-        $data['work_center'] = $dataWorkCenter->getWorkCenter($id);
+        $data['submenu'] = 'routing';
+        $data['routing'] = $dataRouting->getRouting($id);
 
-        $dataSi = $dataSit->getSite($data['work_center'][0]->site)[0];
-        $dataDe = $dataDep->getDepartment($data['work_center'][0]->dept)[0];
+        $dataSi = $dataSit->getSite($data['routing'][0]->site)[0];
+        $dataDe = $dataDep->getDepartment($data['routing'][0]->dept)[0];
 
-        $data['site_name'] = $data['work_center'][0]->site ? $dataSi->site_code."|".$dataSi->site_name : "|";
-        $data['dept_name'] = $data['work_center'][0]->dept ? $dataDe->dept_code . "|". $dataDe->dept_name : "|";
-        $data['warehouse_name'] = $data['work_center'][0]->warehouse ? $dataWhs->getWarehouse($data['work_center'][0]->warehouse)[0]->whs_code."|".$dataWhs->getWarehouse($data['work_center'][0]->warehouse)[0]->whs_name : "|";
-        $data['title_meta'] = view('partials/title-meta', ['title' => 'WorkCenter']);
-        $data['page_title'] = view('partials/page-title', ['title' => 'WorkCenter', 'pagetitle' => 'MasterData']);
+        $data['site_name'] = $data['routing'][0]->site ? $dataSi->site_code."|".$dataSi->site_name : "|";
+        $data['dept_name'] = $data['routing'][0]->dept ? $dataDe->dept_code . "|". $dataDe->dept_name : "|";
+        $data['warehouse_name'] = $data['routing'][0]->warehouse ? $dataWhs->getWarehouse($data['routing'][0]->warehouse)[0]->whs_code."|".$dataWhs->getWarehouse($data['routing'][0]->warehouse)[0]->whs_name : "|";
+        $data['title_meta'] = view('partials/title-meta', ['title' => 'Routing']);
+        $data['page_title'] = view('partials/page-title', ['title' => 'Routing', 'pagetitle' => 'MasterData']);
 
-        return view('work_center/edit', $data);            
+        return view('routing/edit', $data);            
     }
 
     public function update()
@@ -566,7 +565,7 @@ class WorkCenter extends BaseController
 
         if($this->validate($rules)){
             $request = Services::request();
-            $model = new WorkCenterModel($request);
+            $model = new RoutingModel($request);
             $data = [
                 'site' => $this->request->getPost('site'),
                 'dept' => $this->request->getPost('dept'),
@@ -580,7 +579,7 @@ class WorkCenter extends BaseController
             try
             {
                 $model->updateData($id, $data);
-                return redirect()->to(base_url('/work_center/index'));
+                return redirect()->to(base_url('/routing/index'));
             }
             catch (\CodeIgniter\Database\Exceptions\DatabaseException $e)
             {
@@ -605,7 +604,7 @@ class WorkCenter extends BaseController
     {
         $id =  $this->request->getPost('id');
         $request = Services::request();
-        $model = new WorkCenterModel($request);
+        $model = new RoutingModel($request);
         $active =  $this->request->getPost('active');
         $data = [
             'deleted_at' => date("Y-m-d H:i:s"),
@@ -623,15 +622,15 @@ class WorkCenter extends BaseController
         }
         $model->deleteData($id, $data);
         
-        return redirect()->to(base_url('/work_center/index'));
+        return redirect()->to(base_url('/routing/index'));
     }
 
-    public function deleteMachine()
+    public function deleteDetail()
     {
         $id =  $this->request->getPost('id');
-        $work_center_id =  $this->request->getPost('work_center_id');
+        $routing_id =  $this->request->getPost('routing_id');
         $request = Services::request();
-        $model = new WorkCenterMachineModel($request);
+        $model = new RoutingDetailModel($request);
         $active =  $this->request->getPost('active');
         $data = [
             'deleted_at' => date("Y-m-d H:i:s"),
@@ -653,7 +652,7 @@ class WorkCenter extends BaseController
             if ($deleted) {
                 $output = [
                     'Success' => true,
-                    'Counter' =>  $model->countAllByWorkCenter($id),
+                    'Counter' =>  $model->countAllByRouting($id),
                     'errors' => [],
                 ];
             } else {
@@ -678,9 +677,9 @@ class WorkCenter extends BaseController
     public function deleteCost()
     {
         $id =  $this->request->getPost('id');
-        $work_center_id =  $this->request->getPost('work_center_id');
+        $routing_id =  $this->request->getPost('routing_id');
         $request = Services::request();
-        $model = new WorkCenterCostModel($request);
+        $model = new RoutingCostModel($request);
         $active =  $this->request->getPost('active');
         $data = [
             'deleted_at' => date("Y-m-d H:i:s"),
@@ -702,7 +701,7 @@ class WorkCenter extends BaseController
             if ($deleted) {
                 $output = [
                     'Success' => true,
-                    'Counter' =>  $model->countAllByWorkCenter($id),
+                    'Counter' =>  $model->countAllByRouting($id),
                     'errors' => [],
                 ];
             } else {
@@ -732,19 +731,11 @@ class WorkCenter extends BaseController
         $data = [];
 
         $db      = \Config\Database::connect();
-        $builder = $db->table('work_center');   
+        $builder = $db->table('routing');   
 
-        $query = $builder
-                ->select('id, concat(workcenter, "|", description) as text')
-                ->limit(30)->get();
-
-        if ($this->request->getVar('q')) {
-            $query = $builder
-                ->like('workcenter', $this->request->getVar('q'))
-                ->orLike('description', $this->request->getVar('q'))
-                ->select('id, concat(workcenter, "|", description) as text')
-                ->limit(30)->get();
-        }
+        $query = $builder->like('routing_desc', $this->request->getPost('q'))
+                    ->select('id, routing_desc as text')
+                    ->limit(30)->get();
         $data = $query->getResult();
         
         echo json_encode($data);
