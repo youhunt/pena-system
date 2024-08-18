@@ -49,7 +49,7 @@ class Routing extends BaseController
                 $row['id'] = $list->id;
                 $row['site'] = $list->site ? $dataSit->getSite($list->site)[0]->site_name : "";
                 $row['dept'] = $list->dept ? $dataDep->getDepartment($list->dept)[0]->dept_name : "";
-                $row['warehouse'] = $list->warehouse ? $dataWhs->getWarehouse($list->warehouse)[0]->whs_name : "";
+                $row['whs'] = $list->whs ? $dataWhs->getWarehouse($list->whs)[0]->whs_name : "";
                 $row['itemcode'] = $list->itemcode;
                 $row['description'] = $list->description;
                 $row['active'] = $list->active;
@@ -212,8 +212,7 @@ class Routing extends BaseController
         $rules = [
             'site' => 'required',
             'dept' => 'required',
-            'warehouse' => 'required',
-            'workcenter' => 'required',
+            'itemcode' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -227,8 +226,8 @@ class Routing extends BaseController
             $data = [
                 'site' => $this->request->getPost('site'),
                 'dept' => $this->request->getPost('dept'),
-                'warehouse' => $this->request->getPost('warehouse'),
-                'workcenter' => $this->request->getPost('workcenter'),
+                'whs' => $this->request->getPost('whs'),
+                'itemcode' => $this->request->getPost('itemcode'),
                 'description' => $this->request->getPost('description'),
                 'created_date'=>  date("Y-m-d H:i:s"),
                 'created_by' =>  user()->username,
@@ -541,7 +540,7 @@ class Routing extends BaseController
 
         $data['site_name'] = $data['routing'][0]->site ? $dataSi->site_code."|".$dataSi->site_name : "|";
         $data['dept_name'] = $data['routing'][0]->dept ? $dataDe->dept_code . "|". $dataDe->dept_name : "|";
-        $data['warehouse_name'] = $data['routing'][0]->warehouse ? $dataWhs->getWarehouse($data['routing'][0]->warehouse)[0]->whs_code."|".$dataWhs->getWarehouse($data['routing'][0]->warehouse)[0]->whs_name : "|";
+        $data['whs_name'] = $data['routing'][0]->whs ? $dataWhs->getWarehouse($data['routing'][0]->whs)[0]->whs_code."|".$dataWhs->getWarehouse($data['routing'][0]->whs)[0]->whs_name : "|";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Routing']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Routing', 'pagetitle' => 'MasterData']);
 
@@ -554,7 +553,7 @@ class Routing extends BaseController
         $rules = [
             'site' => 'required',
             'dept' => 'required',
-            'warehouse' => 'required',
+            'whs' => 'required',
             'workcenter' => 'required',
         ];
     
@@ -569,7 +568,7 @@ class Routing extends BaseController
             $data = [
                 'site' => $this->request->getPost('site'),
                 'dept' => $this->request->getPost('dept'),
-                'warehouse' => $this->request->getPost('warehouse'),
+                'whs' => $this->request->getPost('whs'),
                 'workcenter' => $this->request->getPost('workcenter'),
                 'description' => $this->request->getPost('description'),
                 'updated_by' =>  user()->username,
