@@ -1,0 +1,332 @@
+INFO - 2024-08-17 01:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:13:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-17 01:15:21 --> ErrorException: Undefined array key 0
+[Method: POST, Route: work_center/getWorkCenterMachine]
+in APPPATH\Controllers\WorkCenter.php on line 95.
+ 1 APPPATH\Controllers\WorkCenter.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\WorkCenter.php', 95)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->getWorkCenterMachine()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-17 01:15:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:15:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-17 01:15:34 --> ErrorException: Undefined array key 0
+[Method: POST, Route: work_center/getWorkCenterMachine]
+in APPPATH\Controllers\WorkCenter.php on line 95.
+ 1 APPPATH\Controllers\WorkCenter.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\WorkCenter.php', 95)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->getWorkCenterMachine()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-17 01:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-17 01:16:03 --> ErrorException: Undefined array key 0
+[Method: POST, Route: work_center/getWorkCenterMachine]
+in APPPATH\Controllers\WorkCenter.php on line 95.
+ 1 APPPATH\Controllers\WorkCenter.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'D:\\Project-project\\CI\\pena-system\\app\\Controllers\\WorkCenter.php', 95)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->getWorkCenterMachine()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-17 01:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:22:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:22:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:23:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 01:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:40:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:41:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:41:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 09:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:18:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:18:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:18:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:42:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:42:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-17 10:42:45 --> ErrorException: Undefined array key 14
+[Method: POST, Route: work_center/getWorkCenterMachine]
+in APPPATH\Models\WorkCenterMachineModel.php on line 90.
+ 1 APPPATH\Models\WorkCenterMachineModel.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 14', 'D:\\Project-project\\CI\\pena-system\\app\\Models\\WorkCenterMachineModel.php', 90)
+ 2 APPPATH\Models\WorkCenterMachineModel.php(120): App\Models\WorkCenterMachineModel->getDatatablesQuery()
+ 3 APPPATH\Controllers\WorkCenter.php(79): App\Models\WorkCenterMachineModel->getDatatablesByWorkCenter('1')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->getWorkCenterMachine()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-17 10:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-17 10:43:24 --> ErrorException: Undefined array key 14
+[Method: POST, Route: work_center/getWorkCenterMachine]
+in APPPATH\Models\WorkCenterMachineModel.php on line 90.
+ 1 APPPATH\Models\WorkCenterMachineModel.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 14', 'D:\\Project-project\\CI\\pena-system\\app\\Models\\WorkCenterMachineModel.php', 90)
+ 2 APPPATH\Models\WorkCenterMachineModel.php(120): App\Models\WorkCenterMachineModel->getDatatablesQuery()
+ 3 APPPATH\Controllers\WorkCenter.php(79): App\Models\WorkCenterMachineModel->getDatatablesByWorkCenter('1')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->getWorkCenterMachine()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-17 10:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:50:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:52:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:53:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 10:53:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:01:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:06:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:52:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:56:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 11:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-17 11:56:32 --> mysqli_sql_exception: Duplicate entry '1-1' for key 'work_center_id' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `wo...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `wo...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `wo...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `wo...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\pena-system\app\Controllers\WorkCenter.php(443): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WorkCenter->saveCost()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#16 {main}
+CRITICAL - 2024-08-17 11:56:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '1-1' for key 'work_center_id'
+[Method: POST, Route: work_center/saveCost]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (:work_center_id:, :costtype:, :costamount:, :costuom:, :notes2:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\WorkCenter.php(443): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->saveCost()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-08-17 11:56:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '1-1' for key 'work_center_id'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:32\', \'2024-08-17 11:56:32\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:32\', \'2024-08-17 11:56:32\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (:work_center_id:, :costtype:, :costamount:, :costuom:, :notes2:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\WorkCenter.php(443): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->saveCost()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-08-17 11:56:32 --> [Caused by] mysqli_sql_exception: Duplicate entry '1-1' for key 'work_center_id'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:32\', \'2024-08-17 11:56:32\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:32\', \'2024-08-17 11:56:32\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:32\', \'2024-08-17 11:56:32\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (:work_center_id:, :costtype:, :costamount:, :costuom:, :notes2:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\WorkCenter.php(443): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->saveCost()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-17 11:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-17 11:56:58 --> mysqli_sql_exception: Duplicate entry '1-1' for key 'work_center_id' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `wo...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `wo...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `wo...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `wo...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\pena-system\app\Controllers\WorkCenter.php(443): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WorkCenter->saveCost()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#16 {main}
+CRITICAL - 2024-08-17 11:56:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '1-1' for key 'work_center_id'
+[Method: POST, Route: work_center/saveCost]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (:work_center_id:, :costtype:, :costamount:, :costuom:, :notes2:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\WorkCenter.php(443): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->saveCost()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-08-17 11:56:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '1-1' for key 'work_center_id'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:58\', \'2024-08-17 11:56:58\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:58\', \'2024-08-17 11:56:58\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (:work_center_id:, :costtype:, :costamount:, :costuom:, :notes2:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\WorkCenter.php(443): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->saveCost()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+CRITICAL - 2024-08-17 11:56:58 --> [Caused by] mysqli_sql_exception: Duplicate entry '1-1' for key 'work_center_id'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:58\', \'2024-08-17 11:56:58\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:58\', \'2024-08-17 11:56:58\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (\'1\', \'1\', \'1000.00000\', \'3\', \'cost 2\', \'2024-08-17 11:56:58\', \'2024-08-17 11:56:58\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `work_center_cost` (`work_center_id`, `costtype`, `costamount`, `costuom`, `notes2`, `created_at`, `updated_at`) VALUES (:work_center_id:, :costtype:, :costamount:, :costuom:, :notes2:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\WorkCenter.php(443): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WorkCenter->saveCost()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Project-project\\CI\\pena-system\\public\\index.php')
+INFO - 2024-08-17 12:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-17 12:01:53 --> mysqli_sql_exception: Duplicate entry '1-1' for key 'work_center_id' in D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `wo...', 0)
+#1 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `wo...')
+#2 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `wo...')
+#3 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `wo...', Array, false)
+#4 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 D:\Project-project\CI\pena-system\app\Controllers\WorkCenter.php(444): CodeIgniter\BaseModel->save(Array)
+#9 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\WorkCenter->saveCost()
+#10 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkCenter))
+#11 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Project-project\CI\pena-system\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Project-project\CI\pena-system\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Project-proj...')
+#16 {main}
+INFO - 2024-08-17 12:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 12:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 12:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 12:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 12:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 12:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 12:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 12:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-17 12:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

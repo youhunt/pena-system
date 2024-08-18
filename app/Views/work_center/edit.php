@@ -94,7 +94,7 @@
                                     <!-- end row -->
                                     <div class="">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="dataTableMachine" width="100%" cellspacing="0">
+                                            <table class="table table-bordered" id="dataTableMachine" width="1768px" cellspacing="0">
                                                 <thead>
                                                     <tr>
                                                         <th><?= lang('WorkCenter.no'); ?></th>
@@ -391,7 +391,7 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>work_center/deleteMachine" method="post">
+    <form id="work_centerMachineDeleteForm" method="post">
     <div class="modal fade" id="work_centerMachineDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -414,8 +414,55 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>work_center/deleteMachine" method="post">
+    <form id="work_centerMachineActiveForm" method="post">
     <div class="modal fade" id="work_centerMachineActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="itemLabel">Delete</h5>
+                    <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Choose "Yes" to <span id="msgActive"></span>.</div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" class="id">
+                    <input type="hidden" name="active" class="active">
+                    <input type="hidden" name="work_center_id" class="work_center_id">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <form id="work_centerCostDeleteForm" method="post">
+    <div class="modal fade" id="work_centerCostDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="itemLabel">Delete</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Choose "Yes" to delete</div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" class="id">
+                    <input type="hidden" name="work_center_id" class="work_center_id">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <form id="work_centerCostActiveForm" method="post">
+    <div class="modal fade" id="work_centerCostActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -444,6 +491,80 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        $("#work_centerMachineDeleteForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#work_centerMachineDeleteForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>work_center/deleteMachine',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        dataTableMachine.ajax.reload();
+                        $('#work_centerMachineDeleteModal').modal('hide');
+                        alert("Work Center Machine deleted.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        $("#work_centerMachineActiveForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#work_centerMachineActiveForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>work_center/deleteMachine',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        dataTableMachine.ajax.reload();
+                        $('#work_centerMachineActiveModal').modal('hide');
+                        alert("Work Center Machine updated.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
         $("#work_centerMachineForm").submit(function (e) {
             e.preventDefault();
 
@@ -480,6 +601,118 @@
             });
 
         });
+
+         $("#work_centerCostDeleteForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#work_centerCostDeleteForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>work_center/deleteCost',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        dataTableCost.ajax.reload();
+                        $('#work_centerCostDeleteModal').modal('hide');
+                        alert("Work Center Cost deleted.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        $("#work_centerCostActiveForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#work_centerCostActiveForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>work_center/deleteCost',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        dataTableCost.ajax.reload();
+                        $('#work_centerCostActiveModal').modal('hide');
+                        alert("Work Center Cost updated.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        $("#work_centerCostForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#work_centerCostForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>work_center/saveCost',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        dataTableCost.ajax.reload();
+                        $('#work_centerCostModal').modal('hide');
+                        alert("Work Center Cost saved.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
 
         $('#dataTableMachine tbody').on('click', '.btn-delete-work_center_machine', function() {
             const id = $(this).data('id');
@@ -522,18 +755,6 @@
             // Call Modal Edit
             $('#work_centerMachineForm')[0].reset();
             $('#work_centerMachineModal').modal('show');
-        });
-
-        $('#addCost-btn').on('click', function() {
-            const id = $(this).data('id');
-            
-            // Set data to Form Edit
-            $('.id').val(id);
-            $('.status').val('1');
-
-            // Call Modal Edit
-            $('#work_centerCostForm')[0].reset();
-            $('#work_centerCostModal').modal('show');
         });
 
         $('#dataTableMachine tbody').on('click', '.btn-update-work_center_machine', function() {
@@ -589,6 +810,83 @@
             $('#work_centerMachineModal').modal('show');
         });
 
+        $('#dataTableCost tbody').on('click', '.btn-delete-work_center_cost', function() {
+            const id = $(this).data('id');
+            const work_center_id = $(this).data('work_center_id');
+            
+            // Set data to Form Edit
+            $('.id').val(id);
+            $('.work_center_id').val(work_center_id);
+
+            // Call Modal Edit
+            $('#work_centerCostDeleteModal').modal('show');
+        });
+
+        $('#dataTableCost tbody').on('click', '.btn-active-work_center_cost', function() {
+            const id = $(this).data('id');
+            const work_center_id = $(this).data('work_center_id');
+            const active = $(this).data('active');
+            
+            // Set data to Form Edit
+            $('.id').val(id);
+            $('.work_center_id').val(work_center_id);
+            $('.active').val(active);
+            if (active == "1") {
+                $('#msgActive').text("Inactive");
+            } else if (active == "0") {
+                $('#msgActive').text("Active");
+            }
+
+            // Call Modal Edit
+            $('#work_centerCostActiveModal').modal('show');
+        });
+
+        $('#addCost-btn').on('click', function() {
+            const id = $(this).data('id');
+            
+            // Set data to Form Edit
+            $('.id').val(id);
+            $('.status').val('1');
+
+            // Call Modal Edit
+            $('#work_centerCostForm')[0].reset();
+            $('#work_centerCostModal').modal('show');
+        });
+
+        $('#dataTableCost tbody').on('click', '.btn-update-work_center_cost', function() {
+            const id = $(this).data('id');
+            const work_center_id = $(this).data('work_center_id');
+            
+            $('.id').val(id);
+            $('.work_center_id').val(work_center_id);
+            $('.status').val('2');
+            $.ajax({
+                url: "<?php echo site_url('work_center/getWorkCenterCostById') ?>",
+                type: "post",
+                data: {
+                    id : id, 
+                } ,
+                success: function (response) {
+                    var data = $.parseJSON(response); //(jsonStringify);
+                    $('#work_center_id').val(data[0].work_center_id);
+                    $('#costtype').val(data[0].costtype);
+                    $('#costamount').val(data[0].costamount);
+                    $('#costuom').val(data[0].costuom);
+                    $('#notes2').val(data[0].notes2);
+                    var uomSelect = $('#itemcostuom');
+                    option = new Option(data[0].costuom_desc, data[0].costuom, true, true);
+                    uomSelect.append(option).trigger('change');
+                    
+                },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+
+            // Call Modal Edit
+            $('#work_centerCostModal').modal('show');
+        });
+
         var dataTableMachine = $('#dataTableMachine').DataTable({
             "processing": true,
             "serverSide": true,
@@ -603,17 +901,17 @@
             "columns": [
                 {
                     "data": "no",
-                    "autoWidth": true,
+                    "width": "40px",
                     "searchable": true,
                 },
                 {
                     "data": "machine",
-                    "autoWidth": true,
+                    "width": "100px",
                     "searchable": true,
                 },                
                 {
                     "data": "notes1",
-                    "autoWidth": true,
+                    "width": "140px",
                     "searchable": true,
                 },
                 {
@@ -678,6 +976,7 @@
                 },
                 {
                     "data": "active", 
+                    "width": "40px",
                     "render": function (data, type, row) {
                         var retVal = "";
                         if (data === null) return "";
@@ -691,14 +990,16 @@
                     },
                 }, 
                 {
-                    data: "no", render: function (data, type, row) {
+                    "data": "no", 
+                    "width": "45px",
+                    "render": function (data, type, row) {
                         return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-work_center_machine" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-work_center-child" title="Delete" data-id="' + row.id + '" data-work_center_id="' + row.work_center_id + '" ><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
         });
 
-        $('#dataTableCost').DataTable({
+        var dataTableCost = $('#dataTableCost').DataTable({
             "processing": true,
             "serverSide": true,
             "order": [],
@@ -938,12 +1239,12 @@
             $("#uom_desc").val($("#uom_code option:selected").text());
         });
 
-        $('#itemchild').select2({
+        $('#itemcosttype').select2({
             placeholder: '|',
             minimumInputLength: 0,
-            dropdownParent: $('#work_centerMachineModal'),
+            dropdownParent: $('#work_centerCostModal'),
             ajax: {
-                url: '<?= base_url('/item/getAll'); ?>',
+                url: '<?= base_url('/costtype/getAll'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
@@ -980,12 +1281,10 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            var data = $("#itemchild option:selected").val();
-            $("#childcode").val(data);
-            $("#itemchildname").val($("#itemchild option:selected").text());
+            var data = $("#itemcosttype option:selected").val();
+            $("#costtype").val(data);
+            $("#costtype_desc").val($("#itemcosttype option:selected").text());
         });
-
-        
 
         $('#itemcostuom').select2({
             placeholder: '|',

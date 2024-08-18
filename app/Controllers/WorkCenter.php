@@ -13,6 +13,7 @@ use App\Models\ItemModel;
 use Config\Services;
 
 use CodeIgniter\Database\Exceptions\DataException;
+use CodeIgniter\Database\Exceptions\DatabaseException;
 
 class WorkCenter extends BaseController
 {
@@ -73,7 +74,6 @@ class WorkCenter extends BaseController
         $request = Services::request();
         $datatable = new WorkCenterMachineModel($request);
         $dataUOM = new UOMModel($request);
-        $dataItem = new ItemModel($request);
         $work_center_id = $request->getPost('work_center_id');
 
         if ($request->getMethod(true) === 'POST') {
@@ -92,13 +92,13 @@ class WorkCenter extends BaseController
                 $row['speed'] = $list->speed;
                 $row['capacity'] = $list->capacity;
                 $row['length'] = $list->length;
-                $row['luom'] = $list->luom;
+                $row['luom'] = $list->luom ?  ($dataUOM->getUOM($list->luom) ? $dataUOM->getUOM($list->luom)[0]->uom_code : "") : "";
                 $row['width'] = $list->width;
-                $row['wuom'] = $list->wuom;
+                $row['wuom'] = $list->wuom ?  ($dataUOM->getUOM($list->wuom) ? $dataUOM->getUOM($list->wuom)[0]->uom_code : "") : "";
                 $row['height'] = $list->height;
-                $row['huom'] = $list->huom;
+                $row['huom'] = $list->huom ?  ($dataUOM->getUOM($list->huom) ? $dataUOM->getUOM($list->huom)[0]->uom_code : "") : "";
                 $row['volume'] = $list->volume;
-                $row['vuom'] = $list->vuom;
+                $row['vuom'] = $list->vuom ?  ($dataUOM->getUOM($list->vuom) ? $dataUOM->getUOM($list->vuom)[0]->uom_code : "") : "";
                 $row['qtylabor'] = $list->qtylabor;
                 $row['workhour'] = $list->workhour;
                 $row['active'] = $list->active;
@@ -122,7 +122,6 @@ class WorkCenter extends BaseController
         $request = Services::request();
         $datatable = new WorkCenterCostModel($request);
         $dataUOM = new UOMModel($request);
-        $dataItem = new ItemModel($request);
         $work_center_id = $request->getPost('work_center_id');
 
         if ($request->getMethod(true) === 'POST') {
@@ -137,7 +136,7 @@ class WorkCenter extends BaseController
                 $row['work_center_id'] = $list->work_center_id;
                 $row['costtype'] = $list->costtype;
                 $row['costamount'] = $list->costamount;
-                $row['costuom'] = $list->costuom;
+                $row['costuom'] = $list->costuom ?  ($dataUOM->getUOM($list->costuom) ? $dataUOM->getUOM($list->costuom)[0]->uom_code : "") : "";
                 $row['notes2'] = $list->notes2;
                 $row['active'] = $list->active;
                 $row['no'] = '';
@@ -271,16 +270,6 @@ class WorkCenter extends BaseController
             'notes1' => 'required',
             'speed' => 'required',
             'capacity' => 'required',
-            // 'length' => 'required',
-            // 'luom' => 'required',
-            // 'width' => 'required',
-            // 'wuom' => 'required',
-            // 'height' => 'required',
-            // 'huom' => 'required',
-            // 'volume' => 'required',
-            // 'vuom' => 'required',
-            // 'qtylabor' => 'required',
-            // 'workhour' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -336,11 +325,11 @@ class WorkCenter extends BaseController
                             'errors' => $model->errors(),
                         ];
                     }
-                } catch (DataException $e) {
+                } catch (DatabaseException $e) {
                     $output = [
                         'Success' => false,
                         'Counter' =>  9999,
-                        'errors' => [$e->getMessage()],
+                        'errors' => ['Data already exists.'],
                     ];
                 }
                 
@@ -385,11 +374,130 @@ class WorkCenter extends BaseController
                             'errors' => $model->errors(),
                         ];
                     }
-                } catch (DataException $e) {
+                } catch (DatabaseException $e) {
                     $output = [
                         'Success' => false,
                         'Counter' =>  9999,
-                        'errors' => [$e->getMessage()],
+                        'errors' => ['Data already exists.'],
+                    ];
+                }
+
+                return json_encode($output);
+            }
+
+
+        } else {
+            
+            //return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            $output = [
+                'Success' => false,
+                'Counter' => 9999,
+                'errors' => $this->validator->getErrors(),
+            ];
+
+            return json_encode($output);
+
+        }
+    
+    }
+
+    public function saveCost()
+    {
+        $id =  $this->request->getVar('id');
+        $work_center_id =  $this->request->getVar('work_center_id');
+        
+        $rules = [
+            'costtype' => 'required',
+            'costamount' => 'required',
+            'costuom' => 'required',
+            'notes2' => 'required',
+        ];
+    
+        if (! $this->validate($rules))
+        {
+            //return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            $output = [
+                'Success' => false,
+                'Counter' => 9999,
+                'errors' => $this->validator->getErrors(),
+            ];
+
+            return json_encode($output);
+        }
+
+        if($this->validate($rules)){
+            $request = Services::request();
+            $model = new WorkCenterCostModel($request);
+            $status = $this->request->getVar('status');
+            if($status=="1") {
+                $data = [
+                    'work_center_id' => $id,
+                    'costtype' => $this->request->getVar('costtype'),
+                    'costamount' => $this->request->getVar('costamount'),
+                    'costuom' => $this->request->getVar('costuom'),
+                    'notes2' => $this->request->getVar('notes2'),
+                    'created_date'=>  date("Y-m-d H:i:s"),
+                    'created_by' =>  user()->username,
+                ];
+
+                try {
+                    $saved = $model->save($data);
+                    if ($saved) {
+                        $output = [
+                            'Success' => true,
+                            'Counter' =>  $model->countAllByWorkCenter($id),
+                            'errors' => [],
+                        ];
+                    } else {
+                        $output = [
+                            'Success' => false,
+                            'Counter' =>  9999,
+                            'errors' => $model->errors(),
+                        ];
+                    }
+                } catch (DatabaseException $e) {
+                    $output = [
+                        'Success' => false,
+                        'Counter' =>  9999,
+                        'errors' => ['Data already exists.'],
+                    ];
+                }
+                
+                return json_encode($output);
+                //return redirect()->to(base_url('/work_center/edit/'.$id));
+
+            } else  {
+                $data = [
+                    'work_center_id' => $work_center_id,
+                    'costtype' => $this->request->getVar('costtype'),
+                    'costamount' => $this->request->getVar('costamount'),
+                    'costuom' => $this->request->getVar('costuom'),
+                    'notes2' => $this->request->getVar('notes2'),
+                    'updated_by' =>  user()->username,
+                    'updated_at' =>  date("Y-m-d H:i:s"),
+                ];
+                
+                try {
+                    $updated = $model->updateData($id, $data);
+
+                    if ($updated) {
+                        $output = [
+                            'Success' => true,
+                            'Counter' =>  $model->countAllByWorkCenter($work_center_id),
+                            'errors' => [],
+                        ];
+                    } else {
+                        $output = [
+                            'Success' => false,
+                            'Counter' =>  9999,
+                            'errors' => $model->errors(),
+                        ];
+                    }
+                } catch (DatabaseException $e) {
+                    $output = [
+                        'Success' => false,
+                        'Counter' =>  9999,
+                        'errors' => ['Data already exists.'],
                     ];
                 }
 
@@ -539,10 +647,82 @@ class WorkCenter extends BaseController
                 'active' => 1,
             ];
         }
-        $model->deleteData($id, $data);
-        
-        return redirect()->to(base_url('/work_center/edit/'.$work_center_id));
 
+        try {
+            $deleted = $model->deleteData($id, $data);
+            if ($deleted) {
+                $output = [
+                    'Success' => true,
+                    'Counter' =>  $model->countAllByWorkCenter($id),
+                    'errors' => [],
+                ];
+            } else {
+                $output = [
+                    'Success' => false,
+                    'Counter' =>  9999,
+                    'errors' => $model->errors(),
+                ];
+            }
+        } catch (DatabaseException $e) {
+            $output = [
+                'Success' => false,
+                'Counter' =>  9999,
+                'errors' => ['Data already exists.'],
+            ];
+        }
+        
+        return json_encode($output);
+
+    }
+
+    public function deleteCost()
+    {
+        $id =  $this->request->getPost('id');
+        $work_center_id =  $this->request->getPost('work_center_id');
+        $request = Services::request();
+        $model = new WorkCenterCostModel($request);
+        $active =  $this->request->getPost('active');
+        $data = [
+            'deleted_at' => date("Y-m-d H:i:s"),
+            'deleted_by' =>  user()->username,
+            'active' => 0,
+        ];
+        if ($active == "0") {
+            $data = [
+                'deleted_at' => null,
+                'deleted_by' =>  null,
+                'updated_by' =>  user()->username,
+                'updated_at' =>  date("Y-m-d H:i:s"),
+                'active' => 1,
+            ];
+        }
+
+        try {
+            $deleted = $model->deleteData($id, $data);
+            if ($deleted) {
+                $output = [
+                    'Success' => true,
+                    'Counter' =>  $model->countAllByWorkCenter($id),
+                    'errors' => [],
+                ];
+            } else {
+                $output = [
+                    'Success' => false,
+                    'Counter' =>  9999,
+                    'errors' => $model->errors(),
+                ];
+            }
+            return json_encode($output);
+
+        } catch (DatabaseException $e) {
+            $output = [
+                'Success' => false,
+                'Counter' =>  9999,
+                'errors' => ['Data already exists.'],
+            ];
+            return json_encode($output);
+        }
+        
     }
 
     public function getAll()

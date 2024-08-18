@@ -47,6 +47,16 @@ class WorkCenterMachineModel extends Model
         'notes1',
         'speed',
         'capacity',
+        'length',
+        'luom',
+        'width',
+        'wuom',
+        'height',
+        'huom',
+        'volume',
+        'vuom',
+        'qtylabor',
+        'workhour',
     ];
     protected $column_search = [
         'no',
@@ -54,6 +64,16 @@ class WorkCenterMachineModel extends Model
         'notes1',
         'speed',
         'capacity',
+        'length',
+        'luom',
+        'width',
+        'wuom',
+        'height',
+        'huom',
+        'volume',
+        'vuom',
+        'qtylabor',
+        'workhour',
     ];
     protected $order = ['id' => 'ASC'];
     protected $request;
