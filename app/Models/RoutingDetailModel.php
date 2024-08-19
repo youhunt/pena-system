@@ -14,30 +14,26 @@ class RoutingDetailModel extends Model
     protected $allowedFields  = [
         'id',
         'routing_id',
-        'no',
-        'detail',
-        'notes1',
+        'routeno',
+        'workcenter',
+        'routetype',
+        'hour',
+        'houruom',
         'speed',
-        'capacity',
-        'length',
-        'luom',
-        'width',
-        'wuom',
-        'height',
-        'huom',
-        'volume',
-        'vuom',
-        'qtylabor',
-        'workhour',
+        'speeduom',
+        'notes',
 
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
-        'no' => 'required',
-        'detail' => 'required',
-        'notes1' => 'required',
+        'routing_id' => 'required',
+        'routeno' => 'required',
+        'workcenter' => 'required',
+        'routetype' => 'required',
+        'hour' => 'required',
+        'houruom' => 'required',
         'speed' => 'required',
-        'capacity' => 'required',
+        'speeduom' => 'required',
     ];
 
     protected $column_order = [

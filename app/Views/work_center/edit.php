@@ -333,7 +333,7 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>work_center/saveCost" method="post" id="work_centerCostForm">
+    <form method="post" id="work_centerCostForm">
     <div class="modal fade" id="work_centerCostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
@@ -784,18 +784,18 @@
                     uomSelect.append(option).trigger('change');
                     $('#width').val(data[0].width);
                     $('#wuom').val(data[0].wuom);
-                    uomSelect = $('#itemluom');
-                    option = new Option(data[0].luom_desc, data[0].luom, true, true);
+                    uomSelect = $('#itemwuom');
+                    option = new Option(data[0].wuom_desc, data[0].wuom, true, true);
                     uomSelect.append(option).trigger('change');
                     $('#height').val(data[0].height);
                     $('#huom').val(data[0].huom);
-                    uomSelect = $('#itemluom');
-                    option = new Option(data[0].luom_desc, data[0].luom, true, true);
+                    uomSelect = $('#itemhuom');
+                    option = new Option(data[0].huom_desc, data[0].huom, true, true);
                     uomSelect.append(option).trigger('change');
                     $('#volume').val(data[0].volume);
                     $('#vuom').val(data[0].vuom);
-                    uomSelect = $('#itemluom');
-                    option = new Option(data[0].luom_desc, data[0].luom, true, true);
+                    uomSelect = $('#itemvuom');
+                    option = new Option(data[0].vuom_desc, data[0].vuom, true, true);
                     uomSelect.append(option).trigger('change');
                     $('#qtylabor').val(data[0].qtylabor);
                     $('#workhour').val(data[0].workhour);
