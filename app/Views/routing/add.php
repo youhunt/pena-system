@@ -310,54 +310,8 @@
             },
         }).on('select2:select', function (evt) {
             var data = $("#item option:selected").val();
-            $("#parentcode").val(data);
+            $("#itemcode").val(data);
             $("#itemname").val($("#item option:selected").text());
-        });
-
-        $('#uom_code').select2({
-            placeholder: '|',
-            minimumInputLength: 0,
-            ajax: {
-                url: '<?= base_url('/uom/getAll'); ?>',
-                dataType: 'json',
-                delay: 250,
-                data: function (params) {
-                    return {
-                        q: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data){
-                return {
-                    results: data
-                };
-                },
-                cache: true
-            },
-            templateResult: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-            templateSelection: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-        }).on('select2:select', function (evt) {
-            var data = $("#uom_code option:selected").val();
-            $("#uom").val(data);
-            $("#uom_desc").val($("#uom_code option:selected").text());
         });
 
     });

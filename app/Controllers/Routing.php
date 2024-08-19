@@ -9,6 +9,7 @@ use App\Models\SiteModel;
 use App\Models\DepartmentModel;
 use App\Models\WarehouseModel;
 use App\Models\ItemModel;
+use App\Models\WorkCenterModel;
 use Config\Services;
 
 use CodeIgniter\Database\Exceptions\DataException;
@@ -84,61 +85,19 @@ class Routing extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
+                $row['no'] = $no;
                 $row['routing_id'] = $list->routing_id;
-                $row['no'] = $list->no;
-                $row['machine'] = $list->machine;
-                $row['notes1'] = $list->notes1;
-                $row['speed'] = $list->speed;
-                $row['capacity'] = $list->capacity;
-                $row['length'] = $list->length;
-                $row['luom'] = $list->luom ?  ($dataUOM->getUOM($list->luom) ? $dataUOM->getUOM($list->luom)[0]->uom_code : "") : "";
-                $row['width'] = $list->width;
-                $row['wuom'] = $list->wuom ?  ($dataUOM->getUOM($list->wuom) ? $dataUOM->getUOM($list->wuom)[0]->uom_code : "") : "";
-                $row['height'] = $list->height;
-                $row['huom'] = $list->huom ?  ($dataUOM->getUOM($list->huom) ? $dataUOM->getUOM($list->huom)[0]->uom_code : "") : "";
-                $row['volume'] = $list->volume;
-                $row['vuom'] = $list->vuom ?  ($dataUOM->getUOM($list->vuom) ? $dataUOM->getUOM($list->vuom)[0]->uom_code : "") : "";
-                $row['qtylabor'] = $list->qtylabor;
-                $row['workhour'] = $list->workhour;
+                $row['routeno'] = $list->routeno;
+                $row['workcenter'] = $list->workcenter;
+                $row['routetype'] = $list->routetype;
+                $row['hour'] = number_format((float)$list->hour, 5, '.', '');
+                $row['houruom'] = $list->houruom;
+                $row['houruom_desc'] = $list->houruom ?  $dataUOM->getUOM($list->houruom)[0]->uom_desc : "";
+                $row['speed'] = number_format((float)$list->speed, 5, '.', '');
+                $row['speeduom'] = $list->speeduom;
+                $row['speeduom_desc'] = $list->speeduom ?  $dataUOM->getUOM($list->speeduom)[0]->uom_desc : "";
+                $row['notes'] = $list->notes;
                 $row['active'] = $list->active;
-                $data[] = $row;
-            }
-
-            $output = [
-                'draw' => $request->getPost('draw'),
-                'recordsTotal' => $datatable->countAllByRouting($routing_id),
-                'recordsFiltered' => $datatable->countFilteredByRouting($routing_id),
-                'data' => $data
-            ];
-
-            echo json_encode($output);
-        }
-    }
-
-    public function getRoutingCost()  
-    {
-
-        $request = Services::request();
-        $datatable = new RoutingCostModel($request);
-        $dataUOM = new UOMModel($request);
-        $routing_id = $request->getPost('routing_id');
-
-        if ($request->getMethod(true) === 'POST') {
-            $lists = $datatable->getDatatablesByRouting($routing_id);
-            $data = [];
-            $no = $request->getPost('start');
-
-            foreach ($lists as $list) {
-                $no++;
-                $row = [];
-                $row['id'] = $list->id;
-                $row['routing_id'] = $list->routing_id;
-                $row['costtype'] = $list->costtype;
-                $row['costamount'] = $list->costamount;
-                $row['costuom'] = $list->costuom ?  ($dataUOM->getUOM($list->costuom) ? $dataUOM->getUOM($list->costuom)[0]->uom_code : "") : "";
-                $row['notes2'] = $list->notes2;
-                $row['active'] = $list->active;
-                $row['no'] = '';
                 $data[] = $row;
             }
 
@@ -158,6 +117,7 @@ class Routing extends BaseController
         $dataBC = new RoutingDetailModel($request);
         $dataUOM = new UOMModel($request);
         $dataItem = new ItemModel($request);
+        $dataWC = new WorkCenterModel($request);
         $id =  $this->request->getPost('id');
         $lists = $dataBC->getRoutingDetail($id);
         $data = [];
@@ -167,25 +127,18 @@ class Routing extends BaseController
             $row = [];
             $row['id'] = $list->id;
             $row['routing_id'] = $list->routing_id;
-            $row['no'] = $list->no;
-            $row['machine'] = $list->machine;
-            $row['notes1'] = $list->notes1;
+            $row['routeno'] = $list->routeno;
+            $row['workcenter'] = $list->workcenter;
+            $row['workcenter_desc'] = $list->workcenter ?  $dataWC->getWorkCenter($list->workcenter)[0]->workcenter."|".$dataWC->getWorkCenter($list->workcenter)[0]->description : "";
+            $row['routetype'] = $list->routetype;
+            $row['hour'] = $list->hour;
+            $row['houruom'] = $list->houruom;
+            $row['houruom_desc'] = $list->houruom ?  $dataUOM->getUOM($list->houruom)[0]->uom_code."|".$dataUOM->getUOM($list->houruom)[0]->uom_desc : "";
             $row['speed'] = $list->speed;
-            $row['capacity'] = $list->capacity;
-            $row['length'] = number_format((float)$list->length, 5, '.', '');
-            $row['luom'] = $list->luom;
-            $row['luom_desc'] = $list->luom ?  $dataUOM->getUOM($list->luom)[0]->uom_code."|".$dataUOM->getUOM($list->luom)[0]->uom_desc : "";
-            $row['width'] = number_format((float)$list->width, 5, '.', '');
-            $row['wuom'] = $list->wuom;
-            $row['wuom_desc'] = $list->wuom ?  $dataUOM->getUOM($list->wuom)[0]->uom_code."|".$dataUOM->getUOM($list->wuom)[0]->uom_desc : "";
-            $row['height'] =  number_format((float)$list->height, 5, '.', '');
-            $row['huom'] = $list->huom;
-            $row['huom_desc'] = $list->huom ?  $dataUOM->getUOM($list->huom)[0]->uom_code."|".$dataUOM->getUOM($list->huom)[0]->uom_desc : "";
-            $row['volume'] = number_format((float)$list->volume, 5, '.', '');
-            $row['vuom'] = $list->vuom;
-            $row['vuom_desc'] = $list->vuom ?  $dataUOM->getUOM($list->vuom)[0]->uom_code."|".$dataUOM->getUOM($list->vuom)[0]->uom_desc : "";
-            $row['qtylabor'] = number_format((float)$list->qtylabor, 5, '.', '');
-            $row['workhour'] = $list->workhour;
+            $row['speeduom'] = $list->speeduom;
+            $row['speeduom_desc'] = $list->speeduom ?  $dataUOM->getUOM($list->speeduom)[0]->uom_code."|".$dataUOM->getUOM($list->speeduom)[0]->uom_desc : "";
+            $row['notes'] = $list->notes;
+            $row['no'] = '';
             $row['active'] = $list->active;
             $data[] = $row;
         }
@@ -263,11 +216,14 @@ class Routing extends BaseController
         $routing_id =  $this->request->getVar('routing_id');
         
         $rules = [
-            'no' => 'required',
-            'machine' => 'required',
-            'notes1' => 'required',
+            'routing_id' => 'required',
+            'routeno' => 'required',
+            'workcenter' => 'required',
+            'routetype' => 'required',
+            'hour' => 'required',
+            'houruom' => 'required',
             'speed' => 'required',
-            'capacity' => 'required',
+            'speeduom' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -289,21 +245,14 @@ class Routing extends BaseController
             if($status=="1") {
                 $data = [
                     'routing_id' => $id,
-                    'no' => $this->request->getVar('no'),
-                    'machine' => $this->request->getVar('machine'),
-                    'notes1' => $this->request->getVar('notes1'),
+                    'routeno' => $this->request->getVar('routeno'),
+                    'workcenter' => $this->request->getVar('workcenter'),
+                    'routetype' => $this->request->getVar('routetype'),
+                    'hour' => $this->request->getVar('hour'),
+                    'houruom' => $this->request->getVar('houruom'),
                     'speed' => $this->request->getVar('speed'),
-                    'capacity' => $this->request->getVar('capacity'),
-                    'length' => $this->request->getVar('length'),
-                    'luom' => $this->request->getVar('luom'),
-                    'width' => $this->request->getVar('width'),
-                    'wuom' => $this->request->getVar('wuom'),
-                    'height' => $this->request->getVar('height'),
-                    'huom' => $this->request->getVar('huom'),
-                    'volume' => $this->request->getVar('volume'),
-                    'vuom' => $this->request->getVar('vuom'),
-                    'qtylabor' => $this->request->getVar('qtylabor'),
-                    'workhour' => $this->request->getVar('workhour'),
+                    'speeduom' => $this->request->getVar('speeduom'),
+                    'notes' => $this->request->getVar('notes'),
                     'created_date'=>  date("Y-m-d H:i:s"),
                     'created_by' =>  user()->username,
                 ];
@@ -337,140 +286,14 @@ class Routing extends BaseController
             } else  {
                 $data = [
                     'routing_id' => $routing_id,
-                    'no' => $this->request->getVar('no'),
-                    'machine' => $this->request->getVar('machine'),
-                    'notes1' => $this->request->getVar('notes1'),
+                    'routeno' => $this->request->getVar('routeno'),
+                    'workcenter' => $this->request->getVar('workcenter'),
+                    'routetype' => $this->request->getVar('routetype'),
+                    'hour' => $this->request->getVar('hour'),
+                    'houruom' => $this->request->getVar('houruom'),
                     'speed' => $this->request->getVar('speed'),
-                    'capacity' => $this->request->getVar('capacity'),
-                    'length' => $this->request->getVar('length'),
-                    'luom' => $this->request->getVar('luom'),
-                    'width' => $this->request->getVar('width'),
-                    'wuom' => $this->request->getVar('wuom'),
-                    'height' => $this->request->getVar('height'),
-                    'huom' => $this->request->getVar('huom'),
-                    'volume' => $this->request->getVar('volume'),
-                    'vuom' => $this->request->getVar('vuom'),
-                    'qtylabor' => $this->request->getVar('qtylabor'),
-                    'workhour' => $this->request->getVar('workhour'),
-                    'updated_by' =>  user()->username,
-                    'updated_at' =>  date("Y-m-d H:i:s"),
-                ];
-                
-                try {
-                    $updated = $model->updateData($id, $data);
-
-                    if ($updated) {
-                        $output = [
-                            'Success' => true,
-                            'Counter' =>  $model->countAllByRouting($routing_id),
-                            'errors' => [],
-                        ];
-                    } else {
-                        $output = [
-                            'Success' => false,
-                            'Counter' =>  9999,
-                            'errors' => $model->errors(),
-                        ];
-                    }
-                } catch (DatabaseException $e) {
-                    $output = [
-                        'Success' => false,
-                        'Counter' =>  9999,
-                        'errors' => ['Data already exists.'],
-                    ];
-                }
-
-                return json_encode($output);
-            }
-
-
-        } else {
-            
-            //return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-            $output = [
-                'Success' => false,
-                'Counter' => 9999,
-                'errors' => $this->validator->getErrors(),
-            ];
-
-            return json_encode($output);
-
-        }
-    
-    }
-
-    public function saveCost()
-    {
-        $id =  $this->request->getVar('id');
-        $routing_id =  $this->request->getVar('routing_id');
-        
-        $rules = [
-            'costtype' => 'required',
-            'costamount' => 'required',
-            'costuom' => 'required',
-            'notes2' => 'required',
-        ];
-    
-        if (! $this->validate($rules))
-        {
-            //return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-            $output = [
-                'Success' => false,
-                'Counter' => 9999,
-                'errors' => $this->validator->getErrors(),
-            ];
-
-            return json_encode($output);
-        }
-
-        if($this->validate($rules)){
-            $request = Services::request();
-            $model = new RoutingCostModel($request);
-            $status = $this->request->getVar('status');
-            if($status=="1") {
-                $data = [
-                    'routing_id' => $id,
-                    'costtype' => $this->request->getVar('costtype'),
-                    'costamount' => $this->request->getVar('costamount'),
-                    'costuom' => $this->request->getVar('costuom'),
-                    'notes2' => $this->request->getVar('notes2'),
-                    'created_date'=>  date("Y-m-d H:i:s"),
-                    'created_by' =>  user()->username,
-                ];
-
-                try {
-                    $saved = $model->save($data);
-                    if ($saved) {
-                        $output = [
-                            'Success' => true,
-                            'Counter' =>  $model->countAllByRouting($id),
-                            'errors' => [],
-                        ];
-                    } else {
-                        $output = [
-                            'Success' => false,
-                            'Counter' =>  9999,
-                            'errors' => $model->errors(),
-                        ];
-                    }
-                } catch (DatabaseException $e) {
-                    $output = [
-                        'Success' => false,
-                        'Counter' =>  9999,
-                        'errors' => ['Data already exists.'],
-                    ];
-                }
-                
-                return json_encode($output);
-                //return redirect()->to(base_url('/routing/edit/'.$id));
-
-            } else  {
-                $data = [
-                    'routing_id' => $routing_id,
-                    'costtype' => $this->request->getVar('costtype'),
-                    'costamount' => $this->request->getVar('costamount'),
-                    'costuom' => $this->request->getVar('costuom'),
-                    'notes2' => $this->request->getVar('notes2'),
+                    'speeduom' => $this->request->getVar('speeduom'),
+                    'notes' => $this->request->getVar('notes'),
                     'updated_by' =>  user()->username,
                     'updated_at' =>  date("Y-m-d H:i:s"),
                 ];
@@ -525,11 +348,11 @@ class Routing extends BaseController
         $dataSit = new SiteModel($request);
         $dataDep = new DepartmentModel($request);
         $dataWhs = new WarehouseModel($request);
+        $dataItem = new ItemModel($request);
 
         $data = [            
             'title' => 'Update Routing',
             'title_child' => 'Routing Detail',
-            'title_child2' => 'Routing Cost',
         ];
         $data['menu'] = 'setup';
         $data['submenu'] = 'routing';
@@ -541,6 +364,7 @@ class Routing extends BaseController
         $data['site_name'] = $data['routing'][0]->site ? $dataSi->site_code."|".$dataSi->site_name : "|";
         $data['dept_name'] = $data['routing'][0]->dept ? $dataDe->dept_code . "|". $dataDe->dept_name : "|";
         $data['whs_name'] = $data['routing'][0]->whs ? $dataWhs->getWarehouse($data['routing'][0]->whs)[0]->whs_code."|".$dataWhs->getWarehouse($data['routing'][0]->whs)[0]->whs_name : "|";
+        $data['itemname'] = $data['routing'][0]->itemcode ? $dataItem->getItem($data['routing'][0]->itemcode)[0]->item_code."|".$dataItem->getItem($data['routing'][0]->itemcode)[0]->item_name_1 : "|";
         $data['title_meta'] = view('partials/title-meta', ['title' => 'Routing']);
         $data['page_title'] = view('partials/page-title', ['title' => 'Routing', 'pagetitle' => 'MasterData']);
 
@@ -553,8 +377,7 @@ class Routing extends BaseController
         $rules = [
             'site' => 'required',
             'dept' => 'required',
-            'whs' => 'required',
-            'workcenter' => 'required',
+            'itemcode' => 'required',
         ];
     
         if (! $this->validate($rules))
@@ -569,7 +392,7 @@ class Routing extends BaseController
                 'site' => $this->request->getPost('site'),
                 'dept' => $this->request->getPost('dept'),
                 'whs' => $this->request->getPost('whs'),
-                'workcenter' => $this->request->getPost('workcenter'),
+                'itemcode' => $this->request->getPost('itemcode'),
                 'description' => $this->request->getPost('description'),
                 'updated_by' =>  user()->username,
                 'updated_at' =>  date("Y-m-d H:i:s"),

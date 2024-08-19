@@ -251,9 +251,33 @@ class BOM extends BaseController
                     'created_by' =>  user()->username,
                 ];
                 
-                $model->save($data);
+                try {
+                    $saved = $model->save($data);
+                    if ($saved) {
+                        $output = [
+                            'Success' => true,
+                            'Counter' =>  $model->countAllByBOM($id),
+                            'errors' => [],
+                        ];
+                    } else {
+                        $output = [
+                            'Success' => false,
+                            'Counter' =>  9999,
+                            'errors' => $model->errors(),
+                        ];
+                    }
+                } catch (DatabaseException $e) {
+                    $output = [
+                        'Success' => false,
+                        'Counter' =>  9999,
+                        'errors' => ['Data already exists.'],
+                    ];
+                }
                 
-                return redirect()->to(base_url('/bom/edit/'.$id));
+                return json_encode($output);
+                // $model->save($data);
+                
+                // return redirect()->to(base_url('/bom/edit/'.$id));
 
             } else  {
                 $data = [
@@ -269,16 +293,47 @@ class BOM extends BaseController
                     'updated_at' =>  date("Y-m-d H:i:s"),
                 ];
                 
-                $model->updateData($id, $data);
+                try {
+                    $updated = $model->updateData($id, $data);
+                    if ($updated) {
+                        $output = [
+                            'Success' => true,
+                            'Counter' =>  $model->countAllByBOM($id),
+                            'errors' => [],
+                        ];
+                    } else {
+                        $output = [
+                            'Success' => false,
+                            'Counter' =>  9999,
+                            'errors' => $model->errors(),
+                        ];
+                    }
+                } catch (DatabaseException $e) {
+                    $output = [
+                        'Success' => false,
+                        'Counter' =>  9999,
+                        'errors' => ['Data already exists.'],
+                    ];
+                }
+                
+                return json_encode($output);
+                // $model->updateData($id, $data);
 
-                return redirect()->to(base_url('/bom/edit/'.$bom_id));
+                // return redirect()->to(base_url('/bom/edit/'.$bom_id));
 
             }
 
 
         } else {
             
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            //return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            $output = [
+                'Success' => false,
+                'Counter' => 9999,
+                'errors' => $this->validator->getErrors(),
+            ];
+
+            return json_encode($output);
 
         }
     
@@ -422,9 +477,33 @@ class BOM extends BaseController
                 'active' => 1,
             ];
         }
-        $model->deleteData($id, $data);
+        // $model->deleteData($id, $data);
         
-        return redirect()->to(base_url('/bom/edit/'.$bom_id));
+        // return redirect()->to(base_url('/bom/edit/'.$bom_id));
+        try {
+            $deleted = $model->deleteData($id, $data);
+            if ($deleted) {
+                $output = [
+                    'Success' => true,
+                    'Counter' =>  $model->countAllByBOM($id),
+                    'errors' => [],
+                ];
+            } else {
+                $output = [
+                    'Success' => false,
+                    'Counter' =>  9999,
+                    'errors' => $model->errors(),
+                ];
+            }
+        } catch (DatabaseException $e) {
+            $output = [
+                'Success' => false,
+                'Counter' =>  9999,
+                'errors' => ['Data already exists.'],
+            ];
+        }
+        
+        return json_encode($output);
 
     }
 

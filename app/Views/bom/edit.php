@@ -128,7 +128,7 @@
                                     <!-- end row -->
                                     <div class="">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <table class="table table-bordered" id="dataTableChild" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
                                                         <th><?= lang('BOM.childno'); ?></th>
@@ -169,7 +169,7 @@
 
 <?= $this->section('div-modal') ?>
     
-    <form action="<?= base_url(); ?>bom/saveChild" method="post" id="bomChildForm">
+    <form method="post" id="bomChildForm">
     <div class="modal fade" id="bomChildModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
@@ -254,7 +254,7 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>bom/deleteChild" method="post">
+    <form id="bomChildDeleteForm"  method="post">
     <div class="modal fade" id="bomChildDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -277,7 +277,7 @@
     </div>
     </form>
 
-    <form action="<?= base_url(); ?>bom/deleteChild" method="post">
+    <form id="bomChildActiveForm" method="post">
     <div class="modal fade" id="bomChildActiveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -307,7 +307,118 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#dataTable tbody').on('click', '.btn-delete-bom-child', function() {
+        $("#bomChildDeleteForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#bomChildDeleteForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>bom/deleteChild',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        dataTableChild.ajax.reload();
+                        $('#bomChildDeleteModal').modal('hide');
+                        alert("Work Center Child deleted.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        $("#bomChildActiveForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#bomChildActiveForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>bom/deleteChild',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        dataTableChild.ajax.reload();
+                        $('#bomChildActiveModal').modal('hide');
+                        alert("Work Center Child updated.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        $("#bomChildForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#bomChildForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>bom/saveChild',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        dataTableChild.ajax.reload();
+                        $('#bomChildModal').modal('hide');
+                        alert("Work Center Child saved.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        $('#dataTableChild tbody').on('click', '.btn-delete-bom-child', function() {
             const id = $(this).data('id');
             const bom_id = $(this).data('bom_id');
             
@@ -319,7 +430,7 @@
             $('#bomChildDeleteModal').modal('show');
         });
 
-        $('#dataTable tbody').on('click', '.btn-active-bom-child', function() {
+        $('#dataTableChild tbody').on('click', '.btn-active-bom-child', function() {
             const id = $(this).data('id');
             const bom_id = $(this).data('bom_id');
             const active = $(this).data('active');
@@ -347,10 +458,19 @@
 
             // Call Modal Edit
             $('#bomChildForm')[0].reset();
+            $("#itemchildname").val("|");
+            $(".itemchildname").val("|");
+            var itemSelect = $('#itemchild');
+            var option = new Option("|", "", true, true);
+            itemSelect.append(option).trigger('change');
+            $('#childuom').val("");
+            var uomSelect = $('#itemchilduom');
+            option = new Option("|", "", true, true);
+            uomSelect.append(option).trigger('change');
             $('#bomChildModal').modal('show');
         });
 
-        $('#dataTable tbody').on('click', '.btn-update-bom-child', function() {
+        $('#dataTableChild tbody').on('click', '.btn-update-bom-child', function() {
             const id = $(this).data('id');
             const bom_id = $(this).data('bom_id');
             
@@ -381,7 +501,6 @@
                     //$('#childuom_desc').html(data[0].childuom_desc);
                     $('#factor').val(data[0].factor);
                     $('#childdescription').val(data[0].childdescription);
-                    $('#childdescription').val(data[0].childdescription);
                     $('#bom_id').val(data[0].bom_id);
                     
                 },
@@ -394,7 +513,7 @@
             $('#bomChildModal').modal('show');
         });
 
-        $('#dataTable').DataTable({
+        var dataTableChild = $('#dataTableChild').DataTable({
             "processing": true,
             "serverSide": true,
             "order": [],

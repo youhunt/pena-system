@@ -17,6 +17,14 @@
                                         </div>
                                         
                                         <div class="row mb-2">
+                                            <label for="itemcode" class="col-sm-2 col-form-label"><?= lang('Routing.itemcode'); ?></label>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="itemcode" name="itemcode" value="<?= old('itemcode') ? old('itemcode') : $routing[0]->itemcode ; ?>" />
+                                                <input type="hidden" id="itemname" name="itemname" value="<?= old('itemname') ? old('itemname') : $itemname ; ?>" />
+                                                <select class="form-control <?php if(session('errors.itemcode')) : ?>is-invalid<?php endif ?>" name="item" id="item" >
+                                                    <option selected="selected"><?= old('itemname') ? old('itemname') : $itemname; ?></option>
+                                                </select>
+                                            </div>
                                             <label for="site" class="col-sm-2 col-form-label"><?= lang('Routing.site'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="site" name="site" value="<?= old('site') ? old('site') : $routing[0]->site ; ?>" />
@@ -25,7 +33,9 @@
                                                     <option selected="selected"><?= $site_name ?></option>
                                                 </select>
                                             </div>
-                                        
+                                        </div>
+
+                                        <div class="row mb-2">
                                             <label for="dept" class="col-sm-2 col-form-label"><?= lang('Routing.dept'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="dept" name="dept" value="<?= old('dept') ? old('dept') : $routing[0]->dept ; ?>" />
@@ -34,9 +44,6 @@
                                                     <option selected="selected"><?= $dept_name ?></option>
                                                 </select>
                                             </div>
-                                        </div>
-
-                                        <div class="row mb-2">
                                             <label for="whs" class="col-sm-2 col-form-label"><?= lang('Routing.whs'); ?></label>
                                             <div class="col-sm-4">
                                                 <input type="hidden" id="whs" name="whs" value="<?= old('whs') ? old('whs') : $routing[0]->whs ; ?>" />
@@ -44,11 +51,7 @@
                                                 <select class="form-control <?php if(session('errors.whs')) : ?>is-invalid<?php endif ?>" name="whs_code" id="whs_code" >
                                                     <option selected="selected"><?= $whs_name ?></option>
                                                 </select>
-                                            </div>
-                                            <label for="itemcode" class="col-sm-2 col-form-label"><?= lang('Routing.itemcode'); ?></label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control <?php if(session('errors.itemcode')) : ?>is-invalid<?php endif ?>" id="itemcode" placeholder="<?= lang('Routing.itemcode'); ?>" name="itemcode" value="<?= old('itemcode') ? old('itemcode') : $routing[0]->itemcode ; ?>">
-                                            </div>
+                                            </div>                                            
                                         </div>
 
                                         <div class="row mb-2">
@@ -94,7 +97,7 @@
                                     <!-- end row -->
                                     <div class="">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="dataTableDetail" width="1768px" cellspacing="0">
+                                            <table class="table table-bordered" id="dataTableDetail" style="width: 100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
                                                         <th><?= lang('Routing.routeno'); ?></th>
@@ -168,9 +171,7 @@
                     <div class="row mb-2">
                         <label for="routetype" class="col-sm-2 col-form-label"><?= lang('Routing.routetype'); ?></label>
                         <div class="col-sm-4">
-                            <input type="hidden" id="routetype" name="routetype" value="<?= old('routetype'); ?>" />
-                            <input type="hidden" id="routetype_desc" name="routetype_desc" value="<?= old('routetype_desc'); ?>" />
-                            <select class="form-control <?php if(session('errors.routetype')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemroutetype" id="itemroutetype" >
+                            <select class="form-control <?php if(session('errors.routetype')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="routetype" id="routetype" >
                                 <option value="1" selected="<?= old('routetype')=="1" ? "selected" : ""; ?>" >Main</option>
                                 <option value="2" selected="<?= old('routetype')=="2" ? "selected" : ""; ?>" >Alt</option>
                             </select>
@@ -205,7 +206,7 @@
                         <div class="col-sm-4">
                             <input type="hidden" id="speeduom" name="speeduom" value="<?= old('speeduom'); ?>" />
                             <input type="hidden" id="speeduom_desc" name="speeduom_desc" value="<?= old('speeduom_desc'); ?>" />
-                            <select class="form-control <?php if(session('errors.speeduom')) : ?>is-invalid<?php endif ?>" style="speed: 100%;" name="itemspeeduom" id="itemspeeduom" >
+                            <select class="form-control <?php if(session('errors.speeduom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="itemspeeduom" id="itemspeeduom" >
                                 <option selected="selected"><?= old('speeduom_desc'); ?></option>
                             </select>
                         </div>
@@ -430,6 +431,18 @@
 
             // Call Modal Edit
             $('#routingDetailForm')[0].reset();
+            $('#workcenter').val("");
+            var uomSelect = $('#itemworkcenter');
+            option = new Option("|", "", true, true);
+            uomSelect.append(option).trigger('change');
+            $('#houruom').val("");
+            uomSelect = $('#itemhouruom');
+            option = new Option("|", "", true, true);
+            uomSelect.append(option).trigger('change');
+            $('#speeduom').val("");
+            uomSelect = $('#itemspeeduom');
+            option = new Option("|", "", true, true);
+            uomSelect.append(option).trigger('change');
             $('#routingDetailModal').modal('show');
         });
 
@@ -451,10 +464,13 @@
                     $('#routing_id').val(data[0].routing_id);
                     $('#routeno').val(data[0].routeno);
                     $('#workcenter').val(data[0].workcenter);
+                    var uomSelect = $('#itemworkcenter');
+                    option = new Option(data[0].workcenter_desc, data[0].workcenter, true, true);
+                    uomSelect.append(option).trigger('change');
                     $('#routetype').val(data[0].routetype);
                     $('#hour').val(data[0].hour);
                     $('#houruom').val(data[0].houruom);
-                    var uomSelect = $('#itemhouruom');
+                    uomSelect = $('#itemhouruom');
                     option = new Option(data[0].houruom_desc, data[0].houruom, true, true);
                     uomSelect.append(option).trigger('change');
                     $('#speed').val(data[0].speed);
@@ -505,7 +521,7 @@
                     "searchable": true,
                 },
                 {
-                    "data": "houruom",
+                    "data": "houruom_desc",
                     "autoWidth": true,
                     "searchable": true,
                 },
@@ -515,7 +531,7 @@
                     "searchable": true,
                 },
                 {
-                    "data": "speeduom",
+                    "data": "speeduom_desc",
                     "autoWidth": true,
                     "searchable": true,
                 },                
@@ -543,17 +559,63 @@
                     "data": "no", 
                     "width": "45px",
                     "render": function (data, type, row) {
-                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-routing_machine" data-id="' + row.id + '" data-routing_id="' + row.routing_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-routing-child" title="Delete" data-id="' + row.id + '" data-routing_id="' + row.routing_id + '" ><i class="fas fa-times"></i></a>';
+                        return '<a href="#" class="btn btn-warning btn-circle btn-sm btn-update-routing_machine" data-id="' + row.id + '" data-routing_id="' + row.routing_id + '" title="Edit" ><i class="fas fa-edit"></i></a><a href="#" class="btn btn-danger btn-circle btn-sm btn-delete-routing_machine" title="Delete" data-id="' + row.id + '" data-routing_id="' + row.routing_id + '" ><i class="fas fa-times"></i></a>';
                     }
                 },
             ]
+        });
+
+        $('#item').select2({
+            placeholder: '|',
+            minimumInputLength: 0,
+            ajax: {
+                url: '<?= base_url('/item/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            }
+        }).on('select2:select', function (evt) {
+            var data = $("#item option:selected").val();
+            $("#itemcode").val(data);
+            $("#itemname").val($("#item option:selected").text());
         });
 
         $('#whs_code').select2({
             placeholder: '|',
             minimumInputLength: 0,
             ajax: {
-                url: '<?= base_url('/whs/getByDepartment'); ?>',
+                url: '<?= base_url('/warehouse/getByDepartment'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
@@ -687,148 +749,9 @@
             var data = $("#dept_code option:selected").val();
             $("#dept").val(data);
             $("#dept_name").val($("#dept_code option:selected").text());
-        });
+        });        
 
-        $('#uom_code').select2({
-            placeholder: '|',
-            minimumInputLength: 0,
-            ajax: {
-                url: '<?= base_url('/uom/getAll'); ?>',
-                dataType: 'json',
-                delay: 250,
-                data: function (params) {
-                    return {
-                        q: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data){
-                return {
-                    results: data
-                };
-                },
-                cache: true
-            },
-            templateResult: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-            templateSelection: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-        }).on('select2:select', function (evt) {
-            var data = $("#uom_code option:selected").val();
-            $("#uom").val(data);
-            $("#uom_desc").val($("#uom_code option:selected").text());
-        });
-
-        $('#itemcosttype').select2({
-            placeholder: '|',
-            minimumInputLength: 0,
-            dropdownParent: $('#routingCostModal'),
-            ajax: {
-                url: '<?= base_url('/costtype/getAll'); ?>',
-                dataType: 'json',
-                delay: 250,
-                data: function (params) {
-                    return {
-                        q: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data){
-                return {
-                    results: data
-                };
-                },
-                cache: true
-            },
-            templateResult: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-            templateSelection: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-        }).on('select2:select', function (evt) {
-            var data = $("#itemcosttype option:selected").val();
-            $("#costtype").val(data);
-            $("#costtype_desc").val($("#itemcosttype option:selected").text());
-        });
-
-        $('#itemcostuom').select2({
-            placeholder: '|',
-            minimumInputLength: 0,
-            dropdownParent: $('#routingCostModal'),
-            ajax: {
-                url: '<?= base_url('/uom/getAll'); ?>',
-                dataType: 'json',
-                delay: 250,
-                data: function (params) {
-                    return {
-                        q: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data){
-                return {
-                    results: data
-                };
-                },
-                cache: true
-            },
-            templateResult: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-            templateSelection: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-        }).on('select2:select', function (evt) {
-            $("#costuom_desc").val($("#itemcostuom option:selected").text());
-            $("#costuom").val($("#itemcostuom option:selected").val());
-        });
-
-        $('#itemluom').select2({
+        $('#itemhouruom').select2({
             placeholder: '|',
             minimumInputLength: 0,
             dropdownParent: $('#routingDetailModal'),
@@ -870,11 +793,11 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            $("#luom_desc").val($("#itemluom option:selected").text());
-            $("#luom").val($("#itemluom option:selected").val());
+            $("#houruom_desc").val($("#itemhouruom option:selected").text());
+            $("#houruom").val($("#itemhouruom option:selected").val());
         });
 
-        $('#itemwuom').select2({
+        $('#itemspeeduom').select2({
             placeholder: '|',
             minimumInputLength: 0,
             dropdownParent: $('#routingDetailModal'),
@@ -916,16 +839,16 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            $("#wuom_desc").val($("#itemwuom option:selected").text());
-            $("#wuom").val($("#itemwuom option:selected").val());
+            $("#speeduom_desc").val($("#itemspeeduom option:selected").text());
+            $("#speeduom").val($("#itemspeeduom option:selected").val());
         });
 
-        $('#itemhuom').select2({
+        $('#itemworkcenter').select2({
             placeholder: '|',
             minimumInputLength: 0,
             dropdownParent: $('#routingDetailModal'),
             ajax: {
-                url: '<?= base_url('/uom/getAll'); ?>',
+                url: '<?= base_url('/work_center/getAll'); ?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
@@ -962,54 +885,8 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            $("#huom_desc").val($("#itemhuom option:selected").text());
-            $("#huom").val($("#itemhuom option:selected").val());
-        });
-
-        $('#itemvuom').select2({
-            placeholder: '|',
-            minimumInputLength: 0,
-            dropdownParent: $('#routingDetailModal'),
-            ajax: {
-                url: '<?= base_url('/uom/getAll'); ?>',
-                dataType: 'json',
-                delay: 250,
-                data: function (params) {
-                    return {
-                        q: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data){
-                return {
-                    results: data
-                };
-                },
-                cache: true
-            },
-            templateResult: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-            templateSelection: function(data) {
-                var r = data.text.split('|');
-                var result = jQuery(
-                    '<div class="row">' +
-                        '<div class="col-3">' + r[0] + '</div>' +
-                        '<div class="col-7">' + r[1] + '</div>' +
-                    '</div>'
-                );
-                return result;
-            },
-        }).on('select2:select', function (evt) {
-            $("#vuom_desc").val($("#itemvuom option:selected").text());
-            $("#vuom").val($("#itemvuom option:selected").val());
+            $("#workcenter_desc").val($("#itemworkcenter option:selected").text());
+            $("#workcenter").val($("#itemworkcenter option:selected").val());
         });
 
     });

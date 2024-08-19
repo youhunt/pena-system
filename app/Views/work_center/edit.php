@@ -754,6 +754,22 @@
 
             // Call Modal Edit
             $('#work_centerMachineForm')[0].reset();
+            $('#luom').val("");
+            var uomSelect = $('#itemluom');
+            option = new Option("|", "", true, true);
+            uomSelect.append(option).trigger('change');
+            $('#wuom').val("");
+            uomSelect = $('#itemwuom');
+            option = new Option("|", "", true, true);
+            uomSelect.append(option).trigger('change');
+            $('#huom').val("");
+            uomSelect = $('#itemhuom');
+            option = new Option("|", "", true, true);
+            uomSelect.append(option).trigger('change');
+            $('#vuom').val("");
+            uomSelect = $('#itemvuom');
+            option = new Option("|", "", true, true);
+            uomSelect.append(option).trigger('change');
             $('#work_centerMachineModal').modal('show');
         });
 
@@ -850,6 +866,10 @@
 
             // Call Modal Edit
             $('#work_centerCostForm')[0].reset();
+            $('#costuom').val("");
+            var uomSelect = $('#itemcostuom');
+            option = new Option("|", "", true, true);
+            uomSelect.append(option).trigger('change');
             $('#work_centerCostModal').modal('show');
         });
 
