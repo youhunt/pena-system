@@ -33,18 +33,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                    <th><?= lang('Department.id'); ?></th>
-                                                        <th><?= lang('Department.comp_code'); ?></th>
-                                                        <th><?= lang('Department.site_code'); ?></th>
-                                                        <th><?= lang('Department.dept_code'); ?></th>
-                                                        <th><?= lang('Department.dept_name'); ?></th>
-                                                        <th><?= lang('Department.dept_pic'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

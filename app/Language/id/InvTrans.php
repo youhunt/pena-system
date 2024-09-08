@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'id' => 'ID',
+    'trans_code' => 'Kode Trans',
+    'trans_no' => 'Nomor Trans',
+    'site_code' => 'Lokasi',
+    'dept_code' => 'Departemen',
+    'whs_code' => 'Gudang',
+    'item_code' => 'Kode Barang',
+    'loc_code' => 'Lokasi',
+    'batch_no' => 'Nomor Batch.',
+    'multiplier' => 'Pengali',
+    'divider' => 'Pembagi',
+    'qtyunit' => 'Jumlah Satuan',
+    'stockunit_uom' => 'Satuan UoM',
+    'qty' => 'Jumlah Stok',
+    'stock_uom' => 'Stok UoM',
+    'description' => 'Keterangan',
+    'length' => 'Panjang',
+    'luom' => 'L UoM',
+    'width' => 'Lebar',
+    'wuom' => 'WUoM',
+    'height' => 'Tinggi',
+    'huom' => 'H UoM',
+    'diameter' => 'Diameter',
+    'duom' => 'Dia UoM',
+];

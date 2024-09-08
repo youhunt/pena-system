@@ -32,17 +32,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('Item.id'); ?></th>
-                                                        <th><?= lang('Item.item_code'); ?></th>
-                                                        <th><?= lang('Item.item_name_1'); ?></th>
-                                                        <th><?= lang('Item.item_code_additional'); ?></th>
-                                                        <th><?= lang('Item.item_name_additional'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

@@ -31,16 +31,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('ConvUOM.id'); ?></th>
-                                                        <th><?= lang('ConvUOM.fr_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.to_uom'); ?></th>
-                                                        <th><?= lang('ConvUOM.value'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

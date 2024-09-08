@@ -33,18 +33,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th>ID</th>
-                                                        <th>Company Code</th>
-                                                        <th>Code</th>
-                                                        <th>Name</th>
-                                                        <th>Site PIC</th>
-                                                        <th>Site Tax ID</th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

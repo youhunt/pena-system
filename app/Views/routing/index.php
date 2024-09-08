@@ -33,18 +33,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('Routing.id'); ?></th>
-                                                        <th><?= lang('Routing.itemcode'); ?></th>
-                                                        <th><?= lang('Routing.site'); ?></th>
-                                                        <th><?= lang('Routing.dept'); ?></th>
-                                                        <th><?= lang('Routing.whs'); ?></th>
-                                                        <th><?= lang('Routing.description'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

@@ -33,18 +33,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('TransactionCode.id'); ?></th>
-                                                        <th><?= lang('TransactionCode.company'); ?></th>
-                                                        <th><?= lang('TransactionCode.site'); ?></th>
-                                                        <th><?= lang('TransactionCode.dept'); ?></th>
-                                                        <th><?= lang('TransactionCode.transcode'); ?></th>
-                                                        <th><?= lang('TransactionCode.transname'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

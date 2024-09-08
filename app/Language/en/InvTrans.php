@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'id' => 'ID',
+    'trans_code' => 'Trans Code',
+    'trans_no' => 'Trans No',
+    'site_code' => 'Site',
+    'dept_code' => 'Department',
+    'whs_code' => 'Warehouse',
+    'item_code' => 'Item Code',
+    'loc_code' => 'Location',
+    'batch_no' => 'Batch No.',
+    'multiplier' => 'Multiplier',
+    'divider' => 'Divider',
+    'qtyunit' => 'Unit Qty',
+    'stockunit_uom' => 'Unit UoM',
+    'qty' => 'Stock Qty',
+    'stock_uom' => 'Stock UoM',
+    'description' => 'Description',
+    'length' => 'Length',
+    'luom' => 'L UoM',
+    'width' => 'Width',
+    'wuom' => 'W UoM',
+    'height' => 'Height',
+    'huom' => 'H UoM',
+    'diameter' => 'Diameter',
+    'duom' => 'Dia UoM',
+];

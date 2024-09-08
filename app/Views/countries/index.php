@@ -30,15 +30,6 @@
                                                         <th style="width: 40px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('Countries.ID'); ?></th>
-                                                        <th><?= lang('Countries.country_code'); ?></th>
-                                                        <th><?= lang('Countries.country_name'); ?></th>
-                                                        <th><?= lang('Files.active'); ?></th>
-                                                        <th></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

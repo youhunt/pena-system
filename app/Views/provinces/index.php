@@ -31,16 +31,6 @@
                                                         <th style="width: 40px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('Provinces.ID'); ?></th>
-                                                        <th><?= lang('Provinces.province_code'); ?></th>
-                                                        <th><?= lang('Provinces.province_name'); ?></th>
-                                                        <th><?= lang('Provinces.Country'); ?></th>
-                                                        <th><?= lang('Files.active'); ?></th>
-                                                        <th></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

@@ -142,19 +142,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('BOM.childno'); ?></th>
-                                                        <th><?= lang('BOM.childcode'); ?></th>
-                                                        <th><?= lang('BOM.childtype'); ?></th>
-                                                        <th><?= lang('BOM.qtyused'); ?></th>
-                                                        <th><?= lang('BOM.childuom'); ?></th>
-                                                        <th><?= lang('BOM.factor'); ?></th>
-                                                        <th><?= lang('BOM.childdescription'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

@@ -52,8 +52,8 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-transactions"><?= lang('Files.Transactions') ?></a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="/invinout" key="t-invinout"><?= lang('Files.InvInOut') ?></a></li>
-                                <li><a href="/invtransfer" key="t-invtransfer"><?= lang('Files.InvTransfer') ?></a></li>
+                                <li><a href="/invtrans" key="t-invtrans"><?= lang('Files.InvTrans') ?></a></li>
+                                <li><a href="/invtranfer" key="t-invtranfer"><?= lang('Files.InvTranfer') ?></a></li>
                                 <li><a href="/invstockopname" key="t-invstockopname"><?= lang('Files.InvStockOpname') ?></a></li>
                             </ul>
                         </li>

@@ -32,17 +32,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('Company.id'); ?></th>
-                                                        <th><?= lang('Company.comp_code'); ?></th>
-                                                        <th><?= lang('Company.comp_name'); ?></th>
-                                                        <th><?= lang('Company.comp_pic'); ?></th>
-                                                        <th><?= lang('Company.comp_taxid'); ?></th>
-                                                        <th><?= lang('Files.active'); ?></th>
-                                                        <th></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

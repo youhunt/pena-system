@@ -36,21 +36,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('BOM.id'); ?></th>
-                                                        <th><?= lang('BOM.site'); ?></th>
-                                                        <th><?= lang('BOM.dept'); ?></th>
-                                                        <th><?= lang('BOM.whs'); ?></th>
-                                                        <th><?= lang('BOM.parentcode'); ?></th>
-                                                        <th><?= lang('BOM.type'); ?></th>
-                                                        <th><?= lang('BOM.qty'); ?></th>
-                                                        <th><?= lang('BOM.uom'); ?></th>
-                                                        <th><?= lang('BOM.ratio'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

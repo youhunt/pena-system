@@ -32,17 +32,6 @@
                                                         <th style="width: 40px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('Cities.ID'); ?></th>
-                                                        <th><?= lang('Cities.city_code'); ?></th>
-                                                        <th><?= lang('Cities.city_name'); ?></th>
-                                                        <th><?= lang('Cities.Province'); ?></th>
-                                                        <th><?= lang('Cities.Country'); ?></th>
-                                                        <th><?= lang('Files.active'); ?></th>
-                                                        <th></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

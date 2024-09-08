@@ -33,18 +33,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('WorkCenter.id'); ?></th>
-                                                        <th><?= lang('WorkCenter.site'); ?></th>
-                                                        <th><?= lang('WorkCenter.dept'); ?></th>
-                                                        <th><?= lang('WorkCenter.warehouse'); ?></th>
-                                                        <th><?= lang('WorkCenter.workcenter'); ?></th>
-                                                        <th><?= lang('WorkCenter.description'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

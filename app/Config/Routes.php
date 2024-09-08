@@ -217,3 +217,17 @@ $routes->post('routing/updateDetail', 'Routing::updateDetail', ['filter' => 'rol
 $routes->post('routing/deleteDetail', 'Routing::deleteDetail', ['filter' => 'role:administrator']);
 $routes->post('routing/getRoutingDetailById', 'Routing::getRoutingDetailById', ['filter' => 'role:administrator']);
 
+$routes->get('invtrans', 'InvTrans::index', ['filter' => 'role:administrator']);
+$routes->get('invtrans/index', 'InvTrans::index', ['filter' => 'role:administrator']);
+$routes->get('invtrans/add', 'InvTrans::add', ['filter' => 'role:administrator']);
+$routes->post('invtrans/getInvTrans', 'InvTrans::getInvTrans', ['filter' => 'role:administrator']);
+$routes->get('invtrans/edit/(:segment)', 'InvTrans::edit/$1', ['filter' => 'role:administrator']);
+$routes->post('invtrans/save', 'InvTrans::save', ['filter' => 'role:administrator']);
+$routes->post('invtrans/update', 'InvTrans::update', ['filter' => 'role:administrator']);
+$routes->post('invtrans/delete', 'InvTrans::delete', ['filter' => 'role:administrator']);
+$routes->get('invtrans/getAll?(:any)', 'InvTrans::getAll', ['filter' => 'role:administrator']);
+$routes->post('invtrans/getTrans', 'InvTrans::getTrans', ['filter' => 'role:administrator']);
+$routes->post('invtrans/saveTrans', 'InvTrans::saveTrans', ['filter' => 'role:administrator']);
+$routes->post('invtrans/updateTrans', 'InvTrans::updateTrans', ['filter' => 'role:administrator']);
+$routes->post('invtrans/deleteTrans', 'InvTrans::deleteTrans', ['filter' => 'role:administrator']);
+

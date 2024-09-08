@@ -28,16 +28,6 @@
                                             <th style="width: 90px;"></th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Username</th>
-                                            <th>Group</th>
-                                            <th>Email</th>
-                                            <th>Active</th>
-                                            <th></th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                                                             
                                     </tbody>

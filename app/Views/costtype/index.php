@@ -31,16 +31,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('CostType.id'); ?></th>
-                                                        <th><?= lang('CostType.type'); ?></th>
-                                                        <th><?= lang('CostType.description'); ?></th>
-                                                        <th><?= lang('CostType.group'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

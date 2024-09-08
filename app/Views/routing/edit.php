@@ -112,20 +112,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('Routing.routeno'); ?></th>
-                                                        <th><?= lang('Routing.workcenter'); ?></th>
-                                                        <th><?= lang('Routing.routetype'); ?></th>
-                                                        <th><?= lang('Routing.hour'); ?></th>
-                                                        <th><?= lang('Routing.houruom'); ?></th>
-                                                        <th><?= lang('Routing.speed'); ?></th>
-                                                        <th><?= lang('Routing.speeduom'); ?></th>
-                                                        <th><?= lang('Routing.notes'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

@@ -116,27 +116,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('WorkCenter.no'); ?></th>
-                                                        <th><?= lang('WorkCenter.machine'); ?></th>
-                                                        <th><?= lang('WorkCenter.notes1'); ?></th>
-                                                        <th><?= lang('WorkCenter.speed'); ?></th>
-                                                        <th><?= lang('WorkCenter.capacity'); ?></th>
-                                                        <th><?= lang('WorkCenter.length'); ?></th>
-                                                        <th><?= lang('WorkCenter.luom'); ?></th>
-                                                        <th><?= lang('WorkCenter.width'); ?></th>
-                                                        <th><?= lang('WorkCenter.wuom'); ?></th>
-                                                        <th><?= lang('WorkCenter.height'); ?></th>
-                                                        <th><?= lang('WorkCenter.huom'); ?></th>
-                                                        <th><?= lang('WorkCenter.volume'); ?></th>
-                                                        <th><?= lang('WorkCenter.vuom'); ?></th>
-                                                        <th><?= lang('WorkCenter.qtylabor'); ?></th>
-                                                        <th><?= lang('WorkCenter.workhour'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>
@@ -177,16 +156,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('WorkCenter.costtype'); ?></th>
-                                                        <th><?= lang('WorkCenter.costamount'); ?></th>
-                                                        <th><?= lang('WorkCenter.costuom'); ?></th>
-                                                        <th><?= lang('WorkCenter.notes2'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>

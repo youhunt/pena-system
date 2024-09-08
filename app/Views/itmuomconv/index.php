@@ -35,20 +35,6 @@
                                                         <th style="width: 45px;"></th>
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th><?= lang('ItmUOMConv.id'); ?></th>
-                                                        <th><?= lang('ItmUOMConv.itemcode'); ?></th>
-                                                        <th><?= lang('ItmUOMConv.site'); ?></th>
-                                                        <th><?= lang('ItmUOMConv.dept'); ?></th>
-                                                        <th><?= lang('ItmUOMConv.whs'); ?></th>
-                                                        <th><?= lang('ItmUOMConv.fr_uom'); ?></th>
-                                                        <th><?= lang('ItmUOMConv.to_uom'); ?></th>
-                                                        <th><?= lang('ItmUOMConv.value'); ?></th>
-                                                        <th style="width: 40px;"><?= lang('Files.active'); ?></th>
-                                                        <th style="width: 45px;"></th>
-                                                    </tr>
-                                                </tfoot>
                                                 <tbody>
                                                                                         
                                                 </tbody>
