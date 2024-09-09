@@ -97,23 +97,31 @@
     <form action="<?= base_url(); ?>invtrans/saveTrans" method="post">
     <div class="modal fade" id="invtransModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="invtransLabel">Add New</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="row mb-2">
-                        <label for="item_code" class="col-sm-2 col-form-label"><?= lang('InvTrans.item_code'); ?></label>
+                        <label for="item" class="col-sm-2 col-form-label"><?= lang('InvTrans.item_code'); ?></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control <?php if(session('errors.item_code')) : ?>is-invalid<?php endif ?>" id="item_code" placeholder="<?= lang('InvTrans.item_code'); ?>" name="item_code" value="<?= old('item_code') ?>">
+                            <input type="hidden" id="item_code" name="item_code" value="<?= old('item_code') ? old('item_code') : ""; ?>" />
+                            <input type="hidden" id="itemname" name="itemname" value="<?= old('itemname') ? old('itemname') : ""; ?>" />
+                            <select class="form-control <?php if(session('errors.item_code')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="item" id="item" >
+                                <option selected="selected"><?= old('itemname') ? old('itemname') : ""; ?></option>
+                            </select>
                         </div>
                         <label for="loc_code" class="col-sm-2 col-form-label"><?= lang('InvTrans.loc_code'); ?></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control <?php if(session('errors.loc_code')) : ?>is-invalid<?php endif ?>" id="item_code" placeholder="<?= lang('InvTrans.loc_code'); ?>" name="loc_code" value="<?= old('loc_code') ?>">
+                            <input type="hidden" id="loc_code" name="loc_code" value="<?= old('loc_code') ? old('loc_code') : ""; ?>" />
+                            <input type="hidden" id="locname" name="locname" value="<?= old('locname') ? old('locname') : ""; ?>" />
+                            <select class="form-control <?php if(session('errors.loc_code')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="loc" id="loc" >
+                                <option selected="selected"><?= old('locname') ? old('locname') : ""; ?></option>
+                            </select>
                         </div>
                     </div>
 
@@ -133,8 +141,7 @@
                         <div class="col-sm-4">
                             <input type="number" step="0.00001" class="form-control <?php if(session('errors.divider')) : ?>is-invalid<?php endif ?>" id="divider" placeholder="<?= lang('InvTrans.divider'); ?>" style="text-align:right;" name="divider" value="<?= number_format((float)(old('divider')), 5, '.', ''); ?>">
                         </div>
-                        <label for="item_add002" class="col-sm-2 col-form-label">&nbsp;</label>
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             &nbsp;
                         </div>
                     </div>
@@ -147,7 +154,7 @@
                         <label for="stockunit_uom" class="col-sm-2 col-form-label"><?= lang('InvTrans.stockunit_uom'); ?></label>
                         <div class="col-sm-4">
                             <input type="hidden" id="stockunit_uom" name="stockunit_uom" value="" />
-                            <select class="form-control <?php if(session('errors.stockunit_uom')) : ?>is-invalid<?php endif ?>" name="uom" id="uom" ></select>
+                            <select class="form-control <?php if(session('errors.stockunit_uom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="suuom" id="suuom" ></select>
                         </div>
                     </div>
 
@@ -159,17 +166,16 @@
                         <label for="stock_uom" class="col-sm-2 col-form-label"><?= lang('InvTrans.stock_uom'); ?></label>
                         <div class="col-sm-4">
                             <input type="hidden" id="stock_uom" name="stock_uom" value="" />
-                            <select class="form-control <?php if(session('errors.stock_uom')) : ?>is-invalid<?php endif ?>" name="uom" id="uom" ></select>
+                            <select class="form-control <?php if(session('errors.stock_uom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="suom" id="suom" ></select>
                         </div>
                     </div>
 
                     <div class="row mb-2">
                         <label for="description" class="col-sm-2 col-form-label"><?= lang('InvTrans.description'); ?></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control <?php if(session('errors.description')) : ?>is-invalid<?php endif ?>" id="item_code" placeholder="<?= lang('InvTrans.description'); ?>" name="description" value="<?= old('description') ?>">
+                            <input type="text" class="form-control <?php if(session('errors.description')) : ?>is-invalid<?php endif ?>" id="description" placeholder="<?= lang('InvTrans.description'); ?>" name="description" value="<?= old('description') ?>">
                         </div>
-                        <label for="item_add001" class="col-sm-2 col-form-label">&nbsp;</label>
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             &nbsp;
                         </div>
                     </div>
@@ -181,7 +187,7 @@
                         </div>
                         <div class="col-sm-2">
                             <input type="hidden" id="luom" name="luom" value="" />
-                            <select class="form-control <?php if(session('errors.luom')) : ?>is-invalid<?php endif ?>" name="lengthuom" id="lengthuom" ></select>
+                            <select class="form-control <?php if(session('errors.luom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="lengthuom" id="lengthuom" ></select>
                         </div>
                         <label for="width" class="col-sm-2 col-form-label"><?= lang('InvTrans.width'); ?></label>
                         <div class="col-sm-2">
@@ -189,7 +195,7 @@
                         </div>
                         <div class="col-sm-2">
                             <input type="hidden" id="wuom" name="wuom" value="" />
-                            <select class="form-control <?php if(session('errors.wuom')) : ?>is-invalid<?php endif ?>" name="widthuom" id="widthuom" ></select>
+                            <select class="form-control <?php if(session('errors.wuom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="widthuom" id="widthuom" ></select>
                         </div>
                     </div>
 
@@ -200,7 +206,7 @@
                         </div>
                         <div class="col-sm-2">
                             <input type="hidden" id="huom" name="huom" value="" />
-                            <select class="form-control <?php if(session('errors.huom')) : ?>is-invalid<?php endif ?>" name="heightuom" id="heightuom" ></select>
+                            <select class="form-control <?php if(session('errors.huom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="heightuom" id="heightuom" ></select>
                         </div>
                         <label for="diameter" class="col-sm-2 col-form-label"><?= lang('InvTrans.diameter'); ?></label>
                         <div class="col-sm-2">
@@ -208,13 +214,13 @@
                         </div>
                         <div class="col-sm-2">
                             <input type="hidden" id="duom" name="duom" value="" />
-                            <select class="form-control <?php if(session('errors.duom')) : ?>is-invalid<?php endif ?>" name="diameteruom" id="diameteruom" ></select>
+                            <select class="form-control <?php if(session('errors.duom')) : ?>is-invalid<?php endif ?>" style="width: 100%;" name="diameteruom" id="diameteruom" ></select>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </div>
@@ -266,7 +272,6 @@
         });
 
         $('#addInvTrans-btn').on('click', function() {
-            alert("1");
             // const id = $(this).data('id');
             
             // // Set data to Form Edit
@@ -285,6 +290,110 @@
             // option = new Option("|", "", true, true);
             // uomSelect.append(option).trigger('change');
             $('#invtransModal').modal('show');
+        });
+
+        $('#item').select2({
+            placeholder: '|',
+            minimumInputLength: 0,
+            allowClear: true,
+            dropdownParent: $('#invtransModal'),
+            ajax: {
+                url: '<?= base_url('/item/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            }
+        }).on('select2:select', function (evt) {
+            var data = $("#item option:selected").val();
+            $("#itemcode").val(data);
+            $("#itemname").val($("#item option:selected").text());
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#itemcode").val(data);
+            $("#itemname").val(data);
+        });
+
+        $('#loc').select2({
+            placeholder: '|',
+            minimumInputLength: 0,
+            allowClear: true,
+            dropdownParent: $('#invtransModal'),
+            ajax: {
+                url: '<?= base_url('/location/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            }
+        }).on('select2:select', function (evt) {
+            var data = $("#loc option:selected").val();
+            $("#loccode").val(data);
+            $("#locname").val($("#loc option:selected").text());
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#loccode").val(data);
+            $("#locname").val(data);
         });
 
         $('#lengthuom').select2({
@@ -486,6 +595,108 @@
             var data = "";
             $("#duom").val(data);
         });
+
+        $('#suuom').select2({
+            placeholder: '|<?= lang('InvTrans.stockunit_uom'); ?>',
+            minimumInputLength: 0,
+            dropdownParent: $('#invtransModal'),
+            allowClear: true,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#stockunit_uom option:selected").val();
+            $("#suuom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#suuom").val(data);
+        });
+
+        $('#suom').select2({
+            placeholder: '|<?= lang('InvTrans.stock_uom'); ?>',
+            minimumInputLength: 0,
+            dropdownParent: $('#invtransModal'),
+            allowClear: true,
+            ajax: {
+                url: '<?= base_url('/uom/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#stock_uom option:selected").val();
+            $("#suom").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#suom").val(data);
+        });
     });
+
+</script>
 
 <?= $this->endSection() ?>  

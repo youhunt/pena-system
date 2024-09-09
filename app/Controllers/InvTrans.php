@@ -73,6 +73,60 @@ class InvTrans extends BaseController
         }
     }
 
+    public function getTrans()  
+    {
+
+        $request = Services::request();
+        $datatable = new InvTransModel($request);
+        
+        if ($request->getMethod(true) === 'POST') {
+            $lists = $datatable->getDatatables();
+            $data = [];
+            $no = $request->getPost('start');
+
+            foreach ($lists as $list) {
+                $no++;
+                $row = [];
+                $row['id'] = $list->id;
+                $row['trans_code'] = $list->trans_code;
+                $row['trans_no'] = $list->trans_no;
+                $row['site_code'] = $list->site_code;
+                $row['dept_code'] = $list->dept_code;
+                $row['whs_code'] = $list->whs_code;
+                $row['item_code'] = $list->item_code;
+                $row['loc_code'] = $list->loc_code;
+                $row['batch_no'] = $list->batch_no;
+                $row['multiplier'] = $list->multiplier;
+                $row['divider'] = $list->divider;
+                $row['qtyunit'] = $list->qtyunit;
+                $row['stockunit_uom'] = $list->stockunit_uom;
+                $row['qty'] = $list->qty;
+                $row['stock_uom'] = $list->stock_uom;
+                $row['description'] = $list->description;
+                $row['length'] = $list->length;
+                $row['luom'] = $list->luom;
+                $row['width'] = $list->width;
+                $row['wuom'] = $list->wuom;
+                $row['height'] = $list->height;
+                $row['huom'] = $list->huom;
+                $row['diameter'] = $list->diameter;
+                $row['duom'] = $list->duom;
+                $row['active'] = $list->active;
+                $row['no'] = '';
+                $data[] = $row;
+            }
+
+            $output = [
+                'draw' => $request->getPost('draw'),
+                'recordsTotal' => $datatable->countAll(),
+                'recordsFiltered' => $datatable->countFiltered(),
+                'data' => $data
+            ];
+
+            echo json_encode($output);
+        }
+    }
+
     public function add()
     {        
     
