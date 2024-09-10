@@ -17,11 +17,14 @@
                                         <div class="row mb-2">
                                             <label for="trans_code" class="col-sm-2 col-form-label"><?= lang('InvTrans.trans_code'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="text" class="form-control <?php if(session('errors.trans_code')) : ?>is-invalid<?php endif ?>" id="trans_code" placeholder="<?= lang('InvTrans.trans_code'); ?>" name="trans_code" value="<?= old('trans_code'); ?>">
+                                                <input type="hidden" id="trans_code" name="trans_code" value="" />
+                                                <select class="form-control <?php if(session('errors.trans_code')) : ?>is-invalid<?php endif ?>" name="transcode" id="transcode" >
+                                                    <option selected="selected"></option>
+                                                </select>
                                             </div>
                                             <label for="trans_no" class="col-sm-2 col-form-label"><?= lang('InvTrans.trans_no'); ?></label>
                                             <div class="col-sm-4">
-                                                <input type="text" class="form-control <?php if(session('errors.trans_no')) : ?>is-invalid<?php endif ?>" id="comp_code" placeholder="<?= lang('InvTrans.trans_no'); ?>" name="trans_no" value="<?= old('trans_no'); ?>">
+                                                <input type="text" class="form-control <?php if(session('errors.trans_no')) : ?>is-invalid<?php endif ?>" id="trans_no" placeholder="<?= lang('InvTrans.trans_no'); ?>" name="trans_no" value="<?= old('trans_no'); ?>">
                                             </div>
                                         </div>
 
@@ -41,7 +44,7 @@
                                         <div class="row mb-2">
                                             <div class="row mb-2">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                    <table class="table table-bordered" id="invtransData" width="100%" cellspacing="0">
                                                         <thead>
                                                             <tr>
                                                                 <th><?= lang('InvTrans.item_code'); ?></th>
@@ -94,7 +97,7 @@
 
 <?= $this->section('div-modal') ?>
     
-    <form action="<?= base_url(); ?>invtrans/saveTrans" method="post">
+    <form id="invtransForm" method="post">
     <div class="modal fade" id="invtransModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
@@ -220,6 +223,9 @@
 
                 </div>
                 <div class="modal-footer">
+                    <input type="hidden" class="trans_code" name="trans_code" value="" />
+                    <input type="hidden" class="trans_no" name="trans_no" value="" />
+
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
@@ -236,7 +242,7 @@
     $(document).ready(function(){
         //invtransModal
 
-        $('#dataTable').DataTable({
+        var invtransData = $('#invtransData').DataTable({
             "processing": true,
             "serverSide": true,
             "order": [],
@@ -271,25 +277,106 @@
             ]
         });
 
-        $('#addInvTrans-btn').on('click', function() {
-            // const id = $(this).data('id');
-            
-            // // Set data to Form Edit
-            // $('.id').val(id);
-            // $('.status').val('1');
+        $("#invtransForm").submit(function (e) {
+            e.preventDefault();
 
-            // // Call Modal Edit
-            // $('#bomChildForm')[0].reset();
-            // $("#itemchildname").val("|");
-            // $(".itemchildname").val("|");
-            // var itemSelect = $('#itemchild');
-            // var option = new Option("|", "", true, true);
-            // itemSelect.append(option).trigger('change');
-            // $('#childuom').val("");
-            // var uomSelect = $('#itemchilduom');
-            // option = new Option("|", "", true, true);
-            // uomSelect.append(option).trigger('change');
-            $('#invtransModal').modal('show');
+            // var formData = new FormData(this);
+            var form = $('#invtransForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>invtrans/saveTrans',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        invtransData.ajax.reload();
+                        $('#invtransModal').modal('hide');
+                        alert("Inventory Transactions saved.");
+
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        $('#addInvTrans-btn').on('click', function() {
+
+            var trans_code = $("#trans_code").val();
+            var trans_no = $("#trans_no").val();
+
+            if (trans_code ==='' || trans_no ==='') {
+                alert("TransCode and TransNo required.");
+            } else {
+                $('.trans_code').val(trans_code);
+                $('.trans_no').val(trans_no);
+
+                $('#invtransModal').modal('show');
+            }
+            
+        });
+
+        $('#transcode').select2({
+            placeholder: '|<?= lang('InvTrans.trans_code'); ?>',
+            minimumInputLength: 0,
+            allowClear: true,
+            ajax: {
+                url: '<?= base_url('/transactioncode/getAll'); ?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data){
+                return {
+                    results: data
+                };
+                },
+                cache: true
+            },
+            templateResult: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+            templateSelection: function(data) {
+                var r = data.text.split('|');
+                var result = jQuery(
+                    '<div class="row">' +
+                        '<div class="col-3">' + r[0] + '</div>' +
+                        '<div class="col-7">' + r[1] + '</div>' +
+                    '</div>'
+                );
+                return result;
+            },
+        }).on('select2:select', function (evt) {
+            var data = $("#transcode option:selected").val();
+            $("#trans_code").val(data);
+        }).on('select2:unselecting', function (evt) {
+            var data = "";
+            $("#trans_code").val(data);
         });
 
         $('#item').select2({

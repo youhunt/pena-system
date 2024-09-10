@@ -230,9 +230,18 @@ class TransactionCode extends BaseController
         $db      = \Config\Database::connect();
         $builder = $db->table('transaction_code');   
 
-        $query = $builder->like('transname', $this->request->getVar('q'))
-                    ->select('id, transname as text')
+        $query = $builder
+                ->select('id, concat(transcode,"|", transname) as text')
+                ->limit(30)->get();
+
+        if ($this->request->getVar('q')) {
+            $query = $builder
+                    ->like('transcode', $this->request->getVar('q'))
+                    ->orLike('transname', $this->request->getVar('q'))
+                    ->select('id, concat(transcode,"|", transname) as text')
                     ->limit(30)->get();
+        }
+
         $data = $query->getResult();
         
 		echo json_encode($data);
