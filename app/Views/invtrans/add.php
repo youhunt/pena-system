@@ -374,9 +374,11 @@
         }).on('select2:select', function (evt) {
             var data = $("#transcode option:selected").val();
             $("#trans_code").val(data);
+            $("#transname").val($("#transcode option:selected").text());
         }).on('select2:unselecting', function (evt) {
             var data = "";
             $("#trans_code").val(data);
+            $("#transname").val(data);
         });
 
         $('#item').select2({
@@ -423,11 +425,11 @@
             }
         }).on('select2:select', function (evt) {
             var data = $("#item option:selected").val();
-            $("#itemcode").val(data);
+            $("#item_code").val(data);
             $("#itemname").val($("#item option:selected").text());
         }).on('select2:unselecting', function (evt) {
             var data = "";
-            $("#itemcode").val(data);
+            $("#item_code").val(data);
             $("#itemname").val(data);
         });
 
@@ -475,11 +477,11 @@
             }
         }).on('select2:select', function (evt) {
             var data = $("#loc option:selected").val();
-            $("#loccode").val(data);
+            $("#loc_code").val(data);
             $("#locname").val($("#loc option:selected").text());
         }).on('select2:unselecting', function (evt) {
             var data = "";
-            $("#loccode").val(data);
+            $("#loc_code").val(data);
             $("#locname").val(data);
         });
 
@@ -726,11 +728,11 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            var data = $("#stockunit_uom option:selected").val();
-            $("#suuom").val(data);
+            var data = $("#suuom option:selected").val();
+            $("#stockunit_uom").val(data);
         }).on('select2:unselecting', function (evt) {
             var data = "";
-            $("#suuom").val(data);
+            $("#stockunit_uom").val(data);
         });
 
         $('#suom').select2({
@@ -776,11 +778,11 @@
                 return result;
             },
         }).on('select2:select', function (evt) {
-            var data = $("#stock_uom option:selected").val();
-            $("#suom").val(data);
+            var data = $("#suom option:selected").val();
+            $("#stock_uom").val(data);
         }).on('select2:unselecting', function (evt) {
             var data = "";
-            $("#suom").val(data);
+            $("#stock_uom").val(data);
         });
     });
 

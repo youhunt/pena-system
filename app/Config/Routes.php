@@ -136,6 +136,7 @@ $routes->get('location/edit/(:segment)', 'Location::edit/$1', ['filter' => 'role
 $routes->post('location/save', 'Location::save', ['filter' => 'role:administrator']);
 $routes->post('location/update', 'Location::update', ['filter' => 'role:administrator']);
 $routes->post('location/delete', 'Location::delete', ['filter' => 'role:administrator']);
+$routes->get('location/getAll?(:any)', 'Location::getAll', ['filter' => 'role:administrator']);
 
 $routes->get('item', 'Item::index', ['filter' => 'role:administrator']);
 $routes->get('item/index', 'Item::index', ['filter' => 'role:administrator']);
