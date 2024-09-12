@@ -39,12 +39,8 @@ class InvTransModel extends Model
     ];
     protected $useTimestamps   = true;
     protected $validationRules = [
-        'id' => 'required',
         'trans_code' => 'required',
         'trans_no' => 'required',
-        'site_code' => 'required',
-        'dept_code' => 'required',
-        'whs_code' => 'required',
         'item_code' => 'required',
         'loc_code' => 'required',
         'qty' => 'required',

@@ -1,7 +1,7 @@
 <?= $this->extend('template/index') ?>            
  
 <?= $this->section('page-content') ?>
-                    <form action="<?= base_url(); ?>invtrans/save" class="user" method="post">
+                    <form id="invForm" class="user" method="post">
 
                         <div class="row">
                             <div class="col-xl-12">
@@ -276,6 +276,41 @@
                 },
             ]
         });
+        
+        $("#invForm").submit(function (e) {
+            e.preventDefault();
+
+            // var formData = new FormData(this);
+            var form = $('#invForm')[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '<?= base_url(); ?>invtrans/save',
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data)
+                    if (data.Success) {
+
+                        alert("Inventory Transactions saved.");
+                        window.location.href = "<?= base_url(); ?>invtrans/index";
+                    } else {
+                        if (data.Counter = 9999) {
+                            var err="";
+                            $.each( data.errors, function( key, value ) {
+                                err += value + "\n";
+                            });
+                            alert(err);
+                        }
+                    }
+                }
+            });
+
+        });
 
         $("#invtransForm").submit(function (e) {
             e.preventDefault();
@@ -375,7 +410,19 @@
             var data = $("#transcode option:selected").val();
             $("#trans_code").val(data);
             $("#transname").val($("#transcode option:selected").text());
-            $("#trans_no").val(new Date().toString("yyyyMMddhhmmssttt"));
+            
+            $.ajax({
+                url: "<?php echo site_url('invtrans/getTransNo') ?>",
+                type: "post",
+                success: function (response) {
+                    var data = $.parseJSON(response); 
+                    $('#trans_no').val(data.data);
+                    
+                },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
         }).on('select2:unselecting', function (evt) {
             var data = "";
             $("#trans_code").val(data);

@@ -381,6 +381,38 @@
             $("#to_uom_name").val($("#touom option:selected").text());
         });
 
+        $.ajax({
+            url: "<?php echo site_url('bom/getBOMChildById') ?>",
+            type: "post",
+            data: {
+                id : id, 
+            } ,
+            success: function (response) {
+                var data = $.parseJSON(response); //(jsonStringify);
+                $('#childno').val(data[0].childno);
+                $('#childcode').val(data[0].childcode);
+                $("#itemchildname").val(data[0].itemchildname);
+                $(".itemchildname").val(data[0].itemchildname);
+                var itemSelect = $('#itemchild');
+                var option = new Option(data[0].itemchildname, data[0].childcode, true, true);
+                itemSelect.append(option).trigger('change');
+                $('#childtype').val(data[0].childtype);
+                $('#qtyused').val(data[0].qtyused);
+                $('#childuom').val(data[0].childuom);
+                var uomSelect = $('#itemchilduom');
+                option = new Option(data[0].childuom_desc, data[0].childuom, true, true);
+                uomSelect.append(option).trigger('change');
+                //$('#childuom_desc').html(data[0].childuom_desc);
+                $('#factor').val(data[0].factor);
+                $('#childdescription').val(data[0].childdescription);
+                $('#bom_id').val(data[0].bom_id);
+                
+            },
+                error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+
     });
 </script>
 

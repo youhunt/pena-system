@@ -43,9 +43,6 @@ class InvTrans extends BaseController
                 $row['id'] = $list->id;
                 $row['trans_code'] = $list->trans_code;
                 $row['trans_no'] = $list->trans_no;
-                $row['site_code'] = $list->site_code;
-                $row['dept_code'] = $list->dept_code;
-                $row['whs_code'] = $list->whs_code;
                 $row['item_code'] = $list->item_code;
                 $row['loc_code'] = $list->loc_code;
                 $row['batch_no'] = $list->batch_no;
@@ -215,57 +212,131 @@ class InvTrans extends BaseController
         return view('invtrans/add', $data);            
     }
 
+    public function getTransNo() {
+        
+        $transDate = date("YmdHist");
+
+        $output = [
+            'data' => $transDate,
+        ];
+
+        echo json_encode($output);
+    }
+
     public function save()
     {
-        $rules = [
-            'trans_code' => 'required',
-            'trans_no' => 'required',
-            'item_code' => 'required',
-            'loc_code' => 'required',
-            'qty' => 'required',
-            'stock_uom' => 'required', 
-        ];
+        // $rules = [
+        //     'trans_code' => 'required',
+        //     'trans_no' => 'required',
+        //     'item_code' => 'required',
+        //     'loc_code' => 'required',
+        //     'qty' => 'required',
+        //     'stock_uom' => 'required', 
+        // ];
     
-        if (! $this->validate($rules))
-        {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
+        // if (! $this->validate($rules))
+        // {
+        //     return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        // }
 
-        if($this->validate($rules)){
+        // if($this->validate($rules)){
+        //     $request = Services::request();
+        //     $model = new InvTransModel($request);
+        //     $data = [
+        //         'trans_code' => $this->request->getVar('trans_code'),
+        //         'trans_no' => $this->request->getVar('trans_no'),
+        //         'item_code' => $this->request->getVar('item_code'),
+        //         'loc_code' => $this->request->getVar('loc_code'),
+        //         'batch_no' => $this->request->getVar('batch_no'),
+        //         'multiplier' => $this->request->getVar('multiplier'),
+        //         'divider' => $this->request->getVar('divider'),
+        //         'qtyunit' => $this->request->getVar('qtyunit'),
+        //         'stockunit_uom' => $this->request->getVar('stockunit_uom'),
+        //         'qty' => $this->request->getVar('qty'),
+        //         'stock_uom' => $this->request->getVar('stock_uom'),
+        //         'description' => $this->request->getVar('description'),
+        //         'length' => $this->request->getVar('length'),
+        //         'luom' => $this->request->getVar('luom'),
+        //         'width' => $this->request->getVar('width'),
+        //         'wuom' => $this->request->getVar('wuom'),
+        //         'height' => $this->request->getVar('height'),
+        //         'huom' => $this->request->getVar('huom'),
+        //         'diameter' => $this->request->getVar('diameter'),
+        //         'duom' => $this->request->getVar('duom'),
+        //         'created_date'=>  date("Y-m-d H:i:s"),
+        //         'created_by' =>  user()->username,
+        //     ];
+            
+        //     $model->save($data);
+
+        //     return redirect()->to(base_url('/invtrans/index'));
+
+        // } else {
+            
+        //     return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+
+        // }
+
+        $session = session();
+        $lists = $session->transData;
+
+        if (isset($lists)) {
             $request = Services::request();
             $model = new InvTransModel($request);
-            $data = [
-                'trans_code' => $this->request->getVar('trans_code'),
-                'trans_no' => $this->request->getVar('trans_no'),
-                'item_code' => $this->request->getVar('item_code'),
-                'loc_code' => $this->request->getVar('loc_code'),
-                'batch_no' => $this->request->getVar('batch_no'),
-                'multiplier' => $this->request->getVar('multiplier'),
-                'divider' => $this->request->getVar('divider'),
-                'qtyunit' => $this->request->getVar('qtyunit'),
-                'stockunit_uom' => $this->request->getVar('stockunit_uom'),
-                'qty' => $this->request->getVar('qty'),
-                'stock_uom' => $this->request->getVar('stock_uom'),
-                'description' => $this->request->getVar('description'),
-                'length' => $this->request->getVar('length'),
-                'luom' => $this->request->getVar('luom'),
-                'width' => $this->request->getVar('width'),
-                'wuom' => $this->request->getVar('wuom'),
-                'height' => $this->request->getVar('height'),
-                'huom' => $this->request->getVar('huom'),
-                'diameter' => $this->request->getVar('diameter'),
-                'duom' => $this->request->getVar('duom'),
-                'created_date'=>  date("Y-m-d H:i:s"),
-                'created_by' =>  user()->username,
-            ];
-            
-            $model->save($data);
 
-            return redirect()->to(base_url('/invtrans/index'));
+            foreach ($lists as $list) {
+                $data = [
+                    'trans_code' => $list['trans_code'],
+                    'trans_no' => $list['trans_no'],
+                    'item_code' => $list['item_code'],
+                    'loc_code' => $list['loc_code'],
+                    'batch_no' => $list['batch_no'],
+                    'multiplier' => $list['multiplier'],
+                    'divider' => $list['divider'],
+                    'qtyunit' => $list['qtyunit'],
+                    'stockunit_uom' => $list['stockunit_uom'],
+                    'qty' => $list['qty'],
+                    'stock_uom' => $list['stock_uom'],
+                    'description' => $list['description'],
+                    'length' => $list['length'],
+                    'luom' => $list['luom'],
+                    'width' => $list['width'],
+                    'wuom' => $list['wuom'],
+                    'height' => $list['height'],
+                    'huom' => $list['huom'],
+                    'diameter' => $list['diameter'],
+                    'duom' => $list['duom'],
+                    'created_date'=>  date("Y-m-d H:i:s"),
+                    'created_by' =>  user()->username,
+                ];
+                try
+                {
+                    $saved = $model->save($data);
+                    // return redirect()->to(base_url('/invtrans/index'));
+                    if ($saved) {
+                        $output = [
+                            'Success' => true,
+                            'Counter' =>  $model->countAll(),
+                            'errors' => $model->errors(),
+                        ];
+                    } else {
+                        $output = [
+                            'Success' => false,
+                            'Counter' =>  9999,
+                            'errors' => $model->errors(),
+                        ];
+                    }
+                } catch (DatabaseException $e) {
+                    $output = [
+                        'Success' => false,
+                        'Counter' =>  9999,
+                        'errors' => ['Data already exists.'],
+                    ];
+                }
 
-        } else {
-            
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            }
+
+            echo json_encode($output);
 
         }
     

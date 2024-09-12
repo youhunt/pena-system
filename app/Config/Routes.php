@@ -231,4 +231,5 @@ $routes->post('invtrans/getTrans', 'InvTrans::getTrans', ['filter' => 'role:admi
 $routes->post('invtrans/saveTrans', 'InvTrans::saveTrans', ['filter' => 'role:administrator']);
 $routes->post('invtrans/updateTrans', 'InvTrans::updateTrans', ['filter' => 'role:administrator']);
 $routes->post('invtrans/deleteTrans', 'InvTrans::deleteTrans', ['filter' => 'role:administrator']);
+$routes->post('invtrans/getTransNo', 'InvTrans::getTransNo', ['filter' => 'role:administrator']);
 
