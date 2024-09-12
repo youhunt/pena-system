@@ -251,8 +251,8 @@
                 "type": "POST"
             },
             "columns": [
-                { "data": "item_code", "autoWidth": true, "searchable": true },
-                { "data": "loc_code", "autoWidth": true, "searchable": true },
+                { "data": "itemname", "autoWidth": true, "searchable": true },
+                { "data": "locname", "autoWidth": true, "searchable": true },
                 { "data": "batch_no", "autoWidth": true, "searchable": true },
                 { "data": "multiplier", "autoWidth": true, "searchable": true },
                 { "data": "divider", "autoWidth": true, "searchable": true },
@@ -375,6 +375,7 @@
             var data = $("#transcode option:selected").val();
             $("#trans_code").val(data);
             $("#transname").val($("#transcode option:selected").text());
+            $("#trans_no").val(new Date().toString("yyyyMMddhhmmssttt"));
         }).on('select2:unselecting', function (evt) {
             var data = "";
             $("#trans_code").val(data);

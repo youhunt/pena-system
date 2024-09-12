@@ -101,9 +101,9 @@ class InvTrans extends BaseController
                 'trans_code' => $this->request->getVar('trans_code'),
                 'trans_no' => $this->request->getVar('trans_no'),
                 'item_code' => $this->request->getVar('item_code'),
-                'itemname' => $this->request->getVar('itemname').split("|")[0],
+                'itemname' => explode("|", $this->request->getVar('itemname'))[0],
                 'loc_code' => $this->request->getVar('loc_code'),
-                'locname' => $this->request->getVar('locname').split("|")[0],
+                'locname' => explode("|", $this->request->getVar('locname'))[0],
                 'batch_no' => $this->request->getVar('batch_no'),
                 'multiplier' => $this->request->getVar('multiplier'),
                 'divider' => $this->request->getVar('divider'),
@@ -201,6 +201,9 @@ class InvTrans extends BaseController
     public function add()
     {        
     
+        $session = session();
+        $session->remove('transData');
+
         $data = [            
             'title' => 'Add InvTrans',
         ];
@@ -208,7 +211,7 @@ class InvTrans extends BaseController
         $data['submenu'] = 'invtrans';
         $data['title_meta'] = view('partials/title-meta', ['title' => 'InvTrans']);
         $data['page_title'] = view('partials/page-title', ['title' => 'InvTrans', 'pagetitle' => 'MasterData']);
-
+        
         return view('invtrans/add', $data);            
     }
 
