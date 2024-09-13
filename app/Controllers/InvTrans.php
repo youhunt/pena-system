@@ -3,6 +3,10 @@
 namespace App\Controllers;
 
 use App\Models\InvTransModel;
+use App\Models\UOMModel;
+use App\Models\ItemModel;
+use App\Models\TransactionCodeModel;
+use App\Models\LocationModel;
 use Config\Services;
 use CodeIgniter\Session\Session;
 
@@ -31,6 +35,10 @@ class InvTrans extends BaseController
 
         $request = Services::request();
         $datatable = new InvTransModel($request);
+        $dataUOM = new UOMModel($request);
+        $dataItem = new ItemModel($request);
+        $dataTransCode = new TransactionCodeModel($request);
+        $dataLoc = new LocationModel($request);
         
         if ($request->getMethod(true) === 'POST') {
             $lists = $datatable->getDatatables();
@@ -41,26 +49,26 @@ class InvTrans extends BaseController
                 $no++;
                 $row = [];
                 $row['id'] = $list->id;
-                $row['trans_code'] = $list->trans_code;
+                $row['trans_code'] = $list->trans_code ? $dataTransCode->getTransactionCode($list->trans_code)[0]->transcode : "";
                 $row['trans_no'] = $list->trans_no;
-                $row['item_code'] = $list->item_code;
+                $row['item_code'] = $list->item_code ? $dataItem->getItem($list->item_code)[0]->item_code : "";
                 $row['loc_code'] = $list->loc_code;
                 $row['batch_no'] = $list->batch_no;
                 $row['multiplier'] = $list->multiplier;
                 $row['divider'] = $list->divider;
                 $row['qtyunit'] = $list->qtyunit;
-                $row['stockunit_uom'] = $list->stockunit_uom;
+                $row['stockunit_uom'] = $list->stockunit_uom ? $dataUOM->getUOM($list->stockunit_uom)[0]->uom_desc : "";
                 $row['qty'] = $list->qty;
-                $row['stock_uom'] = $list->stock_uom;
+                $row['stock_uom'] = $list->stock_uom ? $dataUOM->getUOM($list->stock_uom)[0]->uom_desc : "";
                 $row['description'] = $list->description;
                 $row['length'] = $list->length;
-                $row['luom'] = $list->luom;
+                $row['luom'] = $list->luom ? $dataUOM->getUOM($list->luom)[0]->uom_desc : "";
                 $row['width'] = $list->width;
-                $row['wuom'] = $list->wuom;
+                $row['wuom'] = $list->wuom ? $dataUOM->getUOM($list->wuom)[0]->uom_desc : "";
                 $row['height'] = $list->height;
-                $row['huom'] = $list->huom;
+                $row['huom'] = $list->huom ? $dataUOM->getUOM($list->huom)[0]->uom_desc : "";
                 $row['diameter'] = $list->diameter;
-                $row['duom'] = $list->duom;
+                $row['duom'] = $list->duom ? $dataUOM->getUOM($list->duom)[0]->uom_desc : "";
                 $row['active'] = $list->active;
                 $row['no'] = '';
                 $data[] = $row;
